@@ -1,0 +1,1787 @@
+@charset "UTF-8";
+section.profile {
+  margin-top: 30px;
+  margin-bottom: 68px;
+}
+@media (max-width: 1280px) {
+  section.profile {
+    margin-bottom: 50px;
+  }
+}
+section.profile div.container {
+  display: grid;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  grid-template-columns: -webkit-max-content 1fr;
+  grid-template-columns: max-content 1fr;
+  grid-gap: 50px;
+}
+@media (max-width: 1280px) {
+  section.profile div.container {
+    display: block;
+  }
+}
+section.profile div.container div.account_page {
+  width: 100%;
+}
+section.profile div.container div.account_page h1 {
+  margin-bottom: 16px;
+}
+section.profile div.container div.account_page div.avatar {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-columns: -webkit-max-content 280px;
+  grid-template-columns: max-content 280px;
+  grid-gap: 15px;
+  margin-bottom: 30px;
+}
+section.profile div.container div.account_page div.avatar div.image {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  border-radius: 10px;
+  width: 98px;
+  height: 98px;
+  background: #f2f5ff;
+}
+section.profile div.container div.account_page div.avatar div.image img.avatar {
+  position: absolute;
+  top: 0;
+  left: 9px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section.profile div.container div.account_page div.avatar div.link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+section.profile div.container div.account_page div.avatar div.link span {
+  font-weight: 700;
+  color: #d819a3;
+}
+section.profile div.container div.account_page div.avatar span.note {
+  opacity: 0.5;
+}
+section.profile div.container div.account_page h5 {
+  margin-top: 34px;
+  margin-bottom: 10px;
+}
+section.profile div.container div.account_page form {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-gap: 5px;
+  margin-bottom: 20px;
+}
+section.profile div.container div.account_page form span.note {
+  font-size: 13px;
+  color: #acacac;
+}
+section.profile div.container div.account_page form fieldset.datepicker {
+  max-width: 480px;
+}
+section.profile div.container div.account_page form fieldset.input {
+  width: 100%;
+  max-width: 480px;
+  pointer-events: auto;
+  -webkit-transition: height 0.3s, max-width 0.3s;
+  transition: height 0.3s, max-width 0.3s;
+}
+section.profile div.container div.account_page form fieldset.input input {
+  top: unset;
+  height: 100%;
+}
+section.profile div.container div.account_page form fieldset.select {
+  width: 100%;
+  max-width: 480px;
+  pointer-events: auto;
+  -webkit-transition: max-width 0.3s;
+  transition: max-width 0.3s;
+}
+section.profile div.container div.account_page form fieldset.select div.select_choice span {
+  height: var(--form-element-height);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+section.profile div.container div.account_page form div.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+}
+@media (max-width: 1280px) {
+  section.profile div.container div.account_page form div.row {
+    gap: 10px;
+  }
+}
+section.profile div.container div.account_page form div.save {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+  opacity: 1;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+@media (max-width: 1280px) {
+  section.profile div.container div.account_page form div.save {
+    gap: 10px;
+  }
+}
+section.profile div.container div.account_page form div.save button {
+  background: #3068f7;
+  height: var(--form-element-height);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+section.profile div.container div.account_page form div.save button img {
+  display: none;
+  width: 24px;
+}
+@media (max-width: 1280px) {
+  section.profile div.container div.account_page form div.save button {
+    min-width: unset;
+  }
+}
+@media (max-width: 960px) {
+  section.profile div.container div.account_page form div.save button {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 40px;
+  }
+  section.profile div.container div.account_page form div.save button span {
+    display: none;
+  }
+  section.profile div.container div.account_page form div.save button img {
+    display: block;
+  }
+}
+section.profile div.container div.account_page form div.save span {
+  cursor: pointer;
+}
+section.profile div.container div.account_page form div.edit {
+  display: none;
+  cursor: pointer;
+  line-height: 0;
+}
+section.profile div.container div.account_page form.disabled fieldset.input {
+  pointer-events: none;
+  border: unset;
+  height: 1em;
+  max-width: 340px;
+}
+section.profile div.container div.account_page form.disabled fieldset.input input {
+  padding-left: unset;
+}
+section.profile div.container div.account_page form.disabled fieldset.select {
+  pointer-events: none;
+  max-width: 340px;
+}
+section.profile div.container div.account_page form.disabled fieldset.select div.select_choice {
+  border: unset;
+}
+section.profile div.container div.account_page form.disabled fieldset.select div.select_choice span {
+  height: 1em;
+  padding-left: 0;
+}
+section.profile div.container div.account_page form.disabled fieldset.select div.select_choice img {
+  opacity: 0;
+}
+section.profile div.container div.account_page form.disabled div.edit {
+  display: block;
+}
+section.profile div.container div.account_page form.disabled div.save {
+  opacity: 0;
+}
+@media (max-width: 960px) {
+  section.profile div.container div.account_page form.disabled div.save {
+    display: none;
+  }
+}
+section.profile div.container div.account_page form.disabled div.save button {
+  height: 1em;
+}
+section.profile div.container div.account_page form.password {
+  grid-gap: 10px;
+  max-width: 480px;
+}
+section.profile div.container div.account_page form.password i {
+  font-size: 12px;
+  color: #acacac;
+  margin-top: -5px;
+  margin-bottom: 14px;
+}
+section.profile div.container div.account_page form.password div.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+section.profile div.container div.account_page form.password div.buttons a {
+  font-weight: 700;
+}
+section.profile div.container div.account_page form.password div.buttons button {
+  background: #3068f7;
+}
+
+section.orders_empty {
+  margin-top: 30px;
+  margin-bottom: 68px;
+}
+@media (max-width: 1280px) {
+  section.orders_empty {
+    margin-bottom: unset;
+  }
+}
+section.orders_empty div.container {
+  display: grid;
+  -ms-flex-line-pack: start;
+      align-content: start;
+  grid-template-columns: -webkit-max-content 1fr;
+  grid-template-columns: max-content 1fr;
+  grid-gap: 50px;
+}
+@media (max-width: 1280px) {
+  section.orders_empty div.container {
+    display: block;
+  }
+}
+section.orders_empty div.container div.account_page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+section.orders_empty div.container div.account_page h1 {
+  margin-bottom: 24px;
+}
+@media (max-width: 1280px) {
+  section.orders_empty div.container div.account_page h1 {
+    margin-bottom: 16px;
+  }
+}
+section.orders_empty div.container div.account_page div.filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-bottom: 10px;
+  gap: 10px;
+}
+section.orders_empty div.container div.account_page div.filter span.tag {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px;
+  height: 48px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #3068f7;
+  background: #f2f5ff;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  cursor: pointer;
+}
+@media (max-width: 1280px) {
+  section.orders_empty div.container div.account_page div.filter span.tag {
+    font-size: 14px;
+    height: 40px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+section.orders_empty div.container div.account_page div.filter span.tag.active {
+  background: #3068f7;
+  color: white;
+}
+section.orders_empty div.container div.account_page div.filter fieldset.select {
+  margin-left: auto;
+}
+@media (max-width: 960px) {
+  section.orders_empty div.container div.account_page div.filter fieldset.select {
+    margin-left: unset;
+  }
+}
+section.orders_empty div.container div.empty {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  justify-items: center;
+  text-align: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+@media (max-width: 1280px) {
+  section.orders_empty div.container div.empty {
+    margin-top: 120px;
+    margin-bottom: 120px;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+  }
+}
+section.orders_empty div.container div.empty img {
+  margin-bottom: 30px;
+}
+section.orders_empty div.container div.empty h2 {
+  display: block;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 130%;
+  text-transform: uppercase;
+  color: #16192c;
+  margin-bottom: 16px;
+}
+@media (max-width: 1280px) {
+  section.orders_empty div.container div.empty h2 {
+    font-size: 20px;
+  }
+}
+
+section.orders {
+  margin-top: 30px;
+  margin-bottom: 68px;
+}
+@media (max-width: 1280px) {
+  section.orders {
+    margin-bottom: 50px;
+  }
+}
+section.orders div.container {
+  display: grid;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  grid-template-columns: -webkit-max-content 1fr;
+  grid-template-columns: max-content 1fr;
+  grid-gap: 50px;
+}
+@media (max-width: 1280px) {
+  section.orders div.container {
+    display: block;
+  }
+}
+section.orders div.container div.account_page {
+  width: 100%;
+}
+section.orders div.container div.account_page h1 {
+  margin-bottom: 24px;
+}
+@media (max-width: 1280px) {
+  section.orders div.container div.account_page h1 {
+    margin-bottom: 16px;
+  }
+}
+section.orders div.container div.account_page div.filter {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-columns: 1fr -webkit-max-content;
+  grid-template-columns: 1fr max-content;
+  padding-bottom: 10px;
+}
+@media (max-width: 960px) {
+  section.orders div.container div.account_page div.filter {
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+}
+section.orders div.container div.account_page div.filter div.tags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+}
+@media (max-width: 960px) {
+  section.orders div.container div.account_page div.filter div.tags {
+    margin-left: calc(var(--side-gap) * -1);
+    margin-right: calc(var(--side-gap) * -1);
+    padding-left: var(--side-gap);
+    padding-right: var(--side-gap);
+  }
+}
+section.orders div.container div.account_page div.filter div.tags::-webkit-scrollbar {
+  display: none;
+  opacity: 0;
+}
+section.orders div.container div.account_page div.filter div.tags span.tag {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px;
+  height: 48px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #3068f7;
+  background: #f2f5ff;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  cursor: pointer;
+  white-space: nowrap;
+}
+@media (max-width: 1280px) {
+  section.orders div.container div.account_page div.filter div.tags span.tag {
+    font-size: 14px;
+    height: 40px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+section.orders div.container div.account_page div.filter div.tags span.tag.active {
+  background: #3068f7;
+  color: white;
+}
+section.orders div.container div.account_page div.filter fieldset.select {
+  margin-left: auto;
+}
+@media (max-width: 960px) {
+  section.orders div.container div.account_page div.filter fieldset.select {
+    margin-left: unset;
+  }
+}
+section.orders div.container div.account_page table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 20px;
+}
+section.orders div.container div.account_page table thead {
+  -moz-text-align-last: left;
+       text-align-last: left;
+  color: #acacac;
+}
+@media (max-width: 960px) {
+  section.orders div.container div.account_page table thead {
+    display: none;
+  }
+}
+section.orders div.container div.account_page table thead th {
+  padding-left: 30px;
+  font-weight: 400;
+  text-align: left;
+}
+@media (max-width: 960px) {
+  section.orders div.container div.account_page table tbody {
+    display: grid;
+    grid-gap: 20px;
+  }
+}
+section.orders div.container div.account_page table tbody tr {
+  position: relative;
+}
+section.orders div.container div.account_page table tbody tr td {
+  padding: 30px;
+  border-top: 1px solid rgba(48, 104, 247, 0.2);
+  border-bottom: 1px solid rgba(48, 104, 247, 0.2);
+}
+@media (max-width: 1600px) {
+  section.orders div.container div.account_page table tbody tr td {
+    padding: 20px;
+  }
+  section.orders div.container div.account_page table tbody tr td:not(:last-child) {
+    padding-right: unset;
+  }
+}
+@media (max-width: 960px) {
+  section.orders div.container div.account_page table tbody tr td {
+    border: unset !important;
+    padding: unset;
+  }
+  section.orders div.container div.account_page table tbody tr td[data-thead]::before {
+    display: block;
+    content: attr(data-thead);
+    color: #acacac;
+    margin-bottom: 4px;
+  }
+}
+section.orders div.container div.account_page table tbody tr td:first-child {
+  border: 1px solid rgba(48, 104, 247, 0.2);
+  border-right: unset;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+section.orders div.container div.account_page table tbody tr td:last-child {
+  border: 1px solid rgba(48, 104, 247, 0.2);
+  border-left: unset;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+@media (max-width: 960px) {
+  section.orders div.container div.account_page table tbody tr {
+    display: grid;
+    grid-gap: 15px;
+    border: 1px solid rgba(48, 104, 247, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+  }
+}
+section.orders div.container div.account_page table i {
+  display: block;
+  font-size: 12px;
+  color: #acacac;
+  margin-top: 5px;
+}
+section.orders div.container div.account_page table span.pink {
+  color: #D819A3;
+}
+section.orders div.container div.account_page table span.green {
+  color: #09B200;
+}
+section.orders div.container div.account_page table span.violet {
+  color: #6727C4;
+}
+section.orders div.container div.account_page table span.blue {
+  color: #3068F7;
+}
+section.orders div.container div.account_page table div.buttons {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  height: 100%;
+}
+@media (max-width: 1600px) {
+  section.orders div.container div.account_page table div.buttons {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 960px) {
+  section.orders div.container div.account_page table div.buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+section.orders div.container div.account_page table div.buttons span.price {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+section.orders div.container div.account_page table div.buttons button.pay {
+  background: #3068f7;
+  min-width: unset;
+}
+@media (max-width: 960px) {
+  section.orders div.container div.account_page table div.buttons button.pay {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+}
+section.orders div.container div.account_page table div.buttons button.cancel {
+  background: rgba(216, 25, 73, 0.1);
+  color: rgba(216, 25, 73, 0.6784313725);
+  min-width: unset;
+  justify-self: end;
+}
+@media (max-width: 960px) {
+  section.orders div.container div.account_page table div.buttons button.cancel {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+  }
+}
+section.orders div.container div.account_page table div.buttons a.more {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: transparent;
+}
+@media (max-width: 960px) {
+  section.orders div.container div.account_page table div.buttons a.more {
+    position: static;
+    display: grid;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    justify-items: center;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    border: 1px solid #3068f7;
+    height: var(--form-element-height);
+    padding: var(--form-element-padding);
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #3068f7;
+    width: 100%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+section.orders div.container div.account_page table div.buttons a.more:hover {
+  border: 1px solid #3068f7;
+}
+section.orders div.container div.account_page table div.buttons.column {
+  grid-template-columns: 1fr;
+}
+@media (max-width: 960px) {
+  section.orders div.container div.account_page table div.empty {
+    display: none;
+  }
+}
+
+section.order_details {
+  margin-top: 30px;
+  margin-bottom: 68px;
+}
+@media (max-width: 1280px) {
+  section.order_details {
+    margin-bottom: 50px;
+  }
+}
+section.order_details div.container {
+  display: grid;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  grid-template-columns: -webkit-max-content 1fr;
+  grid-template-columns: max-content 1fr;
+  grid-gap: 50px;
+}
+@media (max-width: 1280px) {
+  section.order_details div.container {
+    display: block;
+  }
+}
+section.order_details div.container div.account_page {
+  width: 100%;
+}
+section.order_details div.container div.account_page div.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+@media (max-width: 1280px) {
+  section.order_details div.container div.account_page div.title {
+    gap: 16px;
+  }
+}
+@media (max-width: 640px) {
+  section.order_details div.container div.account_page div.title {
+    display: grid;
+    justify-items: start;
+  }
+}
+section.order_details div.container div.account_page div.title div.tag {
+  white-space: nowrap;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  border-radius: 3px;
+  padding: 2.5px 10px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 130%;
+  margin-top: 10px;
+}
+@media (max-width: 1600px) {
+  section.order_details div.container div.account_page div.title div.tag {
+    margin-top: 8px;
+  }
+}
+@media (max-width: 960px) {
+  section.order_details div.container div.account_page div.title div.tag {
+    margin-top: 6px;
+  }
+}
+@media (max-width: 640px) {
+  section.order_details div.container div.account_page div.title div.tag {
+    margin-top: unset;
+  }
+}
+section.order_details div.container div.account_page div.title div.tag.green {
+  background: rgba(14, 171, 105, 0.1);
+  color: #0eab69;
+}
+section.order_details div.container div.account_page div.excursion_card {
+  border: unset;
+  -webkit-box-shadow: 0 0 0 1px rgba(48, 104, 247, 0.2);
+          box-shadow: 0 0 0 1px rgba(48, 104, 247, 0.2);
+  background: #fff;
+  max-width: 1048px;
+  grid-template-columns: 280px 1fr;
+  margin-bottom: 20px;
+}
+@media (max-width: 1280px) {
+  section.order_details div.container div.account_page div.excursion_card {
+    grid-template-columns: 1fr;
+  }
+}
+section.order_details div.container div.account_page div.excursion_card div.text span.city a {
+  display: inline;
+}
+section.order_details div.container div.account_page div.excursion_card div.text div.type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 7px;
+  border-radius: 5px;
+}
+@media (max-width: 640px) {
+  section.order_details div.container div.account_page div.excursion_card div.text div.type {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
+section.order_details div.container div.account_page div.excursion_card div.text div.type span {
+  display: block;
+}
+section.order_details div.container div.account_page div.excursion_card div.details {
+  width: 100%;
+  grid-template-columns: -webkit-max-content 1fr -webkit-max-content;
+  grid-template-columns: max-content 1fr max-content;
+  padding-right: unset;
+}
+@media (max-width: 960px) {
+  section.order_details div.container div.account_page div.excursion_card div.details {
+    padding: unset;
+    grid-gap: 16px;
+  }
+}
+@media (max-width: 640px) {
+  section.order_details div.container div.account_page div.excursion_card div.details {
+    grid-template-columns: 1fr;
+  }
+}
+section.order_details div.container div.account_page div.excursion_card div.details div.difficulty {
+  padding: 10px;
+}
+@media (max-width: 640px) {
+  section.order_details div.container div.account_page div.excursion_card div.details div.difficulty {
+    padding-top: unset;
+    padding-bottom: unset;
+  }
+}
+section.order_details div.container div.account_page div.excursion_card div.details div.tags {
+  padding: 10px;
+}
+@media (max-width: 640px) {
+  section.order_details div.container div.account_page div.excursion_card div.details div.tags {
+    padding-top: unset;
+    padding-bottom: unset;
+  }
+}
+section.order_details div.container div.account_page div.excursion_card button {
+  border-radius: 0 0 20px 0;
+  min-width: 234px;
+  height: 100%;
+  background: #3068f7;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 130%;
+  color: #fff;
+}
+@media (max-width: 640px) {
+  section.order_details div.container div.account_page div.excursion_card button {
+    height: 40px;
+    width: 100%;
+  }
+}
+section.order_details div.container div.account_page div.detail {
+  display: grid;
+  grid-gap: 20px;
+}
+section.order_details div.container div.account_page div.data {
+  display: grid;
+  grid-template-columns: 1fr 406px;
+  grid-gap: 20px;
+  max-width: 1048px;
+}
+@media (max-width: 1600px) {
+  section.order_details div.container div.account_page div.data {
+    grid-template-columns: 1fr 360px;
+  }
+}
+@media (max-width: 960px) {
+  section.order_details div.container div.account_page div.data {
+    grid-template-columns: 1fr 290px;
+  }
+}
+@media (max-width: 640px) {
+  section.order_details div.container div.account_page div.data {
+    grid-template-columns: 1fr;
+  }
+}
+section.order_details div.container div.account_page div.data div.tour_data {
+  display: grid;
+  grid-gap: 30px;
+  border: 1px solid rgba(75, 105, 221, 0.2);
+  border-radius: 20px;
+  padding: 20px;
+  background: white;
+}
+section.order_details div.container div.account_page div.data div.tour_data h5 {
+  margin-bottom: 16px;
+}
+section.order_details div.container div.account_page div.data div.tour_data strong {
+  display: block;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #3068f7;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+section.order_details div.container div.account_page div.data div.tour_data div.tbody {
+  display: grid;
+  grid-gap: 10px;
+}
+section.order_details div.container div.account_page div.data div.tour_data div.tbody div.tr {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+}
+@media (max-width: 960px) {
+  section.order_details div.container div.account_page div.data div.tour_data div.tbody div.tr {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+section.order_details div.container div.account_page div.data div.tour_data div.tbody div.tr span:first-child {
+  display: grid;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  grid-template-columns: -webkit-max-content 1fr;
+  grid-template-columns: max-content 1fr;
+  grid-gap: 5px;
+  opacity: 0.8;
+  grid-column: 2 span;
+}
+@media (max-width: 960px) {
+  section.order_details div.container div.account_page div.data div.tour_data div.tbody div.tr span:first-child {
+    grid-column: 1 span;
+  }
+}
+section.order_details div.container div.account_page div.data div.tour_data div.tbody div.tr span:first-child::after {
+  content: "";
+  margin-top: 1em;
+  display: block;
+  width: 100%;
+  border-bottom: 1px dashed #dddde4;
+}
+section.order_details div.container div.account_page div.data div.tour_data div.tbody div.tr a {
+  display: block;
+  text-decoration: underline;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: #3068f7;
+  margin-top: 5px;
+}
+section.order_details div.container div.account_page div.data div.tour_data div.tbody div.tr a:hover {
+  text-decoration: none;
+}
+section.order_details div.container div.account_page div.data div.tour_data div.date div.tr {
+  display: grid;
+  grid-template-columns: 1fr -webkit-max-content;
+  grid-template-columns: 1fr max-content;
+  grid-gap: 10px;
+}
+section.order_details div.container div.account_page div.data div.tour_data div.date div.tr span:first-child {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-columns: -webkit-max-content 1fr;
+  grid-template-columns: max-content 1fr;
+  grid-gap: 10px;
+}
+section.order_details div.container div.account_page div.data div.tour_data div.date div.tr span:first-child::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #3068f7;
+}
+section.order_details div.container div.account_page div.data div.column {
+  display: grid;
+  grid-gap: 20px;
+}
+section.order_details div.container div.account_page div.data div.documents_data {
+  display: grid;
+  -ms-flex-line-pack: start;
+      align-content: start;
+  grid-gap: 15px;
+  border: 1px solid rgba(75, 105, 221, 0.2);
+  border-radius: 20px;
+  padding: 20px;
+}
+section.order_details div.container div.account_page div.data div.documents_data div.list {
+  display: grid;
+  grid-gap: 15px;
+}
+section.order_details div.container div.account_page div.data div.documents_data div.list a {
+  font-weight: 700;
+  text-decoration: underline;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: #3068f7;
+}
+section.order_details div.container div.account_page div.data div.documents_data div.list a:hover {
+  text-decoration: none;
+}
+section.order_details div.container div.account_page div.data div.transport {
+  display: grid;
+  -ms-flex-line-pack: start;
+      align-content: start;
+  grid-gap: 15px;
+  border: 1px solid rgba(75, 105, 221, 0.2);
+  border-radius: 20px;
+  padding: 20px;
+}
+section.order_details div.container div.account_page div.data div.transport span.note {
+  opacity: 0.5;
+}
+section.order_details div.container div.account_page div.data div.transport div.scheme {
+  display: grid;
+  grid-template-columns: 1fr -webkit-max-content;
+  grid-template-columns: 1fr max-content;
+}
+section.order_details div.container div.account_page div.data div.transport div.scheme b {
+  font-size: 14px;
+  color: #d819a3;
+}
+section.order_details div.container div.account_page div.data div.transport div.scheme a {
+  font-weight: 700;
+  text-decoration: underline;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: #3068f7;
+}
+section.order_details div.container div.account_page div.data div.transport div.scheme a:hover {
+  text-decoration: none;
+}
+section.order_details div.container div.account_page div.data div.transport div.route {
+  display: grid;
+  grid-gap: 5px;
+}
+section.order_details div.container div.account_page div.data div.transport div.dates {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+section.order_details div.container div.account_page div.data div.transport div.dates div {
+  display: grid;
+  grid-gap: 5px;
+}
+section.order_details div.container div.account_page div.data div.transport div.places {
+  display: grid;
+  grid-gap: 5px;
+}
+section.order_details div.container div.account_page div.data div.transport div.places span.blue {
+  color: #3068f7;
+}
+section.order_details div.container div.account_page div.data button.more {
+  margin-top: -50px;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  height: unset;
+  background: #f2f5ff;
+  color: #4b69dd;
+  z-index: -1;
+}
+section.order_details div.container div.account_page div.results {
+  display: grid;
+  -ms-flex-line-pack: start;
+      align-content: start;
+  grid-gap: 16px;
+  border: 1px solid rgba(75, 105, 221, 0.2);
+  border-radius: 20px;
+  padding: 20px;
+  padding-bottom: unset;
+  overflow: hidden;
+  max-width: 1048px;
+}
+@media (max-width: 1280px) {
+  section.order_details div.container div.account_page div.results {
+    grid-gap: 10px;
+  }
+}
+section.order_details div.container div.account_page div.results div.tbody {
+  display: grid;
+  grid-gap: 10px;
+}
+section.order_details div.container div.account_page div.results div.tbody div.tr {
+  display: grid;
+  grid-template-columns: 1fr -webkit-max-content;
+  grid-template-columns: 1fr max-content;
+}
+section.order_details div.container div.account_page div.results div.tbody div.tr span:nth-child(1) {
+  display: grid;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  grid-template-columns: -webkit-max-content 1fr;
+  grid-template-columns: max-content 1fr;
+  grid-gap: 5px;
+  opacity: 0.8;
+}
+section.order_details div.container div.account_page div.results div.tbody div.tr span:nth-child(1)::after {
+  content: "";
+  margin-top: 1em;
+  display: block;
+  width: 100%;
+  border-bottom: 1px dashed #dddde4;
+}
+section.order_details div.container div.account_page div.results div.tbody div.tr span:nth-child(2) {
+  font-weight: 600;
+  color: #16192c;
+}
+section.order_details div.container div.account_page div.results div.tbody div.subtr {
+  display: grid;
+  grid-gap: 10px;
+  grid-column: 2 span;
+  padding-left: 10px;
+  margin-top: 10px;
+}
+section.order_details div.container div.account_page div.results div.total {
+  background: #3068f7;
+  width: calc(100% + 40px);
+  margin-top: 35px;
+  margin-left: -20px;
+  padding: 10px 20px;
+}
+@media (max-width: 1280px) {
+  section.order_details div.container div.account_page div.results div.total {
+    margin-top: 10px;
+  }
+}
+section.order_details div.container div.account_page div.results div.total div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+section.order_details div.container div.account_page div.results div.total h5 {
+  color: white;
+}
+section.order_details div.container div.account_page div.results div.total span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  color: #fff;
+  opacity: 0.5;
+}
+section.order_details div.container div.account_page button.cancel {
+  width: 100%;
+  max-width: 1048px;
+  background: rgba(216, 25, 73, 0.1);
+  color: #d81949;
+}
+
+section.bonuses {
+  margin-top: 30px;
+  margin-bottom: 68px;
+}
+@media (max-width: 1280px) {
+  section.bonuses {
+    margin-bottom: 50px;
+  }
+}
+section.bonuses div.container {
+  display: grid;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  grid-template-columns: -webkit-max-content 1fr;
+  grid-template-columns: max-content 1fr;
+  grid-gap: 50px;
+}
+@media (max-width: 1280px) {
+  section.bonuses div.container {
+    display: block;
+  }
+}
+section.bonuses div.container div.account_page {
+  width: 100%;
+}
+section.bonuses div.container div.account_page h1 {
+  margin-bottom: 32px;
+}
+section.bonuses div.container div.account_page ul li {
+  position: relative;
+  padding-left: 24px;
+}
+section.bonuses div.container div.account_page ul li::before {
+  content: "•";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+section.bonuses div.container div.account_page div.graph {
+  margin-bottom: 42px;
+  border-radius: 20px;
+  padding: 25px 30px;
+  background: #f2f5ff;
+}
+@media (max-width: 1280px) {
+  section.bonuses div.container div.account_page div.graph {
+    margin-bottom: 34px;
+    padding: 20px;
+  }
+}
+section.bonuses div.container div.account_page div.graph div.status {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 15px;
+}
+@media (max-width: 1280px) {
+  section.bonuses div.container div.account_page div.graph div.status {
+    margin-bottom: 10px;
+  }
+}
+section.bonuses div.container div.account_page div.graph div.status span.level {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 130%;
+  text-transform: uppercase;
+  color: #3068f7;
+}
+section.bonuses div.container div.account_page div.graph div.status span.count {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 130%;
+  color: #343a60;
+}
+section.bonuses div.container div.account_page div.graph div.details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 30px;
+}
+@media (max-width: 1280px) {
+  section.bonuses div.container div.account_page div.graph div.details {
+    margin-bottom: 24px;
+  }
+}
+@media (max-width: 960px) {
+  section.bonuses div.container div.account_page div.graph div.details {
+    display: grid;
+    grid-gap: 12px;
+  }
+}
+section.bonuses div.container div.account_page div.graph div.details div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+}
+section.bonuses div.container div.account_page div.graph div.details span.type {
+  border-radius: 3px;
+  background: rgba(14, 171, 105, 0.1);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 130%;
+  color: #0eab69;
+  padding: 2px 10px;
+}
+section.bonuses div.container div.account_page div.graph div.details span.note {
+  opacity: 0.4;
+}
+section.bonuses div.container div.account_page div.graph div.discount div.percents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 15px;
+}
+@media (max-width: 1280px) {
+  section.bonuses div.container div.account_page div.graph div.discount div.percents {
+    margin-bottom: 10px;
+  }
+}
+section.bonuses div.container div.account_page div.graph div.discount div.percents span {
+  font-weight: 700;
+  color: #d819a3;
+}
+section.bonuses div.container div.account_page div.graph div.discount div.track {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  background: rgba(52, 58, 96, 0.062745098);
+}
+section.bonuses div.container div.account_page div.graph div.discount div.track div.thumb {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #d819a3;
+  border-radius: 5px;
+}
+section.bonuses div.container div.account_page div.description {
+  display: grid;
+  margin-top: 42px;
+  margin-bottom: 24px;
+}
+@media (max-width: 1280px) {
+  section.bonuses div.container div.account_page div.description {
+    margin-top: 34px;
+    margin-bottom: 20px;
+  }
+}
+section.bonuses div.container div.account_page div.description h5 {
+  margin-bottom: 16px;
+}
+@media (max-width: 1280px) {
+  section.bonuses div.container div.account_page div.description h5 {
+    margin-bottom: 12px;
+  }
+}
+section.bonuses div.container div.account_page div.description span.blue {
+  font-weight: 500;
+  color: #3068f7;
+  margin-bottom: 16px;
+}
+@media (max-width: 1280px) {
+  section.bonuses div.container div.account_page div.description span.blue {
+    margin-bottom: 10px;
+  }
+}
+section.bonuses div.container div.account_page div.advantages {
+  display: grid;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px 80px;
+  border-radius: 20px;
+  background: #f2f5ff;
+  padding: 40px;
+  margin-top: 24px;
+  margin-bottom: 50px;
+}
+@media (max-width: 1280px) {
+  section.bonuses div.container div.account_page div.advantages {
+    grid-gap: 20px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 34px;
+  }
+}
+@media (max-width: 960px) {
+  section.bonuses div.container div.account_page div.advantages {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+section.bonuses div.container div.account_page div.advantages div.advantage {
+  display: grid;
+}
+section.bonuses div.container div.account_page div.advantages div.advantage img {
+  margin-bottom: 30px;
+}
+@media (max-width: 1280px) {
+  section.bonuses div.container div.account_page div.advantages div.advantage img {
+    margin-bottom: 12px;
+  }
+}
+section.bonuses div.container div.account_page div.advantages div.advantage strong {
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+@media (max-width: 1280px) {
+  section.bonuses div.container div.account_page div.advantages div.advantage strong {
+    margin-bottom: 10px;
+  }
+}
+section.bonuses div.container div.account_page div.advantages div.advantage span {
+  opacity: 0.8;
+}
+section.bonuses div.container div.account_page div.how {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+@media (max-width: 1280px) {
+  section.bonuses div.container div.account_page div.how {
+    margin-top: 34px;
+    margin-bottom: 30px;
+  }
+}
+section.bonuses div.container div.account_page div.how h5 {
+  margin-bottom: 16px;
+}
+@media (max-width: 1280px) {
+  section.bonuses div.container div.account_page div.how h5 {
+    margin-bottom: 12px;
+  }
+}
+section.bonuses div.container div.account_page div.levels {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+@media (max-width: 1280px) {
+  section.bonuses div.container div.account_page div.levels {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+section.bonuses div.container div.account_page div.levels h5 {
+  margin-bottom: 16px;
+}
+@media (max-width: 1280px) {
+  section.bonuses div.container div.account_page div.levels h5 {
+    margin-bottom: 12px;
+  }
+}
+section.bonuses div.container div.account_page div.levels div.list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  margin-bottom: 18px;
+}
+@media (max-width: 1280px) {
+  section.bonuses div.container div.account_page div.levels div.list {
+    grid-gap: 10px;
+    margin-bottom: 12px;
+  }
+}
+@media (max-width: 640px) {
+  section.bonuses div.container div.account_page div.levels div.list {
+    grid-template-columns: 1fr;
+  }
+}
+section.bonuses div.container div.account_page div.levels div.list div.level {
+  display: grid;
+  border-radius: 20px;
+  padding: 20px 30px;
+  background: #f2f5ff;
+}
+@media (max-width: 1280px) {
+  section.bonuses div.container div.account_page div.levels div.list div.level {
+    padding: 15px;
+  }
+}
+section.bonuses div.container div.account_page div.levels div.list div.level span.note {
+  opacity: 0.5;
+  margin-bottom: 8px;
+}
+@media (max-width: 1280px) {
+  section.bonuses div.container div.account_page div.levels div.list div.level span.note {
+    margin-bottom: 5px;
+  }
+}
+section.bonuses div.container div.account_page div.levels div.list div.level strong {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #3068f7;
+  margin-bottom: 12px;
+}
+@media (max-width: 1280px) {
+  section.bonuses div.container div.account_page div.levels div.list div.level strong {
+    margin-bottom: 10px;
+  }
+}
+section.bonuses div.container div.account_page div.levels div.list div.level p {
+  opacity: 0.8;
+}
+section.bonuses div.container div.account_page div.levels i {
+  opacity: 0.7;
+}
+section.bonuses div.container div.account_page div.conditions {
+  margin-top: 50px;
+}
+@media (max-width: 1280px) {
+  section.bonuses div.container div.account_page div.conditions {
+    margin-top: 30px;
+  }
+}
+section.bonuses div.container div.account_page div.conditions h5 {
+  margin-bottom: 16px;
+}
+@media (max-width: 1280px) {
+  section.bonuses div.container div.account_page div.conditions h5 {
+    margin-bottom: 12px;
+  }
+}
+
+section.documents {
+  margin-top: 30px;
+  margin-bottom: 68px;
+}
+@media (max-width: 1280px) {
+  section.documents {
+    margin-bottom: 50px;
+  }
+}
+section.documents div.container {
+  display: grid;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  grid-template-columns: -webkit-max-content 1fr;
+  grid-template-columns: max-content 1fr;
+  grid-gap: 50px;
+}
+@media (max-width: 1280px) {
+  section.documents div.container {
+    display: block;
+  }
+}
+section.documents div.container div.account_page {
+  width: 100%;
+}
+section.documents div.container div.account_page h1 {
+  margin-bottom: 24px;
+}
+@media (max-width: 1280px) {
+  section.documents div.container div.account_page h1 {
+    margin-bottom: 16px;
+  }
+}
+section.documents div.container div.account_page div.list a.item {
+  display: grid;
+  grid-template-columns: 1fr -webkit-max-content;
+  grid-template-columns: 1fr max-content;
+  grid-gap: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 0;
+  border-top: 1px solid rgba(48, 104, 247, 0.2);
+}
+section.documents div.container div.account_page div.list a.item span {
+  text-decoration: underline;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: #343a60;
+}
+@media (max-width: 1280px) {
+  section.documents div.container div.account_page div.list a.item img {
+    width: 16px;
+    height: 16px;
+  }
+}
+section.documents div.container div.account_page div.list a.item:first-child {
+  border-top: unset;
+  padding-top: unset;
+}
+section.documents div.container div.account_page div.list a.item:hover span {
+  color: #3068f7;
+}
+
+section.reports {
+  margin-top: 30px;
+  margin-bottom: 68px;
+}
+@media (max-width: 1280px) {
+  section.reports {
+    margin-bottom: 50px;
+  }
+}
+section.reports div.container {
+  display: grid;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  grid-template-columns: -webkit-max-content 1fr;
+  grid-template-columns: max-content 1fr;
+  grid-gap: 50px;
+}
+@media (max-width: 1280px) {
+  section.reports div.container {
+    display: block;
+  }
+}
+section.reports div.container div.account_page {
+  width: 100%;
+}
+section.reports div.container div.account_page h1 {
+  margin-bottom: 24px;
+}
+@media (max-width: 1280px) {
+  section.reports div.container div.account_page h1 {
+    margin-bottom: 16px;
+  }
+}
+section.reports div.container div.account_page div.tags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+section.reports div.container div.account_page div.tags a {
+  background: #f2f5ff;
+  border-radius: 10px;
+  padding: 12px;
+}
+section.reports div.container div.account_page div.tags a.active {
+  background: #3068f7;
+  color: white;
+  font-weight: 600;
+}
+section.reports div.container div.account_page div.tags a:hover {
+  color: #3068f7;
+}
+section.reports div.container div.account_page div.group {
+  display: grid;
+  grid-gap: 20px;
+  margin-top: 32px;
+}
+@media (max-width: 1280px) {
+  section.reports div.container div.account_page div.group {
+    margin-top: 30px;
+  }
+}
+section.reports div.container div.account_page div.group div.list a.item {
+  display: grid;
+  grid-template-columns: 1fr -webkit-max-content;
+  grid-template-columns: 1fr max-content;
+  grid-gap: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 0;
+  border-top: 1px solid rgba(48, 104, 247, 0.2);
+}
+section.reports div.container div.account_page div.group div.list a.item span {
+  text-decoration: underline;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: #343a60;
+}
+@media (max-width: 1280px) {
+  section.reports div.container div.account_page div.group div.list a.item img {
+    width: 16px;
+    height: 16px;
+  }
+}
+section.reports div.container div.account_page div.group div.list a.item:hover span {
+  color: #3068f7;
+}
+
+div.pagination {
+  position: relative;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-columns: 1fr -webkit-max-content;
+  grid-template-columns: 1fr max-content;
+}
+@media (max-width: 960px) {
+  div.pagination {
+    grid-template-columns: 1fr;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+div.pagination div.pages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+@media (max-width: 1600px) {
+  div.pagination div.pages {
+    gap: 10px;
+  }
+}
+@media (max-width: 960px) {
+  div.pagination div.pages {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-bottom: 37px;
+  }
+}
+div.pagination div.pages a {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  border-radius: 6px;
+  width: 40px;
+  height: 40px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  text-align: center;
+  color: #16192c;
+}
+@media (max-width: 1600px) {
+  div.pagination div.pages a {
+    font-size: 14px;
+  }
+}
+div.pagination div.pages a.active {
+  pointer-events: none;
+  background: #3068F7;
+  color: white;
+}
+div.pagination div.pages a:hover {
+  background: #F3F2FD;
+}
+div.pagination div.pages a.arrow {
+  border-radius: 6px;
+  width: 40px;
+  height: 40px;
+  background: #F3F2FD;
+}
+div.pagination div.pages a.arrow svg path {
+  fill: #4b69dd;
+}
+div.pagination div.pages a.arrow:hover {
+  background: #3068F7;
+}
+div.pagination div.pages a.arrow:hover svg path {
+  fill: white;
+}
+div.pagination button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 130%;
+  text-align: center;
+  color: #3068F7;
+  border-radius: 8px;
+  width: 175px;
+  height: 44px;
+  background: #F3F2FD;
+  justify-self: center;
+}
+@media (max-width: 1280px) {
+  div.pagination button {
+    position: static;
+    -webkit-transform: unset;
+        -ms-transform: unset;
+            transform: unset;
+  }
+}
+@media (max-width: 960px) {
+  div.pagination button {
+    font-size: 14px;
+  }
+}
+div.pagination div.count {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 18px;
+}
+@media (max-width: 1280px) {
+  div.pagination div.count {
+    display: none;
+  }
+}
+div.pagination div.count span {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #768195;
+}
+div.pagination div.count fieldset.select {
+  width: 55px;
+}
+div.pagination div.count fieldset.select div.select_choice {
+  background: #f2f5ff;
+  border-radius: 6px;
+  border: unset;
+}
+div.pagination div.count fieldset.select div.select_choice span {
+  color: #4b69dd;
+  height: 44px;
+  padding-right: unset;
+  padding-left: 10px;
+}
+div.pagination div.count fieldset.select img.arrow {
+  padding: unset;
+  right: 10px;
+  top: calc(50% - 4px);
+}/*# sourceMappingURL=account.css.map */

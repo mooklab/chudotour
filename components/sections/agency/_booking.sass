@@ -1,0 +1,73 @@
+section.booking
+    margin-top: 68px
+    margin-bottom: 68px
+    +s(l)
+        margin-top: 50px
+        margin-bottom: 50px
+
+    div.container
+        border-radius: 20px
+        background: #f2f5ff
+        padding: 60px 40px
+        +s(l)
+            padding: 30px 20px
+
+        div.title
+            display: grid
+            grid-gap: 24px
+            text-align: center
+            margin-bottom: 32px
+            +s(l)
+                grid-gap: 16px
+                margin-bottom: 26px
+
+        div.list
+            display: grid
+            grid-template-columns: repeat(5, 1fr)
+            grid-gap: 25px
+            border-radius: 20px
+            background: white
+            padding: 40px
+            +s(l)
+                grid-template-columns: repeat(3, 1fr)
+            +s(s)
+                grid-template-columns: repeat(2, 1fr)
+                padding: unset
+                background: unset
+                grid-gap: 20px
+
+            div.item
+                position: relative
+                display: grid
+                align-content: start
+                justify-items: center
+
+                span
+                    font-weight: 500
+                    font-size: 14px
+                    line-height: 130%
+                    text-align: center
+                    color: #343a60
+                    margin-top: 20px
+                    +s(l)
+                        margin-top: 15px
+                    &::after
+                        content: ''
+                        position: absolute
+                        top: 156px
+                        left: 0
+                        display: block
+                        width: calc(100% + 25px)
+                        height: 1px
+                        background: #3068f7
+                        +s(s)
+                            display: none
+
+                &:last-child
+                    span::after
+                        width: 100%
+
+                &:nth-child(3)
+                    +s(l)
+                        span:after
+                            width: 100%

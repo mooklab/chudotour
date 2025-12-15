@@ -1,0 +1,30 @@
+include ../../common/pug/_mixins.pug
+
+section.blog
+    div.container
+
+        h2 Читайте в нашем блоге
+
+        div.swiper.index_blog
+            div.swiper-wrapper
+                div.swiper-slide
+                    +blog_card('images/7.webp', '29 августа 2025', 'Адыгея навсегда...', 'Есть места, куда хочется возвращаться вновь и вновь. Посмотрите фотографии, помечтайте.')
+                div.swiper-slide
+                    +blog_card('images/8.webp', '29 августа 2025', 'Адыгея навсегда...', 'Есть места, куда хочется возвращаться вновь и вновь. Посмотрите фотографии, помечтайте.')
+                div.swiper-slide
+                    +blog_card('images/9.webp', '29 августа 2025', 'Адыгея навсегда...', 'Есть места, куда хочется возвращаться вновь и вновь. Посмотрите фотографии, помечтайте.')
+                div.swiper-slide
+                    +blog_card('images/7.webp', '29 августа 2025', 'Адыгея навсегда...', 'Есть места, куда хочется возвращаться вновь и вновь. Посмотрите фотографии, помечтайте.')
+                div.swiper-slide
+                    +blog_card('images/8.webp', '29 августа 2025', 'Адыгея навсегда...', 'Есть места, куда хочется возвращаться вновь и вновь. Посмотрите фотографии, помечтайте.')
+                div.swiper-slide
+                    +blog_card('images/9.webp', '29 августа 2025', 'Адыгея навсегда...', 'Есть места, куда хочется возвращаться вновь и вновь. Посмотрите фотографии, помечтайте.')
+
+            div.naviagtion
+                button.hollow Смотреть все статьи
+                button Подписаться на рассылку
+                div.swiper-navigation
+                    div.arrow
+                        include ../../../images/swiper_arrow.svg
+                    div.arrow
+                        include ../../../images/swiper_arrow.svg

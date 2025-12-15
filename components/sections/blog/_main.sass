@@ -1,0 +1,68 @@
+section.main
+    height: 480px
+
+    div.container
+        display: grid
+        grid-template-rows: max-content 1fr
+        z-index: 1
+
+        div.breadcrumbs
+            a, span
+                color: white
+
+        div.swiper-pagination
+            position: absolute
+            bottom: 60px
+            left: 0
+            display: grid
+            grid-auto-flow: column
+            grid-auto-columns: max-content
+            justify-content: center
+            grid-gap: 2px
+            z-index: 2
+            margin-top: 15px
+            +s(m)
+                bottom: 50px
+            span
+                display: block
+                width: 3px
+                height: 3px
+                background: white
+                border-radius: 999px
+                transition: all 0.3s
+                &.swiper-pagination-bullet-active
+                    width: 15px
+
+            &.swiper-pagination-lock
+                display: none
+
+    div.swiper.blog_main_texts
+        width: 100%
+        min-width: 0
+        div.swiper-slide
+            display: grid
+            align-content: end
+            align-items: end
+            grid-gap: 20px
+            padding-bottom: 110px
+            +s(m)
+                padding-bottom: 83px
+            h1
+                color: white
+                max-width: 600px
+            span
+                color: white
+                max-width: 600px
+
+    div.swiper.blog_main_images
+        grid-column: full
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: 0
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover

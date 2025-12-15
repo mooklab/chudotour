@@ -1,0 +1,44 @@
+section.upcoming
+    div.container
+        h2 Ближайшие туры
+
+        div.swiper.month
+            div.swiper-wrapper
+                div.swiper-slide Ближайшие
+                div.swiper-slide Январь 2025
+                div.swiper-slide Февраль 2025
+                div.swiper-slide Март 2025
+                div.swiper-slide Апрель 2025
+                div.swiper-slide Май 2025
+                div.swiper-slide Июнь 2025
+                div.swiper-slide Июль 2025
+                div.swiper-slide Август 2025
+                div.swiper-slide Сентябрь 2025
+                div.swiper-slide Октябрь 2025
+                div.swiper-slide Ноябрь 2025
+                div.swiper-slide Декабрь 2025
+
+        div.swiper.schedule
+            div.swiper-wrapper
+                - for(s=0; s<=13; s++)
+                    div.swiper-slide
+                        table.short
+                            thead
+                                tr
+                                    th Даты тура
+                                    th Свободные места
+                                    th Место посадки
+                                    th Стоимость
+                                    th
+                            tbody
+                                - for(x=0; x<=10; x++)
+                                    tr
+                                        td 14.12.2024 -24.12.2024
+                                        td 30 из 30
+                                        td пл. Ленина. Трансфер в Копорье
+                                            a(href="index.html") Другое место
+                                        td от 2 000 ₽
+                                        td.button: button Забронировать
+                        button(onclick="tableAccordion(this)").more.short
+                            span Показать все даты тура
+                            span Свернуть даты тура

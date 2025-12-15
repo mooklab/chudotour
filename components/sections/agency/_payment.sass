@@ -1,0 +1,70 @@
+section.payment
+    margin-top: 68px
+    margin-bottom: 68px
+    +s(l)
+        margin-top: 50px
+        margin-bottom: 50px
+
+    div.container
+        display: grid
+        grid-gap: 32px
+        +s(l)
+            grid-gap: 16px
+
+        div.title
+            display: grid
+            grid-gap: 16px
+
+        div.list
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            grid-gap: 20px
+            +s(l)
+                grid-gap: 10px
+            +s(m)
+                grid-template-columns: 1fr
+
+            div.payment
+                display: grid
+                border-radius: 20px
+                box-shadow: 0 4px 9px 0 rgba(174, 174, 174, 0.25)
+                background: #fff
+                padding: 30px
+                +s(l)
+                    padding: 20px
+
+                img
+                    height: 156px
+                    object-fit: contain
+                    justify-self: center
+                    margin-bottom: 40px
+                    +s(l)
+                        height: 104px
+
+                h5
+                    display: block
+                    border-bottom: 1px solid #01235521
+                    margin-bottom: 20px
+                    padding-bottom: 15px
+                    text-transform: unset
+                    +s(l)
+                        margin-bottom: 10px
+                        padding-bottom: 10px
+                        font-size: 16px
+
+                div.detail
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+                    gap: 20px
+                    +s(m)
+                        display: grid
+                        grid-gap: 10px
+                    span
+                        opacity: 0.8
+                    i
+                        font-weight: 400
+                        font-size: 14px
+                        line-height: 140%
+                        color: #616161
+                        opacity: 0.4

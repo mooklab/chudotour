@@ -1,0 +1,25 @@
+@import ../components/common/sass/_mixins
+
+section.pages
+    margin-top: 80px
+    margin-bottom: 80px
+
+    div.container
+        display: grid
+        grid-gap: 40px
+
+    div.list
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-gap: 20px
+
+    a
+        display: block
+        padding: 15px 20px
+        border: 1px solid #343a6021
+        transition: all 0.3s
+
+        &:hover
+            background: #343a60
+            border: 1px solid #343a60
+            color: white

@@ -1,0 +1,18 @@
+include ../../common/pug/_mixins.pug
+
+section.pagination
+    div.container
+        div.pagination
+            div.pages
+                a(href="index.html").page.active 1
+                a(href="index.html").page 2
+                a(href="index.html").page 3
+                a(href="index.html").page 4
+                a(href="index.html").page 5
+                a(href="index.html").arrow
+                    include ../../../images/pagination_arrow.svg
+            button Показать еще
+            div.count
+                span Выводить на странице:
+                +select('per_page', false, '12', '16', '20', '24')
+                    img(src="images/pagination_select_arrow_blue.svg", alt="").arrow

@@ -1,0 +1,13 @@
+extends ../components/common/pug/_layout.pug
+
+block links
+    link(rel="stylesheet", href="css/agency.css")
+    script(src="https://api-maps.yandex.ru/2.1/?lang=ru-RU", type="text/javascript")
+
+block content
+    include ../components/sections/agency/_main.pug
+    include ../components/sections/agency/_start.pug
+    include ../components/sections/agency/_payment.pug
+    include ../components/sections/agency/_booking.pug
+    include ../components/sections/agency/_additional.pug
+    include ../components/sections/agency/_map.pug

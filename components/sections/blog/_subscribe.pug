@@ -1,0 +1,14 @@
+include ../../common/pug/_mixins.pug
+
+section.subscribe
+    div.container
+
+        div.title
+            h3 Подпишитесь на рассылку
+            span Подпишитесь и читайте интересное о новых направлениях и турах
+
+        div.form
+            form
+                +input('Введите Email', true)
+                button Подписаться
+            span.policy Нажимая «Подписаться», вы соглашаетесь с #[a(href="index.html") политикой конфиденциальности]

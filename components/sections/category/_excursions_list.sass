@@ -1,0 +1,12 @@
+
+section.tourlist
+    div.container
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        grid-gap: 20px
+        +s(l)
+            grid-template-columns: repeat(3, 1fr)
+            grid-gap: 12px
+        +s(s)
+            grid-template-columns: repeat(2, 1fr)
+            grid-column: full

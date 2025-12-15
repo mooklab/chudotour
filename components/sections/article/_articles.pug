@@ -1,0 +1,32 @@
+mixin blog_card(image, title)
+    a(href="index.html").blog_card
+        div.preview
+            img(src=image)
+            div.clock
+                img(src="images/blog_clock.svg")
+                span 10 мин.
+        div.text
+            div.date
+                include ../../../images/blog_calendar.svg
+                span 08.09.2025
+            h5= title
+            div.tags
+                div Важно знать
+
+section.articles
+    div.container
+
+        h3 Подобрано специально для вас
+
+        div.swiper.article_articles
+            div.swiper-wrapper
+                div.swiper-slide
+                    +blog_card('images/35.webp', 'Повышение туристических налогов')
+                div.swiper-slide
+                    +blog_card('images/34.webp', 'Гид по Ульяновской области: от пионов до музея Балалайки')
+                div.swiper-slide
+                    +blog_card('images/36.webp', 'Кронштадт: легендарные форты и морская история')
+                div.swiper-slide
+                    +blog_card('images/37.webp', 'Гид по Московской области: что посмотреть — кремли... монастыри...усадьбы и уникальные музеи')
+
+            div.swiper-pagination

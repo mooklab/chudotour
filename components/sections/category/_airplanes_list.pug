@@ -1,0 +1,107 @@
+include ../../common/pug/_mixins.pug
+
+mixin date(date, price)
+    div.swiper-slide
+        span= date
+        h5= price
+
+section.airhead
+    div.container
+
+        div.breadcrumbs
+            a(href="index.html") Главная - 
+            a(href="index.html") Каталог - 
+            span Авиабилет
+
+        h1 авиабилет
+        h3 Выберите перелет туда ср, #[b 16 апреля]
+        div.cities
+            span Москва
+            img(src="images/airplanes_list_citiies_arrow.svg")
+            span Париж
+
+        div.slider
+            div.swiper.airdatesfrom
+                div.swiper-wrapper
+                    -for(y=0;y<=8;y++)
+                        +date('Пн, 14 апреля', 'от 94 291 ₽')
+                        +date('Пн, 14 апреля', 'от 294 291 ₽')
+
+        div.filter
+            div.tabs
+                span(onclick="showAirTickets(this, false)").tab_caption.opened Эконом
+                span(onclick="showAirTickets(this, true)").tab_caption Бизнес
+            div.sort
+                span.note Сортировать по:
+                a(href="###").active По популярности
+                a(href="###") Дешевле
+                a(href="###") Дороже
+                a(href="###") Новинки
+            +select('list_sort', '', 'По популярности', 'Дешевле', 'Дороже', 'Новинки')
+                include ../../../images/select_arrow.svg
+
+section.airlist
+    div.container
+        div.swiper.airticketsfrom
+            div.swiper-wrapper
+                -for(x=0;x<=15;x++)
+                    div.swiper-slide
+                        div.econom
+                            +air_card('94 291 ₽')
+                        div.econom
+                            +air_card('94 291 ₽')
+                        div.econom
+                            +air_card('94 291 ₽')
+                        div.bussiness
+                            +air_card('194 291 ₽')
+                        div.bussiness
+                            +air_card('194 291 ₽')
+                        div.bussiness
+                            +air_card('194 291 ₽')
+
+section.airhead
+    div.container
+        h3 Выберите перелет обратно ср, #[b 16 апреля]
+        div.cities
+            span Москва
+            img(src="images/airplanes_list_citiies_arrow.svg")
+            span Париж
+
+        div.slider
+            div.swiper.airdatesto
+                div.swiper-wrapper
+                    -for(y=0;y<=8;y++)
+                        +date('Пн, 14 апреля', 'от 94 291 ₽')
+                        +date('Пн, 14 апреля', 'от 294 291 ₽')
+
+        div.filter
+            div.tabs
+                span(onclick="showAirTickets(this, false)").tab_caption.opened Эконом
+                span(onclick="showAirTickets(this, true)").tab_caption Бизнес
+            div.sort
+                span.note Сортировать по:
+                a(href="###").active По популярности
+                a(href="###") Дешевле
+                a(href="###") Дороже
+                a(href="###") Новинки
+            +select('list_sort', '', 'По популярности', 'Дешевле', 'Дороже', 'Новинки')
+                include ../../../images/select_arrow.svg
+
+section.airlist
+    div.container
+        div.swiper.airticketsto
+            div.swiper-wrapper
+                -for(x=0;x<=15;x++)
+                    div.swiper-slide
+                        div.econom
+                            +air_card('94 291 ₽')
+                        div.econom
+                            +air_card('94 291 ₽')
+                        div.econom
+                            +air_card('94 291 ₽')
+                        div.bussiness
+                            +air_card('194 291 ₽')
+                        div.bussiness
+                            +air_card('194 291 ₽')
+                        div.bussiness
+                            +air_card('194 291 ₽')

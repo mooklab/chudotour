@@ -1,0 +1,99 @@
+include ../../common/pug/_mixins.pug
+
+mixin form_nav
+    div(onclick="changeEditabilitySelect(this, 'edit')").edit
+        include ../../../images/account_edit.svg
+    div.save
+        button(onclick="event.preventDefault(); changeEditabilitySelect(this, 'save')")
+            img(src="images/checkbox_tick.svg")
+            span Сохранить
+        span(onclick="changeEditabilitySelect(this, 'cancel')") Отменить
+
+section.profile
+    div.container
+
+        +account_sidemenu('images/6.webp', 'Константинопольский Константин ', 'konstatin.konstantin123@gmail.com', '0', 'Мои данные', 'Бронирования', 'Документы', 'Выйти')
+
+        div.account_page
+            h1 Мои данные
+
+            div.avatar
+                div.image
+                    img(src="images/account_photo.svg")
+                div.about
+                    div.link
+                        img(src="images/account_upload.svg")
+                        span Изменить
+                    span.note Размер аватара должен быть не больше 200х200 пикселей #[br]Форматы загрузки JPG, GIF и PNG
+
+
+            form.disabled
+                span.note ФИО
+                div.row
+                    fieldset.input
+                        input(type="text", placeholder=" ", value="Константинопольский Константин Константинович")
+                    +form_nav
+
+            form
+                span.note Дата рождения
+                +datepicker('Дата рождения')
+
+            form.disabled
+                span.note Пол
+                div.row
+                    +select('gender', '', 'Мужской', 'Женский')
+                    +form_nav
+
+            form.disabled
+                span.note Телефон
+                div.row
+                    fieldset.input
+                        input(type="tel", placeholder=" ", value="+7 (963) 923-45-88")
+                    +form_nav
+
+            form.disabled
+                span.note Email
+                div.row
+                    fieldset.input
+                        input(type="email", placeholder=" ", value="konstatin.konstantin123@gmail.com")
+                    +form_nav
+
+            h5 Документы
+
+            form.disabled
+                span.note Гражданство
+                div.row
+                    +select('country', '', 'Россия', 'СНГ')
+                    +form_nav
+
+            form.disabled
+                span.note Документ
+                div.row
+                    +select('document', '', 'Паспорт РФ', 'Водительские права')
+                    +form_nav
+
+            form.disabled
+                span.note Паспортные данные
+                div.row
+                    fieldset.input
+                        input(type="text", placeholder=" ", value="4519 123456")
+                    +form_nav
+
+            h5 Изменить пароль
+            form.password
+                fieldset.password
+                    input(type="password", name="password", placeholder="Старый пароль", onChange="passwordChange()")
+                    div(onclick="showPassword(this)").eye
+                        img(src="images/password_visible.svg")
+                        img(src="images/password_hidden.svg")
+                fieldset.password
+                    input(type="password", name="confirm", placeholder="Новый пароль", onChange="passwordChange()")
+                    div(onclick="showPassword(this)").eye
+                        img(src="images/password_visible.svg")
+                        img(src="images/password_hidden.svg")
+                i Пароль может содержать от 6 до 50 символов: латинские буквы, цифры и спецсимволы
+                div.buttons
+                    button Сохранить
+                    a(onclick="this.closest('form').reset()") Отменить
+            
+            

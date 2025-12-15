@@ -1,0 +1,148 @@
+section.main
+    div.container
+
+        h1
+            margin-bottom: 32px
+            +s(xl)
+                margin-bottom: 20px
+            +s(m)
+                margin-bottom: 16px
+
+        div.filter
+            display: grid
+            grid-template-columns: repeat(5, 1fr)
+            grid-template-rows: repeat(2, max-content)
+            border-radius: 10px
+            +s(m)
+                grid-template-columns: repeat(3, 1fr)
+            +s(s)
+                grid-template-columns: repeat(2, 1fr)
+                grid-gap: 10px
+
+            & > *
+                border: 1px solid #dddde4
+                margin-top: -1px
+                margin-left: -1px
+                &:nth-child(1)
+                    border-top-left-radius: 10px
+                &:nth-child(3)
+                    border-top-right-radius: 10px
+                &:nth-child(4)
+                    border-bottom-left-radius: 10px
+                &:nth-child(8)
+                    border-bottom-right-radius: 10px
+                +s(m)
+                    &:nth-child(1)
+                        border-top-left-radius: 10px
+                        border-top-right-radius: 10px
+                    &:nth-child(3)
+                        border-top-right-radius: unset
+                    &:nth-child(4)
+                        border-bottom-left-radius: unset
+                    &:nth-child(8)
+                        border-bottom-left-radius: 10px
+                        border-bottom-right-radius: 10px
+
+                +s(s)
+                    border-radius: 10px !important
+
+            fieldset.select
+                div.select_choice
+                    border: unset
+
+            fieldset.datepicker
+                border: unset
+
+            div.direction
+                grid-column: 3 span
+                +s(m)
+                    grid-column: 3 span
+                +s(s)
+                    grid-column: 2 span
+
+            div.first_date
+                +s(s)
+                    grid-column: 2 span
+
+            div.last_date
+                +s(s)
+                    grid-column: 2 span
+
+            div.transport,
+            div.type
+                position: relative
+                display: grid
+                align-items: center
+                grid-template-columns: auto 1fr
+                padding: var(--form-element-padding)
+                padding-right: unset
+                +s(s)
+                    grid-column: 2 span
+
+                fieldset
+                    position: static
+                    div.select_dropdown
+                        left: 0
+
+                span.note
+                    font-weight: 400
+                    font-size: 16px
+                    line-height: 130%
+                    color: #343a60
+                    opacity: 0.5
+                    +s(xl)
+                        font-size: 12px
+
+            div.quantity
+                display: grid
+                grid-template-columns: 1fr max-content max-content 1fr
+                padding: var(--form-element-padding)
+                height: var(--form-element-height)
+                border-radius: 10px
+                +s(s)
+                    grid-column: 1 span
+                div.minus,
+                div.plus
+                    width: 14px
+                    height: 14px
+                    &:hover
+                        svg
+                            opacity: 1
+                input
+                    opacity: 0
+                    transition: all 0.3s
+                div.plus
+                    justify-self: end
+                svg
+                    width: 14px
+                    height: 14px
+                    opacity: 0.5
+
+                span.note
+                    opacity: 0.5
+                    margin-right: -10px
+                    transition: all 0.3s
+
+                &.show
+                    input
+                        opacity: 1
+                    span.note
+                        margin-right: 0
+
+            div.button
+                overflow: hidden
+                button
+                    width: 100%
+                    background: #f2f5ff
+                    font-weight: 800
+                    font-size: 16px
+                    line-height: 130%
+                    text-align: center
+                    color: #3068f7
+                    border-radius: unset
+                    +s(m)
+                        font-size: 14px
+                +s(m)
+                    grid-column: 3 span
+                +s(s)
+                    grid-column: 2 span

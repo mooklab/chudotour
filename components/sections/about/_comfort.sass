@@ -1,0 +1,42 @@
+section.comfort
+    margin-top: 68px
+    margin-bottom: 68px
+    +s(l)
+        margin-top: 50px
+        margin-bottom: 50px
+
+    div.container
+        display: grid
+        grid-gap: 40px
+        +s(l)
+            grid-gap: 16px
+
+        div.title
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            grid-gap: 20px
+            +s(s)
+                grid-template-columns: 1fr
+                grid-gap: 16px
+
+            span
+                opacity: 0.8
+
+        div.gallery
+            display: grid
+            grid-template-columns: repeat(3, 1fr)
+            grid-gap: 20px
+            +s(l)
+                grid-gap: 10px
+            +s(m)
+                grid-template-columns: 1fr
+
+            img
+                height: 520px
+                width: 100%
+                object-fit: cover
+                border-radius: 10px
+                +s(l)
+                    height: 400px
+                +s(m)
+                    height: 200px

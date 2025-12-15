@@ -1,0 +1,101 @@
+include ../../common/pug/_mixins.pug
+
+section.main
+    div.container
+        h1 Отдых мечты за пару кликов
+
+        div.swiper.captions
+            div.swiper-wrapper
+                div.swiper-slide
+                    include ../../../images/filter_airplane.svg
+                    span Авиа туры
+                div.swiper-slide
+                    include ../../../images/filter_sun.svg
+                    span Туры на юг
+                div.swiper-slide
+                    include ../../../images/filter_bus.svg
+                    span Экскурсии
+                div.swiper-slide
+                    include ../../../images/filter_airplane.svg
+                    span Авиабилеты
+                div.swiper-slide
+                    include ../../../images/filter_hostel.svg
+                    span Однодневные
+                div.swiper-slide
+                    include ../../../images/filter_hotel.svg
+                    span Отели
+            div.swiper-pagination
+
+        div.swiper.contents
+            div.swiper-wrapper
+                div.swiper-slide
+                    form(action="index.html")
+                        +select('direction_airplane', 'Направление', 'Городская прогулка', 'Исторический обзор', 'Культурное погружение', 'Архитектурный тур', 'Экскурсия на пляж', 'Ночная прогулка', 'Гастрономический тур', 'Природный заповедник', 'Музейный маршрут', 'Круиз по реке')
+                        +datepicker('Дата от')
+                        +datepicker('Дата до')
+                        +tourist_select
+                        +select('placement_airplane', 'Тип размещения', 'одноместное', 'двухместное', 'трехместное')
+                        +select('food_airplane', 'Тип питания', 'завтрак', 'полупансион', 'полный пансион', 'всё включено')
+                        button Найти тур
+                div.swiper-slide
+                    form(action="index.html")
+                        +select('direction_sun', 'Направление', 'Городская прогулка', 'Исторический обзор', 'Культурное погружение', 'Архитектурный тур', 'Экскурсия на пляж', 'Ночная прогулка', 'Гастрономический тур', 'Природный заповедник', 'Музейный маршрут', 'Круиз по реке')
+                        +datepicker('Дата от')
+                        +datepicker('Дата до')
+                        +tourist_select
+                        +select('placement_sun', 'Тип размещения', 'одноместное', 'двухместное', 'трехместное')
+                        +select('food_sun', 'Тип питания', 'завтрак', 'полупансион', 'полный пансион', 'всё включено')
+                        button Найти тур
+                div.swiper-slide
+                    form(action="index.html")
+                        div(style="grid-column: 2 span").two_column
+                            +select('direction_bus', 'Направление', 'Городская прогулка', 'Исторический обзор', 'Культурное погружение', 'Архитектурный тур', 'Экскурсия на пляж', 'Ночная прогулка', 'Гастрономический тур', 'Природный заповедник', 'Музейный маршрут', 'Круиз по реке')
+                        +datepicker('Дата от')
+                        +datepicker('Дата до')
+                        +select('period_bus', 'Кол-во дней', 'Все', '1-3', '4-6', '7-9', '10-12', '13-15', '16-18')
+                        +tourist_select
+                        button Найти тур
+                div.swiper-slide
+                    form(action="index.html")
+                        div(style="grid-column: 2 span").two_column
+                            input(type="text", placeholder="Откуда")
+                        div(style="grid-column: 2 span").two_column
+                            input(type="text", placeholder="Куда")
+                        +datepicker('Дата от')
+                        +datepicker('Дата до')
+                        div.two_column_only_mobile
+                            +select('food_airplane2', 'Тип питания', 'завтрак', 'полупансион', 'полный пансион', 'всё включено')
+                        button Найти тур
+                div.swiper-slide
+                    form(action="index.html")
+                        div(style="grid-column: 2 span").two_column
+                            +select('direction_hostel', 'Направление', 'Городская прогулка', 'Исторический обзор', 'Культурное погружение', 'Архитектурный тур', 'Экскурсия на пляж', 'Ночная прогулка', 'Гастрономический тур', 'Природный заповедник', 'Музейный маршрут', 'Круиз по реке')
+                        +datepicker('Дата от')
+                        +datepicker('Дата до')
+                        +select('time_hostel', 'Время отправления', 'Все', 'Утро', 'День', 'Вечер')
+                        +tourist_select
+                        button Найти тур
+                div.swiper-slide
+                    form(action="index.html")
+                        +select('direction_hotel', 'Направление', 'Городская прогулка', 'Исторический обзор', 'Культурное погружение', 'Архитектурный тур', 'Экскурсия на пляж', 'Ночная прогулка', 'Гастрономический тур', 'Природный заповедник', 'Музейный маршрут', 'Круиз по реке')
+                        +datepicker('Дата заезда')
+                        +datepicker('Дата выезда')
+                        +tourist_select
+                        +select('placement_hotel', 'Тип размещения', 'одноместное', 'двухместное', 'трехместное')
+                        +select('food_hotel', 'Тип питания', 'завтрак', 'полупансион', 'полный пансион', 'всё включено')
+                        button Найти тур
+
+        div.advantages
+            div.item
+                img(src="images/filter_map.svg", alt="Сертифицированный туроператор")
+                div
+                    strong Сертифицированный туроператор
+                    span 5000 великолепных туров
+            div.item
+                img(src="images/filter_certificate.svg", alt="в реестре туроператоров РТО 021180")
+                div
+                    strong в реестре туроператоров РТО 021180
+                    span по всей России
+
+    div.background
+        img(src="images/1.webp")

@@ -1,0 +1,146 @@
+footer
+    padding-top: 30px
+    padding-bottom: 30px
+    border-top: 1px solid #343a6020
+    +s(m)
+        padding-top: 15px
+        padding-bottom: 24px
+
+    div.top
+        display: grid
+        align-items: start
+        grid-template-columns: repeat(6, max-content)
+        grid-template-areas: 'Logotype Info Tourist Agency Account Registry'
+        justify-content: space-between
+        grid-gap: 20px 62px
+        +s(xl)
+            grid-template-columns: repeat(5, 1fr)
+            grid-template-areas: 'Logotype Info Tourist Agency Registry' 'Account Info Tourist Agency Registry'
+        +s(l)
+            grid-template-columns: repeat(3, 1fr)
+            grid-template-areas: 'Logotype Account Registry' 'Info Tourist Agency'
+        +s(m)
+            grid-template-columns: repeat(2, 1fr)
+            grid-template-areas: 'Logotype Logotype' 'Account Account' 'Info Tourist' 'Info Agency' 'Registry Registry'
+            grid-gap: 20px
+
+        a.logotype
+            grid-area: Logotype
+            img
+                width: 254px
+                +s(xl)
+                    width: 200px
+
+        menu
+            display: grid
+            grid-gap: 10px
+            strong
+                font-family: "Montserrat", sans-serif
+                margin-bottom: 10px
+                font-weight: 600
+                font-size: 16px
+                line-height: 130%
+                color: #343a60
+                +s(xl)
+                    font-size: 14px
+
+            a
+                font-weight: 400
+                font-size: 16px
+                line-height: 130%
+                color: #343a60cc
+                +s(xl)
+                    font-size: 12px
+
+        menu.info
+            grid-area: Info
+
+        menu.tourist
+            grid-area: Tourist
+
+        menu.agency
+            grid-area: Agency
+
+        div.account
+            grid-area: Account
+            display: grid
+            grid-gap: 10px
+            a
+                display: grid
+                align-items: center
+                grid-template-columns: max-content max-content
+                grid-gap: 10px
+                font-weight: 400
+                font-size: 16px
+                line-height: 130%
+                color: #343a60
+                +s(xl)
+                    font-size: 14px
+
+        div.registry
+            grid-area: Registry
+            display: grid
+            align-items: center
+            justify-content: center
+            grid-template-columns: max-content 1fr
+            grid-gap: 10px
+            padding: 15px
+            width: max-content
+            min-width: 360px
+            height: max-content
+            border-radius: 10px
+            background: #eae8ff
+            font-weight: 400
+            font-size: 16px
+            line-height: 130%
+            color: #343a60
+            +s(xl)
+                font-size: 14px
+            +s(m)
+                width: 100%
+                min-width: unset
+                font-size: 12px
+
+    div.bottom
+        display: grid
+        grid-template-columns: max-content 1fr max-content
+        grid-gap: 100px
+        padding-top: 30px
+        font-weight: 400
+        font-size: 14px
+        line-height: 130%
+        color: #343a60
+        +s(xl)
+            font-size: 12px
+            grid-gap: 10px 60px
+        +s(l)
+            grid-template-columns: 1fr
+        +s(m)
+            padding-top: 20px
+            font-size: 12px
+
+        span.copyright
+            opacity: 0.5
+
+        div.docs
+            display: grid
+            grid-auto-flow: column
+            grid-auto-columns: max-content
+            grid-gap: 20px
+            opacity: 0.5
+            +s(s)
+                grid-auto-flow: row
+                grid-gap: 10px
+            a
+                text-decoration: underline
+                &:hover
+                    text-decoration: none
+
+        a.studio
+            display: grid
+            grid-auto-flow: column
+            grid-auto-columns: max-content
+            align-items: center
+            grid-gap: 5px
+            span
+                opacity: 0.5

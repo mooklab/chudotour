@@ -1,0 +1,67 @@
+include ../common/pug/_mixins.pug
+
+section.reviews
+    div.container
+
+        div.yandex
+            div.subscribers
+                img(src="images/reviews_vkontakte.svg", alt="Вконтакте")
+                span #[b 13 000+ ] подписчиков
+            div.rating
+                img(src="images/reviews_yandex.svg", alt="Яндекс").logotype
+                div.overall
+                    span.digit 5.0
+                    div.reviews_count
+                        div.stars
+                            img(src="images/review_star.svg")
+                            img(src="images/review_star.svg")
+                            img(src="images/review_star.svg")
+                            img(src="images/review_star.svg")
+                            img(src="images/review_star.svg")
+                        span 338 отзывов
+
+        div.gis
+            div.subscribers
+                img(src="images/reviews_dzen.svg", alt="Дзен")
+                span #[b 650 ] подписчиков
+            div.rating
+                img(src="images/reviews_2gis.svg", alt="2гис").logotype
+                div.overall
+                    span.digit 4.8
+                    div.reviews_count
+                        div.stars
+                            img(src="images/review_star.svg")
+                            img(src="images/review_star.svg")
+                            img(src="images/review_star.svg")
+                            img(src="images/review_star.svg")
+                            img(src="images/review_star.svg")
+                        span 25 отзывов
+
+        div.swiper.reviews
+            div.swiper-wrapper
+                div.swiper-slide
+                    +review('images/6.webp', 'Константин Константинопольский', 'Чечни до Дагестана', 'Спасибо за отдых! Тур от Чечни до Дагестана просто супер! Сопровождающей Елене спасибо! Водители Профессионалы с большой буквы!!! Кострома)))')
+                div.swiper-slide
+                    +review('images/6.webp', 'Константин Константинопольский', 'Чечни до Дагестана', 'Спасибо за отдых! Тур от Чечни до Дагестана просто супер! Сопровождающей Елене спасибо! Водители Профессионалы с большой буквы!!! Кострома)))')
+                div.swiper-slide
+                    +review('images/6.webp', 'Константин Константинопольский', 'Чечни до Дагестана', 'Спасибо за отдых! Тур от Чечни до Дагестана просто супер! Сопровождающей Елене спасибо! Водители Профессионалы с большой буквы!!! Кострома)))')
+                div.swiper-slide
+                    +review('images/6.webp', 'Константин Константинопольский', 'Чечни до Дагестана', 'Спасибо за отдых! Тур от Чечни до Дагестана просто супер! Сопровождающей Елене спасибо! Водители Профессионалы с большой буквы!!! Кострома)))')
+                div.swiper-slide
+                    +review('images/6.webp', 'Константин Константинопольский', 'Чечни до Дагестана', 'Спасибо за отдых! Тур от Чечни до Дагестана просто супер! Сопровождающей Елене спасибо! Водители Профессионалы с большой буквы!!! Кострома)))')
+                div.swiper-slide
+                    +review('images/6.webp', 'Константин Константинопольский', 'Чечни до Дагестана', 'Спасибо за отдых! Тур от Чечни до Дагестана просто супер! Сопровождающей Елене спасибо! Водители Профессионалы с большой буквы!!! Кострома)))')
+
+            div.naviagtion
+                button.hollow Читать все отзывы
+                button Добавить отзыв
+                div.swiper-navigation
+                    div.arrow
+                        include ../../images/swiper_arrow.svg
+                    div.arrow
+                        include ../../images/swiper_arrow.svg
+
+
+
+
+

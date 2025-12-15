@@ -1,0 +1,15 @@
+extends ../components/common/pug/_layout.pug
+
+block links
+    link(rel="stylesheet", href="css/about.css")
+    script(src="https://api-maps.yandex.ru/2.1/?lang=ru-RU", type="text/javascript")
+
+block content
+    include ../components/sections/about/_main.pug
+    include ../components/sections/about/_mission.pug
+    include ../components/sections/about/_advantages.pug
+    include ../components/sections/about/_directions.pug
+    include ../components/sections/about/_garantee.pug
+    include ../components/sections/about/_team.pug
+    include ../components/sections/about/_comfort.pug
+    include ../components/sections/about/_map.pug

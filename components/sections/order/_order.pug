@@ -1,0 +1,192 @@
+include ../../common/pug/_mixins.pug
+
+section.order
+    div.container
+
+        h1 Оформление тура
+
+        div.data
+
+            div.excursion_card
+                div.preview
+                    img(src="images/1.webp", alt="Майские праздники в Москве").preview
+                    span.season Весна, Лето
+
+                div.description
+                    div.text
+                        span.title Майские праздники в Москве
+                        span.city #[a(href="index.html") из Н.Новгорода, ]автобус, 8-9 часов
+                        span.text Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...
+                        div.type
+                            img(src="images/card_train.svg", alt="Автобус")
+                            span Автобусный тур
+                        
+                    div.details
+                        div.difficulty
+                            span.note Сложность
+                            div.stars
+                                div.filled
+                                div.filled
+                                div.empty
+                                div.empty
+                                div.empty
+                        div.tags
+                            span.note Проживание и комфорт
+                            div.list
+                                span Простой
+                                span Завтрак
+                        button Подробнее о туре
+
+            div.habitation_data
+                h2 Место отправления
+                +select('habitation', 'Выберите место отправления', '<strong>10:00 Талдом, Московское шоссе, 12</strong><p>Наценка к стоимости тура для каждого туриста 3 000 ₽<p>')
+
+            div.personal_data
+                h2 Личные данные туриста
+                div.inputs
+                    div.tr
+                        +input('Имя', true)
+                        +input('Фамилия', true)
+                    div.tr
+                        +datepicker('Дата рождения')
+                        +select('gender', 'Пол', 'Мужской', 'Женский')
+                    div.tr
+                        +input('Телефон', true)
+                        +input('Email', true)
+                    div.tr
+                        +select('category', 'Категория', 'Категория 1', 'Категория 2', 'Категория 3')
+                        +select('place_transport', 'Место в транспорте', 'Переднее', 'В середине', 'Заднее')
+                    div.tr
+                        +select('document_type', 'Вид документа', 'Паспорт', 'Загран паспорт')
+                        +input('Серия и номер', true)
+                        +select('nationality', 'Гражданство', 'Россия', 'Беларусь', 'Казахстан', 'Армения', 'Грузия')
+                    textarea(name="", placeholder="Примечание турагенства")
+                    +checkbox('save_data', 'Сохранить данные для следующих бронирований')
+                button
+                    img(src="images/order_button_plus.svg")
+                    span Добавить ещё туриста
+
+            div.additional_data
+                h2 Дополнительные услуги
+                div.list
+                    div.item
+                        strong Добавьте питание
+                        div.tr
+                            div.radio
+                                div.title
+                                    +radio('food', 'Без питания', true)
+                                div.price
+                                    span 0 ₽
+                            div.radio
+                                div.title
+                                    +radio('food', 'Завтрак')
+                                    span.note Завтрак шведский стол
+                                div.price
+                                    span + 5 000 ₽
+                    div.item
+                        strong Экскурсии
+                        div.tr
+                            div.radio
+                                div.title
+                                    +radio('excursion', 'Дополнительная экскурсия', true)
+                                div.price
+                                    span 0 ₽
+                            div.radio
+                                div.title
+                                    +radio('excursion', 'Дополнительная экскурсия')
+                                div.price
+                                    span + 5 000 ₽
+                    div.item
+                        strong Музеи
+                        div.tr
+                            div.radio
+                                div.title
+                                    +radio('museum', 'Дополнительная экскурсия', true)
+                                div.price
+                                    span 0 ₽
+                            div.radio
+                                div.title
+                                    +radio('museum', 'Дополнительная экскурсия')
+                                div.price
+                                    span + 5 000 ₽
+                    div.item
+                        strong Трансфер
+                        div.tr
+                            div.radio
+                                div.title
+                                    +radio('transfer', 'Без трансфера', true)
+                                div.price
+                                    span 0 ₽
+                            div.radio
+                                div.title
+                                    +radio('transfer', 'Трансфер из аэропорта')
+                                div.price
+                                    span + 5 000 ₽
+
+            div.payment_data
+                h2 Форма оплаты
+                div.item
+                    strong Добавьте питание
+                    div.tr
+                        div.radio
+                            div.title
+                                +radio('payment', 'Наличными', true)
+                        div.radio
+                            div.title
+                                +radio('payment', 'На расчетный счет')
+
+
+        div.total
+            div.total_data
+                strong Дата тура
+                div.tr
+                    span 06.12.2024
+                    hr
+                    span 13.12.2024
+            div.total_tour
+                strong Информация о туре
+                div.list
+                    div.tr
+                        span Продолжительность
+                        span 9-10 часов
+                    div.tr
+                        span Тип экскурсии
+                        span Автобусная
+                    div.tr
+                        span Время отправления
+                        span 10:00
+                    div.tr
+                        span Место сбора группы
+                        span Отправление Н. Новгород пл. Ленина. Трансфер в Копорье
+                a(href="index.html").red Смотреть на карте
+                hr
+                div.links
+                    a(href="index.html").blue Информация для Туристов
+                    a(href="index.html").blue Информация для Агентств
+            div.total_price
+                div.list
+                    div.tr
+                        span Стоимость тура
+                        span 100 000 ₽
+                    div.tr
+                        span Стоимость доп. услуг
+                        span 10 000 ₽
+                    div.tr
+                        span Скидка
+                        span -3 000 ₽
+                    div.tr
+                        div.question
+                            span Комиссия
+                            div.tooltip
+                                img(src="images/order_question.svg")
+                                div.tooltip_text Мы предоставляем скидку для наших агентов, позволяя вам продавать туры по розничной цене, а самим покупать их со значительной экономией. Эти сэкономленные средства – ваш дополнительный доход.
+                        span -3 000 ₽
+                div.tr.total
+                    div
+                        span ИТОГО
+                        i за 8 дней, 7 ночей
+                    div
+                        span 203 000 000 ₽
+                        i за 1 человек
+                span.policy Даю #[a Согласие на обработку персональных данных] в соответствии с #[a Политикой в отношении обработки персональных данных], а также принимаете условия #[a Пользовательского соглашения].
+                button Забронировать

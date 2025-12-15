@@ -1,0 +1,20 @@
+mixin person_slide
+    div.swiper-slide.person
+        img(src="images/28.webp", alt="Константинопольский Константин")
+        h5 Константинопольский Константин
+        span Менеджер
+
+section.team
+    div.container
+
+        h3 Наша команда
+
+        div.swiper.about_team
+            div.swiper-wrapper
+                +person_slide
+                +person_slide
+                +person_slide
+                +person_slide
+                +person_slide
+
+            div.swiper-pagination

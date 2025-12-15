@@ -1,0 +1,91 @@
+mixin table(date, active)
+    table(class=active && 'opened').tab_content
+        thead
+            tr
+                th Наименование
+                th Дата отправления
+                th Время отправления
+                th Город отправления
+                th № автобуса
+                th Места посадки
+        tbody
+            -for(x=0; x<=6; x++)
+                tr
+                    td(data-thead="Наименование") Москва. Мюзикл Принцесса цирка
+                    td(data-thead="Дата отправления")= date
+                    td(data-thead="Время отправления") 23:00
+                    td(data-thead="Город отправления") Нижний Новгород
+                    td(data-thead="№ автобуса"): span.bus у 854 кр 152
+                    td(data-thead="Места посадки") − Площадь Ленина, памятник Ленину, г. Н. Новгород в 08:00 #[br]− г.Нижний Новгород, ост. Дворец Спорта в 08:20 #[br]− НН, ост. Щербинки-2 в 08:30 #[br]− г.Арзамас, Соборная площадь в 10:00
+
+section.main
+    div.container
+
+        div.breadcrumbs
+            a(href="index.html") Главная - 
+            span Об отправлениях
+
+        div.title
+            h1 Об отправлениях
+            span Здесь вы найдете всю необходимую информацию о времени и месте отправления наших автобусных туров. Пожалуйста, обратите внимание, что сбор группы начинается за 15 минут до отправления. Будьте пунктуальны, чтобы ваше путешествие началось вовремя!
+
+        fieldset.search
+            input(type="search", placeholder="Направление")
+            img(src="images/search.svg")
+
+        div.tabs
+
+            div.dates
+                span.tab_caption.opened
+                    span 10.07 
+                    span чт
+                span.tab_caption 
+                    span 11.07 
+                    span чт
+                span.tab_caption 
+                    span 12.07 
+                    span чт
+                span.tab_caption 
+                    span 13.07 
+                    span чт
+                span.tab_caption 
+                    span 14.07 
+                    span чт
+                span.tab_caption 
+                    span 15.07 
+                    span чт
+                span.tab_caption 
+                    span 16.07 
+                    span чт
+                span.tab_caption 
+                    span 17.07 
+                    span чт
+                span.tab_caption 
+                    span 18.07 
+                    span чт
+                span.tab_caption 
+                    span 19.07 
+                    span чт
+                span.tab_caption 
+                    span 20.07 
+                    span чт
+                span.tab_caption 
+                    span 21.07 
+                    span чт
+                span.tab_caption 
+                    span 22.07 
+                    span ЧТ
+
+            +table('01.12.2024 (пт)', true)
+            +table('02.12.2024 (пт)')
+            +table('03.12.2024 (пт)')
+            +table('04.12.2024 (пт)')
+            +table('05.12.2024 (пт)')
+            +table('06.12.2024 (пт)')
+            +table('07.12.2024 (пт)')
+            +table('08.12.2024 (пт)')
+            +table('09.12.2024 (пт)')
+            +table('10.12.2024 (пт)')
+            +table('11.12.2024 (пт)')
+            +table('12.12.2024 (пт)')
+            +table('13.12.2024 (пт)')

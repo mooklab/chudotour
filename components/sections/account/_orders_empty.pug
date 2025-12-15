@@ -1,0 +1,20 @@
+include ../../common/pug/_mixins.pug
+
+section.orders_empty
+    div.container
+
+        +account_sidemenu('images/6.webp', 'Константинопольский Константин ', 'konstatin.konstantin123@gmail.com', '1', 'Мои данные', 'Бронирования', 'Документы', 'Выйти')
+
+        div.account_page
+            h1 Бронирования
+
+            div.filter
+                span.tag.active Все (100)
+                span.tag Текущие (100)
+                span.tag Прошедшие (100)
+                +select('account_tour', 'Туры', 'Городская прогулка', 'Исторический обзор', 'Культурное погружение', 'Архитектурный тур', 'Экскурсия на пляж', 'Ночная прогулка', 'Гастрономический тур', 'Природный заповедник', 'Музейный маршрут', 'Круиз по реке')
+
+            div.empty
+                img(src="images/empty_orders.svg")
+                h2 Пока нет активных заказов
+                span На этой странице будут отображаться ваши заказы

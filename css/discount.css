@@ -1,0 +1,74 @@
+@charset "UTF-8";
+section.main {
+  margin-bottom: 68px;
+}
+@media (max-width: 1280px) {
+  section.main {
+    margin-bottom: 50px;
+  }
+}
+section.main div.content {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-gap: 20px;
+}
+@media (max-width: 1280px) {
+  section.main div.content {
+    grid-gap: 16px;
+  }
+}
+@media (max-width: 960px) {
+  section.main div.content {
+    grid-template-columns: 1fr;
+  }
+}
+section.main div.content div.title {
+  display: grid;
+  -ms-flex-line-pack: start;
+      align-content: start;
+  grid-gap: 24px;
+}
+@media (max-width: 1280px) {
+  section.main div.content div.title {
+    grid-gap: 16px;
+  }
+}
+section.main div.content div.title span {
+  opacity: 0.8;
+}
+section.main div.content div.text h5 {
+  margin-top: 30px;
+  margin-bottom: 16px;
+}
+@media (max-width: 1280px) {
+  section.main div.content div.text h5 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+}
+section.main div.content div.text ul li {
+  position: relative;
+  padding-left: 24px;
+}
+section.main div.content div.text ul li::before {
+  content: "•";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+section.main div.content div.text button {
+  margin-top: 32px;
+}
+@media (max-width: 1280px) {
+  section.main div.content div.text button {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 640px) {
+  section.main div.content div.text button {
+    width: 100%;
+  }
+}/*# sourceMappingURL=discount.css.map */

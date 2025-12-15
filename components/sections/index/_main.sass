@@ -1,0 +1,272 @@
+section.main
+    color: white
+    padding-top: 160px
+    padding-bottom: 135px
+    +s(xl)
+        padding-top: 60px
+        padding-bottom: 60px
+
+    div.container
+        z-index: 1
+        display: grid
+        justify-items: center
+        grid-gap: 50px
+        +s(xl)
+            grid-gap: 40px
+
+    h1
+        margin-bottom: -10px
+        text-align: center
+        +s(xl)
+            margin-bottom: unset
+
+    div.swiper.captions
+        max-width: 692px
+        +s(l)
+            max-width: unset
+
+        div.swiper-slide
+            cursor: pointer
+            display: grid
+            grid-gap: 5px
+            justify-items: center
+            border-radius: 14px
+            background: #fff
+            font-weight: 600
+            font-size: 12px
+            line-height: 130%
+            color: #3068f7
+            padding-top: 12px
+            padding-bottom: 10px
+            transition: background 0.5s, color 0.5s
+            +s(l)
+                padding: 10px 12px
+        div.swiper-slide-thumb-active
+            background: #3068f7
+            color: white
+            svg
+                path
+                    fill: white
+
+        div.swiper-pagination
+            position: relative
+            display: grid
+            grid-auto-flow: column
+            grid-auto-columns: max-content
+            justify-content: center
+            grid-gap: 2px
+            z-index: 1
+            margin-top: 10px
+            span
+                display: block
+                width: 3px
+                height: 3px
+                background: white
+                border-radius: 999px
+                transition: all 0.3s
+                &.swiper-pagination-bullet-active
+                    width: 15px
+
+            &.swiper-pagination-lock
+                display: none
+
+    div.swiper.contents
+        overflow: visible
+        max-width: 1420px
+        div.swiper-slide
+            pointer-events: none
+
+            &.swiper-slide-active
+                pointer-events: auto
+
+    div.swiper
+        width: 100%
+        height: max-content
+        min-width: 0
+        user-select: none
+
+    form
+        display: grid
+        align-items: center
+        grid-auto-flow: column
+        grid-auto-columns: 1fr
+        width: 100%
+        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.15)
+        +s(l)
+            grid-auto-flow: unset
+            grid-template-columns: repeat(2, 1fr)
+            grid-gap: 10px
+
+        & > *
+            &:last-child
+                border-right: unset
+                &::before
+                    display: none
+                &::after
+                    display: none
+            &:nth-last-child(2)
+                border-right: unset
+                &::before
+                    display: none
+                &::after
+                    display: none
+
+            &::before
+                content: ''
+                position: absolute
+                top: 0
+                right: 0
+                width: 2px
+                height: 100%
+                background: #3068f7
+                z-index: 6
+                +s(l)
+                    display: none
+
+            &::after
+                content: ''
+                position: absolute
+                top: 0
+                right: -10px
+                height: 100%
+                width: 20px
+                background: white
+                z-index: -1
+                +s(l)
+                    display: none !important
+
+        div.two_column
+            position: relative
+            background: white
+            border-radius: 10px
+            input
+                color: #343a60
+                padding: var(--form-element-padding)
+                &::placeholder
+                    color: #343a6081
+
+        div.two_column_only_mobile
+            +s(l)
+                grid-column: 2 span
+
+        fieldset.select
+            div.select_choice
+                border: unset
+                box-shadow: unset
+                span
+                    height: 58px
+                    +s(l)
+                        height: 40px
+
+        fieldset.tourists
+            div.select
+                height: 58px
+                padding: 10px 15px
+                +s(l)
+                    height: 40px
+                    padding: 10px
+
+        fieldset.datepicker
+            border: unset
+            input
+                height: 58px
+                +s(l)
+                    height: 40px
+            span
+                height: 58px
+                +s(l)
+                    height: 40px
+
+        div.quantity
+            height: 28px
+            width: 65px
+            border: 1px solid #343a6021
+            border-radius: 4px
+
+        button
+            border-radius: 10px
+            width: 200px
+            background: #d819a3
+            margin-left: 10px
+            padding: 10px 15px
+            height: 58px
+            font-weight: 800
+            font-size: 16px
+            line-height: 130%
+            text-align: center
+            color: #fff
+            transform: unset
+            +s(xl)
+                font-weight: 700
+                font-size: 14px
+            +s(l)
+                width: 100%
+                height: 40px
+                margin-left: unset
+                grid-column: 2 span
+
+        input[type=text]
+            height: 58px
+            +s(xl)
+                font-size: 13px
+            +s(l)
+                height: 40px
+            +s(m)
+                font-size: 12px
+
+    div.advantages
+        display: grid
+        grid-template-columns: auto auto
+        grid-gap: 93px
+        +s(l)
+            grid-gap: 40px
+        +s(m)
+            grid-template-columns: 1fr
+            grid-gap: 20px
+            width: 100%
+
+        div.item
+            display: grid
+            align-items: center
+            grid-template-columns: max-content auto
+            grid-gap: 10px
+
+            div
+                display: grid
+                grid-gap: 5px
+                strong
+                    font-weight: 600
+                    font-size: 16px
+                    line-height: 130%
+                    color: #fff
+                    +s(l)
+                        font-size: 14px
+                span
+                    font-weight: 400
+                    font-size: 12px
+                    line-height: 130%
+                    color: #fff
+                    opacity: 0.7
+
+    div.background
+        grid-column: full
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: 0
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+        &::after
+            content: ''
+            display: block
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background: linear-gradient(180deg, rgba(12, 19, 29, 0.4) 0%, rgba(12, 19, 29, 0.74) 100%)

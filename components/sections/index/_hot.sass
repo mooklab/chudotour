@@ -1,0 +1,129 @@
+
+section.hot
+    color: white
+    margin-bottom: 68px
+    +s(m)
+        margin-bottom: 50px
+
+    div.container
+        display: grid
+        align-items: start
+        grid-template-columns: repeat(2, 1fr)
+        grid-gap: 50px
+        background: #3068f7
+        padding: 50px
+        border-radius: 20px
+        +s(m)
+            padding: 30px 20px
+            grid-template-columns: 1fr
+            grid-gap: 20px
+
+    div.description
+        display: grid
+        justify-items: start
+
+        h3
+            display: block
+            margin-bottom: 10px
+            +s(m)
+                text-align: center
+                font-size: 20px
+
+        span
+            display: block
+            max-width: 494px
+            font-weight: 400
+            line-height: 130%
+            +s(m)
+                text-align: center
+                font-size: 12px
+
+        button
+            margin-top: 27px
+            justify-self: start
+            +s(m)
+                display: none
+
+    div.swiper.hot
+        width: 100%
+        min-width: 0
+        overflow: visible
+
+        div.swiper-wrapper
+            height: 173px
+            max-width: 467px
+            transform: unset !important
+            +s(xl)
+                height: 112px
+            +s(m)
+                max-width: unset
+
+        div.swiper-slide
+            border-radius: 20px
+            a.hot_tour_card
+                opacity: 0
+            &.swiper-slide-active
+                a.hot_tour_card
+                    opacity: 1
+
+    a.hot_tour_card
+        display: grid
+        align-items: center
+        grid-template-columns: max-content 1fr
+        grid-gap: 22px
+        padding: 10px
+        background: white
+        border-radius: 20px
+        transition: opacity 0.5s
+        +s(xl)
+            padding: 7px
+
+        img
+            width: 152px
+            height: 152px
+            border-radius: 15px
+            +s(xl)
+                width: 96px
+                height: 96px
+
+        div.text
+            position: relative
+            display: grid
+            align-items: center
+            align-content: center
+            height: max-content
+
+            strong.price
+                font-weight: 600
+                font-size: 31px
+                line-height: 130%
+                color: #0c131d
+                margin-bottom: 4px
+                +s(xl)
+                    font-size: 20px
+                    margin-bottom: 2px
+
+            span.destination
+                font-weight: 600
+                font-size: 22px
+                line-height: 130%
+                color: #0c131d
+                margin-bottom: 16px
+                +s(xl)
+                    font-size: 14px
+                    margin-bottom: 10px
+
+            span.date
+                font-weight: 400
+                font-size: 17px
+                line-height: 130%
+                color: #5a6472
+                +s(xl)
+                    font-size: 12px
+
+    button.mobile
+        display: none
+        +s(m)
+            display: grid
+            width: 100%
+            margin-top: 10px

@@ -1,0 +1,146 @@
+section.main
+    div.container
+
+        div.title
+            display: grid
+            grid-gap: 20px
+            margin-bottom: 32px
+            max-width: 1000px
+            +s(l)
+                grid-gap: 16px
+                margin-bottom: 20px
+
+        fieldset.search
+            position: relative
+            margin-bottom: 48px
+            +s(l)
+                margin-bottom: 32px
+
+            input
+                height: var(--form-element-height)
+                padding: var(--form-element-padding)
+                background: rgba(221, 221, 228, 0.2)
+                border-radius: 10px
+                width: 100%
+                &::placeholder
+                    opacity: 0.5
+                    color: #16192c
+            img
+                position: absolute
+                top: 50%
+                right: 15px
+                transform: translateY(-50%)
+
+        div.dates
+            display: flex
+            gap: 20px
+            width: 100%
+            overflow-x: auto
+            padding-bottom: 10px
+            margin-bottom: 40px
+            +s(l)
+                gap: 10px
+
+            span.tab_caption
+                cursor: pointer
+                display: grid
+                align-items: center
+                align-content: center
+                justify-items: center
+                text-align: center
+                border: 1px solid #dddde4
+                border-radius: 10px
+                height: 72px
+                min-width: 120px
+                +s(l)
+                    display: flex
+                    justify-content: center
+                    font-size: 14px
+                    height: 31px
+                    min-width: 81px
+
+                span:last-child
+                    text-transform: uppercase
+                    +s(l)
+                        text-transform: unset
+
+                &.opened
+                    border: 2px solid #4b69dd
+                    +s(l)
+                        background: #f2f5ff
+                        color: #3068f7
+                        border: unset
+
+            &::-webkit-scrollbar
+                height: 5px
+            &::-webkit-scrollbar-track
+                border-radius: 15px
+                background: #f1f1f4
+            &::-webkit-scrollbar-thumb
+                border-radius: 15px
+                background: #e4e4ea
+                transition: all 0.3s
+            &::-webkit-scrollbar-thumb:hover
+                background-color: #b1b1b8
+            &::-webkit-scrollbar:vertical
+                display: none
+
+        table
+            width: 100%
+            border-collapse: separate
+            border-spacing: 0 20px
+            display: none
+            thead
+                text-align-last: left
+                color: #acacac
+                +s(m)
+                    display: none
+                th
+                    padding-left: 30px
+                    font-weight: 400
+                    text-align: left
+            tbody
+                +s(m)
+                    display: grid
+                    grid-gap: 20px
+                tr
+                    td
+                        padding: 30px
+                        border-top: 1px solid rgba(48, 104, 247, 0.2)
+                        border-bottom: 1px solid rgba(48, 104, 247, 0.2)
+                        +s(m)
+                            border: unset !important
+                            padding: unset
+                            &::before
+                                display: block
+                                content: attr(data-thead)
+                                color: #acacac
+                                margin-bottom: 4px
+                    td:first-child
+                        border: 1px solid rgba(48, 104, 247, 0.2)
+                        border-right: unset
+                        border-top-left-radius: 10px
+                        border-bottom-left-radius: 10px
+                    td:last-child
+                        border: 1px solid rgba(48, 104, 247, 0.2)
+                        border-left: unset
+                        border-top-right-radius: 10px
+                        border-bottom-right-radius: 10px
+                    +s(m)
+                        display: grid
+                        grid-gap: 15px
+                        border: 1px solid rgba(48, 104, 247, 0.2)
+                        border-radius: 10px
+                        padding: 15px
+
+            &.opened
+                display: table
+                +s(m)
+
+        span.bus
+            display: inline-block
+            border-radius: 10px
+            padding: 10px
+            background: rgba(48, 104, 247, 0.1)
+            color: #3068f7
+            white-space: nowrap

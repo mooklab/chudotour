@@ -1,0 +1,28 @@
+mixin slide(title)
+    div.swiper-slide
+        div.text
+            h2= title
+            span Индивидуальные, корпоративные, экскурсионные, спортивные, экзотические, пляжные, детские, морские и речные круизы, фестивальные и паломнические туры
+        img(src="images/27.webp")
+
+section.advantages
+    div.container
+
+        div.swiper.about_advantages
+            div.swiper-wrapper
+                +slide('Широкий спектр туров')
+                +slide('Широкий спектр туров')
+                +slide('Широкий спектр туров')
+                +slide('Широкий спектр туров')
+                +slide('Широкий спектр туров')
+                +slide('Широкий спектр туров')
+
+            div.swiper-navigation
+                div.arrow
+                    include ../../../images/swiper_arrow.svg
+                div.arrow
+                    include ../../../images/swiper_arrow.svg
+
+            div.swiper-count
+                span.current 1
+                span.total 6

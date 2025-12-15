@@ -1,0 +1,219 @@
+include ../../common/pug/_mixins.pug
+
+section.about_hotel
+    div.container
+
+        div.about
+
+            div.content
+                span.note Описание:
+                span В Абхазии Вы найдете все для хорошего отдыха: свежий воздух, чистое море, прекрасную природу, экологические овощи и фрукты.
+                span.note Расположение:
+                span Гостевой дом «Villa Roza» в центре г. Гагра с уютными номерами, до моря 200 метров или 2 минуты пешком. Рядом находятся стадион, аптека, магазины, овощной рынок, рестораны, кафе, пивбар, боулинг.
+                span.note Пляж
+                span 200 м до моря
+                span.note Размещение:
+                ul
+                    li 2-х местный Эконом :  кровати двуспальные или односпальные, кондиционер, спутниковое ТВ, телевизор стулья, тумбочка, тумбочки, шкаф, кровать двуспальная, вешалка, санузел на этаже (2 санузла с душем)
+                    li 2-х, 3-х местный Стандарт: кровати двуспальные, диван-кровать, тумбочки, шкаф, шкаф/гардероб,  вешалка, спутниковое ТВ, телевизор, кондиционер, санузел в номере. 
+                    li К услугам отдыхающих мангал, уборка номера по требованию и замена белья 1 раз в 5 дней. Имеется стоянка для автомобилей (платно). Предоставляется постельное белье, комплект полотенец, утюг,  стиральная машина {платно).  Выделена зона для курения.
+                span.note Питание:
+                span Большая веранда с кухней, оборудованной всей техникой и посудой.
+            
+            div.gallery
+                img(src="images/42.webp")
+                img(src="images/42.webp")
+                img(src="images/42.webp")
+                img(src="images/42.webp")
+                img(src="images/42.webp")
+                a.more
+                    span Еще 1000 фото
+                    img(src="images/20.webp")
+
+            div.places
+                div.title
+                    h2 Наличие мест
+                    button Изменить параметры поиска
+                div.form
+                    div.element
+                        span.note Дата заезда
+                        +datepicker('Дата заезда')
+                    div.element
+                        span.note Дата выезда
+                        +datepicker('Дата выезда')
+                    div.element
+                        span.note Взрослых
+                        div.quantity
+                            div.minus
+                                include ../../../images/quantity_minus.svg
+                            input(type="number", min="0", max="9")
+                            div.plus
+                                include ../../../images/quantity_plus.svg
+                    div.element
+                        span.note Детей
+                        div.quantity
+                            div.minus
+                                include ../../../images/quantity_minus.svg
+                            input(type="number", min="0", max="9")
+                            div.plus
+                                include ../../../images/quantity_plus.svg
+
+            div.rooms
+                h2 Номера
+                div.list
+                    div.room_card
+                        div.swiper
+                            div.swiper-wrapper
+                                div.swiper-slide: img(src="images/1.webp")
+                                div.swiper-slide: img(src="images/1.webp")
+                                div.swiper-slide: img(src="images/1.webp")
+                                div.swiper-slide: img(src="images/1.webp")
+                                div.swiper-slide: img(src="images/1.webp")
+                            div.swiper-pagination
+                        div.description
+                            div.title
+                                span.count 1 человек
+                                h5 2-х местный Эконом
+                                span.area Площадь 22 м2
+                            div.advantages
+                                div.advantage
+                                    img(src="images/room_card_icon_1.svg", alt="WiFi в номерах")
+                                    span WiFi в номерах
+                                div.advantage
+                                    img(src="images/room_card_icon_2.svg", alt="Собственная ванная")
+                                    span Собственная ванная
+                                div.advantage
+                                    img(src="images/room_card_icon_3.svg", alt="Кондиционер")
+                                    span Кондиционер
+                                div.advantage
+                                    img(src="images/room_card_icon_4.svg", alt="Мини-бар")
+                                    span Мини-бар
+                            div.link
+                                span Описание номера
+                        div.order
+                            div.wrap
+                                span.price 100 000 ₽
+                                div.period
+                                    div.days
+                                        img(src="images/card_sun.svg")
+                                        span 3 дня
+                                    div.nights
+                                        img(src="images/card_moon.svg")
+                                        span 2 ночи
+                                div.dates
+                                    span 01.04.2025
+                                    hr
+                                    span 08.04.2025
+                                div.tags
+                                    div.tag
+                                        img(src="images/detail_card_icon_1.svg", alt="")
+                                        span Завтраки включены
+                                    div.tag
+                                        img(src="images/detail_card_icon_2.svg", alt="")
+                                        span Бесплатная отмена
+                            a(href="index.html").button Забронировать
+                    div.room_card
+                        div.swiper
+                            div.swiper-wrapper
+                                div.swiper-slide: img(src="images/1.webp")
+                                div.swiper-slide: img(src="images/1.webp")
+                                div.swiper-slide: img(src="images/1.webp")
+                                div.swiper-slide: img(src="images/1.webp")
+                                div.swiper-slide: img(src="images/1.webp")
+                            div.swiper-pagination
+                        div.description
+                            div.title
+                                span.count 1 человек
+                                h5 3-х местный Эконом
+                                span.area Площадь 22 м2
+                            div.advantages
+                                div.advantage
+                                    img(src="images/room_card_icon_1.svg", alt="WiFi в номерах")
+                                    span WiFi в номерах
+                                div.advantage
+                                    img(src="images/room_card_icon_2.svg", alt="Собственная ванная")
+                                    span Собственная ванная
+                                div.advantage
+                                    img(src="images/room_card_icon_3.svg", alt="Кондиционер")
+                                    span Кондиционер
+                                div.advantage
+                                    img(src="images/room_card_icon_4.svg", alt="Мини-бар")
+                                    span Мини-бар
+                            div.link
+                                span Описание номера
+                        div.order
+                            div.wrap
+                                span.price 120 000 ₽
+                                div.period
+                                    div.days
+                                        img(src="images/card_sun.svg")
+                                        span 3 дня
+                                    div.nights
+                                        img(src="images/card_moon.svg")
+                                        span 2 ночи
+                                div.dates
+                                    span 01.04.2025
+                                    hr
+                                    span 08.04.2025
+                                div.tags
+                                    div.tag
+                                        img(src="images/detail_card_icon_1.svg", alt="")
+                                        span Завтраки включены
+                                    div.tag
+                                        img(src="images/detail_card_icon_2.svg", alt="")
+                                        span Бесплатная отмена
+                            a(href="index.html").button Забронировать
+
+        div.total
+            div.order
+                span.price от 18 600 ₽
+                div.time
+                    h5 Заезд 14:00
+                    h5 Отъезд 12:00
+                div.inprice
+                    span В стоимость включено:
+                    div.list
+                        img(src="images/hotel_card_icon_1.svg", alt=" ")
+                        img(src="images/hotel_card_icon_2.svg", alt=" ")
+                        img(src="images/hotel_card_icon_3.svg", alt=" ")
+                        img(src="images/hotel_card_icon_4.svg", alt=" ")
+                div.links
+                    a(href="index.html") Информация для Туристов
+                    a(href="index.html") Информация для Агентств
+
+            div.support
+                div.question
+                    h5 Задайте вопрос
+                    div.phone_tourist
+                        a(href="tel:8 (831) 413-11-23") 8 (831) 413-11-23
+                            img(src="images/header_phone_arrow.svg", alt="")
+                        span Туристам
+
+                    div.phone_agency
+                        a(href="tel:8 (831) 413-11-23") 8 (831) 413-11-23
+                            img(src="images/header_phone_arrow.svg", alt="")
+                        span Туристам
+                div.message
+                    h5 Или напишите в сообщении
+                    div.socials
+                        a(href="https://telegram.org", target="blank")
+                            img(src="images/header_telegram.svg", alt="Telegram")
+                        a(href="https://vk.ru", target="blank")
+                            img(src="images/header_vkontakte.svg", alt="Vkontakte")
+
+            div.advantages
+                div.item
+                    img(src="images/filter_map.svg", alt="Сертифицированный туроператор")
+                    div
+                        strong Сертифицированный туроператор
+                        span 5000 великолепных туров
+                div.item
+                    img(src="images/filter_certificate.svg", alt="в реестре туроператоров РТО 021180")
+                    div
+                        strong в реестре туроператоров РТО 021180
+                        span по всей России
+
+
+
+
+

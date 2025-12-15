@@ -1,0 +1,12 @@
+include ../../common/pug/_mixins.pug
+
+section.questions
+    div.container
+
+        h2 Важно знать
+
+        div.list
+            +question_accordion('Где происходит встреча?')
+            +question_accordion('Может ли ребенок поехать с сопровождающим?')
+            +question_accordion('Могу ли я пропустить экскурсию?')
+            +question_accordion('Входят ли билеты на самолет в стоимость тура?')

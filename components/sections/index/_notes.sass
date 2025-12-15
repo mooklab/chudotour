@@ -1,0 +1,64 @@
+section.notes
+    margin-top: 68px
+    margin-bottom: 68px
+    +s(m)
+        margin-top: 50px
+        margin-bottom: 50px
+
+    div.container
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        grid-gap: 20px
+        +s(xl)
+            grid-gap: 16px
+        +s(s)
+            grid-template-columns: 1fr
+            grid-gap: 10px
+
+        a
+            display: grid
+            align-items: center
+            grid-template-columns: 1fr max-content
+            grid-gap: 20px
+            padding: 40px
+            border-radius: 20px
+            background: #f3f2fd
+            +s(m)
+                padding: 15px 20px
+                grid-gap: 40px
+
+            div.text
+                display: grid
+                grid-gap: 16px
+                +s(m)
+                    grid-gap: 10px
+
+                h3
+                    font-weight: 600
+                    font-size: 28px
+                    line-height: 130%
+                    text-transform: uppercase
+                    color: #16192c
+                    +s(m)
+                        font-size: 16px
+
+                span
+                    font-weight: 500
+                    font-size: 16px
+                    line-height: 130%
+                    color: #343a60
+                    +s(m)
+                        font-size: 12px
+
+            div.arrow
+                display: grid
+                align-items: center
+                justify-items: center
+                border: 1px solid #d819a3
+                border-radius: 5px
+                width: 46px
+                height: 46px
+                background: #d819a3
+                +s(m)
+                    width: 40px
+                    height: 40px

@@ -1,0 +1,50 @@
+section.list_sort
+    margin-bottom: 25px
+    +s(xl)
+        margin-bottom: 20px
+    +s(m)
+        margin-bottom: 20px
+    div.container
+        display: grid
+        grid-template-columns: 1fr max-content
+        align-items: center
+
+        span.note
+            color: #343a60
+            opacity: 0.58
+
+        div.sort
+            display: flex
+            align-items: center
+            gap: 20px
+            +s(m)
+                display: none
+            a
+                text-align: center
+                color: #343a60
+                &.active
+                    border-radius: 10px
+                    padding: 5px 10px
+                    background: #f2f5ff
+                    color: #3068f7
+                &:hover
+                    color: #3068f7
+
+        fieldset.select
+            display: none
+            +s(m)
+                display: grid
+            div.select_choice
+                border-radius: 10px
+                background: #f2f5ff
+                span
+                    font-weight: 400
+                    font-size: 12px
+                    line-height: 130%
+                    color: #3068f7
+                    padding: 7px 10px
+                    padding-right: 28px
+            svg
+                path
+                    fill: #3068f7
+                    opacity: 1

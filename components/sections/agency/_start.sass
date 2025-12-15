@@ -1,0 +1,101 @@
+section.start
+    margin-top: 98px
+    margin-bottom: 68px
+    +s(l)
+        margin-top: 50px
+        margin-bottom: 50px
+
+    div.container
+        display: grid
+        grid-template-columns: 1fr 440px 1fr
+        grid-gap: 60px
+        +s(xl)
+            grid-template-columns: 1fr 360px 1fr
+        +s(m)
+            grid-template-columns: 1fr
+            grid-gap: 16px
+
+        div.title
+            display: grid
+            align-content: start
+            grid-gap: 20px
+
+        div.steps
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            grid-gap: 20px
+            grid-column: 2 span
+            +s(m)
+                grid-column: 1 span
+                grid-gap: 10px
+            +s(s)
+                grid-template-columns: 1fr
+
+            div.step
+                display: grid
+                grid-template-rows: max-content 1fr
+                align-content: start
+                counter-increment: step
+                border-radius: 20px
+                box-shadow: 0 4px 9px 0 rgba(174, 174, 174, 0.25)
+                background: #fff
+                padding: 30px
+                +s(m)
+                    padding: 20px
+
+                h5
+                    display: grid
+                    align-items: center
+                    grid-template-columns: max-content 1fr
+                    grid-gap: 15px
+                    text-transform: unset
+                    margin-bottom: 30px
+                    +s(m)
+                        margin-bottom: 16px
+                        font-size: 16px
+
+                    &::before
+                        content: counter(step)
+                        display: grid
+                        align-items: center
+                        justify-items: center
+                        width: 35px
+                        height: 35px
+                        border-radius: 10px
+                        background: #d819a3
+                        color: white
+                        font-weight: 600
+
+                span.note
+                    opacity: 0.8
+
+                a.doc
+                    display: grid
+                    grid-template-columns: 1fr max-content
+                    align-items: center
+                    border-top: 1px solid #3068f752
+                    border-bottom: 1px solid #3068f752
+                    padding-top: 15px
+                    padding-bottom: 15px
+                    margin-top: 40px
+                    +s(m)
+                        font-size: 14px
+                    span
+                        font-weight: 700
+                        color: #3068f7
+
+                div.list
+                    display: grid
+                    grid-gap: 10px
+                    div.item
+                        display: grid
+                        grid-gap: 10px
+                    span.blue
+                        font-weight: 600
+                        color: #3068f7
+                        +s(m)
+                            font-size: 14px
+                    a
+                        text-decoration: underline
+                        &:hover
+                            text-decoration: none

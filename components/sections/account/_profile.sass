@@ -1,0 +1,165 @@
+section.profile
+    margin-top: 30px
+    margin-bottom: 68px
+    +s(l)
+        margin-bottom: 50px
+
+    div.container
+        display: grid
+        align-items: start
+        grid-template-columns: max-content 1fr
+        grid-gap: 50px
+        +s(l)
+            display: block
+
+        div.account_page
+            width: 100%
+
+            h1
+                margin-bottom: 16px
+
+            div.avatar
+                display: grid
+                align-items: center
+                grid-template-columns: max-content 280px
+                grid-gap: 15px
+                margin-bottom: 30px
+                div.image
+                    display: grid
+                    align-items: center
+                    justify-items: center
+                    border-radius: 10px
+                    width: 98px
+                    height: 98px
+                    background: #f2f5ff
+                    img.avatar
+                        position: absolute
+                        top: 0
+                        left: 9px
+                        width: 100%
+                        height: 100%
+                        object-fit: cover
+                div.link
+                    display: flex
+                    align-items: center
+                    gap: 5px
+                    margin-bottom: 10px
+                    span
+                        font-weight: 700
+                        color: #d819a3
+                span.note
+                    opacity: 0.5
+
+            h5
+                margin-top: 34px
+                margin-bottom: 10px
+
+            form
+                display: grid
+                align-items: center
+                grid-gap: 5px
+                margin-bottom: 20px
+                span.note
+                    font-size: 13px
+                    color: #acacac
+                fieldset.datepicker
+                    max-width: 480px
+                fieldset.input
+                    width: 100%
+                    max-width: 480px
+                    pointer-events: auto
+                    transition: height 0.3s, max-width 0.3s
+                    input
+                        top: unset
+                        height: 100%
+                fieldset.select
+                    width: 100%
+                    max-width: 480px
+                    pointer-events: auto
+                    transition: max-width 0.3s
+                    div.select_choice
+                        span
+                            height: var(--form-element-height)
+                            transition: all 0.3s
+                div.row
+                    display: flex
+                    align-items: center
+                    gap: 15px
+                    +s(l)
+                        gap: 10px
+
+                div.save
+                    display: flex
+                    align-items: center
+                    gap: 15px
+                    opacity: 1
+                    transition: opacity 0.3s
+                    +s(l)
+                        gap: 10px
+
+                    button
+                        background: #3068f7
+                        height: var(--form-element-height)
+                        transition: all 0.3s
+                        img
+                            display: none
+                            width: 24px
+                        +s(l)
+                            min-width: unset
+                        +s(m)
+                            justify-content: center
+                            width: 40px
+                            span
+                                display: none
+                            img
+                                display: block
+                    span
+                        cursor: pointer
+                div.edit
+                    display: none
+                    cursor: pointer
+                    line-height: 0
+
+                &.disabled
+                    fieldset.input
+                        pointer-events: none
+                        border: unset
+                        height: 1em
+                        max-width: 340px
+                        input
+                            padding-left: unset
+                    fieldset.select
+                        pointer-events: none
+                        max-width: 340px
+                        div.select_choice
+                            border: unset
+                            span
+                                height: 1em
+                                padding-left: 0
+                            img
+                                opacity: 0
+                    div.edit
+                        display: block
+                    div.save
+                        opacity: 0
+                        +s(m)
+                            display: none
+                        button
+                            height: 1em
+
+            form.password
+                grid-gap: 10px
+                max-width: 480px
+                i
+                    font-size: 12px
+                    color: #acacac
+                    margin-top: -5px
+                    margin-bottom: 14px
+                div.buttons
+                    display: flex
+                    align-items: center
+                    gap: 20px
+                    a
+                        font-weight: 700
+                    button
+                        background: #3068f7

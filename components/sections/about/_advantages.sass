@@ -1,0 +1,100 @@
+section.advantages
+    margin-top: 68px
+    margin-bottom: 68px
+    +s(l)
+        margin-top: 50px
+        margin-bottom: 50px
+
+    div.container
+        display: grid
+        grid-gap: 32px
+
+    div.swiper
+        width: 100%
+        min-width: 0
+
+    div.swiper-slide
+        display: grid
+        grid-template-columns: 2fr 3fr
+        grid-gap: 20px
+        +s(l)
+            grid-template-columns: repeat(2, 1fr)
+            grid-gap: 10px
+        +s(m)
+            grid-template-columns: 1fr
+
+        div.text
+            display: grid
+            grid-gap: 16px
+            align-content: end
+            padding: 40px
+            padding-bottom: calc(46px + 80px)
+            border-radius: 10px
+            background: #f2f5ff
+            min-height: 540px
+            +s(m)
+                order: 2
+                padding: 20px
+                padding-top: 150px
+                padding-bottom: 100px
+                min-height: unset
+
+            h2
+                font-weight: 500
+                font-size: 28px
+                line-height: 130%
+                text-transform: uppercase
+                color: #16192c
+                +s(l)
+                    font-size: 16px
+            span
+                opacity: 0.8
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+            border-radius: 10px
+            +s(m)
+                order: 1
+                height: 220px
+
+    div.swiper-navigation
+        position: absolute
+        left: 40px
+        bottom: 40px
+        z-index: 1
+        +s(m)
+            left: 20px
+            bottom: 30px
+            div.arrow
+                width: 30px
+                height: 30px
+
+    div.swiper-count
+        display: flex
+        gap: 15px
+        position: absolute
+        top: 40px
+        left: 40px
+        z-index: 1
+        +s(m)
+            top: 250px
+            left: 20px
+        span
+            font-weight: 500
+            font-size: 28px
+            line-height: 130%
+            color: #343a60
+            +s(m)
+                font-size: 20px
+        span.current
+            display: flex
+            align-items: center
+            gap: 15px
+            color: #3068f7
+            &::after
+                content: ''
+                display: block
+                width: 85px
+                height: 1px
+                background: #343a60

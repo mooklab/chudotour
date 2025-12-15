@@ -1,0 +1,84 @@
+section.questions
+    margin-top: 68px
+    margin-bottom: 68px
+    +s(l)
+        margin-top: 50px
+        margin-bottom: 50px
+
+    div.container
+
+        h2
+            margin-bottom: 32px
+
+        div.list
+            display: grid
+            grid-gap: 10px
+
+        div.question_accordion
+
+            div.caption
+                cursor: pointer
+                display: grid
+                align-items: center
+                grid-template-columns: 1fr max-content
+                border: 1px solid rgba(75, 105, 221, 0.2)
+                border-radius: 8px
+                padding: 20px 30px
+                transition: all 0.3s
+                +s(l)
+                    padding: 15px 20px
+                span
+                    font-weight: 600
+                    font-family: "Montserrat", sans-serif
+                    font-size: 20px
+                    color: #343a60
+                    transition: all 0.3s
+                    +s(l)
+                        font-size: 14px
+                img
+                    transition: all 0.3s
+
+            div.content
+                div.overflow
+                    overflow: hidden
+                    div.wrap
+                        display: grid
+                        grid-gap: 20px
+                        padding-top: 30px
+                        padding-bottom: 12px
+                        span
+                            opacity: 0.8
+                        b
+                            display: block
+                            font-weight: 700
+                            color: #3068f7
+                            margin-top: 16px
+                            margin-bottom: 10px
+                        ul
+                            opacity: 0.8
+                            li
+                                position: relative
+                                padding-left: 24px
+                                &::before
+                                    content: "•"
+                                    position: absolute
+                                    top: 0
+                                    left: 0
+                                    display: inline-block
+                                    margin-left: 8px
+                                    margin-right: 8px
+
+            &.open
+                div.caption
+                    padding: 14px 30px
+                    +s(l)
+                        padding: 13px 20px
+                    span
+                        font-weight: 500
+                        font-size: 28px
+                        line-height: 130%
+                        color: #3068f7
+                        +s(l)
+                            font-size: 20px
+                    img
+                        transform: rotate(180deg)

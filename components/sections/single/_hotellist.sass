@@ -1,0 +1,82 @@
+section.hotellist
+    margin-top: 68px
+    margin-bottom: 68px
+    +s(l)
+        margin-top: 50px
+        margin-bottom: 50px
+
+    div.container
+        h2
+            margin-bottom: 24px
+
+        div.swiper
+            +s(m)
+                overflow: visible
+
+    a.single_hotel_card
+        div.preview
+            position: relative
+            width: 100%
+            aspect-ratio: 1 / 1
+            overflow: hidden
+            border-radius: 20px
+            img
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                object-fit: cover
+            div.stars
+                position: absolute
+                top: 15px
+                left: 15px
+                display: flex
+                border-radius: 22px
+                background: white
+                padding: 5px 10px
+                svg
+                    width: 20px
+                    height: 20px
+                    +s(l)
+                        width: 16px
+                        height: 16px
+                div.empty
+                    svg
+                        path
+                            fill: #EEEEF1
+        div.text
+            display: grid
+            grid-gap: 5px
+            margin-top: 12px
+            strong
+                font-weight: 500
+                font-size: 18px
+                line-height: 158%
+                color: #242440
+                +s(l)
+                    font-size: 14px
+            span
+                color: #acacac
+
+    div.swiper-pagination
+        position: relative
+        display: grid
+        grid-auto-flow: column
+        grid-auto-columns: max-content
+        justify-content: center
+        grid-gap: 2px
+        z-index: 1
+        margin-top: 15px
+        span
+            display: block
+            width: 3px
+            height: 3px
+            background: #3068f7
+            border-radius: 999px
+            transition: all 0.3s
+            &.swiper-pagination-bullet-active
+                width: 15px
+
+        &.swiper-pagination-lock
+            display: none

@@ -1,0 +1,34 @@
+section.expert
+    margin-top: 100px
+    margin-bottom: 100px
+    +s(m)
+        margin-top: 50px
+        margin-bottom: 50px
+
+    h2
+        br
+            +s(s)
+                display: none
+
+    div.container
+        display: grid
+        grid-gap: 26px
+        +s(m)
+            grid-gap: 20px
+
+        form
+            display: grid
+            grid-template-columns: repeat(3, 1fr) max-content
+            grid-gap: 20px
+            background: #f3f2fd
+            padding: 38px 40px
+            border-radius: 20px
+            +s(xl)
+                grid-gap: 15px
+            +s(m)
+                grid-template-columns: 1fr
+                padding: 30px 20px
+
+            button
+                +s(m)
+                    width: 100%

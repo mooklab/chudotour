@@ -1,0 +1,143 @@
+section.upcoming
+    margin-top: 68px
+    margin-bottom: 68px
+    +s(l)
+        margin-top: 50px
+        margin-bottom: 50px
+
+    div.container
+        h2
+            margin-bottom: 40px
+
+        div.swiper.month
+            margin-bottom: 30px
+
+            div.swiper-wrapper
+                div.swiper-slide
+                    width: auto !important
+                    font-size: 14px
+                    opacity: 0.8
+                    cursor: pointer
+                    &.swiper-slide-thumb-active
+                        font-weight: 500
+                        font-size: 14px
+                        text-decoration: underline
+                        text-decoration-skip-ink: none
+                        color: #3068f7
+                        opacity: 1
+
+        div.swiper.schedule
+            div.swiper-wrapper
+                div.swiper-slide
+                    table
+                        width: 100%
+                        border: 1px solid rgba(75, 105, 221, 0.2)
+                        border-radius: 8px
+                        +s(m)
+                            border: unset
+                            display: grid
+
+                        thead
+                            tr
+                                +s(m)
+                                    display: grid
+                                    grid-template-columns: repeat(4, 1fr)
+                                    grid-gap: 10px
+                                    border: 1px solid rgba(75, 105, 221, 0.2)
+                                    border-radius: 8px
+                                    margin-bottom: 10px
+                                    padding: 10px
+                            th
+                                color: #3068f7
+                                text-align: left
+                                padding: 20px
+                                border-right: 1px solid rgba(75, 105, 221, 0.2)
+                                font-weight: 400
+                                +s(m)
+                                    border: unset
+                                    text-align: center
+                                    padding: 0px
+                                &:last-child
+                                    border-right: unset
+                                    width: 380px
+                                    +s(xl)
+                                        width: 280px
+                                    +s(m)
+                                        display: none
+
+                        tbody
+                            +s(m)
+                                display: grid
+                                grid-gap: 10px
+                            tr
+                                position: relative
+                                +s(m)
+                                    display: grid
+                                    grid-template-columns: repeat(4, 1fr)
+                                    grid-gap: 10px
+                                    border: 1px solid rgba(75, 105, 221, 0.2)
+                                    border-radius: 8px
+                                    padding: 10px
+                            td
+                                padding: 20px
+                                border-top: 1px solid rgba(75, 105, 221, 0.2)
+                                border-right: 1px solid rgba(75, 105, 221, 0.2)
+                                +s(m)
+                                    border: unset
+                                    text-align: center
+                                    padding: 0px
+                                &:last-child
+                                    border-right: unset
+                                    width: 380px
+                                    +s(xl)
+                                        width: 280px
+
+                            td.button
+                                +s(m)
+                                    width: 100%
+                                    grid-column: 4 span
+                                button
+                                    margin: 0 auto
+
+                            a
+                                display: block
+                                font-weight: 700
+                                color: #3068f7
+                                margin-top: 8px
+
+                            button
+                                background: #3068f7
+                                font-weight: 700
+                                font-size: 14px
+                                text-align: center
+                                color: #fff
+                                +s(m)
+                                    width: 100%
+                                    grid-column: 4 span
+
+                    table.short
+                        tbody
+                            tr:nth-child(n + 6)
+                                display: none
+                            +s(m)
+                                tr:nth-child(n + 4)
+                                    display: none
+
+                    button.more
+                        background: #f2f5ff
+                        font-weight: 700
+                        font-size: 14px
+                        text-align: center
+                        color: #3068f7
+                        width: 100%
+                        margin-top: 20px
+                        span:first-child
+                            display: none
+                        span:last-child
+                            display: block
+
+                        &.short
+                            span:first-child
+                                display: block
+                            span:last-child
+                                display: none

@@ -1,0 +1,31 @@
+mixin discount(image, title)
+    a(href="index.html").discount
+        img(src=image, alt=title)
+        h5= title 
+        span.excerpt #[b Срок проведения акции c 31.08.2025 до 29.09.2025] Успейте забронировать Новый год по лучшей цене!
+        span.date До 31 января 2025
+
+
+
+section.main
+    div.container
+
+        div.breadcrumbs
+            a(href="index.html") Главная - 
+            span Акции
+
+        div.title
+            h1 Акции
+            a(href="index.html") Прошедшие акции
+
+        div.list
+            +discount('images/23.webp', 'Новогодние туры - 2026. Раннее бронирование')
+            +discount('images/24.webp', 'До 45% скидки на отели Таиланда')
+            +discount('images/32.webp', 'Бесплатные билеты для детей в парки и музеи Москвы')
+            +discount('images/34.webp', 'Обновлённые условия брони туров в Турцию')
+            +discount('images/35.webp', 'Обновлённые условия брони туров в Турцию')
+            +discount('images/36.webp', 'Бесплатные билеты для детей в парки и музеи Москвы')
+            +discount('images/17.webp', 'До 45% скидки на отели Таиланда')
+            +discount('images/8.webp', 'Новогодние туры - 2026. Раннее бронирование')
+
+        button.more Показать еще

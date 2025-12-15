@@ -1,0 +1,80 @@
+
+section.advantages
+
+    div.container
+        display: grid
+        justify-content: center
+
+    div.description
+        display: grid
+        max-width: 1037px
+
+        span.note
+            font-weight: 400
+            font-size: 16px
+            line-height: 130%
+            text-align: center
+            color: #343a60
+            opacity: 0.5
+            margin-bottom: 10px
+            +s(l)
+                font-size: 14px
+
+        h2
+            text-align: center
+            margin-bottom: 16px
+            +s(l)
+                margin-bottom: 12px
+
+        p
+            font-weight: 500
+            font-size: 16px
+            line-height: 130%
+            text-align: center
+            color: #343a60
+            margin-bottom: 27px
+            +s(l)
+                font-size: 12px
+                margin-bottom: 24px
+
+        button
+            justify-self: center
+            +s(s)
+                width: 100%
+
+    div.list
+        margin-bottom: 68px
+        margin-top: 60px
+        display: grid
+        grid-column: full
+        grid-template-columns: repeat(4, 1fr)
+        font-weight: 600
+        font-size: 16px
+        line-height: 130%
+        text-align: center
+        color: #333
+        +s(l)
+            font-size: 12px
+            margin-top: 32px
+            margin-bottom: 25px
+        +s(m)
+            grid-template-columns: repeat(2, 1fr)
+
+        div.item
+            display: grid
+            justify-items: center
+            grid-gap: 68px
+            border-right: 1px solid #dddde4
+            padding: 23px
+            +s(l)
+                grid-gap: 16px
+
+            &:nth-child(1),
+            &:nth-child(2)
+                +s(m)
+                    border-bottom: 1px solid #dddde4
+
+            img
+                height: 124px
+                +s(l)
+                    height: 92px

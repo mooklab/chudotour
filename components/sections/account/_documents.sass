@@ -1,0 +1,46 @@
+section.documents
+    margin-top: 30px
+    margin-bottom: 68px
+    +s(l)
+        margin-bottom: 50px
+
+    div.container
+        display: grid
+        align-items: start
+        grid-template-columns: max-content 1fr
+        grid-gap: 50px
+        +s(l)
+            display: block
+
+        div.account_page
+            width: 100%
+
+            h1
+                margin-bottom: 24px
+                +s(l)
+                    margin-bottom: 16px
+
+            div.list
+                a.item
+                    display: grid
+                    grid-template-columns: 1fr max-content
+                    grid-gap: 20px
+                    align-items: center
+                    padding: 20px 0
+                    border-top: 1px solid rgba(48, 104, 247, 0.2)
+                    span
+                        text-decoration: underline
+                        text-decoration-skip-ink: none
+                        color: #343a60
+                    img
+                        +s(l)
+                            width: 16px
+                            height: 16px
+
+                    &:first-child
+                        border-top: unset
+                        padding-top: unset
+
+                    &:hover
+                        span
+                            color: #3068f7

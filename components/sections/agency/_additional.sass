@@ -1,0 +1,35 @@
+section.additional
+    margin-top: 68px
+    margin-bottom: 68px
+    +s(l)
+        margin-top: 50px
+        margin-bottom: 50px
+
+    div.container
+        display: grid
+        grid-gap: 32px
+        +s(l)
+            grid-gap: 16px
+
+        div.list
+            display: grid
+            a.item
+                display: grid
+                align-items: center
+                grid-template-columns: 1fr max-content
+                padding: 20px 0
+                border-bottom: 1px solid #343a6021
+                span
+                    font-weight: 500
+                    font-size: 20px
+                    line-height: 130%
+                    color: #343a60
+                    +s(l)
+                        font-size: 16px
+                svg
+                    +s(l)
+                        width: 16px
+                        height: 16px
+
+                &:first-child
+                    border-top: 1px solid #343a6021

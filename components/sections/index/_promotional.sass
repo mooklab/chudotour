@@ -1,0 +1,57 @@
+section.promotional
+    margin-top: 68px
+    margin-bottom: 68px
+    +s(m)
+        margin-top: 50px
+        margin-bottom: 50px
+
+    div.container
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        border-radius: 20px
+        background: #f3f2fd
+        +s(m)
+            grid-template-columns: 1fr
+
+        div.text
+            display: grid
+            padding: 40px 50px
+            +s(m)
+                padding: 30px 20px
+                padding-bottom: 47px
+            h3
+                margin-bottom: 10px
+                +s(m)
+                    margin-bottom: 16px
+
+            span
+                font-weight: 500
+                font-size: 16px
+                line-height: 130%
+                color: #343a60
+                margin-bottom: 27px
+                +s(m)
+                    margin-bottom: 18px
+                    font-size: 12px
+
+            button
+                justify-self: start
+                +s(s)
+                    width: 100%
+
+        div.preview
+            img.desktop
+                width: 100%
+                height: 100%
+                object-fit: cover
+                object-position: left center
+                +s(m)
+                    display: none
+            img.mobile
+                display: none
+                +s(m)
+                    display: block
+                    height: 320px
+                    width: 100%
+                    object-fit: cover
+                    object-position: center center

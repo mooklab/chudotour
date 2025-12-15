@@ -1,0 +1,142 @@
+section.main
+    div.container
+
+        h1
+            margin-bottom: 70px
+            +s(m)
+                margin-bottom: 16px
+
+            b
+                display: block
+                color: #D819A3
+
+        div.advantages
+            display: grid
+            grid-template-columns: 1fr max-content 1fr
+            +s(m)
+                grid-template-columns: 1fr
+                grid-gap: 10px
+
+            div.why
+                padding: 50px
+                position: relative
+                border-top-left-radius: 20px
+                border-bottom-left-radius: 20px
+                overflow: hidden
+                +s(m)
+                    padding: 20px
+                    height: 235px
+                    border-radius: 20px
+
+                h2
+                    position: relative
+                    color: white
+                    z-index: 1
+
+                img
+                    position: absolute
+                    top: 0
+                    left: 0
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+
+            div.white
+                display: grid
+                grid-template-rows: repeat(2, 1fr)
+                max-width: 440px
+                margin-left: -15px
+                margin-right: -15px
+                z-index: 2
+                +s(xl)
+                    max-width: 360px
+                    margin: unset
+                +s(m)
+                    max-width: unset
+                    grid-template-rows: unset
+                    grid-template-columns: repeat(2, 1fr)
+                    grid-gap: 10px
+                +s(s)
+                    grid-template-columns: 1fr
+
+                div.advantage
+                    display: grid
+                    grid-template-rows: 1fr max-content
+                    grid-gap: 25px
+                    border-radius: 20px
+                    box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.25)
+                    background: #f2f5ff
+                    padding: 30px
+                    +s(m)
+                        padding: 20px
+                        box-shadow: unset
+                        grid-template-rows: unset
+                        grid-template-columns: max-content 1fr
+                        align-items: start
+                        height: 188px
+
+                    img
+                        width: 54px
+                        height: 54px
+                        +s(m)
+                            width: 38px
+                            height: 38px
+
+                    div.text
+                        display: grid
+                        grid-gap: 12px
+                        h5
+                            +s(l)
+                                font-size: 16px
+                        span
+                            opacity: 0.8
+
+                    &:first-child
+                        margin-top: -30px
+                        margin-bottom: -15px
+                        padding-bottom: 60px
+                        +s(m)
+                            margin: unset
+                    &:last-child
+                        margin-top: -15px
+                        margin-bottom: -30px
+                        +s(m)
+                            margin: unset
+
+            div.blue
+                display: grid
+                grid-gap: 60px
+                background: #3068f7
+                padding: 60px 50px
+                border-top-right-radius: 20px
+                border-bottom-right-radius: 20px
+                overflow: hidden
+                +s(m)
+                    padding: 20px
+                    border-radius: 20px
+                    grid-gap: 38px
+
+                div.advantage
+                    display: grid
+                    align-items: start
+                    grid-template-rows: 1fr max-content
+                    grid-gap: 25px
+                    +s(m)
+                        grid-template-rows: unset
+                        grid-template-columns: max-content 1fr
+                    img
+                        width: 54px
+                        height: 54px
+                        +s(m)
+                            width: 38px
+                            height: 38px
+                    div.text
+                        display: grid
+                        grid-gap: 12px
+                        h5
+                            color: white
+                            +s(l)
+                                font-size: 16px
+                        span
+                            color: white
+                            opacity: 0.8

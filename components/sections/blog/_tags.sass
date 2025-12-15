@@ -1,0 +1,37 @@
+section.tags
+    margin-top: 68px
+    margin-bottom: 68px
+    +s(l)
+        margin-top: 24px
+        margin-bottom: 24px
+
+    div.container
+        display: flex
+        overflow-x: auto
+        gap: 10px
+        padding-bottom: 10px
+        span
+            padding: 12px
+            border-radius: 10px
+            background: #f2f5ff
+            color: #3068f7
+            white-space: nowrap
+            +s(l)
+                font-size: 12px
+            &.active
+                background: #3068f7
+                color: white
+
+        &::-webkit-scrollbar
+            height: 5px
+        &::-webkit-scrollbar-track
+            border-radius: 15px
+            background: #f1f1f4
+        &::-webkit-scrollbar-thumb
+            border-radius: 15px
+            background: #e4e4ea
+            transition: all 0.3s
+        &::-webkit-scrollbar-thumb:hover
+            background-color: #b1b1b8
+        &::-webkit-scrollbar:vertical
+            display: none

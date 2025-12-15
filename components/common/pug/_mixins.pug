@@ -1,0 +1,669 @@
+mixin input(placeholder, required)
+    fieldset.input
+        input(type="text", placeholder=" ", required=(required))
+        span= placeholder
+
+mixin checkbox(name, title)
+    label.checkbox
+        input(type="checkbox")
+        span= title
+
+mixin radio(name, title, checked)
+    label.radio
+        input(type="radio", name=name, checked=(checked))
+        span= title
+
+mixin select(name, placeholder, ...items)
+    fieldset(tabindex="0").select
+        div.select_choice
+            if placeholder
+                input(type="radio", id=name, name=name, checked).placeholder
+                span= placeholder
+            each item, index in items
+                input(type="radio", id=name + "_" + index, name=name, checked=(!placeholder && index === 0))
+                span !{item}
+            if block
+                block
+            else
+                img(src="images/select_arrow.svg", alt="").arrow
+        div.select_dropdown
+            div.select_dropdown_overflow
+                div.select_dropdown_content
+                    each item, index in items
+                        label(for=name + "_" + index) !{item}
+
+mixin datepicker(title)
+    fieldset.datepicker
+        input(type="date", required)
+        span= title
+
+mixin tourist_select
+    fieldset(tabindex="0").tourists
+        div.select
+            span Туристы
+            img(src="images/select_arrow.svg")
+        div.select_popup
+            div.select_overflow
+                div.select_content
+                    div.parents
+                        div.text
+                            strong Взрослые
+                            span Старше 14 лет
+                        div.quantity
+                            div.minus
+                                include ../../../images/quantity_minus.svg
+                            input(type="number", min="1", max="9")
+                            div.plus
+                                include ../../../images/quantity_plus.svg
+                    div.childs
+                        div.text
+                            strong Дети
+                            span От 1 до 14 лет
+                        div.quantity
+                            div.minus
+                                include ../../../images/quantity_minus.svg
+                            input(type="number", min="0", max="9")
+                            div.plus
+                                include ../../../images/quantity_plus.svg
+
+mixin tour_card(image, title, destination, price)
+    a(href="index.html").tour_card
+        div.tag
+            include ../../../images/filter_bus.svg
+            span Экскурсионный тур
+        div.description
+            h4= title
+            span.destination= destination
+            span.price= price
+        img(src=image, alt=title).preview
+
+mixin tour_card2(image, title, date, price)
+    a(href="index.html").tour_card2
+        strong= title
+        span.date= date
+        span.price= price
+        img(src=image, alt=title)
+        div.tag
+            include ../../../images/filter_bus.svg
+            span Экскурсионный тур
+
+mixin hot_tour_card(image, price, destination, date)
+    a(href="index.html").hot_tour_card
+        img(src=image, alt=title)
+        div.text
+            strong.price= price 
+            span.destination= destination
+            span.date= date
+
+mixin review(image, name, tour, text)
+    div.review
+        div.author
+            img(src=image, alt=name)
+            div.name
+                span.name= name
+                span.tour Тур 
+                    a(href="index.html")= tour
+        div.text
+            span= text
+        div.gallery
+            img(src="images/3.webp")
+            img(src="images/4.webp")
+            img(src="images/5.webp")
+
+mixin blog_card(image, date, title, text)
+    div.blog_card
+        div.preview
+            img(src=image, alt=title)
+        div.text
+            span.date= date 
+            strong= title
+            span.text= text
+            a(href="index.html") Читать статью
+
+mixin catalog_card(image, title)
+    a(href="index.html").category_card
+        img(src=image, alt=title)
+        span= title
+
+mixin excursion_card(image, title, price)
+    div.excursion_card
+        div.preview
+            div.tags
+                span Новинка
+            img(src=image, alt=title).preview
+            span.season Весна, Лето
+            div.type
+                img(src="images/card_train.svg", alt="Автобус")
+
+        div.description
+            div.text
+                span.title= title
+                span.city #[a(href="index.html") из Н.Новгорода, ]автобус, 8-9 часов
+                span.text Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...
+                div.type
+                    img(src="images/card_train.svg", alt="Автобус")
+                    span Автобусный тур
+            div.details
+                div.difficulty
+                    span.note Сложность
+                    div.stars
+                        div.filled
+                        div.filled
+                        div.empty
+                        div.empty
+                        div.empty
+                div.tags
+                    span.note Проживание и комфорт
+                    div.list
+                        span Простой
+                        span Завтрак
+
+        div.order
+            div.wrap
+                span.price= price
+                div.period
+                    div.days
+                        img(src="images/card_sun.svg")
+                        span 3 дня
+                    div.nights
+                        img(src="images/card_moon.svg")
+                        span 2 ночи
+                div.dates
+                    span.note Даты туров
+                    span.dates 1—3 мая
+                    a(href="index.html").more +20 дат
+            a(href="index.html").button Смотреть тур
+
+mixin hotel_card(image, title, price)
+    div.hotel_card
+        div.swiper
+            div.swiper-wrapper
+                div.swiper-slide: img(src="images/1.webp")
+                div.swiper-slide: img(src="images/1.webp")
+                div.swiper-slide: img(src="images/1.webp")
+                div.swiper-slide: img(src="images/1.webp")
+                div.swiper-slide: img(src="images/1.webp")
+            div.swiper-pagination
+
+        div.description
+            div.text
+                span.title= title
+                span.city #[a(href="index.html") Гагра, ул Бостонжана, д.15]
+                div.inprice
+                    span В стоимость включено:
+                    div.list
+                        img(src="images/hotel_card_icon_1.svg", alt=" ")
+                        img(src="images/hotel_card_icon_2.svg", alt=" ")
+                        img(src="images/hotel_card_icon_3.svg", alt=" ")
+                        img(src="images/hotel_card_icon_4.svg", alt=" ")
+            div.details
+                span.note Проживание и комфорт
+
+                div.row
+                    div.stars
+                        div.filled
+                            include ../../../images/hotel_card_star.svg
+                        div.filled
+                            include ../../../images/hotel_card_star.svg
+                        div.filled
+                            include ../../../images/hotel_card_star.svg
+                        div.filled
+                            include ../../../images/hotel_card_star.svg
+                        div.empty
+                            include ../../../images/hotel_card_star.svg
+                    div.tags
+                        span Завтрак
+
+        div.order
+            div.wrap
+                span.price= price
+                div.period
+                    div.days
+                        img(src="images/card_sun.svg")
+                        span 3 дня
+                    div.nights
+                        img(src="images/card_moon.svg")
+                        span 2 ночи
+                div.dates
+                    span.note Даты туров
+                    span.dates 1—3 мая
+                    a(href="index.html").more +20 дат
+            a(href="index.html").button Смотреть отель
+
+mixin air_card(price)
+    div.air_card
+        div.air_details
+            div.logotypes
+                img(src="images/air_card_logotype_1.svg", alt="Победа")
+                img(src="images/air_card_logotype_2.webp", alt="Победа")
+            div.tags
+                div.clock: img(src="images/air_card_clock.svg")
+                div.moon: img(src="images/air_card_moon.svg")
+                div.man: img(src="images/air_card_man.svg")
+                div.share: img(src="images/air_card_share.svg")
+            div.start
+                h2 19:10
+                span Москва #[br]Ср, 16 апреля
+            div.airline
+                div.icons
+                    img(src="images/air_card_airplane.svg")
+                    span.time В пути: 11 ч 20 м
+                    img(src="images/air_card_airplane.svg")
+                div.lines
+                    div.line_start
+                    div.line_end
+                div.abbr
+                    span VKO
+                    span IST
+                    span ORY
+            div.end
+                h2 20:30
+                span Москва #[br]Пт, 18 апреля
+            div.more_details
+                div.more_caption
+                    span Детали перелета
+                    img(src="images/air_card_details_arrow.svg")
+                div.more_content
+                    div.overflow
+                        div.wrap
+                            div.way
+                                div.part
+                                    div.icons
+                                        img(src="images/air_card_airplane2.svg")
+                                        hr
+                                        img(src="images/air_card_dot.svg")
+                                    div.text
+                                        div.city
+                                            div.row
+                                                span.time 19:10
+                                                span.date Ср, 16 апреля
+                                            span.city Москва, Россия
+                                            span.airport Внуково, VKO
+                                        div.distance
+                                            div.row
+                                                span.distance 1 915 км
+                                                span.time В пути 3 ч 20 мин
+                                            div.menu
+                                                img(src="images/air_card_menu.svg")
+                                                span Меню: Снэк
+                                        div.city
+                                            div.row
+                                                span.time 20:30
+                                                span.date Чт, 17 апреля
+                                            span.city Стамбул, ОАЭ
+                                            span.airport Стамбул Новый аэропорт, IST
+                                div.transfer
+                                    img(src="images/air_card_transfer.svg")
+                                    span Пересадка: 13 ч 30 мин
+                                div.company
+                                    div.row
+                                        img(src="/images/air_card_logotype_2.webp")
+                                        span.model C J2 73 
+                                        span Аэрофлот, Российские авиалинии
+                                    span Airbus A320
+                                div.part
+                                    div.icons
+                                        img(src="images/air_card_airplane2.svg")
+                                        hr
+                                        img(src="images/air_card_dot.svg")
+                                    div.text
+                                        div.city
+                                            div.row
+                                                span.time 19:10
+                                                span.date Ср, 16 апреля
+                                            span.city Москва, Россия
+                                            span.airport Внуково, VKO
+                                        div.distance
+                                            div.row
+                                                span.distance 1 915 км
+                                                span.time В пути 3 ч 20 мин
+                                            div.menu
+                                                img(src="images/air_card_menu.svg")
+                                                span Меню: Снэк
+                                        div.city
+                                            div.row
+                                                span.time 20:30
+                                                span.date Чт, 17 апреля
+                                            span.city Стамбул, ОАЭ
+                                            span.airport Стамбул Новый аэропорт, IST
+                            div.luggage
+                                strong Багаж:
+                                ul
+                                    li.tick 
+                                        img(src="images/air_card_tick.svg").bullet
+                                        span Ручная кладь 1×7 кг
+                                        span.right 50×25×37 см
+                                    li.cross 
+                                        img(src="images/air_card_cross.svg").bullet
+                                        span Багаж оплачивается отдельно
+                                        img(src="images/air_card_info.svg").info
+                                    li.tick 
+                                        img(src="images/air_card_tick.svg").bullet
+                                        span Обмен платный
+                                        img(src="images/air_card_info.svg").info
+                                    li.cross 
+                                        img(src="images/air_card_cross.svg").bullet
+                                        span Без возврата
+                                        img(src="images/air_card_info.svg").info
+                            button Выбрать
+
+        div.air_total
+            div.price
+                span Цена
+                h2= price
+            div.tag Может подойти
+            label.bag
+                span Багаж&nbsp;
+                span.blue +10 000 ₽
+                input(type="checkbox", checked)
+                div.tumbler
+            button Выбрать
+
+mixin air_card_choosen
+    div.air_card_choosen
+        div.air_date
+            div.date
+                strong 16
+                span апреля
+        div.air_details
+            div.logotypes
+                img(src="images/air_card_logotype_1.svg", alt="Победа")
+                img(src="images/air_card_logotype_2.webp", alt="Победа")
+            div.start
+                h2 19:10
+                span Москва #[br]Ср, 16 апреля
+            div.airline
+                div.icons
+                    img(src="images/air_card_airplane.svg")
+                    span.time В пути: 11 ч 20 м
+                    img(src="images/air_card_airplane.svg")
+                div.lines
+                    div.line_start
+                    div.line_end
+                div.abbr
+                    span VKO
+                    span IST
+                    span ORY
+            div.end
+                h2 20:30
+                span Москва #[br]Пт, 18 апреля
+            div.more_details
+                div.more_caption
+                    span Детали перелета
+                    img(src="images/air_card_details_arrow.svg")
+                div.more_content
+                    div.overflow
+                        div.wrap
+                            div.way
+                                div.part
+                                    div.icons
+                                        img(src="images/air_card_airplane2.svg")
+                                        hr
+                                        img(src="images/air_card_dot.svg")
+                                    div.text
+                                        div.city
+                                            div.row
+                                                span.time 19:10
+                                                span.date Ср, 16 апреля
+                                            span.city Москва, Россия
+                                            span.airport Внуково, VKO
+                                        div.distance
+                                            div.row
+                                                span.distance 1 915 км
+                                                span.time В пути 3 ч 20 мин
+                                            div.menu
+                                                img(src="images/air_card_menu.svg")
+                                                span Меню: Снэк
+                                        div.city
+                                            div.row
+                                                span.time 20:30
+                                                span.date Чт, 17 апреля
+                                            span.city Стамбул, ОАЭ
+                                            span.airport Стамбул Новый аэропорт, IST
+                                div.transfer
+                                    img(src="images/air_card_transfer.svg")
+                                    span Пересадка: 13 ч 30 мин
+                                div.company
+                                    div.row
+                                        img(src="/images/air_card_logotype_2.webp")
+                                        span.model C J2 73 
+                                        span Аэрофлот, Российские авиалинии
+                                    span Airbus A320
+                                div.part
+                                    div.icons
+                                        img(src="images/air_card_airplane2.svg")
+                                        hr
+                                        img(src="images/air_card_dot.svg")
+                                    div.text
+                                        div.city
+                                            div.row
+                                                span.time 19:10
+                                                span.date Ср, 16 апреля
+                                            span.city Москва, Россия
+                                            span.airport Внуково, VKO
+                                        div.distance
+                                            div.row
+                                                span.distance 1 915 км
+                                                span.time В пути 3 ч 20 мин
+                                            div.menu
+                                                img(src="images/air_card_menu.svg")
+                                                span Меню: Снэк
+                                        div.city
+                                            div.row
+                                                span.time 20:30
+                                                span.date Чт, 17 апреля
+                                            span.city Стамбул, ОАЭ
+                                            span.airport Стамбул Новый аэропорт, IST
+                            div.luggage
+                                strong Багаж:
+                                ul
+                                    li.tick 
+                                        img(src="images/air_card_tick.svg").bullet
+                                        span Ручная кладь 1×7 кг
+                                        span.right 50×25×37 см
+                                    li.cross 
+                                        img(src="images/air_card_cross.svg").bullet
+                                        span Багаж оплачивается отдельно
+                                        img(src="images/air_card_info.svg").info
+                                    li.tick 
+                                        img(src="images/air_card_tick.svg").bullet
+                                        span Обмен платный
+                                        img(src="images/air_card_info.svg").info
+                                    li.cross 
+                                        img(src="images/air_card_cross.svg").bullet
+                                        span Без возврата
+                                        img(src="images/air_card_info.svg").info
+                            button Выбрать
+
+        div.air_total
+            div.tags
+                div.man: img(src="images/air_card_man.svg")
+                div.moon: img(src="images/air_card_moon.svg")
+                div.edit: img(src="images/air_card_edit.svg")
+            div.price
+                h2 94 291 ₽
+
+mixin program_accordion(title)
+    div.program_accordion
+        div.caption 
+            span= title
+            img(src="images/accordion_arrow.svg")
+        div.content
+            div.overflow
+                div.wrap
+                    div.time
+                        span.time 10:30 
+                        div.details
+                            span Отправление Н. Новгород пл. Ленина. Трансфер в Копорье. Прибытие на место, общий сбор и заполнение необходимой документации.
+                    div.time
+                        span.time  12:30 
+                        div.details
+                            span Посещение мини зоопарка кролики, козлики, барашки, уточки…
+                            span Пешеходная экскурсия по экотропе "Копорье". Вас ждет небольшой пеший маршрут протяженностью около 2х км по лесной дороге, в ходе которого Вы встретите избушку Бабы Яги, сможете изучить различные плакаты с информацией о животных обитающих в этих лесах. Во время экскурсии Вы услышите рассказ от местного егеря о жизни пятнистых оленей: каким образом их разводят, как ведут себя в дикой природе, чем питаются. Сейчас в Копорье обитает около 80 особей пятнистого оленя.
+                            b Что нужно знать:
+                            ul
+                                li с собой обязательно привозите вкусные лакомства для местных жителей, хлеб, морковку, капусту и возможно в знак благодарности они дадут себя погладить и сфотографируются с вами на память. Ароматный чай из настоящего самовара в теплой палатке с печкой
+                                li Одевайтесь с учетом маршрута по лесу: удобные теплые вещи и обувь. Рекомендуем взять с собой чай в термосе и перекус, а также влажные спиртовые салфетки.
+                    div.time
+                        span.time  16:00
+                        div.details
+                            span Ориентировочное возвращение Н. Новгород пл Ленина
+
+mixin question_accordion(title)
+    div.question_accordion
+        div.caption 
+            span= title
+            img(src="images/accordion_arrow.svg")
+        div.content
+            div.overflow
+                div.wrap
+                    span Посещение мини зоопарка кролики, козлики, барашки, уточки…
+                    span Пешеходная экскурсия по экотропе "Копорье". Вас ждет небольшой пеший маршрут протяженностью около 2х км по лесной дороге, в ходе которого Вы встретите избушку Бабы Яги, сможете изучить различные плакаты с информацией о животных обитающих в этих лесах. Во время экскурсии Вы услышите рассказ от местного егеря о жизни пятнистых оленей: каким образом их разводят, как ведут себя в дикой природе, чем питаются. Сейчас в Копорье обитает около 80 особей пятнистого оленя.
+                    b Что нужно знать:
+                    ul
+                        li с собой обязательно привозите вкусные лакомства для местных жителей, хлеб, морковку, капусту и возможно в знак благодарности они дадут себя погладить и сфотографируются с вами на память. Ароматный чай из настоящего самовара в теплой палатке с печкой
+                        li Одевайтесь с учетом маршрута по лесу: удобные теплые вещи и обувь. Рекомендуем взять с собой чай в термосе и перекус, а также влажные спиртовые салфетки.
+
+mixin account_sidemenu(image, name, email, activeIndex, ...menus)
+    div.account_sidemenu
+        div.tourist
+            img(src=image, alt=name)
+            div.text
+                h4= name
+                a(href="index.html")= email
+        div.menu
+            each menu, index in menus
+                a(href="index.html", class=index == activeIndex ? 'active' : '')= menu
+        div.tours
+            div.title
+                h4 Новые направления
+                a(href="index.html") Смотреть все
+            div.list
+                -for(x=0; x<=4; x++)
+                    div.card
+                        img(src="images/23.webp", alt="Майские праздники в Москве").preview
+                        div.text
+                            div.tag
+                                img(src="images/card_train_blue.svg", alt="Экскурсионные туры")
+                                span Экскурсионные туры
+                            a(href="index.html").title Майские праздники в Москве
+                            div.price
+                                span.price 100 000 ₽
+                                span.oldprice 104 000 000 ₽
+
+mixin habitation_card
+    div.habitation_card
+
+        div.hotel_datails
+            img(src="images/1.webp").preview
+            div.description
+                div.text
+                    h5 Гостевой дом Villa Rosa (Абхазия)
+                    span.city Гагра, ул Бостонжана, д.15
+                    div.inprice
+                        span В стоимость включено:
+                        div.list
+                            img(src="images/hotel_card_icon_1.svg", alt=" ")
+                            img(src="images/hotel_card_icon_2.svg", alt=" ")
+                            img(src="images/hotel_card_icon_3.svg", alt=" ")
+                            img(src="images/hotel_card_icon_4.svg", alt=" ")
+                div.details
+                    span.note Проживание и комфорт
+                    div.row
+                        div.stars
+                            div.filled
+                                include ../../../images/hotel_card_star.svg
+                            div.filled
+                                include ../../../images/hotel_card_star.svg
+                            div.filled
+                                include ../../../images/hotel_card_star.svg
+                            div.filled
+                                include ../../../images/hotel_card_star.svg
+                            div.empty
+                                include ../../../images/hotel_card_star.svg
+                        span.tag Завтраки включены
+
+        div.room_datails
+            img(src="images/1.webp").preview
+            div.description
+                span.count 1 человек
+                h5 2-х местный Эконом
+                span.area Площадь 22 м2
+                div.advantages
+                    div.advantage
+                        img(src="images/room_card_icon_1.svg", alt="WiFi в номерах")
+                        span WiFi в номерах
+                    div.advantage
+                        img(src="images/room_card_icon_2.svg", alt="Собственная ванная")
+                        span Собственная ванная
+                    div.advantage
+                        img(src="images/room_card_icon_3.svg", alt="Кондиционер")
+                        span Кондиционер
+                    div.advantage
+                        img(src="images/room_card_icon_4.svg", alt="Мини-бар")
+                        span Мини-бар
+
+        div.common_details
+            h5 Проживание
+            div.list
+                div.checkin
+                    span.gray Заезд
+                    span вт, 01.04.2025
+                    span.gray с 14:00
+                div.leave
+                    span.gray Отъезд
+                    span вт, 08.04.2025
+                    span.gray до 12:00
+            div.tags
+                div.tag
+                    img(src="images/detail_card_icon_1.svg", alt="")
+                    span Завтраки включены
+                div.tag
+                    img(src="images/detail_card_icon_2.svg", alt="")
+                    span Бесплатная отмена
+            button Описание номера
+
+mixin map
+    div.map
+        div#map
+        div.dialog
+            h5 Нижний Новогород
+            div.adress
+                span.note Адрес:
+                span г. Нижний Новгород, улица Советская, 12Маринс Парк отель, 1 этаж, центральный вход
+            div.schedule
+                span.note Часы работы:
+                span Пн-Вс 9:00-20:00
+            div.row
+                div.agemcy
+                    span.note Для агентов:
+                    a(href="tel:+7 (831) 423-58-28") +7 (831) 423-58-28
+                    a(href="tel:+7 (831) 233-07-67") +7 (831) 233-07-67
+                    a(href="mailto:chudo-tur@bk.ru").email chudo-tur@bk.ru
+                div.tourist
+                    span.note Для туристов:
+                    a(href="tel:+7 (831) 413-11-23") +7 (831) 413-11-23
+                    a(href="tel:+7 (831) 277-51-31") +7 (831) 277-51-31
+                    a(href="mailto:chudo-tur@mail.ru").email chudo-tur@mail.ru
+            div.common
+                span.note Прием, экскурсионное обслуживание в Нижнем Новгороде:
+                a(href="tel:+7 (831) 413-72-76") +7 (831) 413-72-76
+                a(href="mailto:chudo-tur@bk.ru").email chudo-tur@bk.ru
+            button Связаться с нами
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

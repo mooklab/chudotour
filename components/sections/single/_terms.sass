@@ -1,0 +1,99 @@
+section.terms
+    margin-top: 68px
+    margin-bottom: 68px
+    +s(l)
+        margin-top: 50px
+        margin-bottom: 50px
+
+    h2
+        margin-bottom: 32px
+        +s(l)
+            margin-bottom: 20px
+
+    div.details
+        display: flex
+        align-items: start
+        gap: 50px
+        +s(m)
+            display: grid
+            grid-gap: 30px
+        div.place
+            display: grid
+            span.note
+                font-size: 14px
+                text-transform: uppercase
+                color: #435161
+                opacity: 0.5
+                margin-bottom: 3px
+                +s(l)
+                    font-size: 12px
+            a
+                font-weight: 700
+                text-decoration: underline
+                text-decoration-skip-ink: none
+                color: #d819a3
+                margin-top: 10px
+        div.duration
+            display: grid
+            span.note
+                font-weight: 400
+                font-size: 14px
+                line-height: 130%
+                text-transform: uppercase
+                color: #343a60
+                opacity: 0.5
+                margin-bottom: 10px
+            div.row
+                display: flex
+                align-items: center
+                gap: 18px
+            div.day,
+            div.night
+                display: flex
+                align-items: center
+                gap: 5px
+
+    div.inprice
+        margin-top: 30px
+        +s(l)
+            margin-top: 16px
+        h5
+            margin-bottom: 10px
+            text-transform: none
+        ul
+            li
+                position: relative
+                padding-left: 20px
+                &::after
+                    content: ''
+                    position: absolute
+                    top: 0.3em
+                    left: 0
+                    width: 12px
+                    height: 12px
+                    background-image: url(../images/single_terms_tick.svg)
+                    background-size: contain
+                    +s(l)
+                        top: 0.2em
+    div.separately
+        margin-top: 30px
+        +s(l)
+            margin-top: 16px
+        h5
+            margin-bottom: 10px
+            text-transform: none
+        ul
+            li
+                position: relative
+                padding-left: 20px
+                &::after
+                    content: ''
+                    position: absolute
+                    top: 0.3em
+                    left: 0
+                    width: 12px
+                    height: 12px
+                    background-image: url(../images/single_terms_cross.svg)
+                    background-size: contain
+                    +s(l)
+                        top: 0.2em

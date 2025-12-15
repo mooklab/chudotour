@@ -1,0 +1,99 @@
+section.main
+    div.container
+
+        h1
+            margin-bottom: 32px
+            +s(m)
+                margin-bottom: 16px
+
+            b
+                color: #D819A3
+
+        div.blocks
+            display: grid
+            grid-template-areas: 'Text Image' 'Advantages Image'
+            grid-template-columns: 3fr 2fr
+            grid-gap: 20px
+            +s(l)
+                grid-template-columns: repeat(2, 1fr)
+                grid-gap: 10px
+            +s(m)
+                grid-template-areas: 'Image' 'Text' 'Advantages'
+                grid-template-columns: 1fr
+
+            div.text
+                grid-area: Text
+                display: grid
+                padding: 50px
+                border-radius: 20px
+                background: #f2f5ff
+                +s(l)
+                    padding: 20px
+
+                h3
+                    font-weight: 500
+                    font-size: 28px
+                    line-height: 130%
+                    margin-bottom: 43px
+                    text-transform: unset
+                    +s(l)
+                        font-size: 16px
+                        margin-bottom: 12px
+                    b
+                        color: #3068f7
+                p
+                    opacity: 0.8
+                    &:not(:last-child)
+                        margin-bottom: 20px
+                        +s(l)
+                            margin-bottom: 10px
+
+            div.advanatges
+                grid-area: Advantages
+                display: grid
+                grid-template-columns: repeat(3, 1fr)
+                grid-gap: 20px
+                +s(l)
+                    grid-template-columns: repeat(2, 1fr)
+                    grid-gap: 10px
+
+                div.item
+                    display: grid
+                    grid-template-rows: 1fr max-content
+                    padding: 30px
+                    background: #3068f7
+                    border-radius: 20px
+                    height: 240px
+                    +s(l)
+                        height: 140px
+                        padding: 15px
+
+                    div.digit
+                        font-weight: 600
+                        font-size: 64px
+                        line-height: 110%
+                        text-transform: uppercase
+                        color: #fff
+                        +s(l)
+                            font-size: 26px
+
+                    span.note
+                        color: white
+
+                    &:last-child
+                        +s(l)
+                            grid-column: 2 span
+                            grid-template-rows: unset
+                            grid-template-columns: max-content 1fr
+                            align-items: center
+                            grid-gap: 10px
+                            height: auto
+
+            img
+                grid-area: Image
+                border-radius: 20px
+                width: 100%
+                height: 100%
+                object-fit: cover
+                +s(m)
+                    height: 250px

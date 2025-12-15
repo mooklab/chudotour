@@ -1,0 +1,11 @@
+extends ../components/common/pug/_layout.pug
+
+block links
+    link(rel="stylesheet", href="css/category.css")
+
+block content
+    include ../components/sections/category/_hotels_main.pug
+    include ../components/sections/category/_list_sort.pug
+    include ../components/sections/category/_hotels_list.pug
+    include ../components/sections/category/_pagination.pug
+    include ../components/sections/_expert.pug

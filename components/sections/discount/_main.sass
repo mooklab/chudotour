@@ -1,0 +1,51 @@
+section.main
+    margin-bottom: 68px
+    +s(l)
+        margin-bottom: 50px
+
+    div.content
+        display: grid
+        grid-template-columns: 2fr 3fr
+        grid-gap: 20px
+        +s(l)
+            grid-gap: 16px
+        +s(m)
+            grid-template-columns: 1fr
+
+        div.title
+            display: grid
+            align-content: start
+            grid-gap: 24px
+            +s(l)
+                grid-gap: 16px
+            span
+                opacity: 0.8
+
+        div.text
+
+            h5
+                margin-top: 30px
+                margin-bottom: 16px
+                +s(l)
+                    margin-top: 20px
+                    margin-bottom: 10px
+
+            ul
+                li
+                    position: relative
+                    padding-left: 24px
+                    &::before
+                        content: "•"
+                        position: absolute
+                        top: 0
+                        left: 0
+                        display: inline-block
+                        margin-left: 8px
+                        margin-right: 8px
+
+            button
+                margin-top: 32px
+                +s(l)
+                    margin-top: 20px
+                +s(s)
+                    width: 100%

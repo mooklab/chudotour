@@ -1,0 +1,25 @@
+include ../../common/pug/_mixins.pug
+
+mixin date(date, price)
+    div.swiper-slide
+        span= date
+        h5= price
+
+section.airhead
+    div.container
+
+        div.breadcrumbs
+            a(href="index.html") Главная - 
+            a(href="index.html") Каталог - 
+            span Авиабилет
+
+        h1 авиабилет
+        h3 Перелет туда-обратно
+
+        div.list
+            +air_card_choosen
+            +air_card_choosen
+
+        div.total
+            span Итого: 189 291 ₽
+            button Продолжить

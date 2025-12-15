@@ -1,0 +1,62 @@
+section.categories
+    margin-top: 40px
+    margin-bottom: 68px
+    +s(xl)
+        margin-top: 30px
+    +s(m)
+        margin-top: 20px
+        margin-bottom: 50px
+
+    div.breadcrumbs
+        font-size: 16px
+        line-height: 130%
+        margin-bottom: 32px
+        +s(xl)
+            margin-bottom: 30px
+        +s(m)
+            font-size: 14px
+            margin-bottom: 20px
+        a
+            font-weight: 400
+            color: #343a60
+        span
+            font-weight: 600
+            color: #3068f7
+
+    div.list
+        display: grid
+        grid-template-columns: repeat(12, 1fr)
+        grid-gap: 10px
+        +s(l)
+            grid-template-columns: repeat(6, 1fr)
+        +s(s)
+            grid-template-columns: 1fr
+
+        a.category_card
+            grid-column: 3 span
+            &:nth-child(5),
+            &:nth-child(6),
+            &:nth-child(7)
+                grid-column: 4 span
+
+            +s(l)
+                grid-column: 2 span
+                &:nth-child(5),
+                &:nth-child(6),
+                &:nth-child(7)
+                    grid-column: 2 span
+
+                &:nth-child(4),
+                &:nth-child(5)
+                    grid-column: 3 span
+
+            +s(s)
+                grid-column: 1 span
+                &:nth-child(5),
+                &:nth-child(6),
+                &:nth-child(7)
+                    grid-column: 1 span
+
+                &:nth-child(4),
+                &:nth-child(5)
+                    grid-column: 1 span

@@ -1,0 +1,32 @@
+include ../../common/pug/_mixins.pug
+
+mixin hotel_card(image)
+    a(href="index.html").single_hotel_card
+        div.preview
+            img(src=image)
+            div.stars
+                div.star
+                    include ../../../images/hotel_card_star.svg
+                div.star
+                    include ../../../images/hotel_card_star.svg
+                div.star
+                    include ../../../images/hotel_card_star.svg
+                div.star.empty
+                    include ../../../images/hotel_card_star.svg
+                div.star.empty
+                    include ../../../images/hotel_card_star.svg
+        div.text
+            strong Гостевой дом Villa Rosa
+            span Гагра, ул Бостонжана, д.15
+
+section.hotellist
+    div.container
+        h2 Похожие отели
+
+        div.swiper.hotels
+            div.swiper-wrapper
+                div.swiper-slide: +hotel_card('images/42.webp')
+                div.swiper-slide: +hotel_card('images/42.webp')
+                div.swiper-slide: +hotel_card('images/42.webp')
+                div.swiper-slide: +hotel_card('images/42.webp')
+            div.swiper-pagination

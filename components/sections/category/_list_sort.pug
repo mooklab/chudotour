@@ -1,0 +1,14 @@
+include ../../common/pug/_mixins.pug
+
+section.list_sort
+    div.container
+        span.note Найдено 1 000 туров
+        div.sort
+            span.note Сортировать по:
+            a(href="###").active По популярности
+            a(href="###") Дешевле
+            a(href="###") Дороже
+            a(href="###") Новинки
+        +select('list_sort', '', 'По популярности', 'Дешевле', 'Дороже', 'Новинки')
+            include ../../../images/select_arrow.svg
+        

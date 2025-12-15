@@ -1,0 +1,102 @@
+section.tours
+    margin-top: 80px
+    margin-bottom: 80px
+
+    div.container
+        display: grid
+        justify-content: center
+
+    div.text
+        display: grid
+        grid-gap: 32px
+        max-width: 780px
+        text-align: center
+        margin-bottom: 50px
+        +s(m)
+            margin-bottom: 32px
+            grid-gap: 24px
+
+    div.swiper.left,
+    div.swiper.right
+        width: 100%
+        min-width: 0
+        overflow: visible
+        grid-column: full
+        &.left
+            margin-bottom: 15px
+            +s(m)
+                margin-bottom: 10px
+
+        div.swiper-wrapper
+            transition-timing-function: linear !important
+
+        div.swiper-slide
+            width: max-content
+
+    div.swiper.tours
+        width: 100%
+        min-width: 0
+        height: max-content
+        margin-top: 60px
+        +s(m)
+            overflow: visible
+            margin-top: 40px
+
+        div.row
+            display: grid
+            align-items: center
+            grid-template-columns: max-content max-content
+            justify-content: space-between
+            margin-top: 30px
+            +s(m)
+                margin-top: 20px
+
+    a.category
+        position: relative
+        display: grid
+        align-items: center
+        grid-template-columns: max-content max-content
+        grid-gap: 10px
+        height: 70px
+        border-radius: 20px
+        box-shadow: 0 4px 20px 0 rgba(51, 51, 51, 0.08)
+        background: #fff
+        padding: 7px
+        padding-right: 20px
+        font-weight: 600
+        font-size: 16px
+        line-height: 130%
+        color: #242440
+        border-radius: 20px
+        z-index: 1
+        +s(m)
+            font-size: 12px
+            padding: 6px 7px
+            height: 60px
+
+        img
+            width: 60px
+            height: 60px
+            border-radius: 15px
+            +s(m)
+                width: 52px
+                height: 52px
+
+        &:hover
+            &::after
+                opacity: 1
+
+        &::after
+            content: ''
+            display: block
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            border-radius: 20px
+            background: linear-gradient(white, white) padding-box, linear-gradient(60deg, #D819A3, #6727C4, #4B69DD) border-box
+            border: 2px solid transparent
+            z-index: -1
+            opacity: 0
+            transition: all 0.3s

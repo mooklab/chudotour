@@ -1,0 +1,81 @@
+include ../../common/pug/_mixins.pug
+
+mixin category(image, title)
+    a(href="index.html").category
+        img(src=image, alt=title) 
+        span= title
+
+section.tours
+    div.container
+
+        div.text
+            h2 Путешествуйте вместе с нами! #[b У нас более 5000 направлений]
+            a(href="index.html").button Выбрать тур
+
+    div.swiper.tour.left
+        div.swiper-wrapper
+            div.swiper-slide: +category('images/categories/1.webp', 'Туры на 23 февраля')
+            div.swiper-slide: +category('images/categories/2.webp', 'ЖД туры')
+            div.swiper-slide: +category('images/categories/3.webp', 'В гости к Снегурочке')
+            div.swiper-slide: +category('images/categories/4.webp', 'Круизы')
+            div.swiper-slide: +category('images/categories/5.webp', 'Великий Устюг')
+            div.swiper-slide: +category('images/categories/6.webp', 'Праздник Ртвели в Грузии')
+            div.swiper-slide: +category('images/categories/7.webp', 'Туры выходного дня')
+            div.swiper-slide: +category('images/categories/1.webp', 'Туры на 23 февраля')
+            div.swiper-slide: +category('images/categories/2.webp', 'ЖД туры')
+            div.swiper-slide: +category('images/categories/3.webp', 'В гости к Снегурочке')
+            div.swiper-slide: +category('images/categories/4.webp', 'Круизы')
+            div.swiper-slide: +category('images/categories/5.webp', 'Великий Устюг')
+            div.swiper-slide: +category('images/categories/6.webp', 'Праздник Ртвели в Грузии')
+            div.swiper-slide: +category('images/categories/7.webp', 'Туры выходного дня')
+            div.swiper-slide: +category('images/categories/1.webp', 'Туры на 23 февраля')
+            div.swiper-slide: +category('images/categories/2.webp', 'ЖД туры')
+            div.swiper-slide: +category('images/categories/3.webp', 'В гости к Снегурочке')
+            div.swiper-slide: +category('images/categories/4.webp', 'Круизы')
+            div.swiper-slide: +category('images/categories/5.webp', 'Великий Устюг')
+            div.swiper-slide: +category('images/categories/6.webp', 'Праздник Ртвели в Грузии')
+            div.swiper-slide: +category('images/categories/7.webp', 'Туры выходного дня')
+
+    div.swiper.tour.right
+        div.swiper-wrapper
+            div.swiper-slide: +category('images/categories/1.webp', 'Туры на 23 февраля')
+            div.swiper-slide: +category('images/categories/2.webp', 'ЖД туры')
+            div.swiper-slide: +category('images/categories/3.webp', 'В гости к Снегурочке')
+            div.swiper-slide: +category('images/categories/4.webp', 'Круизы')
+            div.swiper-slide: +category('images/categories/5.webp', 'Великий Устюг')
+            div.swiper-slide: +category('images/categories/6.webp', 'Праздник Ртвели в Грузии')
+            div.swiper-slide: +category('images/categories/7.webp', 'Туры выходного дня')
+            div.swiper-slide: +category('images/categories/1.webp', 'Туры на 23 февраля')
+            div.swiper-slide: +category('images/categories/2.webp', 'ЖД туры')
+            div.swiper-slide: +category('images/categories/3.webp', 'В гости к Снегурочке')
+            div.swiper-slide: +category('images/categories/4.webp', 'Круизы')
+            div.swiper-slide: +category('images/categories/5.webp', 'Великий Устюг')
+            div.swiper-slide: +category('images/categories/6.webp', 'Праздник Ртвели в Грузии')
+            div.swiper-slide: +category('images/categories/7.webp', 'Туры выходного дня')
+            div.swiper-slide: +category('images/categories/1.webp', 'Туры на 23 февраля')
+            div.swiper-slide: +category('images/categories/2.webp', 'ЖД туры')
+            div.swiper-slide: +category('images/categories/3.webp', 'В гости к Снегурочке')
+            div.swiper-slide: +category('images/categories/4.webp', 'Круизы')
+            div.swiper-slide: +category('images/categories/5.webp', 'Великий Устюг')
+            div.swiper-slide: +category('images/categories/6.webp', 'Праздник Ртвели в Грузии')
+            div.swiper-slide: +category('images/categories/7.webp', 'Туры выходного дня')
+
+    div.container
+        div.swiper.tours
+            div.swiper-wrapper
+                div.swiper-slide: +tour_card('images/2.webp', 'Круизы', 'из Нижнего Новгорода', 'от 30 900 ₽')
+                div.swiper-slide: +tour_card('images/2.webp', 'Круизы', 'из Нижнего Новгорода', 'от 30 900 ₽')
+                div.swiper-slide: +tour_card('images/2.webp', 'Круизы', 'из Нижнего Новгорода', 'от 30 900 ₽')
+                div.swiper-slide: +tour_card('images/2.webp', 'Круизы', 'из Нижнего Новгорода', 'от 30 900 ₽')
+                div.swiper-slide: +tour_card('images/2.webp', 'Круизы', 'из Нижнего Новгорода', 'от 30 900 ₽')
+                div.swiper-slide: +tour_card('images/2.webp', 'Круизы', 'из Нижнего Новгорода', 'от 30 900 ₽')
+                div.swiper-slide: +tour_card('images/2.webp', 'Круизы', 'из Нижнего Новгорода', 'от 30 900 ₽')
+                div.swiper-slide: +tour_card('images/2.webp', 'Круизы', 'из Нижнего Новгорода', 'от 30 900 ₽')
+                div.swiper-slide: +tour_card('images/2.webp', 'Круизы', 'из Нижнего Новгорода', 'от 30 900 ₽')
+            div.row
+                a(href="index.html").button.hollow Смотреть все туры
+                div.swiper-navigation
+                    div.arrow
+                        include ../../../images/swiper_arrow.svg
+                    div.arrow
+                        include ../../../images/swiper_arrow.svg

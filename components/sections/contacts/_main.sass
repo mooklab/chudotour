@@ -1,0 +1,39 @@
+section.main
+    div.container
+
+        h1
+            margin-bottom: 32px
+            +s(m)
+                margin-bottom: 16px
+
+        div.requisite
+            display: grid
+            grid-gap: 24px
+            max-width: 1343px
+            margin-top: 68px
+            margin-bottom: 68px
+            +s(l)
+                margin-top: 50px
+                margin-bottom: 50px
+            div.table
+                display: grid
+                grid-template-columns: repeat(2, 1fr)
+                border: 1px solid #4b68dd60
+                border-radius: 10px
+                strong
+                    display: block
+                    font-weight: 600
+                    padding: 20px
+                    border-right: 1px solid #4b68dd60
+                    border-bottom: 1px solid #4b68dd60
+                span
+                    display: grid
+                    align-items: center
+                    padding: 20px
+                    border-bottom: 1px solid #4b68dd60
+
+                & > *
+                    &:nth-last-child(1)
+                        border-bottom: unset
+                    &:nth-last-child(2)
+                        border-bottom: unset

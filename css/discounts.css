@@ -1,0 +1,102 @@
+section.main {
+  margin-bottom: 68px;
+}
+@media (max-width: 1280px) {
+  section.main {
+    margin-bottom: 50px;
+  }
+}
+section.main div.container div.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+section.main div.container div.title a {
+  font-weight: 700;
+  text-decoration: underline;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: #3068f7;
+}
+section.main div.container div.list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+}
+@media (max-width: 1280px) {
+  section.main div.container div.list {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+}
+@media (max-width: 960px) {
+  section.main div.container div.list {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px 10px;
+  }
+}
+@media (max-width: 480px) {
+  section.main div.container div.list {
+    grid-template-columns: 1fr;
+  }
+}
+section.main div.container div.list a.discount img {
+  width: 100%;
+  border-radius: 20px;
+  aspect-ratio: 1/1;
+  margin-bottom: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 1280px) {
+  section.main div.container div.list a.discount img {
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 640px) {
+  section.main div.container div.list a.discount img {
+    height: 240px;
+    aspect-ratio: unset;
+  }
+}
+section.main div.container div.list a.discount h5 {
+  margin-bottom: 16px;
+}
+@media (max-width: 1280px) {
+  section.main div.container div.list a.discount h5 {
+    margin-bottom: 10px;
+  }
+}
+section.main div.container div.list a.discount span.excerpt {
+  display: block;
+  color: rgba(52, 58, 96, 0.4745098039);
+  margin-bottom: 24px;
+}
+@media (max-width: 1280px) {
+  section.main div.container div.list a.discount span.excerpt {
+    margin-bottom: 14px;
+  }
+}
+section.main div.container div.list a.discount span.excerpt b {
+  color: #343a60;
+}
+section.main div.container div.list a.discount span.date {
+  display: inline-block;
+  padding: 6px 10px;
+  color: #3068f7;
+  border-radius: 5px;
+  background: rgba(48, 104, 247, 0.0666666667);
+}
+section.main div.container button.more {
+  background: #fff5fc;
+  color: #d819a3;
+  margin: 40px auto 0;
+}/*# sourceMappingURL=discounts.css.map */

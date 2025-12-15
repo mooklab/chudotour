@@ -1,0 +1,175 @@
+section.reviews
+    background: #3068f7
+    padding-top: 90px
+    padding-bottom: 90px
+    +s(m)
+        padding-top: 30px
+        padding-bottom: 30px
+
+    div.container
+        display: grid
+        grid-template-columns: 360px 360px 1fr
+        grid-gap: 14px
+        +s(xl)
+            grid-gap: 10px
+            grid-template-columns: repeat(4, 1fr)
+        +s(l)
+            grid-template-columns: repeat(2, 1fr)
+
+        div.yandex,
+        div.gis
+            display: grid
+            grid-template-rows: max-content 1fr
+            grid-gap: 13px
+            div.subscribers
+                display: grid
+                align-items: center
+                grid-template-columns: max-content 1fr
+                grid-gap: 13px
+                border-radius: 13px
+                height: 54px
+                box-shadow: 0 5px 26px 0 rgba(51, 51, 51, 0.08)
+                background: #fff
+                padding: 0 16px
+                +s(l)
+                    grid-gap: 6px
+                    height: 42px
+                    padding: 0 8px
+
+                img
+                    width: 32px
+                    height: 32px
+                    +s(l)
+                        width: 22px
+                        height: 22px
+
+                span
+                    display: grid
+                    grid-template-columns: max-content max-content
+                    align-items: center
+                    justify-content: center
+                    border-radius: 10px
+                    height: 44px
+                    background: #f2f8ff
+                    text-align: center
+                    font-weight: 700
+                    font-size: 16px
+                    line-height: 143%
+                    color: #7f8999
+                    +s(l)
+                        height: 32px
+                    +s(m)
+                        font-size: 10px
+                    b
+                        color: #3068f7
+            div.rating
+                display: grid
+                grid-template-rows: 1fr max-content
+                grid-gap: 50px
+                background: white
+                border-radius: 13px
+                box-shadow: inset 0 0 0 3px #ebedf0
+                padding: 30px
+                +s(l)
+                    padding: 20px
+
+                img.logotype
+                    height: 53px
+                    +s(l)
+                        height: 32px
+
+                div.overall
+                    display: grid
+                    grid-template-columns: max-content 1fr
+                    align-items: center
+                    grid-gap: 15px
+                    +s(m)
+                        grid-template-columns: 1fr
+                        grid-gap: 10px
+
+                    span.digit
+                        font-weight: 900
+                        font-size: 52px
+                        line-height: 110%
+                        color: #343a60
+                        +s(l)
+                            font-size: 44px
+
+                    div.reviews_count
+                        display: grid
+                        grid-gap: 7px
+                        +s(l)
+                            grid-gap: 4px
+
+                        div.stars
+                            display: grid
+                            grid-auto-flow: column
+                            grid-auto-columns: max-content
+                            grid-gap: 3px
+                            +s(l)
+                                grid-gap: 2px
+
+                            img
+                                width: 20px
+                                +s(l)
+                                    width: 16px
+
+                        span
+                            font-weight: 400
+                            font-size: 18px
+                            line-height: 135%
+                            color: #343a60
+                            +s(l)
+                                font-size: 14px
+                                line-height: 152%
+
+    div.swiper
+        width: 100%
+        min-width: 0
+        margin-left: 16px
+        +s(xl)
+            margin-left: unset
+            grid-column: 2 span
+
+        div.swiper-wrapper
+            height: max-content
+
+        div.swiper-navigation
+            justify-content: end
+            +s(s)
+                order: 2
+            div.arrow
+                border-color: white
+                svg
+                    path
+                        fill: white
+
+                &:hover
+                    background: white
+                    svg
+                        path
+                            fill: #3068f7
+
+        div.naviagtion
+            display: grid
+            grid-template-columns: max-content max-content 1fr
+            align-items: center
+            grid-gap: 10px
+            margin-top: 32px
+            +s(s)
+                grid-template-columns: 1fr max-content
+                margin-top: 15px
+
+            button.hollow
+                border-color: white
+                color: white
+                +s(s)
+                    justify-self: start
+                &:hover
+                    border-color: #d819a3
+
+            button:not(.hollow)
+                +s(s)
+                    order: 3
+                    grid-column: 2 span
+                    width: 100%

@@ -1,0 +1,234 @@
+section.bonuses
+    margin-top: 30px
+    margin-bottom: 68px
+    +s(l)
+        margin-bottom: 50px
+
+    div.container
+        display: grid
+        align-items: start
+        grid-template-columns: max-content 1fr
+        grid-gap: 50px
+        +s(l)
+            display: block
+
+        div.account_page
+            width: 100%
+
+            h1
+                margin-bottom: 32px
+
+            ul
+                li
+                    position: relative
+                    padding-left: 24px
+                    &::before
+                        content: "•"
+                        position: absolute
+                        top: 0
+                        left: 0
+                        display: inline-block
+                        margin-left: 8px
+                        margin-right: 8px
+
+            div.graph
+                margin-bottom: 42px
+                border-radius: 20px
+                padding: 25px 30px
+                background: #f2f5ff
+                +s(l)
+                    margin-bottom: 34px
+                    padding: 20px
+
+                div.status
+                    display: flex
+                    justify-content: space-between
+                    margin-bottom: 15px
+                    +s(l)
+                        margin-bottom: 10px
+
+                    span.level
+                        font-weight: 600
+                        font-size: 20px
+                        line-height: 130%
+                        text-transform: uppercase
+                        color: #3068f7
+
+                    span.count
+                        font-weight: 600
+                        font-size: 20px
+                        line-height: 130%
+                        color: #343a60
+
+                div.details
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+                    margin-bottom: 30px
+                    +s(l)
+                        margin-bottom: 24px
+                    +s(m)
+                        display: grid
+                        grid-gap: 12px
+
+                    div
+                        display: flex
+                        align-items: center
+                        gap: 15px
+                    span.type
+                        border-radius: 3px
+                        background: rgba(14, 171, 105, 0.1)
+                        font-weight: 500
+                        font-size: 12px
+                        line-height: 130%
+                        color: #0eab69
+                        padding: 2px 10px
+                    span.note
+                        opacity: 0.4
+
+                div.discount
+                    div.percents
+                        display: flex
+                        justify-content: space-between
+                        margin-bottom: 15px
+                        +s(l)
+                            margin-bottom: 10px
+
+                        span
+                            font-weight: 700
+                            color: #d819a3
+                    div.track
+                        position: relative
+                        width: 100%
+                        height: 10px
+                        border-radius: 5px
+                        margin-bottom: 15px
+                        background: #343a6010
+                        div.thumb
+                            position: absolute
+                            display: block
+                            top: 0
+                            left: 0
+                            height: 100%
+                            background: #d819a3
+                            border-radius: 5px
+
+            div.description
+                display: grid
+                margin-top: 42px
+                margin-bottom: 24px
+                +s(l)
+                    margin-top: 34px
+                    margin-bottom: 20px
+                h5
+                    margin-bottom: 16px
+                    +s(l)
+                        margin-bottom: 12px
+                span.blue
+                    font-weight: 500
+                    color: #3068f7
+                    margin-bottom: 16px
+                    +s(l)
+                        margin-bottom: 10px
+
+            div.advantages
+                display: grid
+                align-items: start
+                grid-template-columns: repeat(3, 1fr)
+                grid-gap: 30px 80px
+                border-radius: 20px
+                background: #f2f5ff
+                padding: 40px
+                margin-top: 24px
+                margin-bottom: 50px
+                +s(l)
+                    grid-gap: 20px
+                    padding: 20px
+                    margin-top: 20px
+                    margin-bottom: 34px
+                +s(m)
+                    grid-template-columns: repeat(2, 1fr)
+                div.advantage
+                    display: grid
+                    img
+                        margin-bottom: 30px
+                        +s(l)
+                            margin-bottom: 12px
+                    strong
+                        margin-bottom: 16px
+                        font-weight: 600
+                        +s(l)
+                            margin-bottom: 10px
+                    span
+                        opacity: 0.8
+
+            div.how
+                margin-top: 50px
+                margin-bottom: 50px
+                +s(l)
+                    margin-top: 34px
+                    margin-bottom: 30px
+                h5
+                    margin-bottom: 16px
+                    +s(l)
+                        margin-bottom: 12px
+
+            div.levels
+                margin-top: 50px
+                margin-bottom: 50px
+                +s(l)
+                    margin-top: 30px
+                    margin-bottom: 30px
+
+                h5
+                    margin-bottom: 16px
+                    +s(l)
+                        margin-bottom: 12px
+
+                div.list
+                    display: grid
+                    grid-template-columns: repeat(3, 1fr)
+                    grid-gap: 30px
+                    margin-bottom: 18px
+                    +s(l)
+                        grid-gap: 10px
+                        margin-bottom: 12px
+                    +s(s)
+                        grid-template-columns: 1fr
+
+                    div.level
+                        display: grid
+                        border-radius: 20px
+                        padding: 20px 30px
+                        background: #f2f5ff
+                        +s(l)
+                            padding: 15px
+
+                        span.note
+                            opacity: 0.5
+                            margin-bottom: 8px
+                            +s(l)
+                                margin-bottom: 5px
+
+                        strong
+                            font-weight: 600
+                            text-transform: uppercase
+                            color: #3068f7
+                            margin-bottom: 12px
+                            +s(l)
+                                margin-bottom: 10px
+
+                        p
+                            opacity: 0.8
+                i
+                    opacity: 0.7
+
+            div.conditions
+                margin-top: 50px
+                +s(l)
+                    margin-top: 30px
+
+                h5
+                    margin-bottom: 16px
+                    +s(l)
+                        margin-bottom: 12px

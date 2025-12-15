@@ -1,0 +1,127 @@
+include ../../common/pug/_mixins.pug
+
+mixin form_nav
+    div(onclick="changeEditabilitySelect(this, 'edit')").edit
+        include ../../../images/account_edit.svg
+    div.save
+        button(onclick="event.preventDefault(); changeEditabilitySelect(this, 'save')")
+            img(src="images/checkbox_tick.svg")
+            span Сохранить
+        span(onclick="changeEditabilitySelect(this, 'cancel')") Отменить
+
+section.profile
+    div.container
+
+        +account_sidemenu('images/6.webp', 'Константинопольский Константин ', 'konstatin.konstantin123@gmail.com', '0', 'Мои данные', 'Бронирования', 'Документы', 'Выйти')
+
+        div.account_page
+            h1 Данные агентства
+
+            div.avatar
+                div.image
+                    img(src="images/account_photo.svg")
+                div.about
+                    div.link
+                        img(src="images/account_upload.svg")
+                        span Изменить
+                    span.note Размер аватара должен быть не больше 200х200 пикселей #[br]Форматы загрузки JPG, GIF и PNG
+
+
+            form.disabled
+                span.note Наименование орнанизации
+                div.row
+                    fieldset.input
+                        input(type="text", placeholder=" ", value="ООО «Чудесный отдых»")
+                    +form_nav
+
+            form.disabled
+                span.note Наименование компании
+                div.row
+                    fieldset.input
+                        input(type="text", placeholder=" ", value="ООО «Чудесный отдых»")
+                    +form_nav
+            
+            form.disabled
+                span.note ИНН
+                div.row
+                    fieldset.input
+                        input(type="text", placeholder=" ", value="13132232424423")
+                    +form_nav
+            
+            form.disabled
+                span.note Сайт
+                div.row
+                    fieldset.input
+                        input(type="text", placeholder=" ", value="https://chudo-tur.ru/")
+                    +form_nav
+            
+            form.disabled
+                span.note Юр. адрес
+                div.row
+                    fieldset.input
+                        input(type="text", placeholder=" ", value="603111, г.Нижний Новгород, ул.Школьная, д.26, кВ.195")
+                    +form_nav
+            
+            form.disabled
+                span.note Фактический адрес
+                div.row
+                    fieldset.input
+                        input(type="text", placeholder=" ", value="г. Нижний Новгород, ул. Советская, 12 Маринс Парк Отель,")
+                    +form_nav
+            
+            form.disabled
+                span.note Телефон
+                div.row
+                    fieldset.input
+                        input(type="text", placeholder=" ", value="(831) 423-58-28, 413-72-76")
+                    +form_nav
+            
+            form.disabled
+                span.note Email
+                div.row
+                    fieldset.input
+                        input(type="email", placeholder=" ", value="chudo-tur@bk.ru")
+                    +form_nav
+
+            h5 Контактное лицо
+
+            form.disabled
+                span.note ФИО
+                div.row
+                    fieldset.input
+                        input(type="text", placeholder=" ", value="Константинопольский Константин Константинович")
+                    +form_nav
+
+            form.disabled
+                span.note Телефон
+                div.row
+                    fieldset.input
+                        input(type="tel", placeholder=" ", value="+7 (963) 923-45-88")
+                    +form_nav
+
+            form.disabled
+                span.note Email
+                div.row
+                    fieldset.input
+                        input(type="email", placeholder=" ", value="konstatin.konstantin123@gmail.com")
+                    +form_nav
+           
+
+            h5 Изменить пароль
+            form.password
+                fieldset.password
+                    input(type="password", name="password", placeholder="Старый пароль", onChange="passwordChange()")
+                    div(onclick="showPassword(this)").eye
+                        img(src="images/password_visible.svg")
+                        img(src="images/password_hidden.svg")
+                fieldset.password
+                    input(type="password", name="confirm", placeholder="Новый пароль", onChange="passwordChange()")
+                    div(onclick="showPassword(this)").eye
+                        img(src="images/password_visible.svg")
+                        img(src="images/password_hidden.svg")
+                i Пароль может содержать от 6 до 50 символов: латинские буквы, цифры и спецсимволы
+                div.buttons
+                    button Сохранить
+                    a(onclick="this.closest('form').reset()") Отменить
+            
+            

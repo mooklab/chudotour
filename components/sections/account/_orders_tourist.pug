@@ -1,0 +1,65 @@
+include ../../common/pug/_mixins.pug
+
+mixin order(color)
+    tr
+        td(data-thead="Дата тура") 
+            span 14.12.2024-22.12.2024 (8 дней / 7 ночей)
+            i 21782-25122024
+        td(data-thead="Направление") Новогодние каникулы в Санкт-Петербурге
+        td(data-thead="ФИО туриста") Константинопольский Константин Константинович
+        td(data-thead="Статус")
+            if color == 'pink'
+                span.pink Подверждено, ожидает оплаты
+            if color == 'green'
+                span.green Подверждено, оплачено
+            if color == 'violet'
+                span.violet Не подтверждено
+            if color == 'blue'
+                span.blue Ожидает обработки
+            if color == 'black'
+                span.black Завершено
+        td
+            div.buttons
+                a(href="index.html").more Подробнее
+                if color == 'pink'
+                    button.pay Оплатить
+                else if color == 'green' || color == 'black'
+                    span.price 100 000 000 ₽
+                else
+                    div.empty
+                button.cancel Аннулировать
+
+section.orders
+    div.container
+
+        +account_sidemenu('images/6.webp', 'Константинопольский Константин ', 'konstatin.konstantin123@gmail.com', '1', 'Мои данные', 'Бронирования', 'Документы', 'Выйти')
+
+        div.account_page
+            h1 Бронирования
+
+            div.filter
+                div.tags
+                    span.tag.active Все (100)
+                    span.tag Текущие (100)
+                    span.tag Прошедшие (100)
+                +select('account_tour', 'Туры', 'Городская прогулка', 'Исторический обзор', 'Культурное погружение', 'Архитектурный тур', 'Экскурсия на пляж', 'Ночная прогулка', 'Гастрономический тур', 'Природный заповедник', 'Музейный маршрут', 'Круиз по реке')
+
+            table
+                thead
+                    tr
+                        th Дата тура
+                        th Направление
+                        th ФИО туриста
+                        th Статус
+                        th Оплата
+                tbody
+                    +order('pink')
+                    +order('green')
+                    +order('violet')
+                    +order('blue')
+                    +order('black')
+                    +order('pink')
+                    +order('green')
+                    +order('violet')
+
+            include _pagination.pug

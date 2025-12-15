@@ -1,0 +1,63 @@
+section.reports
+    margin-top: 30px
+    margin-bottom: 68px
+    +s(l)
+        margin-bottom: 50px
+
+    div.container
+        display: grid
+        align-items: start
+        grid-template-columns: max-content 1fr
+        grid-gap: 50px
+        +s(l)
+            display: block
+
+        div.account_page
+            width: 100%
+
+            h1
+                margin-bottom: 24px
+                +s(l)
+                    margin-bottom: 16px
+
+            div.tags
+                display: flex
+                gap: 10px
+                a
+                    background: #f2f5ff
+                    border-radius: 10px
+                    padding: 12px
+                    &.active
+                        background: #3068f7
+                        color: white
+                        font-weight: 600
+                    &:hover
+                        color: #3068f7
+
+            div.group
+                display: grid
+                grid-gap: 20px
+                margin-top: 32px
+                +s(l)
+                    margin-top: 30px
+
+                div.list
+                    a.item
+                        display: grid
+                        grid-template-columns: 1fr max-content
+                        grid-gap: 20px
+                        align-items: center
+                        padding: 20px 0
+                        border-top: 1px solid rgba(48, 104, 247, 0.2)
+                        span
+                            text-decoration: underline
+                            text-decoration-skip-ink: none
+                            color: #343a60
+                        img
+                            +s(l)
+                                width: 16px
+                                height: 16px
+
+                        &:hover
+                            span
+                                color: #3068f7
