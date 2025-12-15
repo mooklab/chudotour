@@ -1,0 +1,25 @@
+section.success {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+section.success div.container {
+  display: grid;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+section.success div.container img {
+  margin-bottom: 40px;
+  max-width: 100%;
+}
+section.success div.container h1 {
+  margin-bottom: 20px;
+}
+section.success div.container a {
+  text-decoration: underline;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: #3068f7;
+}/*# sourceMappingURL=success.css.map */

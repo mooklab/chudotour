@@ -707,7 +707,7 @@ section.order_details div.container {
 section.order_details div.container div.account_page {
   width: 100%;
 }
-section.order_details div.container div.account_page div.title {
+section.order_details div.container div.account_page > div.title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -715,17 +715,17 @@ section.order_details div.container div.account_page div.title {
   margin-bottom: 20px;
 }
 @media (max-width: 1280px) {
-  section.order_details div.container div.account_page div.title {
+  section.order_details div.container div.account_page > div.title {
     gap: 16px;
   }
 }
 @media (max-width: 640px) {
-  section.order_details div.container div.account_page div.title {
+  section.order_details div.container div.account_page > div.title {
     display: grid;
     justify-items: start;
   }
 }
-section.order_details div.container div.account_page div.title div.tag {
+section.order_details div.container div.account_page > div.title div.tag {
   white-space: nowrap;
   height: -webkit-max-content;
   height: -moz-max-content;
@@ -738,21 +738,21 @@ section.order_details div.container div.account_page div.title div.tag {
   margin-top: 10px;
 }
 @media (max-width: 1600px) {
-  section.order_details div.container div.account_page div.title div.tag {
+  section.order_details div.container div.account_page > div.title div.tag {
     margin-top: 8px;
   }
 }
 @media (max-width: 960px) {
-  section.order_details div.container div.account_page div.title div.tag {
+  section.order_details div.container div.account_page > div.title div.tag {
     margin-top: 6px;
   }
 }
 @media (max-width: 640px) {
-  section.order_details div.container div.account_page div.title div.tag {
+  section.order_details div.container div.account_page > div.title div.tag {
     margin-top: unset;
   }
 }
-section.order_details div.container div.account_page div.title div.tag.green {
+section.order_details div.container div.account_page > div.title div.tag.green {
   background: rgba(14, 171, 105, 0.1);
   color: #0eab69;
 }
@@ -844,12 +844,315 @@ section.order_details div.container div.account_page div.excursion_card button {
     width: 100%;
   }
 }
+section.order_details div.container div.account_page div.room_card {
+  display: grid;
+  -ms-flex-line-pack: start;
+      align-content: start;
+  grid-template-columns: 280px 1fr 240px;
+  border: 1px solid rgba(48, 104, 247, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  background: white;
+  max-width: 1048px;
+}
+@media (max-width: 1600px) {
+  section.order_details div.container div.account_page div.room_card {
+    grid-template-columns: 200px 1fr 200px;
+  }
+}
+@media (max-width: 1280px) {
+  section.order_details div.container div.account_page div.room_card {
+    grid-template-columns: 1fr;
+  }
+}
+section.order_details div.container div.account_page div.room_card div.swiper {
+  width: 100%;
+  aspect-ratio: 1/1;
+  min-width: 0;
+  border-radius: 20px;
+}
+@media (max-width: 1280px) {
+  section.order_details div.container div.account_page div.room_card div.swiper {
+    height: 182px;
+  }
+}
+section.order_details div.container div.account_page div.room_card div.swiper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+}
+section.order_details div.container div.account_page div.room_card div.swiper::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(75.5%, rgba(0, 0, 0, 0)), color-stop(79.71%, rgba(0, 0, 0, 0.3)), color-stop(93.87%, rgba(0, 0, 0, 0.7))), -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.16)), color-stop(22.47%, rgba(0, 0, 0, 0)));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 75.5%, rgba(0, 0, 0, 0.3) 79.71%, rgba(0, 0, 0, 0.7) 93.87%), linear-gradient(180deg, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0) 22.47%);
+}
+section.order_details div.container div.account_page div.room_card div.swiper div.swiper-pagination {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2px;
+  z-index: 2;
+}
+@media (max-width: 1600px) {
+  section.order_details div.container div.account_page div.room_card div.swiper div.swiper-pagination {
+    bottom: 15px;
+  }
+}
+section.order_details div.container div.account_page div.room_card div.swiper div.swiper-pagination span {
+  display: block;
+  border-radius: 6px;
+  width: 5px;
+  height: 2px;
+  -webkit-transition: width 0.3s;
+  transition: width 0.3s;
+  background: white;
+}
+section.order_details div.container div.account_page div.room_card div.swiper div.swiper-pagination span.swiper-pagination-bullet-active {
+  width: 23px;
+}
+section.order_details div.container div.account_page div.room_card div.description {
+  display: grid;
+  grid-template-rows: -webkit-max-content 1fr -webkit-max-content;
+  grid-template-rows: max-content 1fr max-content;
+  -ms-flex-line-pack: start;
+      align-content: start;
+  justify-items: start;
+  padding: 16px 20px;
+  padding-bottom: unset;
+}
+@media (max-width: 1280px) {
+  section.order_details div.container div.account_page div.room_card div.description {
+    padding: 15px;
+    padding-bottom: unset;
+  }
+}
+section.order_details div.container div.account_page div.room_card div.description div.title {
+  margin-bottom: 20px;
+}
+section.order_details div.container div.account_page div.room_card div.description div.title span.count {
+  border-radius: 3px;
+  padding: 0 10px;
+  background: rgba(14, 171, 105, 0.1);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 236%;
+  color: #0eab69;
+  margin-bottom: 5px;
+}
+section.order_details div.container div.account_page div.room_card div.description div.title h5 {
+  text-transform: unset;
+  margin-bottom: 5px;
+}
+section.order_details div.container div.account_page div.room_card div.description div.title span.area {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 130%;
+  color: #acacac;
+  margin-bottom: 24px;
+}
+section.order_details div.container div.account_page div.room_card div.description div.advantages {
+  display: grid;
+  -ms-flex-line-pack: start;
+      align-content: start;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5px;
+  margin-bottom: 30px;
+}
+section.order_details div.container div.account_page div.room_card div.description div.advantages div.advantage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+}
+section.order_details div.container div.account_page div.room_card div.description div.advantages div.advantage img {
+  width: 16px;
+  height: 16px;
+}
+section.order_details div.container div.account_page div.room_card div.description div.advantages div.advantage span {
+  font-size: 12px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+section.order_details div.container div.account_page div.room_card div.description div.link {
+  padding: 15px 20px;
+  cursor: pointer;
+  font-weight: 700;
+  text-decoration: underline;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: #16192c;
+  opacity: 0.67;
+  border-top: 1px solid rgba(48, 104, 247, 0.2);
+  width: calc(100% + 40px);
+  margin-left: -20px;
+}
+@media (max-width: 1280px) {
+  section.order_details div.container div.account_page div.room_card div.description div.link {
+    padding: 10px 20px;
+  }
+}
+section.order_details div.container div.account_page div.room_card div.description div.link:hover {
+  opacity: 1;
+}
+section.order_details div.container div.account_page div.room_card div.order {
+  display: grid;
+  grid-template-rows: 1fr -webkit-max-content;
+  grid-template-rows: 1fr max-content;
+  border-left: 1px solid rgba(75, 105, 221, 0.2);
+}
+section.order_details div.container div.account_page div.room_card div.order div.wrap {
+  padding: 20px;
+}
+@media (max-width: 1600px) {
+  section.order_details div.container div.account_page div.room_card div.order div.wrap {
+    padding: 12px 10px;
+  }
+}
+@media (max-width: 1280px) {
+  section.order_details div.container div.account_page div.room_card div.order div.wrap {
+    padding: 15px;
+  }
+}
+section.order_details div.container div.account_page div.room_card div.order span.price {
+  display: block;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 106%;
+  color: #d819a3;
+  margin-bottom: 10px;
+}
+@media (max-width: 1600px) {
+  section.order_details div.container div.account_page div.room_card div.order span.price {
+    font-size: 20px;
+  }
+}
+section.order_details div.container div.account_page div.room_card div.order div.period {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+@media (max-width: 960px) {
+  section.order_details div.container div.account_page div.room_card div.order div.period {
+    margin-bottom: 10px;
+  }
+}
+section.order_details div.container div.account_page div.room_card div.order div.period div.days,
+section.order_details div.container div.account_page div.room_card div.order div.period div.nights {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+}
+section.order_details div.container div.account_page div.room_card div.order div.period div.days span,
+section.order_details div.container div.account_page div.room_card div.order div.period div.nights span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #343a60;
+}
+@media (max-width: 1600px) {
+  section.order_details div.container div.account_page div.room_card div.order div.period div.days span,
+  section.order_details div.container div.account_page div.room_card div.order div.period div.nights span {
+    font-size: 12px;
+  }
+}
+section.order_details div.container div.account_page div.room_card div.order div.dates {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  margin-bottom: 14px;
+}
+section.order_details div.container div.account_page div.room_card div.order div.dates span {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 130%;
+  color: #16192c;
+  opacity: 0.5;
+}
+section.order_details div.container div.account_page div.room_card div.order div.dates hr {
+  display: block;
+  height: 1px;
+  width: 28px;
+  background: #3068f7;
+}
+section.order_details div.container div.account_page div.room_card div.order div.tags {
+  display: grid;
+  -ms-flex-line-pack: start;
+      align-content: start;
+  grid-gap: 3px;
+}
+section.order_details div.container div.account_page div.room_card div.order div.tags div.tag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+section.order_details div.container div.account_page div.room_card div.order div.tags div.tag img {
+  height: 27px;
+  width: 27px;
+}
+section.order_details div.container div.account_page div.room_card div.order div.tags div.tag span {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 130%;
+  color: #343a60;
+}
+section.order_details div.container div.account_page div.room_card div.order a.button {
+  border-radius: 0 0 20px 0;
+  width: 100%;
+  height: 50px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 130%;
+  color: #fff;
+  background: #3068f7;
+  padding: unset;
+  min-width: unset;
+}
+@media (max-width: 1600px) {
+  section.order_details div.container div.account_page div.room_card div.order a.button {
+    font-size: 14px;
+  }
+}
 section.order_details div.container div.account_page div.detail {
   display: grid;
   grid-gap: 20px;
 }
 section.order_details div.container div.account_page div.data {
   display: grid;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
   grid-template-columns: 1fr 406px;
   grid-gap: 20px;
   max-width: 1048px;
@@ -894,7 +1197,7 @@ section.order_details div.container div.account_page div.data div.tour_data div.
 }
 section.order_details div.container div.account_page div.data div.tour_data div.tbody div.tr {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-gap: 5px;
 }
 @media (max-width: 960px) {
@@ -911,7 +1214,7 @@ section.order_details div.container div.account_page div.data div.tour_data div.
   grid-template-columns: max-content 1fr;
   grid-gap: 5px;
   opacity: 0.8;
-  grid-column: 2 span;
+  grid-column: 3 span;
 }
 @media (max-width: 960px) {
   section.order_details div.container div.account_page div.data div.tour_data div.tbody div.tr span:first-child {
@@ -924,6 +1227,14 @@ section.order_details div.container div.account_page div.data div.tour_data div.
   display: block;
   width: 100%;
   border-bottom: 1px dashed #dddde4;
+}
+section.order_details div.container div.account_page div.data div.tour_data div.tbody div.tr span:last-child {
+  grid-column: 2 span;
+}
+@media (max-width: 960px) {
+  section.order_details div.container div.account_page div.data div.tour_data div.tbody div.tr span:last-child {
+    grid-column: 1 span;
+  }
 }
 section.order_details div.container div.account_page div.data div.tour_data div.tbody div.tr a {
   display: block;

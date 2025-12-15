@@ -1,0 +1,183 @@
+include ../../common/pug/_mixins.pug
+
+section.order_details
+    div.container
+
+        +account_sidemenu('images/6.webp', 'Константинопольский Константин ', 'konstatin.konstantin123@gmail.com', '1', 'Мои данные', 'Бронирования', 'Документы', 'Выйти')
+
+        div.account_page
+
+            div.title
+                h1 Заказ № 23379-10042025 от 23.09.2024 16:55
+                div.tag.green Подтвержден, оплачен
+
+            div.detail
+
+                div.excursion_card
+                    div.preview
+                        img(src="images/1.webp", alt="Майские праздники в Москве").preview
+                        span.season Весна, Лето
+
+                    div.description
+                        div.text
+                            span.title Майские праздники в Москве
+                            span.city #[a(href="index.html") из Н.Новгорода, ]автобус, 8-9 часов
+                            span.text Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...
+                            div.type
+                                img(src="images/card_train.svg", alt="Автобус")
+                                span Автобусный тур
+                            
+                        div.details
+                            div.difficulty
+                                span.note Сложность
+                                div.stars
+                                    div.filled
+                                    div.filled
+                                    div.empty
+                                    div.empty
+                                    div.empty
+                            div.tags
+                                span.note Проживание и комфорт
+                                div.list
+                                    span Простой
+                                    span Завтрак
+                            button Подробнее о туре
+
+                div.room_card
+                    div.swiper
+                        div.swiper-wrapper
+                            div.swiper-slide: img(src="images/1.webp")
+                            div.swiper-slide: img(src="images/1.webp")
+                            div.swiper-slide: img(src="images/1.webp")
+                            div.swiper-slide: img(src="images/1.webp")
+                            div.swiper-slide: img(src="images/1.webp")
+                        div.swiper-pagination
+                    div.description
+                        div.title
+                            span.count 1 человек
+                            h5 2-х местный Эконом
+                            span.area Площадь 22 м2
+                        div.advantages
+                            div.advantage
+                                img(src="images/room_card_icon_1.svg", alt="WiFi в номерах")
+                                span WiFi в номерах
+                            div.advantage
+                                img(src="images/room_card_icon_2.svg", alt="Собственная ванная")
+                                span Собственная ванная
+                            div.advantage
+                                img(src="images/room_card_icon_3.svg", alt="Кондиционер")
+                                span Кондиционер
+                            div.advantage
+                                img(src="images/room_card_icon_4.svg", alt="Мини-бар")
+                                span Мини-бар
+                    div.order
+                        div.wrap
+                            div.tags
+                                div.tag
+                                    img(src="images/detail_card_icon_1.svg", alt="")
+                                    span Завтраки включены
+                                div.tag
+                                    img(src="images/detail_card_icon_2.svg", alt="")
+                                    span Бесплатная отмена
+                        a(href="index.html").button Описание номера
+
+                div.data
+
+                    div.column
+
+                        div.tour_data
+                            div.tour
+                                h5 Ответственный менеджер
+                                div.tbody
+                                    div.tr
+                                        span Имя
+                                        span Константин
+                                    div.tr
+                                        span Фамилия
+                                        span Константинопольский
+                                    div.tr
+                                        span Телефон
+                                        span +7 (987) 000-00-00
+                                    div.tr
+                                        span Email
+                                        span chudotur123@gmail.com
+
+                        div.tour_data
+
+                            div.personal
+                                h5 Личные данные туриста
+                                div.tbody
+                                    div.tr
+                                        span Имя
+                                        span Константин
+                                    div.tr
+                                        span Фамилия
+                                        span Константинопольский
+                                    div.tr
+                                        span Дата рождения
+                                        span 23.12.1998
+                                    div.tr
+                                        span Пол
+                                        span Мужской
+                                    div.tr
+                                        span Телефон
+                                        span +7 (900) 677-87-87
+                                    div.tr
+                                        span Email
+                                        span info123@gmail.com
+                                    div.tr
+                                        span Вид документа
+                                        span Паспорт
+                                    div.tr
+                                        span Серия и номер
+                                        span 2345 234567
+                                    div.tr
+                                        span Гражданство
+                                        span РФ
+                                    div.tr
+                                        span Примечание турагенства
+                                        span Аллергия на орехи у туриста
+
+
+
+                    div.column
+
+                        div.documents_data
+                            h5 Документация
+                            div.list
+                                a(href="index.html") Подтверждение
+                                a(href="index.html") Посадочный талон
+                                a(href="index.html") Договор с туристом
+                        
+                div.results
+                    h5 Итого
+                    div.tbody
+                        div.tr
+                            span Стоимость номера
+                            span 100 000 ₽
+                        div.tr
+                            span Стоимость доп. услуг
+                            span 10 000 ₽
+                        div.tr
+                            span Скидка
+                            span -3 000 ₽
+                        div.tr
+                            span Всего к оплате
+                            span 107 000 ₽
+                        div.tr
+                            span Оплачено
+                            span 107 000 ₽
+                        div.tr
+                            span Комиссия
+                            span -3 000 ₽
+                    div.total
+                        div
+                            h5 Итого
+                            h5 107 000 ₽
+                        div
+                            span за 7 дней, 6 ночей
+                            span за 1 человек
+
+                button.cancel Аннулировать заказ
+
+            

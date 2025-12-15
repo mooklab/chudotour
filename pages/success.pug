@@ -1,0 +1,11 @@
+extends ../components/common/pug/_layout.pug
+
+block links
+    link(rel="stylesheet", href="css/success.css")
+
+block content
+    section.success
+        div.container
+            img(src="images/success.svg")
+            h1 Бронирование завершено!
+            span Подробная информация в #[a(href="index.html") Личном кабинете]

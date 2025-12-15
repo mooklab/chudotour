@@ -1,7 +1,7 @@
-section.order {
+section.order_tour {
   background: #F3F5F8;
 }
-section.order div.container {
+section.order_tour div.container {
   display: grid;
   grid-template-columns: 1fr 582px;
   grid-gap: 20px;
@@ -9,37 +9,37 @@ section.order div.container {
   margin-bottom: 68px;
 }
 @media (max-width: 1600px) {
-  section.order div.container {
+  section.order_tour div.container {
     grid-template-columns: 1fr 420px;
   }
 }
 @media (max-width: 1280px) {
-  section.order div.container {
+  section.order_tour div.container {
     grid-template-columns: 1fr 320px;
   }
 }
 @media (max-width: 960px) {
-  section.order div.container {
+  section.order_tour div.container {
     grid-template-columns: 1fr;
     margin-top: 20px;
     margin-bottom: unset;
   }
 }
-section.order div.container h1 {
+section.order_tour div.container h1 {
   grid-column: 2 span;
   margin-bottom: 22px;
 }
 @media (max-width: 960px) {
-  section.order div.container h1 {
+  section.order_tour div.container h1 {
     grid-column: 1 span;
     margin-bottom: unset;
   }
 }
-section.order div.container div.data {
+section.order_tour div.container div.data {
   display: grid;
   grid-gap: 20px;
 }
-section.order div.container div.data div.excursion_card {
+section.order_tour div.container div.data div.excursion_card {
   border: unset;
   -webkit-box-shadow: 0 0 0 1px #f1f3f7;
           box-shadow: 0 0 0 1px #f1f3f7;
@@ -48,14 +48,14 @@ section.order div.container div.data div.excursion_card {
   grid-template-columns: 200px 1fr;
 }
 @media (max-width: 1280px) {
-  section.order div.container div.data div.excursion_card {
+  section.order_tour div.container div.data div.excursion_card {
     grid-template-columns: 1fr;
   }
 }
-section.order div.container div.data div.excursion_card div.text span.city a {
+section.order_tour div.container div.data div.excursion_card div.text span.city a {
   display: inline;
 }
-section.order div.container div.data div.excursion_card div.text div.type {
+section.order_tour div.container div.data div.excursion_card div.text div.type {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -66,50 +66,50 @@ section.order div.container div.data div.excursion_card div.text div.type {
   border-radius: 5px;
 }
 @media (max-width: 640px) {
-  section.order div.container div.data div.excursion_card div.text div.type {
+  section.order_tour div.container div.data div.excursion_card div.text div.type {
     margin-top: 15px;
     margin-bottom: 15px;
   }
 }
-section.order div.container div.data div.excursion_card div.text div.type span {
+section.order_tour div.container div.data div.excursion_card div.text div.type span {
   display: block;
 }
-section.order div.container div.data div.excursion_card div.details {
+section.order_tour div.container div.data div.excursion_card div.details {
   width: 100%;
   grid-template-columns: -webkit-max-content 1fr -webkit-max-content;
   grid-template-columns: max-content 1fr max-content;
   padding-right: unset;
 }
 @media (max-width: 960px) {
-  section.order div.container div.data div.excursion_card div.details {
+  section.order_tour div.container div.data div.excursion_card div.details {
     padding: unset;
     grid-gap: 16px;
   }
 }
 @media (max-width: 640px) {
-  section.order div.container div.data div.excursion_card div.details {
+  section.order_tour div.container div.data div.excursion_card div.details {
     grid-template-columns: 1fr;
   }
 }
-section.order div.container div.data div.excursion_card div.details div.difficulty {
+section.order_tour div.container div.data div.excursion_card div.details div.difficulty {
   padding: 10px;
 }
 @media (max-width: 640px) {
-  section.order div.container div.data div.excursion_card div.details div.difficulty {
+  section.order_tour div.container div.data div.excursion_card div.details div.difficulty {
     padding-top: unset;
     padding-bottom: unset;
   }
 }
-section.order div.container div.data div.excursion_card div.details div.tags {
+section.order_tour div.container div.data div.excursion_card div.details div.tags {
   padding: 10px;
 }
 @media (max-width: 640px) {
-  section.order div.container div.data div.excursion_card div.details div.tags {
+  section.order_tour div.container div.data div.excursion_card div.details div.tags {
     padding-top: unset;
     padding-bottom: unset;
   }
 }
-section.order div.container div.data div.excursion_card button {
+section.order_tour div.container div.data div.excursion_card button {
   border-radius: 0 0 20px 0;
   min-width: 234px;
   height: 100%;
@@ -121,15 +121,15 @@ section.order div.container div.data div.excursion_card button {
   color: #fff;
 }
 @media (max-width: 640px) {
-  section.order div.container div.data div.excursion_card button {
+  section.order_tour div.container div.data div.excursion_card button {
     height: 40px;
     width: 100%;
   }
 }
-section.order div.container div.data div.habitation_data,
-section.order div.container div.data div.personal_data,
-section.order div.container div.data div.additional_data,
-section.order div.container div.data div.payment_data {
+section.order_tour div.container div.data div.habitation_data,
+section.order_tour div.container div.data div.personal_data,
+section.order_tour div.container div.data div.additional_data,
+section.order_tour div.container div.data div.payment_data {
   display: grid;
   grid-gap: 25px;
   padding: 30px;
@@ -139,18 +139,18 @@ section.order div.container div.data div.payment_data {
   max-width: 1048px;
 }
 @media (max-width: 1280px) {
-  section.order div.container div.data div.habitation_data,
-  section.order div.container div.data div.personal_data,
-  section.order div.container div.data div.additional_data,
-  section.order div.container div.data div.payment_data {
+  section.order_tour div.container div.data div.habitation_data,
+  section.order_tour div.container div.data div.personal_data,
+  section.order_tour div.container div.data div.additional_data,
+  section.order_tour div.container div.data div.payment_data {
     grid-gap: 15px;
     padding: 20px;
   }
 }
-section.order div.container div.data div.habitation_data h2,
-section.order div.container div.data div.personal_data h2,
-section.order div.container div.data div.additional_data h2,
-section.order div.container div.data div.payment_data h2 {
+section.order_tour div.container div.data div.habitation_data h2,
+section.order_tour div.container div.data div.personal_data h2,
+section.order_tour div.container div.data div.additional_data h2,
+section.order_tour div.container div.data div.payment_data h2 {
   font-weight: 600;
   font-size: 20px;
   line-height: 130%;
@@ -158,57 +158,57 @@ section.order div.container div.data div.payment_data h2 {
   color: #16192c;
 }
 @media (max-width: 1280px) {
-  section.order div.container div.data div.habitation_data h2,
-  section.order div.container div.data div.personal_data h2,
-  section.order div.container div.data div.additional_data h2,
-  section.order div.container div.data div.payment_data h2 {
+  section.order_tour div.container div.data div.habitation_data h2,
+  section.order_tour div.container div.data div.personal_data h2,
+  section.order_tour div.container div.data div.additional_data h2,
+  section.order_tour div.container div.data div.payment_data h2 {
     font-size: 16px;
   }
 }
-section.order div.container div.data div.habitation_data div.inputs,
-section.order div.container div.data div.personal_data div.inputs,
-section.order div.container div.data div.additional_data div.inputs,
-section.order div.container div.data div.payment_data div.inputs {
+section.order_tour div.container div.data div.habitation_data div.inputs,
+section.order_tour div.container div.data div.personal_data div.inputs,
+section.order_tour div.container div.data div.additional_data div.inputs,
+section.order_tour div.container div.data div.payment_data div.inputs {
   display: grid;
   grid-gap: 15px;
 }
 @media (max-width: 1280px) {
-  section.order div.container div.data div.habitation_data div.inputs,
-  section.order div.container div.data div.personal_data div.inputs,
-  section.order div.container div.data div.additional_data div.inputs,
-  section.order div.container div.data div.payment_data div.inputs {
+  section.order_tour div.container div.data div.habitation_data div.inputs,
+  section.order_tour div.container div.data div.personal_data div.inputs,
+  section.order_tour div.container div.data div.additional_data div.inputs,
+  section.order_tour div.container div.data div.payment_data div.inputs {
     grid-gap: 10px;
   }
 }
-section.order div.container div.data div.habitation_data div.tr,
-section.order div.container div.data div.personal_data div.tr,
-section.order div.container div.data div.additional_data div.tr,
-section.order div.container div.data div.payment_data div.tr {
+section.order_tour div.container div.data div.habitation_data div.tr,
+section.order_tour div.container div.data div.personal_data div.tr,
+section.order_tour div.container div.data div.additional_data div.tr,
+section.order_tour div.container div.data div.payment_data div.tr {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
   grid-gap: 15px;
 }
 @media (max-width: 1280px) {
-  section.order div.container div.data div.habitation_data div.tr,
-  section.order div.container div.data div.personal_data div.tr,
-  section.order div.container div.data div.additional_data div.tr,
-  section.order div.container div.data div.payment_data div.tr {
+  section.order_tour div.container div.data div.habitation_data div.tr,
+  section.order_tour div.container div.data div.personal_data div.tr,
+  section.order_tour div.container div.data div.additional_data div.tr,
+  section.order_tour div.container div.data div.payment_data div.tr {
     grid-gap: 10px;
   }
 }
 @media (max-width: 640px) {
-  section.order div.container div.data div.habitation_data div.tr,
-  section.order div.container div.data div.personal_data div.tr,
-  section.order div.container div.data div.additional_data div.tr,
-  section.order div.container div.data div.payment_data div.tr {
+  section.order_tour div.container div.data div.habitation_data div.tr,
+  section.order_tour div.container div.data div.personal_data div.tr,
+  section.order_tour div.container div.data div.additional_data div.tr,
+  section.order_tour div.container div.data div.payment_data div.tr {
     grid-auto-flow: unset;
   }
 }
-section.order div.container div.data div.personal_data label.checkbox {
+section.order_tour div.container div.data div.personal_data label.checkbox {
   margin-top: 5px;
 }
-section.order div.container div.data div.personal_data button {
+section.order_tour div.container div.data div.personal_data button {
   display: grid;
   grid-template-columns: repeat(2, -webkit-max-content);
   grid-template-columns: repeat(2, max-content);
@@ -224,17 +224,17 @@ section.order div.container div.data div.personal_data button {
   border: 1px solid transparent;
 }
 @media (max-width: 1280px) {
-  section.order div.container div.data div.personal_data button {
+  section.order_tour div.container div.data div.personal_data button {
     padding-left: 20px;
     padding-right: 20px;
   }
 }
-section.order div.container div.data div.personal_data button:hover {
+section.order_tour div.container div.data div.personal_data button:hover {
   border: 1px solid #3068f7;
   color: #3068f7;
 }
-section.order div.container div.data div.additional_data strong,
-section.order div.container div.data div.payment_data strong {
+section.order_tour div.container div.data div.additional_data strong,
+section.order_tour div.container div.data div.payment_data strong {
   display: block;
   font-weight: 500;
   line-height: 130%;
@@ -243,31 +243,31 @@ section.order div.container div.data div.payment_data strong {
   margin-bottom: 16px;
 }
 @media (max-width: 1280px) {
-  section.order div.container div.data div.additional_data strong,
-  section.order div.container div.data div.payment_data strong {
+  section.order_tour div.container div.data div.additional_data strong,
+  section.order_tour div.container div.data div.payment_data strong {
     margin-bottom: 10px;
   }
 }
-section.order div.container div.data div.additional_data div.list,
-section.order div.container div.data div.payment_data div.list {
+section.order_tour div.container div.data div.additional_data div.list,
+section.order_tour div.container div.data div.payment_data div.list {
   display: grid;
   grid-gap: 30px;
 }
-section.order div.container div.total {
+section.order_tour div.container div.total {
   display: grid;
   -ms-flex-line-pack: start;
       align-content: start;
   grid-gap: 20px;
 }
-section.order div.container div.total div.total_data,
-section.order div.container div.total div.total_tour,
-section.order div.container div.total div.total_price {
+section.order_tour div.container div.total div.total_data,
+section.order_tour div.container div.total div.total_tour,
+section.order_tour div.container div.total div.total_price {
   display: grid;
   background: white;
   padding: 20px;
   border-radius: 20px;
 }
-section.order div.container div.total strong {
+section.order_tour div.container div.total strong {
   font-weight: 600;
   font-size: 16px;
   line-height: 130%;
@@ -277,22 +277,22 @@ section.order div.container div.total strong {
   margin-bottom: 18px;
 }
 @media (max-width: 1280px) {
-  section.order div.container div.total strong {
+  section.order_tour div.container div.total strong {
     font-size: 14px;
     margin-bottom: 10px;
   }
 }
-section.order div.container div.total div.list {
+section.order_tour div.container div.total div.list {
   display: grid;
   grid-gap: 10px;
 }
-section.order div.container div.total div.total_data hr {
+section.order_tour div.container div.total div.total_data hr {
   background: #3068f7;
   -ms-flex-item-align: center;
       align-self: center;
   margin: unset;
 }
-section.order div.container div.total div.tr {
+section.order_tour div.container div.total div.tr {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -306,19 +306,19 @@ section.order div.container div.total div.tr {
   color: #343a60;
 }
 @media (max-width: 1280px) {
-  section.order div.container div.total div.tr {
+  section.order_tour div.container div.total div.tr {
     font-size: 12px;
     grid-gap: 10px;
   }
 }
-section.order div.container div.total div.tr span:first-child {
+section.order_tour div.container div.total div.tr span:first-child {
   opacity: 0.8;
 }
-section.order div.container div.total div.tr span:last-child {
+section.order_tour div.container div.total div.tr span:last-child {
   text-align: right;
   max-width: 60%;
 }
-section.order div.container div.total hr {
+section.order_tour div.container div.total hr {
   display: block;
   width: 100%;
   height: 1px;
@@ -327,11 +327,11 @@ section.order div.container div.total hr {
   margin-bottom: 20px;
 }
 @media (max-width: 1280px) {
-  section.order div.container div.total hr {
+  section.order_tour div.container div.total hr {
     margin-bottom: 10px;
   }
 }
-section.order div.container div.total a.red {
+section.order_tour div.container div.total a.red {
   font-weight: 700;
   font-size: 16px;
   line-height: 130%;
@@ -343,18 +343,18 @@ section.order div.container div.total a.red {
   margin-top: 8px;
 }
 @media (max-width: 1280px) {
-  section.order div.container div.total a.red {
+  section.order_tour div.container div.total a.red {
     font-size: 14px;
   }
 }
-section.order div.container div.total a.red:hover {
+section.order_tour div.container div.total a.red:hover {
   text-decoration: none;
 }
-section.order div.container div.total div.links {
+section.order_tour div.container div.total div.links {
   display: grid;
   grid-gap: 12px;
 }
-section.order div.container div.total div.links a.blue {
+section.order_tour div.container div.total div.links a.blue {
   display: block;
   font-weight: 700;
   font-size: 16px;
@@ -365,14 +365,14 @@ section.order div.container div.total div.links a.blue {
   color: #3068f7;
 }
 @media (max-width: 1280px) {
-  section.order div.container div.total div.links a.blue {
+  section.order_tour div.container div.total div.links a.blue {
     font-size: 14px;
   }
 }
-section.order div.container div.total div.links a.blue:hover {
+section.order_tour div.container div.total div.links a.blue:hover {
   text-decoration: none;
 }
-section.order div.container div.total div.question {
+section.order_tour div.container div.total div.question {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -381,11 +381,11 @@ section.order div.container div.total div.question {
           align-items: center;
   gap: 5px;
 }
-section.order div.container div.total div.question div.tooltip {
+section.order_tour div.container div.total div.question div.tooltip {
   position: relative;
   cursor: pointer;
 }
-section.order div.container div.total div.question div.tooltip div.tooltip_text {
+section.order_tour div.container div.total div.question div.tooltip div.tooltip_text {
   display: none;
   position: absolute;
   top: 0;
@@ -401,37 +401,37 @@ section.order div.container div.total div.question div.tooltip div.tooltip_text 
   text-align: left;
   z-index: 10;
 }
-section.order div.container div.total div.question div.tooltip:hover div.tooltip_text {
+section.order_tour div.container div.total div.question div.tooltip:hover div.tooltip_text {
   display: block;
 }
-section.order div.container div.total div.tr.total {
+section.order_tour div.container div.total div.tr.total {
   margin-top: 18px;
   margin-bottom: 24px;
 }
 @media (max-width: 1280px) {
-  section.order div.container div.total div.tr.total {
+  section.order_tour div.container div.total div.tr.total {
     margin-top: 10px;
     margin-bottom: 10px;
   }
 }
-section.order div.container div.total div.tr.total div {
+section.order_tour div.container div.total div.tr.total div {
   display: grid;
   -ms-flex-line-pack: end;
       align-content: end;
   grid-gap: 4px;
 }
-section.order div.container div.total div.tr.total div:first-child {
+section.order_tour div.container div.total div.tr.total div:first-child {
   font-weight: 600;
   font-size: 16px;
   line-height: 130%;
   color: #5b5b5b;
 }
 @media (max-width: 1280px) {
-  section.order div.container div.total div.tr.total div:first-child {
+  section.order_tour div.container div.total div.tr.total div:first-child {
     font-size: 14px;
   }
 }
-section.order div.container div.total div.tr.total div:last-child {
+section.order_tour div.container div.total div.tr.total div:last-child {
   font-weight: 400;
   font-size: 20px;
   line-height: 130%;
@@ -439,11 +439,11 @@ section.order div.container div.total div.tr.total div:last-child {
   color: #343a60;
 }
 @media (max-width: 1280px) {
-  section.order div.container div.total div.tr.total div:last-child {
+  section.order_tour div.container div.total div.tr.total div:last-child {
     font-size: 14px;
   }
 }
-section.order div.container div.total div.tr.total i {
+section.order_tour div.container div.total div.tr.total i {
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -451,7 +451,7 @@ section.order div.container div.total div.tr.total i {
   color: #343a60;
   opacity: 0.5;
 }
-section.order div.container div.total span.policy {
+section.order_tour div.container div.total span.policy {
   font-weight: 400;
   font-size: 14px;
   line-height: 130%;
@@ -459,21 +459,723 @@ section.order div.container div.total span.policy {
   margin-bottom: 24px;
 }
 @media (max-width: 1280px) {
-  section.order div.container div.total span.policy {
+  section.order_tour div.container div.total span.policy {
     font-size: 12px;
     margin-bottom: 20px;
   }
 }
-section.order div.container div.total span.policy a {
+section.order_tour div.container div.total span.policy a {
   text-decoration: underline;
   -webkit-text-decoration-skip-ink: none;
           text-decoration-skip-ink: none;
   color: #3068f7;
 }
-section.order div.container div.total span.policy a:hover {
+section.order_tour div.container div.total span.policy a:hover {
   text-decoration: none;
 }
-section.order div.container div.total button {
+section.order_tour div.container div.total button {
+  background: #3068f7;
+  width: 100%;
+}
+
+section.order_hotel {
+  background: #F3F5F8;
+}
+section.order_hotel div.container {
+  display: grid;
+  grid-template-columns: 1fr 582px;
+  grid-gap: 20px;
+  margin-top: 48px;
+  margin-bottom: 68px;
+}
+@media (max-width: 1600px) {
+  section.order_hotel div.container {
+    grid-template-columns: 1fr 420px;
+  }
+}
+@media (max-width: 1280px) {
+  section.order_hotel div.container {
+    grid-template-columns: 1fr 320px;
+  }
+}
+@media (max-width: 960px) {
+  section.order_hotel div.container {
+    grid-template-columns: 1fr;
+    margin-top: 20px;
+    margin-bottom: unset;
+  }
+}
+section.order_hotel div.container div.title {
+  grid-column: 2 span;
+}
+@media (max-width: 960px) {
+  section.order_hotel div.container div.title {
+    grid-column: 1 span;
+  }
+}
+section.order_hotel div.container div.title h1 {
+  margin-bottom: 20px;
+}
+@media (max-width: 960px) {
+  section.order_hotel div.container div.title h1 {
+    margin-bottom: unset;
+  }
+}
+section.order_hotel div.container div.data {
+  display: grid;
+  grid-gap: 20px;
+}
+section.order_hotel div.container div.data div.room_card {
+  display: grid;
+  -ms-flex-line-pack: start;
+      align-content: start;
+  grid-template-columns: 280px 1fr 240px;
+  border: 1px solid rgba(48, 104, 247, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  background: white;
+}
+@media (max-width: 1600px) {
+  section.order_hotel div.container div.data div.room_card {
+    grid-template-columns: 200px 1fr 200px;
+  }
+}
+@media (max-width: 1280px) {
+  section.order_hotel div.container div.data div.room_card {
+    grid-template-columns: 1fr;
+  }
+}
+section.order_hotel div.container div.data div.room_card div.swiper {
+  width: 100%;
+  aspect-ratio: 1/1;
+  min-width: 0;
+  border-radius: 20px;
+}
+@media (max-width: 1280px) {
+  section.order_hotel div.container div.data div.room_card div.swiper {
+    height: 182px;
+  }
+}
+section.order_hotel div.container div.data div.room_card div.swiper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+}
+section.order_hotel div.container div.data div.room_card div.swiper::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(75.5%, rgba(0, 0, 0, 0)), color-stop(79.71%, rgba(0, 0, 0, 0.3)), color-stop(93.87%, rgba(0, 0, 0, 0.7))), -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.16)), color-stop(22.47%, rgba(0, 0, 0, 0)));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 75.5%, rgba(0, 0, 0, 0.3) 79.71%, rgba(0, 0, 0, 0.7) 93.87%), linear-gradient(180deg, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0) 22.47%);
+}
+section.order_hotel div.container div.data div.room_card div.swiper div.swiper-pagination {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2px;
+  z-index: 2;
+}
+@media (max-width: 1600px) {
+  section.order_hotel div.container div.data div.room_card div.swiper div.swiper-pagination {
+    bottom: 15px;
+  }
+}
+section.order_hotel div.container div.data div.room_card div.swiper div.swiper-pagination span {
+  display: block;
+  border-radius: 6px;
+  width: 5px;
+  height: 2px;
+  -webkit-transition: width 0.3s;
+  transition: width 0.3s;
+  background: white;
+}
+section.order_hotel div.container div.data div.room_card div.swiper div.swiper-pagination span.swiper-pagination-bullet-active {
+  width: 23px;
+}
+section.order_hotel div.container div.data div.room_card div.description {
+  display: grid;
+  grid-template-rows: -webkit-max-content 1fr -webkit-max-content;
+  grid-template-rows: max-content 1fr max-content;
+  -ms-flex-line-pack: start;
+      align-content: start;
+  justify-items: start;
+  padding: 16px 20px;
+  padding-bottom: unset;
+}
+@media (max-width: 1280px) {
+  section.order_hotel div.container div.data div.room_card div.description {
+    padding: 15px;
+    padding-bottom: unset;
+  }
+}
+section.order_hotel div.container div.data div.room_card div.description div.title {
+  margin-bottom: 20px;
+}
+section.order_hotel div.container div.data div.room_card div.description div.title span.count {
+  border-radius: 3px;
+  padding: 0 10px;
+  background: rgba(14, 171, 105, 0.1);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 236%;
+  color: #0eab69;
+  margin-bottom: 5px;
+}
+section.order_hotel div.container div.data div.room_card div.description div.title h5 {
+  text-transform: unset;
+  margin-bottom: 5px;
+}
+section.order_hotel div.container div.data div.room_card div.description div.title span.area {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 130%;
+  color: #acacac;
+  margin-bottom: 24px;
+}
+section.order_hotel div.container div.data div.room_card div.description div.advantages {
+  display: grid;
+  -ms-flex-line-pack: start;
+      align-content: start;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5px;
+  margin-bottom: 30px;
+}
+section.order_hotel div.container div.data div.room_card div.description div.advantages div.advantage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+}
+section.order_hotel div.container div.data div.room_card div.description div.advantages div.advantage img {
+  width: 16px;
+  height: 16px;
+}
+section.order_hotel div.container div.data div.room_card div.description div.advantages div.advantage span {
+  font-size: 12px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+section.order_hotel div.container div.data div.room_card div.description div.link {
+  padding: 15px 20px;
+  cursor: pointer;
+  font-weight: 700;
+  text-decoration: underline;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: #16192c;
+  opacity: 0.67;
+  border-top: 1px solid rgba(48, 104, 247, 0.2);
+  width: calc(100% + 40px);
+  margin-left: -20px;
+}
+@media (max-width: 1280px) {
+  section.order_hotel div.container div.data div.room_card div.description div.link {
+    padding: 10px 20px;
+  }
+}
+section.order_hotel div.container div.data div.room_card div.description div.link:hover {
+  opacity: 1;
+}
+section.order_hotel div.container div.data div.room_card div.order {
+  display: grid;
+  grid-template-rows: 1fr -webkit-max-content;
+  grid-template-rows: 1fr max-content;
+  border-left: 1px solid rgba(75, 105, 221, 0.2);
+}
+section.order_hotel div.container div.data div.room_card div.order div.wrap {
+  padding: 20px;
+}
+@media (max-width: 1600px) {
+  section.order_hotel div.container div.data div.room_card div.order div.wrap {
+    padding: 12px 10px;
+  }
+}
+@media (max-width: 1280px) {
+  section.order_hotel div.container div.data div.room_card div.order div.wrap {
+    padding: 15px;
+  }
+}
+section.order_hotel div.container div.data div.room_card div.order span.price {
+  display: block;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 106%;
+  color: #d819a3;
+  margin-bottom: 10px;
+}
+@media (max-width: 1600px) {
+  section.order_hotel div.container div.data div.room_card div.order span.price {
+    font-size: 20px;
+  }
+}
+section.order_hotel div.container div.data div.room_card div.order div.period {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+@media (max-width: 960px) {
+  section.order_hotel div.container div.data div.room_card div.order div.period {
+    margin-bottom: 10px;
+  }
+}
+section.order_hotel div.container div.data div.room_card div.order div.period div.days,
+section.order_hotel div.container div.data div.room_card div.order div.period div.nights {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+}
+section.order_hotel div.container div.data div.room_card div.order div.period div.days span,
+section.order_hotel div.container div.data div.room_card div.order div.period div.nights span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #343a60;
+}
+@media (max-width: 1600px) {
+  section.order_hotel div.container div.data div.room_card div.order div.period div.days span,
+  section.order_hotel div.container div.data div.room_card div.order div.period div.nights span {
+    font-size: 12px;
+  }
+}
+section.order_hotel div.container div.data div.room_card div.order div.dates {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  margin-bottom: 14px;
+}
+section.order_hotel div.container div.data div.room_card div.order div.dates span {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 130%;
+  color: #16192c;
+  opacity: 0.5;
+}
+section.order_hotel div.container div.data div.room_card div.order div.dates hr {
+  display: block;
+  height: 1px;
+  width: 28px;
+  background: #3068f7;
+}
+section.order_hotel div.container div.data div.room_card div.order div.tags {
+  display: grid;
+  -ms-flex-line-pack: start;
+      align-content: start;
+  grid-gap: 3px;
+}
+section.order_hotel div.container div.data div.room_card div.order div.tags div.tag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+section.order_hotel div.container div.data div.room_card div.order div.tags div.tag img {
+  height: 27px;
+  width: 27px;
+}
+section.order_hotel div.container div.data div.room_card div.order div.tags div.tag span {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 130%;
+  color: #343a60;
+}
+section.order_hotel div.container div.data div.room_card div.order a.button {
+  border-radius: 0 0 20px 0;
+  width: 100%;
+  height: 50px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 130%;
+  color: #fff;
+  background: #3068f7;
+  padding: unset;
+  min-width: unset;
+}
+@media (max-width: 1600px) {
+  section.order_hotel div.container div.data div.room_card div.order a.button {
+    font-size: 14px;
+  }
+}
+section.order_hotel div.container div.data div.personal_data,
+section.order_hotel div.container div.data div.manager_data,
+section.order_hotel div.container div.data div.additional_data,
+section.order_hotel div.container div.data div.payment_data {
+  display: grid;
+  grid-gap: 25px;
+  padding: 30px;
+  padding-top: 35px;
+  background: white;
+  border-radius: 20px;
+  max-width: 1048px;
+}
+@media (max-width: 1280px) {
+  section.order_hotel div.container div.data div.personal_data,
+  section.order_hotel div.container div.data div.manager_data,
+  section.order_hotel div.container div.data div.additional_data,
+  section.order_hotel div.container div.data div.payment_data {
+    grid-gap: 15px;
+    padding: 20px;
+  }
+}
+section.order_hotel div.container div.data div.personal_data h2,
+section.order_hotel div.container div.data div.manager_data h2,
+section.order_hotel div.container div.data div.additional_data h2,
+section.order_hotel div.container div.data div.payment_data h2 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 130%;
+  text-transform: uppercase;
+  color: #16192c;
+}
+@media (max-width: 1280px) {
+  section.order_hotel div.container div.data div.personal_data h2,
+  section.order_hotel div.container div.data div.manager_data h2,
+  section.order_hotel div.container div.data div.additional_data h2,
+  section.order_hotel div.container div.data div.payment_data h2 {
+    font-size: 16px;
+  }
+}
+section.order_hotel div.container div.data div.personal_data div.inputs,
+section.order_hotel div.container div.data div.manager_data div.inputs,
+section.order_hotel div.container div.data div.additional_data div.inputs,
+section.order_hotel div.container div.data div.payment_data div.inputs {
+  display: grid;
+  grid-gap: 15px;
+}
+@media (max-width: 1280px) {
+  section.order_hotel div.container div.data div.personal_data div.inputs,
+  section.order_hotel div.container div.data div.manager_data div.inputs,
+  section.order_hotel div.container div.data div.additional_data div.inputs,
+  section.order_hotel div.container div.data div.payment_data div.inputs {
+    grid-gap: 10px;
+  }
+}
+section.order_hotel div.container div.data div.personal_data div.tr,
+section.order_hotel div.container div.data div.manager_data div.tr,
+section.order_hotel div.container div.data div.additional_data div.tr,
+section.order_hotel div.container div.data div.payment_data div.tr {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  grid-gap: 15px;
+}
+@media (max-width: 1280px) {
+  section.order_hotel div.container div.data div.personal_data div.tr,
+  section.order_hotel div.container div.data div.manager_data div.tr,
+  section.order_hotel div.container div.data div.additional_data div.tr,
+  section.order_hotel div.container div.data div.payment_data div.tr {
+    grid-gap: 10px;
+  }
+}
+@media (max-width: 640px) {
+  section.order_hotel div.container div.data div.personal_data div.tr,
+  section.order_hotel div.container div.data div.manager_data div.tr,
+  section.order_hotel div.container div.data div.additional_data div.tr,
+  section.order_hotel div.container div.data div.payment_data div.tr {
+    grid-auto-flow: unset;
+  }
+}
+section.order_hotel div.container div.data div.personal_data label.checkbox {
+  margin-top: 5px;
+}
+section.order_hotel div.container div.data div.personal_data button {
+  display: grid;
+  grid-template-columns: repeat(2, -webkit-max-content);
+  grid-template-columns: repeat(2, max-content);
+  grid-gap: 15px;
+  border-radius: 10px;
+  height: 60px;
+  background: #f2f5ff;
+  color: rgba(48, 104, 247, 0.7725490196);
+  padding-left: 42px;
+  padding-right: 42px;
+  justify-self: start;
+  margin-top: 5px;
+  border: 1px solid transparent;
+}
+@media (max-width: 1280px) {
+  section.order_hotel div.container div.data div.personal_data button {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+section.order_hotel div.container div.data div.personal_data button:hover {
+  border: 1px solid #3068f7;
+  color: #3068f7;
+}
+section.order_hotel div.container div.data div.additional_data strong,
+section.order_hotel div.container div.data div.payment_data strong {
+  display: block;
+  font-weight: 500;
+  line-height: 130%;
+  text-transform: uppercase;
+  color: #16192c;
+  margin-bottom: 16px;
+}
+@media (max-width: 1280px) {
+  section.order_hotel div.container div.data div.additional_data strong,
+  section.order_hotel div.container div.data div.payment_data strong {
+    margin-bottom: 10px;
+  }
+}
+section.order_hotel div.container div.data div.additional_data div.list,
+section.order_hotel div.container div.data div.payment_data div.list {
+  display: grid;
+  grid-gap: 30px;
+}
+section.order_hotel div.container div.data div.payment_data div.tr {
+  grid-auto-flow: unset;
+  grid-template-columns: repeat(2, 1fr);
+}
+section.order_hotel div.container div.total {
+  display: grid;
+  -ms-flex-line-pack: start;
+      align-content: start;
+  grid-gap: 20px;
+}
+section.order_hotel div.container div.total div.total_data,
+section.order_hotel div.container div.total div.total_tour,
+section.order_hotel div.container div.total div.total_price {
+  display: grid;
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+}
+section.order_hotel div.container div.total strong {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 130%;
+  text-transform: uppercase;
+  color: #333;
+  display: block;
+  margin-bottom: 18px;
+}
+@media (max-width: 1280px) {
+  section.order_hotel div.container div.total strong {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+}
+section.order_hotel div.container div.total div.list {
+  display: grid;
+  grid-gap: 10px;
+}
+section.order_hotel div.container div.total div.total_data hr {
+  background: #3068f7;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin: unset;
+}
+section.order_hotel div.container div.total div.tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  grid-gap: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #343a60;
+}
+@media (max-width: 1280px) {
+  section.order_hotel div.container div.total div.tr {
+    font-size: 12px;
+    grid-gap: 10px;
+  }
+}
+section.order_hotel div.container div.total div.tr span:first-child {
+  opacity: 0.8;
+}
+section.order_hotel div.container div.total div.tr span:last-child {
+  text-align: right;
+  max-width: 60%;
+}
+section.order_hotel div.container div.total hr {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #dddde4;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+@media (max-width: 1280px) {
+  section.order_hotel div.container div.total hr {
+    margin-bottom: 10px;
+  }
+}
+section.order_hotel div.container div.total a.red {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 130%;
+  text-decoration: underline;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: #d819a3;
+  justify-self: end;
+  margin-top: 8px;
+}
+@media (max-width: 1280px) {
+  section.order_hotel div.container div.total a.red {
+    font-size: 14px;
+  }
+}
+section.order_hotel div.container div.total a.red:hover {
+  text-decoration: none;
+}
+section.order_hotel div.container div.total div.links {
+  display: grid;
+  grid-gap: 12px;
+}
+section.order_hotel div.container div.total div.links a.blue {
+  display: block;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 130%;
+  text-decoration: underline;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: #3068f7;
+}
+@media (max-width: 1280px) {
+  section.order_hotel div.container div.total div.links a.blue {
+    font-size: 14px;
+  }
+}
+section.order_hotel div.container div.total div.links a.blue:hover {
+  text-decoration: none;
+}
+section.order_hotel div.container div.total div.question {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+}
+section.order_hotel div.container div.total div.question div.tooltip {
+  position: relative;
+  cursor: pointer;
+}
+section.order_hotel div.container div.total div.question div.tooltip div.tooltip_text {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: calc(100% + 10px);
+  border-radius: 10px;
+  background: #d819a3;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 130%;
+  color: #eef5fd;
+  padding: 10px 15px;
+  width: 295px;
+  text-align: left;
+  z-index: 10;
+}
+section.order_hotel div.container div.total div.question div.tooltip:hover div.tooltip_text {
+  display: block;
+}
+section.order_hotel div.container div.total div.tr.total {
+  margin-top: 18px;
+  margin-bottom: 24px;
+}
+@media (max-width: 1280px) {
+  section.order_hotel div.container div.total div.tr.total {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+section.order_hotel div.container div.total div.tr.total div {
+  display: grid;
+  -ms-flex-line-pack: end;
+      align-content: end;
+  grid-gap: 4px;
+}
+section.order_hotel div.container div.total div.tr.total div:first-child {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 130%;
+  color: #5b5b5b;
+}
+@media (max-width: 1280px) {
+  section.order_hotel div.container div.total div.tr.total div:first-child {
+    font-size: 14px;
+  }
+}
+section.order_hotel div.container div.total div.tr.total div:last-child {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 130%;
+  text-align: right;
+  color: #343a60;
+}
+@media (max-width: 1280px) {
+  section.order_hotel div.container div.total div.tr.total div:last-child {
+    font-size: 14px;
+  }
+}
+section.order_hotel div.container div.total div.tr.total i {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 130%;
+  color: #343a60;
+  opacity: 0.5;
+}
+section.order_hotel div.container div.total span.policy {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  color: #343a60;
+  margin-bottom: 24px;
+}
+@media (max-width: 1280px) {
+  section.order_hotel div.container div.total span.policy {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+}
+section.order_hotel div.container div.total span.policy a {
+  text-decoration: underline;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: #3068f7;
+}
+section.order_hotel div.container div.total span.policy a:hover {
+  text-decoration: none;
+}
+section.order_hotel div.container div.total button {
   background: #3068f7;
   width: 100%;
 }/*# sourceMappingURL=order.css.map */

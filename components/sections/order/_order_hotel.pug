@@ -1,45 +1,51 @@
 include ../../common/pug/_mixins.pug
 
-section.order
+section.order_hotel
     div.container
 
-        h1 Оформление тура
+        div.title
+            h1 Бронирование отеля
+            h3 Заказ № 23379-10042025
 
         div.data
 
-            div.excursion_card
-                div.preview
-                    img(src="images/1.webp", alt="Майские праздники в Москве").preview
-                    span.season Весна, Лето
-
+            div.room_card
+                div.swiper
+                    div.swiper-wrapper
+                        div.swiper-slide: img(src="images/1.webp")
+                        div.swiper-slide: img(src="images/1.webp")
+                        div.swiper-slide: img(src="images/1.webp")
+                        div.swiper-slide: img(src="images/1.webp")
+                        div.swiper-slide: img(src="images/1.webp")
+                    div.swiper-pagination
                 div.description
-                    div.text
-                        span.title Майские праздники в Москве
-                        span.city #[a(href="index.html") из Н.Новгорода, ]автобус, 8-9 часов
-                        span.text Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...
-                        div.type
-                            img(src="images/card_train.svg", alt="Автобус")
-                            span Автобусный тур
-                        
-                    div.details
-                        div.difficulty
-                            span.note Сложность
-                            div.stars
-                                div.filled
-                                div.filled
-                                div.empty
-                                div.empty
-                                div.empty
+                    div.title
+                        span.count 1 человек
+                        h5 2-х местный Эконом
+                        span.area Площадь 22 м2
+                    div.advantages
+                        div.advantage
+                            img(src="images/room_card_icon_1.svg", alt="WiFi в номерах")
+                            span WiFi в номерах
+                        div.advantage
+                            img(src="images/room_card_icon_2.svg", alt="Собственная ванная")
+                            span Собственная ванная
+                        div.advantage
+                            img(src="images/room_card_icon_3.svg", alt="Кондиционер")
+                            span Кондиционер
+                        div.advantage
+                            img(src="images/room_card_icon_4.svg", alt="Мини-бар")
+                            span Мини-бар
+                div.order
+                    div.wrap
                         div.tags
-                            span.note Проживание и комфорт
-                            div.list
-                                span Простой
-                                span Завтрак
-                        button Подробнее о туре
-
-            div.habitation_data
-                h2 Место отправления
-                +select('habitation', 'Выберите место отправления', '<strong>10:00 Талдом, Московское шоссе, 12</strong><p>Наценка к стоимости тура для каждого туриста 3 000 ₽<p>')
+                            div.tag
+                                img(src="images/detail_card_icon_1.svg", alt="")
+                                span Завтраки включены
+                            div.tag
+                                img(src="images/detail_card_icon_2.svg", alt="")
+                                span Бесплатная отмена
+                    a(href="index.html").button Описание номера
 
             div.personal_data
                 h2 Личные данные туриста
@@ -66,6 +72,16 @@ section.order
                     img(src="images/order_button_plus.svg")
                     span Добавить ещё туриста
 
+            div.manager_data
+                h2 Ответственный менеджер
+                div.inputs
+                    div.tr
+                        +input('Имя', true)
+                        +input('Фамилия', true)
+                    div.tr
+                        +input('Телефон', true)
+                        +input('Email', true)
+
             div.additional_data
                 h2 Дополнительные услуги
                 div.list
@@ -84,89 +100,46 @@ section.order
                                 div.price
                                     span + 5 000 ₽
                     div.item
-                        strong Экскурсии
+                        strong Бронирование
                         div.tr
                             div.radio
                                 div.title
-                                    +radio('excursion', 'Дополнительная экскурсия', true)
+                                    +radio('cancel', 'Бесплатная отмена', true)
+                                    span.note до 13:30 31.03.2025
                                 div.price
                                     span 0 ₽
-                            div.radio
-                                div.title
-                                    +radio('excursion', 'Дополнительная экскурсия')
-                                div.price
-                                    span + 5 000 ₽
+                            div
                     div.item
-                        strong Музеи
+                        strong Варианты размещения
                         div.tr
                             div.radio
                                 div.title
-                                    +radio('museum', 'Дополнительная экскурсия', true)
+                                    +radio('variant', '1 двуспальная кровать', true)
                                 div.price
                                     span 0 ₽
-                            div.radio
-                                div.title
-                                    +radio('museum', 'Дополнительная экскурсия')
-                                div.price
-                                    span + 5 000 ₽
-                    div.item
-                        strong Трансфер
-                        div.tr
-                            div.radio
-                                div.title
-                                    +radio('transfer', 'Без трансфера', true)
-                                div.price
-                                    span 0 ₽
-                            div.radio
-                                div.title
-                                    +radio('transfer', 'Трансфер из аэропорта')
-                                div.price
-                                    span + 5 000 ₽
+                            div
 
             div.payment_data
                 h2 Форма оплаты
                 div.item
-                    strong Добавьте питание
                     div.tr
                         div.radio
                             div.title
                                 +radio('payment', 'Наличными', true)
                         div.radio
                             div.title
-                                +radio('payment', 'На расчетный счет')
-
-
+                                +radio('payment', 'СБП')
+                                img(src="images/sbp.svg")
+                        div.radio
+                            div.title
+                                +radio('payment', 'Онлайн VISA, MasterCard, Maestro, Мир')
+                                img(src="images/cards.svg")
+        
         div.total
-            div.total_data
-                strong Дата тура
-                div.tr
-                    span 06.12.2024
-                    hr
-                    span 13.12.2024
-            div.total_tour
-                strong Информация о туре
-                div.list
-                    div.tr
-                        span Продолжительность
-                        span 9-10 часов
-                    div.tr
-                        span Тип экскурсии
-                        span Автобусная
-                    div.tr
-                        span Время отправления
-                        span 10:00
-                    div.tr
-                        span Место сбора группы
-                        span Отправление Н. Новгород пл. Ленина. Трансфер в Копорье
-                a(href="index.html").red Смотреть на карте
-                hr
-                div.links
-                    a(href="index.html").blue Информация для Туристов
-                    a(href="index.html").blue Информация для Агентств
             div.total_price
                 div.list
                     div.tr
-                        span Стоимость тура
+                        span Стоимость номера
                         span 100 000 ₽
                     div.tr
                         span Стоимость доп. услуг
