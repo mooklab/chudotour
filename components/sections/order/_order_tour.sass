@@ -32,9 +32,12 @@ section.order_tour
                 box-shadow: 0 0 0 1px #f1f3f7
                 background: #fff
                 max-width: 1048px
-                grid-template-columns: 200px 1fr
+                grid-template-columns: 280px 1fr
                 +s(l)
                     grid-template-columns: 1fr
+
+                div.preview
+                    aspect-ratio: 1 / 1
 
                 div.text
                     span.city
@@ -125,6 +128,28 @@ section.order_tour
                         grid-gap: 10px
                     +s(s)
                         grid-auto-flow: unset
+
+            div.habitation_data
+                fieldset.select
+                    div.select_choice
+                        span
+                            p
+                                display: none
+                    div.select_dropdown
+                        div.select_dropdown_content
+                            grid-gap: unset
+                            max-height: 284px
+                            padding: unset
+                        label
+                            display: grid
+                            grid-gap: 5px
+                            border-bottom: 1px solid #343a601e
+                            padding: 15px
+                        p
+                            font-weight: 400
+                            font-size: 12px
+                            line-height: 130%
+                            color: #acacac
 
             div.personal_data
                 label.checkbox

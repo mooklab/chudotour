@@ -45,12 +45,15 @@ section.order_tour div.container div.data div.excursion_card {
           box-shadow: 0 0 0 1px #f1f3f7;
   background: #fff;
   max-width: 1048px;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 280px 1fr;
 }
 @media (max-width: 1280px) {
   section.order_tour div.container div.data div.excursion_card {
     grid-template-columns: 1fr;
   }
+}
+section.order_tour div.container div.data div.excursion_card div.preview {
+  aspect-ratio: 1/1;
 }
 section.order_tour div.container div.data div.excursion_card div.text span.city a {
   display: inline;
@@ -204,6 +207,26 @@ section.order_tour div.container div.data div.payment_data div.tr {
   section.order_tour div.container div.data div.payment_data div.tr {
     grid-auto-flow: unset;
   }
+}
+section.order_tour div.container div.data div.habitation_data fieldset.select div.select_choice span p {
+  display: none;
+}
+section.order_tour div.container div.data div.habitation_data fieldset.select div.select_dropdown div.select_dropdown_content {
+  grid-gap: unset;
+  max-height: 284px;
+  padding: unset;
+}
+section.order_tour div.container div.data div.habitation_data fieldset.select div.select_dropdown label {
+  display: grid;
+  grid-gap: 5px;
+  border-bottom: 1px solid rgba(52, 58, 96, 0.1176470588);
+  padding: 15px;
+}
+section.order_tour div.container div.data div.habitation_data fieldset.select div.select_dropdown p {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 130%;
+  color: #acacac;
 }
 section.order_tour div.container div.data div.personal_data label.checkbox {
   margin-top: 5px;
@@ -534,6 +557,7 @@ section.order_hotel div.container div.data div.room_card {
   border-radius: 20px;
   overflow: hidden;
   background: white;
+  max-width: 1048px;
 }
 @media (max-width: 1600px) {
   section.order_hotel div.container div.data div.room_card {
