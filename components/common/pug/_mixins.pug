@@ -3,10 +3,10 @@ mixin input(placeholder, required)
         input(type="text", placeholder=" ", required=(required))
         span= placeholder
 
-mixin checkbox(name, title)
+mixin checkbox(name, title, ischecked = false)
     label.checkbox
-        input(type="checkbox")
-        span= title
+        input(type="checkbox", checked=ischecked)
+        span!= title
 
 mixin radio(name, title, checked)
     label.radio

@@ -1,0 +1,15 @@
+dialog(data-modal-name="callback")
+    div.container
+        img(src="images/dialog_cross.svg", data-modal-close).cross
+        div.text
+            h3 Мы вам перезвоним
+            span Оставьте свои контактные данные и мы свяжемся с Вами и ответим на все Ваши вопросы.
+
+        form(action="") 
+            +input('Имя', true)
+            fieldset.input
+                input(type="tel", placeholder=" ", required)
+                span Телефон
+            button Отправить
+            +checkbox('personal', 'Даю согласие на обработку персональных данных в соответствии с <a href="index.html">Политикой в отношении обработки персональных данных</a>, а также принимаете условия <a href="index.html">Пользовательского соглашения</a>.', true)
+                        

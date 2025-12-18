@@ -1,0 +1,57 @@
+dialog(data-modal-name="registration")
+    div.container
+        img(src="images/dialog_cross.svg", data-modal-close).cross
+        h3 Регистрация
+
+        div.tabs
+            div.tabs_captions
+                span.tab_caption.opened Турист
+                span.tab_caption Агент
+            div.tabs_contents
+                div.tab_content.opened
+                    form(action="") 
+                        +input('Имя', true)
+                        div.phone
+                            fieldset.input
+                                input(type="tel", placeholder=" ", required)
+                                span Телефон
+                            a(href="index.html")  Выслать код
+                        +input('Email', true)
+                        fieldset.password
+                            input(type="password", name="password", placeholder="Старый пароль", onChange="passwordChange()")
+                            div(onclick="showPassword(this)").eye
+                                img(src="images/password_visible.svg")
+                                img(src="images/password_hidden.svg")
+                        fieldset.password
+                            input(type="password", name="confirm", placeholder="Новый пароль", onChange="passwordChange()")
+                            div(onclick="showPassword(this)").eye
+                                img(src="images/password_visible.svg")
+                                img(src="images/password_hidden.svg")
+                        button Зарегистрироваться
+                        +checkbox('personal', 'Даю согласие на обработку персональных данных в соответствии с <a href="index.html">Политикой в отношении обработки персональных данных</a>, а также принимаете условия <a href="index.html">Пользовательского соглашения</a>.', true)
+                        +checkbox('subscribe', 'Хочу получать информацию о скидках, специальных предложениях и акциях', true)
+
+                div.tab_content
+                    form(action="")
+                        +input('Юридическое название компании', true)
+                        +input('Фактическое название компании', true)
+                        +input('Фактический адрес компании', true)
+                        fieldset.input
+                            input(type="tel", placeholder=" ", required)
+                            span Телефон
+                        +input('Контактное лицо', true)
+                        +input('Email', true)
+                        fieldset.password
+                            input(type="password", name="password", placeholder="Старый пароль", onChange="passwordChange()")
+                            div(onclick="showPassword(this)").eye
+                                img(src="images/password_visible.svg")
+                                img(src="images/password_hidden.svg")
+                        fieldset.password
+                            input(type="password", name="confirm", placeholder="Новый пароль", onChange="passwordChange()")
+                            div(onclick="showPassword(this)").eye
+                                img(src="images/password_visible.svg")
+                                img(src="images/password_hidden.svg")
+                        button Зарегистрироваться
+                        +checkbox('personal', 'Даю согласие на обработку персональных данных в соответствии с <a href="index.html">Политикой в отношении обработки персональных данных</a>, а также принимаете условия <a href="index.html">Пользовательского соглашения</a>.', true)
+                        +checkbox('subscribe', 'Хочу получать информацию о скидках, специальных предложениях и акциях', true)
+                        

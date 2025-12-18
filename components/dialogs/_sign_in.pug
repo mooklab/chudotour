@@ -1,0 +1,25 @@
+dialog(data-modal-name="signin")
+    div.container
+        img(src="images/dialog_cross.svg", data-modal-close).cross
+        h3 Вход
+        form(action="") 
+            +input('Email', true)
+            fieldset.password
+                input(type="password", name="password", placeholder="Пароль", onChange="passwordChange()")
+                div(onclick="showPassword(this)").eye
+                    img(src="images/password_visible.svg")
+                    img(src="images/password_hidden.svg")
+            div.row
+                +checkbox('remember', 'Запомнить меня')
+                a(href="index.html").forgot Забыли пароль?
+            button Войти
+            a(href="index.html").register Зарегистрироваться
+
+            span.or или
+
+            div.yandex
+                img(src="images/sign_in_yandex.svg")
+                span Войти по Яндекс ID
+            div.yandex
+                img(src="images/sign_in_vkontakte.svg")
+                span Войти по VK ID

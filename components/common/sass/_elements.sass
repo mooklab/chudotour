@@ -122,12 +122,13 @@ fieldset.input
             top: 50%
             transform: translateY(-50%)
             & + span
-                font-weight: 400
                 font-size: var(--text-size)
-                line-height: 130%
-                color: #343a60
                 bottom: 50%
                 transform: translateY(50%)
+
+        &[required] + span::after
+            content: '*'
+            color: #D819A3
 
     span
         position: absolute
@@ -135,11 +136,10 @@ fieldset.input
         left: 0
         padding: var(--form-element-padding)
         pointer-events: none
-        opacity: 0.5
         font-weight: 400
         font-size: 12px
         line-height: 130%
-        color: #343a60
+        color: #343a6080
         transition: all 0.2s
         +s(l)
             bottom: 50%

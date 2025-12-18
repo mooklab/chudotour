@@ -28,6 +28,7 @@
         <link rel="stylesheet" href="css/common.css">
         <link rel="stylesheet" href="css/account.css">
         <script defer src="scripts/main.js" type="module"></script>
+        <script defer src="scripts/dialog.js"></script>
     </head>
     <body>
         <header>
@@ -323,5 +324,158 @@
                 </div>
             </div>
         </footer>
+        <dialog data-modal-name="signin">
+            <div class="container"><img class="cross" src="images/dialog_cross.svg" data-modal-close>
+                <h3>Вход</h3>
+                <form action=""> 
+                            <fieldset class="input">
+                                <input type="text" placeholder=" " required><span>Email</span>
+                            </fieldset>
+                    <fieldset class="password">
+                        <input type="password" name="password" placeholder="Пароль" onChange="passwordChange()">
+                        <div class="eye" onclick="showPassword(this)"><img src="images/password_visible.svg"><img src="images/password_hidden.svg"></div>
+                    </fieldset>
+                    <div class="row">
+                                <label class="checkbox">
+                                    <input type="checkbox"><span>Запомнить меня</span>
+                                </label><a class="forgot" href="index.html">Забыли пароль?</a>
+                    </div>
+                    <button>Войти</button><a class="register" href="index.html">Зарегистрироваться</a><span class="or">или</span>
+                    <div class="yandex"><img src="images/sign_in_yandex.svg"><span>Войти по Яндекс ID</span></div>
+                    <div class="yandex"><img src="images/sign_in_vkontakte.svg"><span>Войти по VK ID</span></div>
+                </form>
+            </div>
+        </dialog>
+        <dialog data-modal-name="registration">
+            <div class="container"><img class="cross" src="images/dialog_cross.svg" data-modal-close>
+                <h3>Регистрация</h3>
+                <div class="tabs">
+                    <div class="tabs_captions"><span class="tab_caption opened">Турист</span><span class="tab_caption">Агент</span></div>
+                    <div class="tabs_contents">
+                        <div class="tab_content opened">
+                            <form action=""> 
+                                        <fieldset class="input">
+                                            <input type="text" placeholder=" " required><span>Имя</span>
+                                        </fieldset>
+                                <div class="phone">
+                                    <fieldset class="input">
+                                        <input type="tel" placeholder=" " required><span>Телефон</span>
+                                    </fieldset><a href="index.html"> Выслать код</a>
+                                </div>
+                                        <fieldset class="input">
+                                            <input type="text" placeholder=" " required><span>Email</span>
+                                        </fieldset>
+                                <fieldset class="password">
+                                    <input type="password" name="password" placeholder="Старый пароль" onChange="passwordChange()">
+                                    <div class="eye" onclick="showPassword(this)"><img src="images/password_visible.svg"><img src="images/password_hidden.svg"></div>
+                                </fieldset>
+                                <fieldset class="password">
+                                    <input type="password" name="confirm" placeholder="Новый пароль" onChange="passwordChange()">
+                                    <div class="eye" onclick="showPassword(this)"><img src="images/password_visible.svg"><img src="images/password_hidden.svg"></div>
+                                </fieldset>
+                                <button>Зарегистрироваться</button>
+                                        <label class="checkbox">
+                                            <input type="checkbox" checked><span>Даю согласие на обработку персональных данных в соответствии с <a href="index.html">Политикой в отношении обработки персональных данных</a>, а также принимаете условия <a href="index.html">Пользовательского соглашения</a>.</span>
+                                        </label>
+                                        <label class="checkbox">
+                                            <input type="checkbox" checked><span>Хочу получать информацию о скидках, специальных предложениях и акциях</span>
+                                        </label>
+                            </form>
+                        </div>
+                        <div class="tab_content">
+                            <form action="">
+                                        <fieldset class="input">
+                                            <input type="text" placeholder=" " required><span>Юридическое название компании</span>
+                                        </fieldset>
+                                        <fieldset class="input">
+                                            <input type="text" placeholder=" " required><span>Фактическое название компании</span>
+                                        </fieldset>
+                                        <fieldset class="input">
+                                            <input type="text" placeholder=" " required><span>Фактический адрес компании</span>
+                                        </fieldset>
+                                <fieldset class="input">
+                                    <input type="tel" placeholder=" " required><span>Телефон</span>
+                                </fieldset>
+                                        <fieldset class="input">
+                                            <input type="text" placeholder=" " required><span>Контактное лицо</span>
+                                        </fieldset>
+                                        <fieldset class="input">
+                                            <input type="text" placeholder=" " required><span>Email</span>
+                                        </fieldset>
+                                <fieldset class="password">
+                                    <input type="password" name="password" placeholder="Старый пароль" onChange="passwordChange()">
+                                    <div class="eye" onclick="showPassword(this)"><img src="images/password_visible.svg"><img src="images/password_hidden.svg"></div>
+                                </fieldset>
+                                <fieldset class="password">
+                                    <input type="password" name="confirm" placeholder="Новый пароль" onChange="passwordChange()">
+                                    <div class="eye" onclick="showPassword(this)"><img src="images/password_visible.svg"><img src="images/password_hidden.svg"></div>
+                                </fieldset>
+                                <button>Зарегистрироваться</button>
+                                        <label class="checkbox">
+                                            <input type="checkbox" checked><span>Даю согласие на обработку персональных данных в соответствии с <a href="index.html">Политикой в отношении обработки персональных данных</a>, а также принимаете условия <a href="index.html">Пользовательского соглашения</a>.</span>
+                                        </label>
+                                        <label class="checkbox">
+                                            <input type="checkbox" checked><span>Хочу получать информацию о скидках, специальных предложениях и акциях</span>
+                                        </label>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+        <dialog data-modal-name="recover_password_form">
+            <div class="container"><img class="cross" src="images/dialog_cross.svg" data-modal-close>
+                <h3>Восстановление пароля</h3><span>Укажите адрес эл. почты, который вы использовали при регистрации. Мы вышлем вам инструкцию по восстановлению пароля</span>
+                <form action="">
+                            <fieldset class="input">
+                                <input type="text" placeholder=" " required><span>Email</span>
+                            </fieldset>
+                    <button>Зарегистрироваться</button>
+                </form>
+            </div>
+        </dialog>
+        <dialog data-modal-name="recover_password_message">
+            <div class="container"><img class="cross" src="images/dialog_cross.svg" data-modal-close>
+                <h3>Восстановление пароля</h3><span>Мы отправили ссылку для востановления пароля на <b>info545@gmail.com</b></span>
+            </div>
+        </dialog>
+        <dialog data-modal-name="callback">
+            <div class="container"><img class="cross" src="images/dialog_cross.svg" data-modal-close>
+                <div class="text">
+                    <h3>Мы вам перезвоним</h3><span>Оставьте свои контактные данные и мы свяжемся с Вами и ответим на все Ваши вопросы.</span>
+                </div>
+                <form action=""> 
+                            <fieldset class="input">
+                                <input type="text" placeholder=" " required><span>Имя</span>
+                            </fieldset>
+                    <fieldset class="input">
+                        <input type="tel" placeholder=" " required><span>Телефон</span>
+                    </fieldset>
+                    <button>Отправить</button>
+                            <label class="checkbox">
+                                <input type="checkbox" checked><span>Даю согласие на обработку персональных данных в соответствии с <a href="index.html">Политикой в отношении обработки персональных данных</a>, а также принимаете условия <a href="index.html">Пользовательского соглашения</a>.</span>
+                            </label>
+                </form>
+            </div>
+        </dialog>
+        <dialog data-modal-name="choose_tour">
+            <div class="container"><img class="cross" src="images/dialog_cross.svg" data-modal-close>
+                <div class="text">
+                    <h3>Подобрать тур</h3><span>Оставьте свои контактные данные и мы свяжемся с Вами и ответим на все Ваши вопросы.</span>
+                </div>
+                <form action=""> 
+                            <fieldset class="input">
+                                <input type="text" placeholder=" " required><span>Имя</span>
+                            </fieldset>
+                    <fieldset class="input">
+                        <input type="tel" placeholder=" " required><span>Телефон</span>
+                    </fieldset>
+                    <button>Подобрать</button>
+                            <label class="checkbox">
+                                <input type="checkbox" checked><span>Даю согласие на обработку персональных данных в соответствии с <a href="index.html">Политикой в отношении обработки персональных данных</a>, а также принимаете условия <a href="index.html">Пользовательского соглашения</a>.</span>
+                            </label>
+                </form>
+            </div>
+        </dialog>
     </body>
 </html>
