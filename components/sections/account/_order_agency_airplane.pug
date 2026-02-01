@@ -1,0 +1,160 @@
+include ../../common/pug/_mixins.pug
+
+section.order_details
+    div.container
+
+        +account_sidemenu('images/40.webp', 'ООО «Чудесный отдых»', 'chudotur123@gmail.com', '3', 'Данные агентства', 'Бронирования', 'Отчеты', 'Документы', 'Бонусная программа', 'Выйти')
+
+        div.account_page
+
+            div.title
+                h1 Заказ № 23379-10042025 от 23.09.2024 16:55
+                div.tag.green Подтвержден, оплачен
+
+            div.detail
+
+                div.tickets
+                    -for(x=0;x<2;x++)
+                        div.ticket
+                            div.first
+                                h5 Авиаперелет
+                                div.excerpt
+                                    div
+                                        span Перелет туда Москва
+                                        img(src="images/order_arrow.svg")
+                                        span Париж
+                                    span.count 1 пассажир
+                            div.second
+                                div
+                                    span.note Рейс
+                                    span Класс
+                                div
+                                    span.note Места
+                                    span VKO–LED (FV-6184)
+                                div
+                                    span.note Эконом
+                                    span.number 8Е
+                            div.third
+                                div.infographic
+                                    div.from
+                                        span.note Отправление
+                                        div
+                                            span.time 19:10
+                                            span.tag VKO
+                                        span.date Ср, 16 апреля
+                                    div.visual
+                                        div.airplane
+                                            hr
+                                            img(src="images/order_airplane.svg")
+                                            hr
+                                        span.time 5 ч 20 мин
+                                    div.to
+                                        span.note Прибытие
+                                        div
+                                            span.tag VKO
+                                            span.time 19:10
+                                        span.date Ср, 16 апреля
+                                div.links
+                                    a(href="index.html").more Подробнее
+                                    a(href="index.html").scheme Схема самолета
+
+                div.data
+
+                    div.column
+
+                        div.tour_data
+                            div.tour
+                                h5 Ответственный менеджер
+                                div.tbody
+                                    div.tr
+                                        span Имя
+                                        span Константин
+                                    div.tr
+                                        span Фамилия
+                                        span Константинопольский
+                                    div.tr
+                                        span Телефон
+                                        span +7 (987) 000-00-00
+                                    div.tr
+                                        span Email
+                                        span chudotur123@gmail.com
+
+                        div.tour_data
+                            div.personal
+                                h5 Личные данные туриста
+                                div.tbody
+                                    div.tr
+                                        span Имя
+                                        span Константин
+                                    div.tr
+                                        span Фамилия
+                                        span Константинопольский
+                                    div.tr
+                                        span Дата рождения
+                                        span 23.12.1998
+                                    div.tr
+                                        span Пол
+                                        span Мужской
+                                    div.tr
+                                        span Телефон
+                                        span +7 (900) 677-87-87
+                                    div.tr
+                                        span Email
+                                        span info123@gmail.com
+                                    div.tr
+                                        span Вид документа
+                                        span Паспорт
+                                    div.tr
+                                        span Серия и номер
+                                        span 2345 234567
+                                    div.tr
+                                        span Гражданство
+                                        span РФ
+                                    div.tr
+                                        span Примечание турагенства
+                                        span Аллергия на орехи у туриста
+
+                    div.column
+                        div.documents_data
+                            h5 Документация
+                            div.list
+                                a(href="index.html") Подтверждение
+                                a(href="index.html") Посадочный талон
+                                a(href="index.html") Договор с туристом
+                                a(href="index.html") Скачать билеты
+                        
+                div.results
+                    h5 Итого
+                    div.tbody
+                        div.tr
+                            span Билеты
+                            span 189 291 ₽
+                        div.tr
+                            span Налоги и сборы
+                            span 9 000 ₽
+                        div.tr
+                            span Скидка
+                            span -3 000 ₽
+                        div.tr
+                            span Всего к оплате
+                            span 107 000 ₽
+                        div.tr
+                            span Оплачено
+                            span 107 000 ₽
+                        div.tr
+                            span Комиссия
+                                div.tooltip
+                                    img(src="images/order_question.svg")
+                                    div.tooltip_text Мы предоставляем скидку для наших агентов, позволяя вам продавать туры по розничной цене, а самим покупать их со значительной экономией. Эти сэкономленные средства – ваш дополнительный доход.
+                            span -3 000 ₽
+                    div.total
+                        div
+                            h5 Итого
+                            h5 107 000 ₽
+                        div
+                            span за 7 дней, 6 ночей
+                            span за 1 человек
+
+                button.cancel Аннулировать заказ
+
+            

@@ -49,5 +49,11 @@ head
     block links
 
     //- Скрипты
+    script(src='https://www.google.com/recaptcha/api.js')
     script(defer, src='scripts/main.js', type="module")
     script(defer, src='scripts/dialog.js')
+
+    script.
+        var onloadCallback = function() {
+            alert("grecaptcha is ready!")
+        }

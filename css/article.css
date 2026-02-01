@@ -111,6 +111,7 @@ section.main div.container div.article div.side div.page_menu h5 {
 @media (max-width: 1280px) {
   section.main div.container div.article div.side div.page_menu h5 {
     margin-bottom: 16px;
+    font-size: 16px;
   }
 }
 section.main div.container div.article div.side div.page_menu div.list {
@@ -392,6 +393,7 @@ section.articles a.blog_card div.preview div.clock {
   }
 }
 section.articles a.blog_card div.preview div.clock span {
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 20px;
   line-height: 130%;

@@ -3,7 +3,7 @@ include ../../common/pug/_mixins.pug
 section.order_details
     div.container
 
-        +account_sidemenu('images/40.webp', 'ООО «Чудесный отдых»', '', '3', 'Данные агентства', 'Бронирования', 'Отчеты', 'Документы', 'Бонусная программа', 'Выйти')
+        +account_sidemenu('images/40.webp', 'ООО «Чудесный отдых»', 'chudotur123@gmail.com', '3', 'Данные агентства', 'Бронирования', 'Отчеты', 'Документы', 'Бонусная программа', 'Выйти')
 
         div.account_page
 
@@ -20,7 +20,8 @@ section.order_details
 
                     div.description
                         div.text
-                            span.title Майские праздники в Москве
+                            a(href="index.html").title
+                                h5 Майские праздники в Москве
                             span.city #[a(href="index.html") из Н.Новгорода, ]автобус, 8-9 часов
                             span.text Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...
                             div.type
@@ -55,7 +56,8 @@ section.order_details
                     div.description
                         div.title
                             span.count 1 человек
-                            h5 2-х местный Эконом
+                            a(href="index.html") 
+                                h5 2-х местный Эконом
                             span.area Площадь 22 м2
                         div.advantages
                             div.advantage
@@ -169,6 +171,9 @@ section.order_details
                             span 107 000 ₽
                         div.tr
                             span Комиссия
+                                div.tooltip
+                                    img(src="images/order_question.svg")
+                                    div.tooltip_text Мы предоставляем скидку для наших агентов, позволяя вам продавать туры по розничной цене, а самим покупать их со значительной экономией. Эти сэкономленные средства – ваш дополнительный доход.
                             span -3 000 ₽
                     div.total
                         div

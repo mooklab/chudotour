@@ -11,7 +11,7 @@ section.direction
         display: grid
         grid-template-columns: 2fr 3fr
         grid-gap: 20px
-        +s(l)
+        +s(xl)
             grid-template-columns: repeat(2, 1fr)
             grid-gap: 10px
         +s(m)
@@ -26,6 +26,7 @@ section.direction
             div.title
                 display: grid
                 grid-template-rows: 1fr max-content
+                max-width: 580px
                 +s(m)
                     display: block
                     width: 100%
@@ -41,12 +42,16 @@ section.direction
                         width: 580px
                         top: 40px
                         left: 50%
-                        transform: translateX(-65%)
-                        object-fit: cover
+                        transform: translateX(-50%)
+                        object-fit: contain
                         object-position: center center
+                    +s(s)
+                        transform: translateX(-65%)
+
 
             div.list
                 margin-top: 36px
+                max-width: 580px
                 +s(l)
                     margin-top: 20px
 
@@ -71,7 +76,7 @@ section.direction
             height: 580px
             +s(xl)
                 margin-right: -170px
-                margin-left: -60px
+                margin-left: -130px
                 width: calc(100% + 230px)
                 height: 460px
             +s(m)

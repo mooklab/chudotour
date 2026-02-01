@@ -83,9 +83,13 @@ section.orders
                     +s(m)
                         display: none
                     th
-                        padding-left: 30px
+                        // padding-left: 30px
                         font-weight: 400
                         text-align: left
+                        &:first-child
+                            padding-left: 30px
+                            +s(xl)
+                                padding-left: 20px
                 tbody
                     +s(m)
                         display: grid
@@ -94,6 +98,7 @@ section.orders
                         position: relative
                         td
                             padding: 30px
+                            padding-left: unset
                             border-top: 1px solid rgba(48, 104, 247, 0.2)
                             border-bottom: 1px solid rgba(48, 104, 247, 0.2)
                             +s(xl)
@@ -113,6 +118,11 @@ section.orders
                             border-right: unset
                             border-top-left-radius: 10px
                             border-bottom-left-radius: 10px
+                            padding-left: 30px
+                            +s(xl)
+                                padding-left: 20px
+                            +s(m)
+                                padding: unset
                         td:last-child
                             border: 1px solid rgba(48, 104, 247, 0.2)
                             border-left: unset
@@ -139,6 +149,10 @@ section.orders
                     color: #6727C4
                 span.blue
                     color: #3068F7
+
+                span.whitespace
+                    display: block
+                    white-space: nowrap
 
                 div.buttons
                     display: grid

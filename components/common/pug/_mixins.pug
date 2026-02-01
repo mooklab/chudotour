@@ -14,7 +14,7 @@ mixin radio(name, title, checked)
         span= title
 
 mixin select(name, placeholder, ...items)
-    fieldset(tabindex="0").select
+    fieldset(class=name, tabindex="0").select
         div.select_choice
             if placeholder
                 input(type="radio", id=name, name=name, checked).placeholder
@@ -95,7 +95,7 @@ mixin hot_tour_card(image, price, destination, date)
             span.destination= destination
             span.date= date
 
-mixin review(image, name, tour, text)
+mixin review(image, name, tour, text, id)
     div.review
         div.author
             img(src=image, alt=name)
@@ -106,9 +106,9 @@ mixin review(image, name, tour, text)
         div.text
             span= text
         div.gallery
-            img(src="images/3.webp")
-            img(src="images/4.webp")
-            img(src="images/5.webp")
+            img(src=image, lightbox=id)
+            img(src="images/14.webp", lightbox=id)
+            img(src="images/16.webp", lightbox=id)
 
 mixin blog_card(image, date, title, text)
     div.blog_card
@@ -116,14 +116,14 @@ mixin blog_card(image, date, title, text)
             img(src=image, alt=title)
         div.text
             span.date= date 
-            strong= title
+            h5= title
             span.text= text
             a(href="index.html") Читать статью
 
 mixin catalog_card(image, title)
     a(href="index.html").category_card
         img(src=image, alt=title)
-        span= title
+        h5= title
 
 mixin excursion_card(image, title, price)
     div.excursion_card
@@ -137,7 +137,8 @@ mixin excursion_card(image, title, price)
 
         div.description
             div.text
-                span.title= title
+                a(href="index.html").title
+                    h5= title
                 span.city #[a(href="index.html") из Н.Новгорода, ]автобус, 8-9 часов
                 span.text Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...
                 div.type
@@ -255,6 +256,9 @@ mixin air_card(price)
                 div.abbr
                     span VKO
                     span IST
+                        div.tooltip
+                            img(src="images/order_question.svg")
+                            div.tooltip_text Пересадка 13 ч 30 мин в аэропорту “Стамбул Новый аэропорт”, Стамбул
                     span ORY
             div.end
                 h2 20:30
@@ -297,7 +301,7 @@ mixin air_card(price)
                                     span Пересадка: 13 ч 30 мин
                                 div.company
                                     div.row
-                                        img(src="/images/air_card_logotype_2.webp")
+                                        img(src="images/air_card_logotype_2.webp")
                                         span.model C J2 73 
                                         span Аэрофлот, Российские авиалинии
                                     span Airbus A320
@@ -336,15 +340,21 @@ mixin air_card(price)
                                     li.cross 
                                         img(src="images/air_card_cross.svg").bullet
                                         span Багаж оплачивается отдельно
-                                        img(src="images/air_card_info.svg").info
+                                        div.tooltip
+                                            img(src="images/air_card_info.svg")
+                                            div.tooltip_text Размер платы и нормы провоза зависят от выбранного тарифа и перевозчика
                                     li.tick 
                                         img(src="images/air_card_tick.svg").bullet
                                         span Обмен платный
-                                        img(src="images/air_card_info.svg").info
+                                        div.tooltip
+                                            img(src="images/air_card_info.svg")
+                                            div.tooltip_text Размер платы и нормы провоза зависят от выбранного тарифа и перевозчика
                                     li.cross 
                                         img(src="images/air_card_cross.svg").bullet
                                         span Без возврата
-                                        img(src="images/air_card_info.svg").info
+                                        div.tooltip
+                                            img(src="images/air_card_info.svg")
+                                            div.tooltip_text Размер платы и нормы провоза зависят от выбранного тарифа и перевозчика
                             button Выбрать
 
         div.air_total
@@ -558,7 +568,8 @@ mixin habitation_card
             img(src="images/1.webp").preview
             div.description
                 div.text
-                    h5 Гостевой дом Villa Rosa (Абхазия)
+                    a(href="index.html") 
+                        h5 Гостевой дом Villa Rosa (Абхазия)
                     span.city Гагра, ул Бостонжана, д.15
                     div.inprice
                         span В стоимость включено:
@@ -587,7 +598,8 @@ mixin habitation_card
             img(src="images/1.webp").preview
             div.description
                 span.count 1 человек
-                h5 2-х местный Эконом
+                a(href="index.html") 
+                    h5 2-х местный Эконом
                 span.area Площадь 22 м2
                 div.advantages
                     div.advantage

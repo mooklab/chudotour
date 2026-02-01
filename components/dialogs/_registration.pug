@@ -18,15 +18,16 @@ dialog(data-modal-name="registration")
                             a(href="index.html")  Выслать код
                         +input('Email', true)
                         fieldset.password
-                            input(type="password", name="password", placeholder="Старый пароль", onChange="passwordChange()")
+                            input(type="password", name="password", placeholder="Пароль", onChange="passwordChange()")
                             div(onclick="showPassword(this)").eye
                                 img(src="images/password_visible.svg")
                                 img(src="images/password_hidden.svg")
                         fieldset.password
-                            input(type="password", name="confirm", placeholder="Новый пароль", onChange="passwordChange()")
+                            input(type="password", name="confirm", placeholder="Повторите пароль", onChange="passwordChange()")
                             div(onclick="showPassword(this)").eye
                                 img(src="images/password_visible.svg")
                                 img(src="images/password_hidden.svg")
+                        <div class="g-recaptcha" data-sitekey="ваш_site_key"></div>
                         button Зарегистрироваться
                         +checkbox('personal', 'Даю согласие на обработку персональных данных в соответствии с <a href="index.html">Политикой в отношении обработки персональных данных</a>, а также принимаете условия <a href="index.html">Пользовательского соглашения</a>.', true)
                         +checkbox('subscribe', 'Хочу получать информацию о скидках, специальных предложениях и акциях', true)
@@ -42,12 +43,12 @@ dialog(data-modal-name="registration")
                         +input('Контактное лицо', true)
                         +input('Email', true)
                         fieldset.password
-                            input(type="password", name="password", placeholder="Старый пароль", onChange="passwordChange()")
+                            input(type="password", name="password", placeholder="Пароль", onChange="passwordChange()")
                             div(onclick="showPassword(this)").eye
                                 img(src="images/password_visible.svg")
                                 img(src="images/password_hidden.svg")
                         fieldset.password
-                            input(type="password", name="confirm", placeholder="Новый пароль", onChange="passwordChange()")
+                            input(type="password", name="confirm", placeholder="Повторите пароль", onChange="passwordChange()")
                             div(onclick="showPassword(this)").eye
                                 img(src="images/password_visible.svg")
                                 img(src="images/password_hidden.svg")

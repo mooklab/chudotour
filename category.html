@@ -27,12 +27,19 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper.min.css">
         <link rel="stylesheet" href="css/common.css">
         <link rel="stylesheet" href="css/category.css">
+        <script src="https://www.google.com/recaptcha/api.js"></script>
         <script defer src="scripts/main.js" type="module"></script>
         <script defer src="scripts/dialog.js"></script>
+        <script>
+            var onloadCallback = function() {
+                alert("grecaptcha is ready!")
+            }
+        </script>
     </head>
     <body>
         <header>
-            <div class="container"><img class="mobile_menu" src="images/header_menu.svg" alt="Меню"><a class="logotype" href="pages.html"><img src="images/logotype.svg" alt="Чудесный отдых"></a><a class="mobile_phone" href="pages.html"><img src="images/header_phone.svg" alt="Позвонить"></a>
+            <div class="container">
+                <div class="mobile_menu_icon" onclick="document.querySelector('section.mobile_menu').classList.toggle('opened'); this.classList.toggle('opened')"><img class="mobile_menu" src="images/header_menu.svg"><img class="mobile_cross" src="images/menu_mobile_cross.svg"></div><a class="logotype" href="pages.html"><img src="images/logotype.svg" alt="Чудесный отдых"></a><a class="mobile_phone" href="pages.html"><img src="images/header_phone.svg" alt="Позвонить"></a>
                 <div class="phone_tourist"><a href="tel:8 (831) 413-11-23">8 (831) 413-11-23<img src="images/header_phone_arrow.svg" alt=""></a><span>Туристам</span></div>
                 <div class="phone_agency"><a href="tel:8 (831) 413-11-23">8 (831) 413-11-23<img src="images/header_phone_arrow.svg" alt=""></a><span>Агентствам</span></div>
                 <div class="search"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -47,6 +54,19 @@
         <section class="menu">
             <div class="container"><a class="catalog" href="index.html"><img src="images/header_filter.svg" alt="Наши туры"><span>Наши туры</span></a><a href="index.html">О нас</a><a href="index.html">Туристам</a><a href="index.html">Агентам</a><a href="index.html">Об отправлениях</a><a href="index.html">Акции</a><a href="index.html">Блог</a><a href="index.html">Контакты</a></div>
         </section>
+        <section class="mobile_menu">
+            <div class="container">
+                <fieldset class="search">
+                    <input type="search" placeholder="Искать"><img class="search" src="images/search.svg">
+                </fieldset>
+                <menu><a class="catalog" href="index.html"><img src="images/header_filter_black.svg" alt="Наши туры"><span>Подобрать тур</span></a><a href="index.html">О нас</a><a href="index.html">Туристам</a><a href="index.html">Агентам</a><a href="index.html">Об отправлениях</a><a href="index.html">Акции</a><a href="index.html">Блог</a><a href="index.html">Контакты</a></menu>
+                <div class="phones">
+                    <div class="phone_tourist"><a href="tel:8 (831) 413-11-23">8 (831) 413-11-23<img src="images/header_phone_arrow.svg" alt=""></a><span>Туристам</span></div>
+                    <div class="phone_agency"><a href="tel:8 (831) 413-11-23">8 (831) 413-11-23<img src="images/header_phone_arrow.svg" alt=""></a><span>Агентствам</span></div>
+                </div>
+                <div class="socials"><a href="https://telegram.org" target="blank"><img src="images/header_telegram.svg" alt="Telegram"></a><a href="https://vk.ru" target="blank"><img src="images/header_vkontakte.svg" alt="Vkontakte"></a></div>
+            </div>
+        </section>
         <main>
             <section class="main">
                 <div class="container">
@@ -54,7 +74,7 @@
                     <h1>Воспользуйтесь подбором и найдите ваш тур</h1>
                     <div class="filter">
                         <div class="direction">
-                                        <fieldset class="select" tabindex="0">
+                                        <fieldset class="directions select" tabindex="0">
                                             <div class="select_choice">
                                                 <input class="placeholder" type="radio" id="directions" name="directions" checked><span>Направление</span>
                                                 <input type="radio" id="directions_0" name="directions"><span>Городская прогулка</span>
@@ -96,8 +116,8 @@
                                             <input type="date" required><span>Дата до</span>
                                         </fieldset>
                         </div>
-                        <div class="transport"><span class="note">Транспорт</span>
-                                        <fieldset class="select" tabindex="0">
+                        <div class="transport"><span class="note">Тип транспорта</span>
+                                        <fieldset class="transport select" tabindex="0">
                                             <div class="select_choice">
                                                 <input type="radio" id="transport_0" name="transport" checked><span>Любой</span>
                                                 <input type="radio" id="transport_1" name="transport"><span>Самолет</span>
@@ -116,8 +136,8 @@
                                             </div>
                                         </fieldset>
                         </div>
-                        <div class="type"><span class="note">Тип</span>
-                                        <fieldset class="select" tabindex="0">
+                        <div class="type"><span class="note">Тип тура</span>
+                                        <fieldset class="type select" tabindex="0">
                                             <div class="select_choice">
                                                 <input type="radio" id="type_0" name="type" checked><span>Любой</span>
                                                 <input type="radio" id="type_1" name="type"><span>Краткосрочный</span>
@@ -172,56 +192,623 @@
                             <button>Найти тур</button>
                         </div>
                     </div>
-                    <div class="dates">
-                        <div class="swiper month">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">Январь 2025</div>
-                                <div class="swiper-slide">Февраль 2025</div>
-                                <div class="swiper-slide">Март 2025</div>
-                                <div class="swiper-slide">Апрель 2025</div>
-                                <div class="swiper-slide">Май 2025</div>
-                                <div class="swiper-slide">Июнь 2025</div>
-                                <div class="swiper-slide">Июль 2025</div>
-                                <div class="swiper-slide">Август 2025</div>
-                                <div class="swiper-slide">Сентябрь 2025</div>
-                                <div class="swiper-slide">Октябрь 2025</div>
-                                <div class="swiper-slide">Ноябрь 2025</div>
-                                <div class="swiper-slide">Декабрь 2025</div>
+                    <div class="dates tabs">
+                        <div class="monthes"><span class="note">Месяц:</span>
+                            <div class="tabs_captions dragdrop">
+                                <div class="tab_caption opened">Январь 2025</div>
+                                <div class="tab_caption">Февраль 2025</div>
+                                <div class="tab_caption">Март 2025</div>
+                                <div class="tab_caption">Апрель 2025</div>
+                                <div class="tab_caption">Май 2025</div>
+                                <div class="tab_caption">Июнь 2025</div>
+                                <div class="tab_caption">Июль 2025</div>
+                                <div class="tab_caption">Август 2025</div>
+                                <div class="tab_caption">Сентябрь 2025</div>
+                                <div class="tab_caption">Октябрь 2025</div>
+                                <div class="tab_caption">Ноябрь 2025</div>
+                                <div class="tab_caption">Декабрь 2025</div>
                             </div>
                         </div>
-                        <div class="swiper date">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">01.10 сб</div>
-                                <div class="swiper-slide">02.10 вс</div>
-                                <div class="swiper-slide">03.10 пн</div>
-                                <div class="swiper-slide">04.10 вт</div>
-                                <div class="swiper-slide">05.10 ср</div>
-                                <div class="swiper-slide">06.10 чт</div>
-                                <div class="swiper-slide">07.10 пт</div>
-                                <div class="swiper-slide">08.10 сб</div>
-                                <div class="swiper-slide">09.10 вс</div>
-                                <div class="swiper-slide">10.10 вс</div>
-                                <div class="swiper-slide">11.10 сб</div>
-                                <div class="swiper-slide">12.10 вс</div>
-                                <div class="swiper-slide">13.10 пн</div>
-                                <div class="swiper-slide">14.10 вт</div>
-                                <div class="swiper-slide">15.10 ср</div>
-                                <div class="swiper-slide">16.10 чт</div>
-                                <div class="swiper-slide">17.10 пт</div>
-                                <div class="swiper-slide">18.10 сб</div>
-                                <div class="swiper-slide">19.10 вс</div>
-                                <div class="swiper-slide">20.10 пн</div>
-                                <div class="swiper-slide">21.10 вт</div>
-                                <div class="swiper-slide">22.10 ср</div>
-                                <div class="swiper-slide">23.10 чт</div>
-                                <div class="swiper-slide">24.10 пт</div>
-                                <div class="swiper-slide">25.10 сб</div>
-                                <div class="swiper-slide">26.10 вс</div>
-                                <div class="swiper-slide">27.10 пн</div>
-                                <div class="swiper-slide">28.10 вт</div>
-                                <div class="swiper-slide">29.10 ср</div>
-                                <div class="swiper-slide">30.10 чт</div>
-                                <div class="swiper-slide">31.10 пт</div>
+                        <div class="days tabs_contents"><span class="note">Дата:</span>
+                            <div class="opened tab_content">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">01.01 сб</div>
+                                        <div class="swiper-slide">02.01 вс</div>
+                                        <div class="swiper-slide">03.01 пн</div>
+                                        <div class="swiper-slide">04.01 вт</div>
+                                        <div class="swiper-slide">05.01 ср</div>
+                                        <div class="swiper-slide">06.01 чт</div>
+                                        <div class="swiper-slide">07.01 пт</div>
+                                        <div class="swiper-slide">08.01 сб</div>
+                                        <div class="swiper-slide">09.01 вс</div>
+                                        <div class="swiper-slide">10.01 вс</div>
+                                        <div class="swiper-slide">11.01 сб</div>
+                                        <div class="swiper-slide">12.01 вс</div>
+                                        <div class="swiper-slide">13.01 пн</div>
+                                        <div class="swiper-slide">14.01 вт</div>
+                                        <div class="swiper-slide">15.01 ср</div>
+                                        <div class="swiper-slide">16.01 чт</div>
+                                        <div class="swiper-slide">17.01 пт</div>
+                                        <div class="swiper-slide">18.01 сб</div>
+                                        <div class="swiper-slide">19.01 вс</div>
+                                        <div class="swiper-slide">20.01 пн</div>
+                                        <div class="swiper-slide">21.01 вт</div>
+                                        <div class="swiper-slide">22.01 ср</div>
+                                        <div class="swiper-slide">23.01 чт</div>
+                                        <div class="swiper-slide">24.01 пт</div>
+                                        <div class="swiper-slide">25.01 сб</div>
+                                        <div class="swiper-slide">26.01 вс</div>
+                                        <div class="swiper-slide">27.01 пн</div>
+                                        <div class="swiper-slide">28.01 вт</div>
+                                        <div class="swiper-slide">29.01 ср</div>
+                                        <div class="swiper-slide">30.01 чт</div>
+                                        <div class="swiper-slide">31.01 пт</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-scrollbar"></div>
+                                <div class="swiper-navigation">
+                                    <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                                    </div>
+                                    <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab_content">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">01.02 сб</div>
+                                        <div class="swiper-slide">02.02 вс</div>
+                                        <div class="swiper-slide">03.02 пн</div>
+                                        <div class="swiper-slide">04.02 вт</div>
+                                        <div class="swiper-slide">05.02 ср</div>
+                                        <div class="swiper-slide">06.02 чт</div>
+                                        <div class="swiper-slide">07.02 пт</div>
+                                        <div class="swiper-slide">08.02 сб</div>
+                                        <div class="swiper-slide">09.02 вс</div>
+                                        <div class="swiper-slide">10.02 вс</div>
+                                        <div class="swiper-slide">11.02 сб</div>
+                                        <div class="swiper-slide">12.02 вс</div>
+                                        <div class="swiper-slide">13.02 пн</div>
+                                        <div class="swiper-slide">14.02 вт</div>
+                                        <div class="swiper-slide">15.02 ср</div>
+                                        <div class="swiper-slide">16.02 чт</div>
+                                        <div class="swiper-slide">17.02 пт</div>
+                                        <div class="swiper-slide">18.02 сб</div>
+                                        <div class="swiper-slide">19.02 вс</div>
+                                        <div class="swiper-slide">20.02 пн</div>
+                                        <div class="swiper-slide">21.02 вт</div>
+                                        <div class="swiper-slide">22.02 ср</div>
+                                        <div class="swiper-slide">23.02 чт</div>
+                                        <div class="swiper-slide">24.02 пт</div>
+                                        <div class="swiper-slide">25.02 сб</div>
+                                        <div class="swiper-slide">26.02 вс</div>
+                                        <div class="swiper-slide">27.02 пн</div>
+                                        <div class="swiper-slide">28.02 вт</div>
+                                        <div class="swiper-slide">29.02 ср</div>
+                                        <div class="swiper-slide">30.02 чт</div>
+                                        <div class="swiper-slide">31.02 пт</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-scrollbar"></div>
+                                <div class="swiper-navigation">
+                                    <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                                    </div>
+                                    <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab_content">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">01.03 сб</div>
+                                        <div class="swiper-slide">02.03 вс</div>
+                                        <div class="swiper-slide">03.03 пн</div>
+                                        <div class="swiper-slide">04.03 вт</div>
+                                        <div class="swiper-slide">05.03 ср</div>
+                                        <div class="swiper-slide">06.03 чт</div>
+                                        <div class="swiper-slide">07.03 пт</div>
+                                        <div class="swiper-slide">08.03 сб</div>
+                                        <div class="swiper-slide">09.03 вс</div>
+                                        <div class="swiper-slide">10.03 вс</div>
+                                        <div class="swiper-slide">11.03 сб</div>
+                                        <div class="swiper-slide">12.03 вс</div>
+                                        <div class="swiper-slide">13.03 пн</div>
+                                        <div class="swiper-slide">14.03 вт</div>
+                                        <div class="swiper-slide">15.03 ср</div>
+                                        <div class="swiper-slide">16.03 чт</div>
+                                        <div class="swiper-slide">17.03 пт</div>
+                                        <div class="swiper-slide">18.03 сб</div>
+                                        <div class="swiper-slide">19.03 вс</div>
+                                        <div class="swiper-slide">20.03 пн</div>
+                                        <div class="swiper-slide">21.03 вт</div>
+                                        <div class="swiper-slide">22.03 ср</div>
+                                        <div class="swiper-slide">23.03 чт</div>
+                                        <div class="swiper-slide">24.03 пт</div>
+                                        <div class="swiper-slide">25.03 сб</div>
+                                        <div class="swiper-slide">26.03 вс</div>
+                                        <div class="swiper-slide">27.03 пн</div>
+                                        <div class="swiper-slide">28.03 вт</div>
+                                        <div class="swiper-slide">29.03 ср</div>
+                                        <div class="swiper-slide">30.03 чт</div>
+                                        <div class="swiper-slide">31.03 пт</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-scrollbar"></div>
+                                <div class="swiper-navigation">
+                                    <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                                    </div>
+                                    <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab_content">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">01.04 сб</div>
+                                        <div class="swiper-slide">02.04 вс</div>
+                                        <div class="swiper-slide">03.04 пн</div>
+                                        <div class="swiper-slide">04.04 вт</div>
+                                        <div class="swiper-slide">05.04 ср</div>
+                                        <div class="swiper-slide">06.04 чт</div>
+                                        <div class="swiper-slide">07.04 пт</div>
+                                        <div class="swiper-slide">08.04 сб</div>
+                                        <div class="swiper-slide">09.04 вс</div>
+                                        <div class="swiper-slide">10.04 вс</div>
+                                        <div class="swiper-slide">11.04 сб</div>
+                                        <div class="swiper-slide">12.04 вс</div>
+                                        <div class="swiper-slide">13.04 пн</div>
+                                        <div class="swiper-slide">14.04 вт</div>
+                                        <div class="swiper-slide">15.04 ср</div>
+                                        <div class="swiper-slide">16.04 чт</div>
+                                        <div class="swiper-slide">17.04 пт</div>
+                                        <div class="swiper-slide">18.04 сб</div>
+                                        <div class="swiper-slide">19.04 вс</div>
+                                        <div class="swiper-slide">20.04 пн</div>
+                                        <div class="swiper-slide">21.04 вт</div>
+                                        <div class="swiper-slide">22.04 ср</div>
+                                        <div class="swiper-slide">23.04 чт</div>
+                                        <div class="swiper-slide">24.04 пт</div>
+                                        <div class="swiper-slide">25.04 сб</div>
+                                        <div class="swiper-slide">26.04 вс</div>
+                                        <div class="swiper-slide">27.04 пн</div>
+                                        <div class="swiper-slide">28.04 вт</div>
+                                        <div class="swiper-slide">29.04 ср</div>
+                                        <div class="swiper-slide">30.04 чт</div>
+                                        <div class="swiper-slide">31.04 пт</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-scrollbar"></div>
+                                <div class="swiper-navigation">
+                                    <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                                    </div>
+                                    <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab_content">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">01.05 сб</div>
+                                        <div class="swiper-slide">02.05 вс</div>
+                                        <div class="swiper-slide">03.05 пн</div>
+                                        <div class="swiper-slide">04.05 вт</div>
+                                        <div class="swiper-slide">05.05 ср</div>
+                                        <div class="swiper-slide">06.05 чт</div>
+                                        <div class="swiper-slide">07.05 пт</div>
+                                        <div class="swiper-slide">08.05 сб</div>
+                                        <div class="swiper-slide">09.05 вс</div>
+                                        <div class="swiper-slide">10.05 вс</div>
+                                        <div class="swiper-slide">11.05 сб</div>
+                                        <div class="swiper-slide">12.05 вс</div>
+                                        <div class="swiper-slide">13.05 пн</div>
+                                        <div class="swiper-slide">14.05 вт</div>
+                                        <div class="swiper-slide">15.05 ср</div>
+                                        <div class="swiper-slide">16.05 чт</div>
+                                        <div class="swiper-slide">17.05 пт</div>
+                                        <div class="swiper-slide">18.05 сб</div>
+                                        <div class="swiper-slide">19.05 вс</div>
+                                        <div class="swiper-slide">20.05 пн</div>
+                                        <div class="swiper-slide">21.05 вт</div>
+                                        <div class="swiper-slide">22.05 ср</div>
+                                        <div class="swiper-slide">23.05 чт</div>
+                                        <div class="swiper-slide">24.05 пт</div>
+                                        <div class="swiper-slide">25.05 сб</div>
+                                        <div class="swiper-slide">26.05 вс</div>
+                                        <div class="swiper-slide">27.05 пн</div>
+                                        <div class="swiper-slide">28.05 вт</div>
+                                        <div class="swiper-slide">29.05 ср</div>
+                                        <div class="swiper-slide">30.05 чт</div>
+                                        <div class="swiper-slide">31.05 пт</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-scrollbar"></div>
+                                <div class="swiper-navigation">
+                                    <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                                    </div>
+                                    <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab_content">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">01.06 сб</div>
+                                        <div class="swiper-slide">02.06 вс</div>
+                                        <div class="swiper-slide">03.06 пн</div>
+                                        <div class="swiper-slide">04.06 вт</div>
+                                        <div class="swiper-slide">05.06 ср</div>
+                                        <div class="swiper-slide">06.06 чт</div>
+                                        <div class="swiper-slide">07.06 пт</div>
+                                        <div class="swiper-slide">08.06 сб</div>
+                                        <div class="swiper-slide">09.06 вс</div>
+                                        <div class="swiper-slide">10.06 вс</div>
+                                        <div class="swiper-slide">11.06 сб</div>
+                                        <div class="swiper-slide">12.06 вс</div>
+                                        <div class="swiper-slide">13.06 пн</div>
+                                        <div class="swiper-slide">14.06 вт</div>
+                                        <div class="swiper-slide">15.06 ср</div>
+                                        <div class="swiper-slide">16.06 чт</div>
+                                        <div class="swiper-slide">17.06 пт</div>
+                                        <div class="swiper-slide">18.06 сб</div>
+                                        <div class="swiper-slide">19.06 вс</div>
+                                        <div class="swiper-slide">20.06 пн</div>
+                                        <div class="swiper-slide">21.06 вт</div>
+                                        <div class="swiper-slide">22.06 ср</div>
+                                        <div class="swiper-slide">23.06 чт</div>
+                                        <div class="swiper-slide">24.06 пт</div>
+                                        <div class="swiper-slide">25.06 сб</div>
+                                        <div class="swiper-slide">26.06 вс</div>
+                                        <div class="swiper-slide">27.06 пн</div>
+                                        <div class="swiper-slide">28.06 вт</div>
+                                        <div class="swiper-slide">29.06 ср</div>
+                                        <div class="swiper-slide">30.06 чт</div>
+                                        <div class="swiper-slide">31.06 пт</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-scrollbar"></div>
+                                <div class="swiper-navigation">
+                                    <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                                    </div>
+                                    <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab_content">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">01.07 сб</div>
+                                        <div class="swiper-slide">02.07 вс</div>
+                                        <div class="swiper-slide">03.07 пн</div>
+                                        <div class="swiper-slide">04.07 вт</div>
+                                        <div class="swiper-slide">05.07 ср</div>
+                                        <div class="swiper-slide">06.07 чт</div>
+                                        <div class="swiper-slide">07.07 пт</div>
+                                        <div class="swiper-slide">08.07 сб</div>
+                                        <div class="swiper-slide">09.07 вс</div>
+                                        <div class="swiper-slide">10.07 вс</div>
+                                        <div class="swiper-slide">11.07 сб</div>
+                                        <div class="swiper-slide">12.07 вс</div>
+                                        <div class="swiper-slide">13.07 пн</div>
+                                        <div class="swiper-slide">14.07 вт</div>
+                                        <div class="swiper-slide">15.07 ср</div>
+                                        <div class="swiper-slide">16.07 чт</div>
+                                        <div class="swiper-slide">17.07 пт</div>
+                                        <div class="swiper-slide">18.07 сб</div>
+                                        <div class="swiper-slide">19.07 вс</div>
+                                        <div class="swiper-slide">20.07 пн</div>
+                                        <div class="swiper-slide">21.07 вт</div>
+                                        <div class="swiper-slide">22.07 ср</div>
+                                        <div class="swiper-slide">23.07 чт</div>
+                                        <div class="swiper-slide">24.07 пт</div>
+                                        <div class="swiper-slide">25.07 сб</div>
+                                        <div class="swiper-slide">26.07 вс</div>
+                                        <div class="swiper-slide">27.07 пн</div>
+                                        <div class="swiper-slide">28.07 вт</div>
+                                        <div class="swiper-slide">29.07 ср</div>
+                                        <div class="swiper-slide">30.07 чт</div>
+                                        <div class="swiper-slide">31.07 пт</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-scrollbar"></div>
+                                <div class="swiper-navigation">
+                                    <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                                    </div>
+                                    <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab_content">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">01.08 сб</div>
+                                        <div class="swiper-slide">02.08 вс</div>
+                                        <div class="swiper-slide">03.08 пн</div>
+                                        <div class="swiper-slide">04.08 вт</div>
+                                        <div class="swiper-slide">05.08 ср</div>
+                                        <div class="swiper-slide">06.08 чт</div>
+                                        <div class="swiper-slide">07.08 пт</div>
+                                        <div class="swiper-slide">08.08 сб</div>
+                                        <div class="swiper-slide">09.08 вс</div>
+                                        <div class="swiper-slide">10.08 вс</div>
+                                        <div class="swiper-slide">11.08 сб</div>
+                                        <div class="swiper-slide">12.08 вс</div>
+                                        <div class="swiper-slide">13.08 пн</div>
+                                        <div class="swiper-slide">14.08 вт</div>
+                                        <div class="swiper-slide">15.08 ср</div>
+                                        <div class="swiper-slide">16.08 чт</div>
+                                        <div class="swiper-slide">17.08 пт</div>
+                                        <div class="swiper-slide">18.08 сб</div>
+                                        <div class="swiper-slide">19.08 вс</div>
+                                        <div class="swiper-slide">20.08 пн</div>
+                                        <div class="swiper-slide">21.08 вт</div>
+                                        <div class="swiper-slide">22.08 ср</div>
+                                        <div class="swiper-slide">23.08 чт</div>
+                                        <div class="swiper-slide">24.08 пт</div>
+                                        <div class="swiper-slide">25.08 сб</div>
+                                        <div class="swiper-slide">26.08 вс</div>
+                                        <div class="swiper-slide">27.08 пн</div>
+                                        <div class="swiper-slide">28.08 вт</div>
+                                        <div class="swiper-slide">29.08 ср</div>
+                                        <div class="swiper-slide">30.08 чт</div>
+                                        <div class="swiper-slide">31.08 пт</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-scrollbar"></div>
+                                <div class="swiper-navigation">
+                                    <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                                    </div>
+                                    <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab_content">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">01.09 сб</div>
+                                        <div class="swiper-slide">02.09 вс</div>
+                                        <div class="swiper-slide">03.09 пн</div>
+                                        <div class="swiper-slide">04.09 вт</div>
+                                        <div class="swiper-slide">05.09 ср</div>
+                                        <div class="swiper-slide">06.09 чт</div>
+                                        <div class="swiper-slide">07.09 пт</div>
+                                        <div class="swiper-slide">08.09 сб</div>
+                                        <div class="swiper-slide">09.09 вс</div>
+                                        <div class="swiper-slide">10.09 вс</div>
+                                        <div class="swiper-slide">11.09 сб</div>
+                                        <div class="swiper-slide">12.09 вс</div>
+                                        <div class="swiper-slide">13.09 пн</div>
+                                        <div class="swiper-slide">14.09 вт</div>
+                                        <div class="swiper-slide">15.09 ср</div>
+                                        <div class="swiper-slide">16.09 чт</div>
+                                        <div class="swiper-slide">17.09 пт</div>
+                                        <div class="swiper-slide">18.09 сб</div>
+                                        <div class="swiper-slide">19.09 вс</div>
+                                        <div class="swiper-slide">20.09 пн</div>
+                                        <div class="swiper-slide">21.09 вт</div>
+                                        <div class="swiper-slide">22.09 ср</div>
+                                        <div class="swiper-slide">23.09 чт</div>
+                                        <div class="swiper-slide">24.09 пт</div>
+                                        <div class="swiper-slide">25.09 сб</div>
+                                        <div class="swiper-slide">26.09 вс</div>
+                                        <div class="swiper-slide">27.09 пн</div>
+                                        <div class="swiper-slide">28.09 вт</div>
+                                        <div class="swiper-slide">29.09 ср</div>
+                                        <div class="swiper-slide">30.09 чт</div>
+                                        <div class="swiper-slide">31.09 пт</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-scrollbar"></div>
+                                <div class="swiper-navigation">
+                                    <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                                    </div>
+                                    <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab_content">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">01.010 сб</div>
+                                        <div class="swiper-slide">02.010 вс</div>
+                                        <div class="swiper-slide">03.010 пн</div>
+                                        <div class="swiper-slide">04.010 вт</div>
+                                        <div class="swiper-slide">05.010 ср</div>
+                                        <div class="swiper-slide">06.010 чт</div>
+                                        <div class="swiper-slide">07.010 пт</div>
+                                        <div class="swiper-slide">08.010 сб</div>
+                                        <div class="swiper-slide">09.010 вс</div>
+                                        <div class="swiper-slide">10.010 вс</div>
+                                        <div class="swiper-slide">11.010 сб</div>
+                                        <div class="swiper-slide">12.010 вс</div>
+                                        <div class="swiper-slide">13.010 пн</div>
+                                        <div class="swiper-slide">14.010 вт</div>
+                                        <div class="swiper-slide">15.010 ср</div>
+                                        <div class="swiper-slide">16.010 чт</div>
+                                        <div class="swiper-slide">17.010 пт</div>
+                                        <div class="swiper-slide">18.010 сб</div>
+                                        <div class="swiper-slide">19.010 вс</div>
+                                        <div class="swiper-slide">20.010 пн</div>
+                                        <div class="swiper-slide">21.010 вт</div>
+                                        <div class="swiper-slide">22.010 ср</div>
+                                        <div class="swiper-slide">23.010 чт</div>
+                                        <div class="swiper-slide">24.010 пт</div>
+                                        <div class="swiper-slide">25.010 сб</div>
+                                        <div class="swiper-slide">26.010 вс</div>
+                                        <div class="swiper-slide">27.010 пн</div>
+                                        <div class="swiper-slide">28.010 вт</div>
+                                        <div class="swiper-slide">29.010 ср</div>
+                                        <div class="swiper-slide">30.010 чт</div>
+                                        <div class="swiper-slide">31.010 пт</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-scrollbar"></div>
+                                <div class="swiper-navigation">
+                                    <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                                    </div>
+                                    <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab_content">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">01.011 сб</div>
+                                        <div class="swiper-slide">02.011 вс</div>
+                                        <div class="swiper-slide">03.011 пн</div>
+                                        <div class="swiper-slide">04.011 вт</div>
+                                        <div class="swiper-slide">05.011 ср</div>
+                                        <div class="swiper-slide">06.011 чт</div>
+                                        <div class="swiper-slide">07.011 пт</div>
+                                        <div class="swiper-slide">08.011 сб</div>
+                                        <div class="swiper-slide">09.011 вс</div>
+                                        <div class="swiper-slide">10.011 вс</div>
+                                        <div class="swiper-slide">11.011 сб</div>
+                                        <div class="swiper-slide">12.011 вс</div>
+                                        <div class="swiper-slide">13.011 пн</div>
+                                        <div class="swiper-slide">14.011 вт</div>
+                                        <div class="swiper-slide">15.011 ср</div>
+                                        <div class="swiper-slide">16.011 чт</div>
+                                        <div class="swiper-slide">17.011 пт</div>
+                                        <div class="swiper-slide">18.011 сб</div>
+                                        <div class="swiper-slide">19.011 вс</div>
+                                        <div class="swiper-slide">20.011 пн</div>
+                                        <div class="swiper-slide">21.011 вт</div>
+                                        <div class="swiper-slide">22.011 ср</div>
+                                        <div class="swiper-slide">23.011 чт</div>
+                                        <div class="swiper-slide">24.011 пт</div>
+                                        <div class="swiper-slide">25.011 сб</div>
+                                        <div class="swiper-slide">26.011 вс</div>
+                                        <div class="swiper-slide">27.011 пн</div>
+                                        <div class="swiper-slide">28.011 вт</div>
+                                        <div class="swiper-slide">29.011 ср</div>
+                                        <div class="swiper-slide">30.011 чт</div>
+                                        <div class="swiper-slide">31.011 пт</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-scrollbar"></div>
+                                <div class="swiper-navigation">
+                                    <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                                    </div>
+                                    <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab_content">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">01.012 сб</div>
+                                        <div class="swiper-slide">02.012 вс</div>
+                                        <div class="swiper-slide">03.012 пн</div>
+                                        <div class="swiper-slide">04.012 вт</div>
+                                        <div class="swiper-slide">05.012 ср</div>
+                                        <div class="swiper-slide">06.012 чт</div>
+                                        <div class="swiper-slide">07.012 пт</div>
+                                        <div class="swiper-slide">08.012 сб</div>
+                                        <div class="swiper-slide">09.012 вс</div>
+                                        <div class="swiper-slide">10.012 вс</div>
+                                        <div class="swiper-slide">11.012 сб</div>
+                                        <div class="swiper-slide">12.012 вс</div>
+                                        <div class="swiper-slide">13.012 пн</div>
+                                        <div class="swiper-slide">14.012 вт</div>
+                                        <div class="swiper-slide">15.012 ср</div>
+                                        <div class="swiper-slide">16.012 чт</div>
+                                        <div class="swiper-slide">17.012 пт</div>
+                                        <div class="swiper-slide">18.012 сб</div>
+                                        <div class="swiper-slide">19.012 вс</div>
+                                        <div class="swiper-slide">20.012 пн</div>
+                                        <div class="swiper-slide">21.012 вт</div>
+                                        <div class="swiper-slide">22.012 ср</div>
+                                        <div class="swiper-slide">23.012 чт</div>
+                                        <div class="swiper-slide">24.012 пт</div>
+                                        <div class="swiper-slide">25.012 сб</div>
+                                        <div class="swiper-slide">26.012 вс</div>
+                                        <div class="swiper-slide">27.012 пн</div>
+                                        <div class="swiper-slide">28.012 вт</div>
+                                        <div class="swiper-slide">29.012 ср</div>
+                                        <div class="swiper-slide">30.012 чт</div>
+                                        <div class="swiper-slide">31.012 пт</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-scrollbar"></div>
+                                <div class="swiper-navigation">
+                                    <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                                    </div>
+                                    <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -235,7 +822,8 @@
                                         <div class="type"><img src="images/card_train.svg" alt="Автобус"></div>
                                     </div>
                                     <div class="description">
-                                        <div class="text"><span class="title">Майские праздники в Москве</span><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
+                                        <div class="text"><a class="title" href="index.html">
+                                                <h5>Майские праздники в Москве</h5></a><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
                                             <div class="type"><img src="images/card_train.svg" alt="Автобус"><span>Автобусный тур</span></div>
                                         </div>
                                         <div class="details">
@@ -269,7 +857,8 @@
                                         <div class="type"><img src="images/card_train.svg" alt="Автобус"></div>
                                     </div>
                                     <div class="description">
-                                        <div class="text"><span class="title">Майские праздники в Москве</span><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
+                                        <div class="text"><a class="title" href="index.html">
+                                                <h5>Майские праздники в Москве</h5></a><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
                                             <div class="type"><img src="images/card_train.svg" alt="Автобус"><span>Автобусный тур</span></div>
                                         </div>
                                         <div class="details">
@@ -303,7 +892,8 @@
                                         <div class="type"><img src="images/card_train.svg" alt="Автобус"></div>
                                     </div>
                                     <div class="description">
-                                        <div class="text"><span class="title">Майские праздники в Москве</span><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
+                                        <div class="text"><a class="title" href="index.html">
+                                                <h5>Майские праздники в Москве</h5></a><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
                                             <div class="type"><img src="images/card_train.svg" alt="Автобус"><span>Автобусный тур</span></div>
                                         </div>
                                         <div class="details">
@@ -337,7 +927,8 @@
                                         <div class="type"><img src="images/card_train.svg" alt="Автобус"></div>
                                     </div>
                                     <div class="description">
-                                        <div class="text"><span class="title">Майские праздники в Москве</span><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
+                                        <div class="text"><a class="title" href="index.html">
+                                                <h5>Майские праздники в Москве</h5></a><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
                                             <div class="type"><img src="images/card_train.svg" alt="Автобус"><span>Автобусный тур</span></div>
                                         </div>
                                         <div class="details">
@@ -371,7 +962,8 @@
                                         <div class="type"><img src="images/card_train.svg" alt="Автобус"></div>
                                     </div>
                                     <div class="description">
-                                        <div class="text"><span class="title">Майские праздники в Москве</span><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
+                                        <div class="text"><a class="title" href="index.html">
+                                                <h5>Майские праздники в Москве</h5></a><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
                                             <div class="type"><img src="images/card_train.svg" alt="Автобус"><span>Автобусный тур</span></div>
                                         </div>
                                         <div class="details">
@@ -405,7 +997,8 @@
                                         <div class="type"><img src="images/card_train.svg" alt="Автобус"></div>
                                     </div>
                                     <div class="description">
-                                        <div class="text"><span class="title">Майские праздники в Москве</span><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
+                                        <div class="text"><a class="title" href="index.html">
+                                                <h5>Майские праздники в Москве</h5></a><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
                                             <div class="type"><img src="images/card_train.svg" alt="Автобус"><span>Автобусный тур</span></div>
                                         </div>
                                         <div class="details">
@@ -439,7 +1032,8 @@
                                         <div class="type"><img src="images/card_train.svg" alt="Автобус"></div>
                                     </div>
                                     <div class="description">
-                                        <div class="text"><span class="title">Майские праздники в Москве</span><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
+                                        <div class="text"><a class="title" href="index.html">
+                                                <h5>Майские праздники в Москве</h5></a><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
                                             <div class="type"><img src="images/card_train.svg" alt="Автобус"><span>Автобусный тур</span></div>
                                         </div>
                                         <div class="details">
@@ -473,7 +1067,8 @@
                                         <div class="type"><img src="images/card_train.svg" alt="Автобус"></div>
                                     </div>
                                     <div class="description">
-                                        <div class="text"><span class="title">Майские праздники в Москве</span><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
+                                        <div class="text"><a class="title" href="index.html">
+                                                <h5>Майские праздники в Москве</h5></a><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
                                             <div class="type"><img src="images/card_train.svg" alt="Автобус"><span>Автобусный тур</span></div>
                                         </div>
                                         <div class="details">
@@ -507,7 +1102,8 @@
                                         <div class="type"><img src="images/card_train.svg" alt="Автобус"></div>
                                     </div>
                                     <div class="description">
-                                        <div class="text"><span class="title">Майские праздники в Москве</span><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
+                                        <div class="text"><a class="title" href="index.html">
+                                                <h5>Майские праздники в Москве</h5></a><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
                                             <div class="type"><img src="images/card_train.svg" alt="Автобус"><span>Автобусный тур</span></div>
                                         </div>
                                         <div class="details">
@@ -541,7 +1137,8 @@
                                         <div class="type"><img src="images/card_train.svg" alt="Автобус"></div>
                                     </div>
                                     <div class="description">
-                                        <div class="text"><span class="title">Майские праздники в Москве</span><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
+                                        <div class="text"><a class="title" href="index.html">
+                                                <h5>Майские праздники в Москве</h5></a><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
                                             <div class="type"><img src="images/card_train.svg" alt="Автобус"><span>Автобусный тур</span></div>
                                         </div>
                                         <div class="details">
@@ -575,7 +1172,8 @@
                                         <div class="type"><img src="images/card_train.svg" alt="Автобус"></div>
                                     </div>
                                     <div class="description">
-                                        <div class="text"><span class="title">Майские праздники в Москве</span><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
+                                        <div class="text"><a class="title" href="index.html">
+                                                <h5>Майские праздники в Москве</h5></a><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
                                             <div class="type"><img src="images/card_train.svg" alt="Автобус"><span>Автобусный тур</span></div>
                                         </div>
                                         <div class="details">
@@ -609,7 +1207,8 @@
                                         <div class="type"><img src="images/card_train.svg" alt="Автобус"></div>
                                     </div>
                                     <div class="description">
-                                        <div class="text"><span class="title">Майские праздники в Москве</span><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
+                                        <div class="text"><a class="title" href="index.html">
+                                                <h5>Майские праздники в Москве</h5></a><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
                                             <div class="type"><img src="images/card_train.svg" alt="Автобус"><span>Автобусный тур</span></div>
                                         </div>
                                         <div class="details">
@@ -647,7 +1246,7 @@
 </a></div>
                     <button>Показать еще</button>
                     <div class="count"><span>Выводить на странице:</span>
-                                    <fieldset class="select" tabindex="0">
+                                    <fieldset class="per_page select" tabindex="0">
                                         <div class="select_choice">
                                             <input type="radio" id="per_page_0" name="per_page" checked><span>12</span>
                                             <input type="radio" id="per_page_1" name="per_page"><span>16</span>
@@ -671,7 +1270,7 @@
             <section class="expert">
                 <div class="container">
                     <h2><b>Наш эксперт подберет тур для вас!</b> <br>Начните путешествовать вместе с нами</h2>
-                    <form action="index.html">
+                    <form action="index.html" onsubmit="event.preventDefault(); this.classList.add('success')">
                                     <fieldset class="input">
                                         <input type="text" placeholder=" " required><span>Имя</span>
                                     </fieldset>
@@ -679,9 +1278,12 @@
                                         <input type="text" placeholder=" "><span>Компания</span>
                                     </fieldset>
                         <fieldset class="input">
-                            <input type="tel" placeholder=" "><span>Телефон</span>
+                            <input type="tel" placeholder=" " required><span>Телефон</span>
                         </fieldset>
                         <button>Отправить заявку</button>
+                        <div class="success">
+                            <h5>Ваша заявка успешно отправлена</h5>
+                        </div>
                     </form>
                 </div>
             </section>
@@ -695,7 +1297,7 @@
                     <div class="account"><a class="agency" href="account.html"><img src="images/footer_arrow.svg" alt="Агентам"><span>Агентам</span></a><a class="tourist" href="account.html"><img src="images/footer_account.svg" alt="Личный кабинет"><span>Личный кабинет</span></a></div>
                     <div class="registry"><img src="images/emblem.webp" alt="Герб"><span>Мы в реестре туроператоров <br>ООО «Чудесный отдых» РТО 021180</span></div>
                 </div>
-                <div class="bottom"><span class="copyright">© 2025 Компания ООО «Чудесный отдых». Все права защищены и охраняются законом.</span>
+                <div class="bottom"><span class="copyright">© 2026 Компания ООО «Чудесный отдых». Все права защищены и охраняются законом.</span>
                     <div class="docs"><a href="index.html">Политика конфиденциальности</a><a href="index.html">Публичная оферта</a></div><a class="studio" href="https://mwi.me" target="blank"><span>Сайт разработан</span><img src="images/mwi.svg" alt="MWI"></a>
                 </div>
             </div>
@@ -742,13 +1344,13 @@
                                             <input type="text" placeholder=" " required><span>Email</span>
                                         </fieldset>
                                 <fieldset class="password">
-                                    <input type="password" name="password" placeholder="Старый пароль" onChange="passwordChange()">
+                                    <input type="password" name="password" placeholder="Пароль" onChange="passwordChange()">
                                     <div class="eye" onclick="showPassword(this)"><img src="images/password_visible.svg"><img src="images/password_hidden.svg"></div>
                                 </fieldset>
                                 <fieldset class="password">
-                                    <input type="password" name="confirm" placeholder="Новый пароль" onChange="passwordChange()">
+                                    <input type="password" name="confirm" placeholder="Повторите пароль" onChange="passwordChange()">
                                     <div class="eye" onclick="showPassword(this)"><img src="images/password_visible.svg"><img src="images/password_hidden.svg"></div>
-                                </fieldset>
+                                </fieldset><div class="g-recaptcha" data-sitekey="ваш_site_key"></div>
                                 <button>Зарегистрироваться</button>
                                         <label class="checkbox">
                                             <input type="checkbox" checked><span>Даю согласие на обработку персональных данных в соответствии с <a href="index.html">Политикой в отношении обработки персональных данных</a>, а также принимаете условия <a href="index.html">Пользовательского соглашения</a>.</span>
@@ -779,11 +1381,11 @@
                                             <input type="text" placeholder=" " required><span>Email</span>
                                         </fieldset>
                                 <fieldset class="password">
-                                    <input type="password" name="password" placeholder="Старый пароль" onChange="passwordChange()">
+                                    <input type="password" name="password" placeholder="Пароль" onChange="passwordChange()">
                                     <div class="eye" onclick="showPassword(this)"><img src="images/password_visible.svg"><img src="images/password_hidden.svg"></div>
                                 </fieldset>
                                 <fieldset class="password">
-                                    <input type="password" name="confirm" placeholder="Новый пароль" onChange="passwordChange()">
+                                    <input type="password" name="confirm" placeholder="Повторите пароль" onChange="passwordChange()">
                                     <div class="eye" onclick="showPassword(this)"><img src="images/password_visible.svg"><img src="images/password_hidden.svg"></div>
                                 </fieldset>
                                 <button>Зарегистрироваться</button>
@@ -806,7 +1408,7 @@
                             <fieldset class="input">
                                 <input type="text" placeholder=" " required><span>Email</span>
                             </fieldset>
-                    <button>Зарегистрироваться</button>
+                    <button>Восстановить</button>
                 </form>
             </div>
         </dialog>
@@ -851,6 +1453,38 @@
                                 <input type="checkbox" checked><span>Даю согласие на обработку персональных данных в соответствии с <a href="index.html">Политикой в отношении обработки персональных данных</a>, а также принимаете условия <a href="index.html">Пользовательского соглашения</a>.</span>
                             </label>
                 </form>
+            </div>
+        </dialog>
+        <dialog data-modal-name="lightbox">
+            <div class="cross" data-modal-close><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1L11 11" stroke="#ACACAC" stroke-width="2" stroke-linecap="round"/>
+<path d="M11 1L1 11" stroke="#ACACAC" stroke-width="2" stroke-linecap="round"/>
+</svg>
+
+            </div>
+            <div class="container">
+                <div class="images">
+                    <div class="swiper">
+                        <div class="swiper-wrapper"></div>
+                    </div>
+                    <div class="swiper-navigation">
+                        <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                        </div>
+                        <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="thumbs">
+                    <div class="swiper">
+                        <div class="swiper-wrapper"></div>
+                    </div>
+                </div>
             </div>
         </dialog>
     </body>

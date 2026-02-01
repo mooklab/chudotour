@@ -14,7 +14,8 @@ section.order_tour
 
                 div.description
                     div.text
-                        span.title Майские праздники в Москве
+                        a(href="index.html").title 
+                            h5 Майские праздники в Москве
                         span.city #[a(href="index.html") из Н.Новгорода, ]автобус, 8-9 часов
                         span.text Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...
                         div.type
@@ -51,7 +52,9 @@ section.order_tour
                         +datepicker('Дата рождения')
                         +select('gender', 'Пол', 'Мужской', 'Женский')
                     div.tr
-                        +input('Телефон', true)
+                        fieldset.input
+                            input(type="tel", placeholder=" ", required)
+                            span Телефон
                         +input('Email', true)
                     div.tr
                         +select('category', 'Категория', 'Категория 1', 'Категория 2', 'Категория 3')

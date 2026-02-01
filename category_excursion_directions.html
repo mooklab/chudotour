@@ -27,12 +27,19 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper.min.css">
         <link rel="stylesheet" href="css/common.css">
         <link rel="stylesheet" href="css/category.css">
+        <script src="https://www.google.com/recaptcha/api.js"></script>
         <script defer src="scripts/main.js" type="module"></script>
         <script defer src="scripts/dialog.js"></script>
+        <script>
+            var onloadCallback = function() {
+                alert("grecaptcha is ready!")
+            }
+        </script>
     </head>
     <body>
         <header>
-            <div class="container"><img class="mobile_menu" src="images/header_menu.svg" alt="Меню"><a class="logotype" href="pages.html"><img src="images/logotype.svg" alt="Чудесный отдых"></a><a class="mobile_phone" href="pages.html"><img src="images/header_phone.svg" alt="Позвонить"></a>
+            <div class="container">
+                <div class="mobile_menu_icon" onclick="document.querySelector('section.mobile_menu').classList.toggle('opened'); this.classList.toggle('opened')"><img class="mobile_menu" src="images/header_menu.svg"><img class="mobile_cross" src="images/menu_mobile_cross.svg"></div><a class="logotype" href="pages.html"><img src="images/logotype.svg" alt="Чудесный отдых"></a><a class="mobile_phone" href="pages.html"><img src="images/header_phone.svg" alt="Позвонить"></a>
                 <div class="phone_tourist"><a href="tel:8 (831) 413-11-23">8 (831) 413-11-23<img src="images/header_phone_arrow.svg" alt=""></a><span>Туристам</span></div>
                 <div class="phone_agency"><a href="tel:8 (831) 413-11-23">8 (831) 413-11-23<img src="images/header_phone_arrow.svg" alt=""></a><span>Агентствам</span></div>
                 <div class="search"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -47,18 +54,34 @@
         <section class="menu">
             <div class="container"><a class="catalog" href="index.html"><img src="images/header_filter.svg" alt="Наши туры"><span>Наши туры</span></a><a href="index.html">О нас</a><a href="index.html">Туристам</a><a href="index.html">Агентам</a><a href="index.html">Об отправлениях</a><a href="index.html">Акции</a><a href="index.html">Блог</a><a href="index.html">Контакты</a></div>
         </section>
+        <section class="mobile_menu">
+            <div class="container">
+                <fieldset class="search">
+                    <input type="search" placeholder="Искать"><img class="search" src="images/search.svg">
+                </fieldset>
+                <menu><a class="catalog" href="index.html"><img src="images/header_filter_black.svg" alt="Наши туры"><span>Подобрать тур</span></a><a href="index.html">О нас</a><a href="index.html">Туристам</a><a href="index.html">Агентам</a><a href="index.html">Об отправлениях</a><a href="index.html">Акции</a><a href="index.html">Блог</a><a href="index.html">Контакты</a></menu>
+                <div class="phones">
+                    <div class="phone_tourist"><a href="tel:8 (831) 413-11-23">8 (831) 413-11-23<img src="images/header_phone_arrow.svg" alt=""></a><span>Туристам</span></div>
+                    <div class="phone_agency"><a href="tel:8 (831) 413-11-23">8 (831) 413-11-23<img src="images/header_phone_arrow.svg" alt=""></a><span>Агентствам</span></div>
+                </div>
+                <div class="socials"><a href="https://telegram.org" target="blank"><img src="images/header_telegram.svg" alt="Telegram"></a><a href="https://vk.ru" target="blank"><img src="images/header_vkontakte.svg" alt="Vkontakte"></a></div>
+            </div>
+        </section>
         <main>
             <section class="excursions_main">
                 <div class="container">
                     <div class="breadcrumbs"><a href="index.html">Главная </a><span class="divide">- </span><a href="index.html">Каталог </a><span class="divide">- </span><span>Популярные направления</span></div>
                     <h1>Популярные направления</h1>
-                    <div class="categories"><a class="category" href="index.html"><img src="images/18.webp" alt="Туры без ночных переездов"><span>Туры без ночных переездов</span></a><a class="category" href="index.html"><img src="images/17.webp" alt="Экскурсии по Нижегородской области и регионам"><span>Экскурсии по Нижегородской области и регионам</span></a><a class="category" href="index.html"><img src="images/16.webp" alt="Событийные экскурсии"><span>Событийные <br>экскурсии</span></a></div>
+                    <div class="categories"><a class="category" href="index.html"><img src="images/18.webp" alt="Туры без ночных переездов">
+                            <h5>Туры без ночных переездов</h5></a><a class="category" href="index.html"><img src="images/17.webp" alt="Экскурсии по Нижегородской области и регионам">
+                            <h5>Экскурсии по Нижегородской области и регионам</h5></a><a class="category" href="index.html"><img src="images/16.webp" alt="Событийные экскурсии">
+                            <h5>Событийные <br>экскурсии</h5></a></div>
                 </div>
             </section>
             <section class="list_sort">
                 <div class="container"><span class="note">Найдено 1 000 туров</span>
                     <div class="sort"><span class="note">Сортировать по:</span><a class="active" href="###">По популярности</a><a href="###">Дешевле</a><a href="###">Дороже</a><a href="###">Новинки</a></div>
-                                <fieldset class="select" tabindex="0">
+                                <fieldset class="list_sort select" tabindex="0">
                                     <div class="select_choice">
                                         <input type="radio" id="list_sort_0" name="list_sort" checked><span>По популярности</span>
                                         <input type="radio" id="list_sort_1" name="list_sort"><span>Дешевле</span>
@@ -89,7 +112,8 @@
                                         <div class="type"><img src="images/card_train.svg" alt="Автобус"></div>
                                     </div>
                                     <div class="description">
-                                        <div class="text"><span class="title">Майские праздники в Москве</span><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
+                                        <div class="text"><a class="title" href="index.html">
+                                                <h5>Майские праздники в Москве</h5></a><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
                                             <div class="type"><img src="images/card_train.svg" alt="Автобус"><span>Автобусный тур</span></div>
                                         </div>
                                         <div class="details">
@@ -123,7 +147,8 @@
                                         <div class="type"><img src="images/card_train.svg" alt="Автобус"></div>
                                     </div>
                                     <div class="description">
-                                        <div class="text"><span class="title">Майские праздники в Москве</span><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
+                                        <div class="text"><a class="title" href="index.html">
+                                                <h5>Майские праздники в Москве</h5></a><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
                                             <div class="type"><img src="images/card_train.svg" alt="Автобус"><span>Автобусный тур</span></div>
                                         </div>
                                         <div class="details">
@@ -157,7 +182,8 @@
                                         <div class="type"><img src="images/card_train.svg" alt="Автобус"></div>
                                     </div>
                                     <div class="description">
-                                        <div class="text"><span class="title">Майские праздники в Москве</span><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
+                                        <div class="text"><a class="title" href="index.html">
+                                                <h5>Майские праздники в Москве</h5></a><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
                                             <div class="type"><img src="images/card_train.svg" alt="Автобус"><span>Автобусный тур</span></div>
                                         </div>
                                         <div class="details">
@@ -191,7 +217,8 @@
                                         <div class="type"><img src="images/card_train.svg" alt="Автобус"></div>
                                     </div>
                                     <div class="description">
-                                        <div class="text"><span class="title">Майские праздники в Москве</span><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
+                                        <div class="text"><a class="title" href="index.html">
+                                                <h5>Майские праздники в Москве</h5></a><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
                                             <div class="type"><img src="images/card_train.svg" alt="Автобус"><span>Автобусный тур</span></div>
                                         </div>
                                         <div class="details">
@@ -225,7 +252,8 @@
                                         <div class="type"><img src="images/card_train.svg" alt="Автобус"></div>
                                     </div>
                                     <div class="description">
-                                        <div class="text"><span class="title">Майские праздники в Москве</span><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
+                                        <div class="text"><a class="title" href="index.html">
+                                                <h5>Майские праздники в Москве</h5></a><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
                                             <div class="type"><img src="images/card_train.svg" alt="Автобус"><span>Автобусный тур</span></div>
                                         </div>
                                         <div class="details">
@@ -259,7 +287,8 @@
                                         <div class="type"><img src="images/card_train.svg" alt="Автобус"></div>
                                     </div>
                                     <div class="description">
-                                        <div class="text"><span class="title">Майские праздники в Москве</span><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
+                                        <div class="text"><a class="title" href="index.html">
+                                                <h5>Майские праздники в Москве</h5></a><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
                                             <div class="type"><img src="images/card_train.svg" alt="Автобус"><span>Автобусный тур</span></div>
                                         </div>
                                         <div class="details">
@@ -293,7 +322,8 @@
                                         <div class="type"><img src="images/card_train.svg" alt="Автобус"></div>
                                     </div>
                                     <div class="description">
-                                        <div class="text"><span class="title">Майские праздники в Москве</span><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
+                                        <div class="text"><a class="title" href="index.html">
+                                                <h5>Майские праздники в Москве</h5></a><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
                                             <div class="type"><img src="images/card_train.svg" alt="Автобус"><span>Автобусный тур</span></div>
                                         </div>
                                         <div class="details">
@@ -327,7 +357,8 @@
                                         <div class="type"><img src="images/card_train.svg" alt="Автобус"></div>
                                     </div>
                                     <div class="description">
-                                        <div class="text"><span class="title">Майские праздники в Москве</span><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
+                                        <div class="text"><a class="title" href="index.html">
+                                                <h5>Майские праздники в Москве</h5></a><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
                                             <div class="type"><img src="images/card_train.svg" alt="Автобус"><span>Автобусный тур</span></div>
                                         </div>
                                         <div class="details">
@@ -361,7 +392,8 @@
                                         <div class="type"><img src="images/card_train.svg" alt="Автобус"></div>
                                     </div>
                                     <div class="description">
-                                        <div class="text"><span class="title">Майские праздники в Москве</span><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
+                                        <div class="text"><a class="title" href="index.html">
+                                                <h5>Майские праздники в Москве</h5></a><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
                                             <div class="type"><img src="images/card_train.svg" alt="Автобус"><span>Автобусный тур</span></div>
                                         </div>
                                         <div class="details">
@@ -395,7 +427,8 @@
                                         <div class="type"><img src="images/card_train.svg" alt="Автобус"></div>
                                     </div>
                                     <div class="description">
-                                        <div class="text"><span class="title">Майские праздники в Москве</span><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
+                                        <div class="text"><a class="title" href="index.html">
+                                                <h5>Майские праздники в Москве</h5></a><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
                                             <div class="type"><img src="images/card_train.svg" alt="Автобус"><span>Автобусный тур</span></div>
                                         </div>
                                         <div class="details">
@@ -429,7 +462,8 @@
                                         <div class="type"><img src="images/card_train.svg" alt="Автобус"></div>
                                     </div>
                                     <div class="description">
-                                        <div class="text"><span class="title">Майские праздники в Москве</span><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
+                                        <div class="text"><a class="title" href="index.html">
+                                                <h5>Майские праздники в Москве</h5></a><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
                                             <div class="type"><img src="images/card_train.svg" alt="Автобус"><span>Автобусный тур</span></div>
                                         </div>
                                         <div class="details">
@@ -463,7 +497,8 @@
                                         <div class="type"><img src="images/card_train.svg" alt="Автобус"></div>
                                     </div>
                                     <div class="description">
-                                        <div class="text"><span class="title">Майские праздники в Москве</span><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
+                                        <div class="text"><a class="title" href="index.html">
+                                                <h5>Майские праздники в Москве</h5></a><span class="city"><a href="index.html">из Н.Новгорода, </a>автобус, 8-9 часов</span><span class="text">Легкая автобусная обзорная экскурсия "Здравствуй, Столица", во время которого мы посетим Красную площадь...</span>
                                             <div class="type"><img src="images/card_train.svg" alt="Автобус"><span>Автобусный тур</span></div>
                                         </div>
                                         <div class="details">
@@ -501,7 +536,7 @@
 </a></div>
                     <button>Показать еще</button>
                     <div class="count"><span>Выводить на странице:</span>
-                                    <fieldset class="select" tabindex="0">
+                                    <fieldset class="per_page select" tabindex="0">
                                         <div class="select_choice">
                                             <input type="radio" id="per_page_0" name="per_page" checked><span>12</span>
                                             <input type="radio" id="per_page_1" name="per_page"><span>16</span>
@@ -525,7 +560,7 @@
             <section class="expert">
                 <div class="container">
                     <h2><b>Наш эксперт подберет тур для вас!</b> <br>Начните путешествовать вместе с нами</h2>
-                    <form action="index.html">
+                    <form action="index.html" onsubmit="event.preventDefault(); this.classList.add('success')">
                                     <fieldset class="input">
                                         <input type="text" placeholder=" " required><span>Имя</span>
                                     </fieldset>
@@ -533,9 +568,12 @@
                                         <input type="text" placeholder=" "><span>Компания</span>
                                     </fieldset>
                         <fieldset class="input">
-                            <input type="tel" placeholder=" "><span>Телефон</span>
+                            <input type="tel" placeholder=" " required><span>Телефон</span>
                         </fieldset>
                         <button>Отправить заявку</button>
+                        <div class="success">
+                            <h5>Ваша заявка успешно отправлена</h5>
+                        </div>
                     </form>
                 </div>
             </section>
@@ -549,7 +587,7 @@
                     <div class="account"><a class="agency" href="account.html"><img src="images/footer_arrow.svg" alt="Агентам"><span>Агентам</span></a><a class="tourist" href="account.html"><img src="images/footer_account.svg" alt="Личный кабинет"><span>Личный кабинет</span></a></div>
                     <div class="registry"><img src="images/emblem.webp" alt="Герб"><span>Мы в реестре туроператоров <br>ООО «Чудесный отдых» РТО 021180</span></div>
                 </div>
-                <div class="bottom"><span class="copyright">© 2025 Компания ООО «Чудесный отдых». Все права защищены и охраняются законом.</span>
+                <div class="bottom"><span class="copyright">© 2026 Компания ООО «Чудесный отдых». Все права защищены и охраняются законом.</span>
                     <div class="docs"><a href="index.html">Политика конфиденциальности</a><a href="index.html">Публичная оферта</a></div><a class="studio" href="https://mwi.me" target="blank"><span>Сайт разработан</span><img src="images/mwi.svg" alt="MWI"></a>
                 </div>
             </div>
@@ -596,13 +634,13 @@
                                             <input type="text" placeholder=" " required><span>Email</span>
                                         </fieldset>
                                 <fieldset class="password">
-                                    <input type="password" name="password" placeholder="Старый пароль" onChange="passwordChange()">
+                                    <input type="password" name="password" placeholder="Пароль" onChange="passwordChange()">
                                     <div class="eye" onclick="showPassword(this)"><img src="images/password_visible.svg"><img src="images/password_hidden.svg"></div>
                                 </fieldset>
                                 <fieldset class="password">
-                                    <input type="password" name="confirm" placeholder="Новый пароль" onChange="passwordChange()">
+                                    <input type="password" name="confirm" placeholder="Повторите пароль" onChange="passwordChange()">
                                     <div class="eye" onclick="showPassword(this)"><img src="images/password_visible.svg"><img src="images/password_hidden.svg"></div>
-                                </fieldset>
+                                </fieldset><div class="g-recaptcha" data-sitekey="ваш_site_key"></div>
                                 <button>Зарегистрироваться</button>
                                         <label class="checkbox">
                                             <input type="checkbox" checked><span>Даю согласие на обработку персональных данных в соответствии с <a href="index.html">Политикой в отношении обработки персональных данных</a>, а также принимаете условия <a href="index.html">Пользовательского соглашения</a>.</span>
@@ -633,11 +671,11 @@
                                             <input type="text" placeholder=" " required><span>Email</span>
                                         </fieldset>
                                 <fieldset class="password">
-                                    <input type="password" name="password" placeholder="Старый пароль" onChange="passwordChange()">
+                                    <input type="password" name="password" placeholder="Пароль" onChange="passwordChange()">
                                     <div class="eye" onclick="showPassword(this)"><img src="images/password_visible.svg"><img src="images/password_hidden.svg"></div>
                                 </fieldset>
                                 <fieldset class="password">
-                                    <input type="password" name="confirm" placeholder="Новый пароль" onChange="passwordChange()">
+                                    <input type="password" name="confirm" placeholder="Повторите пароль" onChange="passwordChange()">
                                     <div class="eye" onclick="showPassword(this)"><img src="images/password_visible.svg"><img src="images/password_hidden.svg"></div>
                                 </fieldset>
                                 <button>Зарегистрироваться</button>
@@ -660,7 +698,7 @@
                             <fieldset class="input">
                                 <input type="text" placeholder=" " required><span>Email</span>
                             </fieldset>
-                    <button>Зарегистрироваться</button>
+                    <button>Восстановить</button>
                 </form>
             </div>
         </dialog>
@@ -705,6 +743,38 @@
                                 <input type="checkbox" checked><span>Даю согласие на обработку персональных данных в соответствии с <a href="index.html">Политикой в отношении обработки персональных данных</a>, а также принимаете условия <a href="index.html">Пользовательского соглашения</a>.</span>
                             </label>
                 </form>
+            </div>
+        </dialog>
+        <dialog data-modal-name="lightbox">
+            <div class="cross" data-modal-close><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1L11 11" stroke="#ACACAC" stroke-width="2" stroke-linecap="round"/>
+<path d="M11 1L1 11" stroke="#ACACAC" stroke-width="2" stroke-linecap="round"/>
+</svg>
+
+            </div>
+            <div class="container">
+                <div class="images">
+                    <div class="swiper">
+                        <div class="swiper-wrapper"></div>
+                    </div>
+                    <div class="swiper-navigation">
+                        <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                        </div>
+                        <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="thumbs">
+                    <div class="swiper">
+                        <div class="swiper-wrapper"></div>
+                    </div>
+                </div>
             </div>
         </dialog>
     </body>

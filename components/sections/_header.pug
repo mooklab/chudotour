@@ -1,6 +1,8 @@
 header
     div.container
-        img(src="images/header_menu.svg", alt="Меню").mobile_menu
+        div(onclick="document.querySelector('section.mobile_menu').classList.toggle('opened'); this.classList.toggle('opened')").mobile_menu_icon
+            img(src="images/header_menu.svg").mobile_menu
+            img(src="images/menu_mobile_cross.svg").mobile_cross
 
         a(href="pages.html").logotype
             img(src="images/logotype.svg", alt="Чудесный отдых")
@@ -47,3 +49,34 @@ section.menu
         a(href="index.html") Блог
         a(href="index.html") Контакты
 
+section.mobile_menu
+    div.container
+        fieldset.search
+            input(type="search", placeholder="Искать")
+            img(src="images/search.svg").search
+        menu
+            a(href="index.html").catalog
+                img(src="images/header_filter_black.svg", alt="Наши туры") 
+                span Подобрать тур
+            a(href="index.html") О нас
+            a(href="index.html") Туристам
+            a(href="index.html") Агентам
+            a(href="index.html") Об отправлениях
+            a(href="index.html") Акции
+            a(href="index.html") Блог
+            a(href="index.html") Контакты
+        div.phones
+            div.phone_tourist
+                a(href="tel:8 (831) 413-11-23") 8 (831) 413-11-23
+                    img(src="images/header_phone_arrow.svg", alt="")
+                span Туристам
+
+            div.phone_agency
+                a(href="tel:8 (831) 413-11-23") 8 (831) 413-11-23
+                    img(src="images/header_phone_arrow.svg", alt="")
+                span Агентствам
+        div.socials
+            a(href="https://telegram.org", target="blank")
+                img(src="images/header_telegram.svg", alt="Telegram")
+            a(href="https://vk.ru", target="blank")
+                img(src="images/header_vkontakte.svg", alt="Vkontakte")

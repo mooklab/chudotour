@@ -27,12 +27,19 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper.min.css">
         <link rel="stylesheet" href="css/common.css">
         <link rel="stylesheet" href="css/single.css">
+        <script src="https://www.google.com/recaptcha/api.js"></script>
         <script defer src="scripts/main.js" type="module"></script>
         <script defer src="scripts/dialog.js"></script>
+        <script>
+            var onloadCallback = function() {
+                alert("grecaptcha is ready!")
+            }
+        </script>
     </head>
     <body>
         <header>
-            <div class="container"><img class="mobile_menu" src="images/header_menu.svg" alt="Меню"><a class="logotype" href="pages.html"><img src="images/logotype.svg" alt="Чудесный отдых"></a><a class="mobile_phone" href="pages.html"><img src="images/header_phone.svg" alt="Позвонить"></a>
+            <div class="container">
+                <div class="mobile_menu_icon" onclick="document.querySelector('section.mobile_menu').classList.toggle('opened'); this.classList.toggle('opened')"><img class="mobile_menu" src="images/header_menu.svg"><img class="mobile_cross" src="images/menu_mobile_cross.svg"></div><a class="logotype" href="pages.html"><img src="images/logotype.svg" alt="Чудесный отдых"></a><a class="mobile_phone" href="pages.html"><img src="images/header_phone.svg" alt="Позвонить"></a>
                 <div class="phone_tourist"><a href="tel:8 (831) 413-11-23">8 (831) 413-11-23<img src="images/header_phone_arrow.svg" alt=""></a><span>Туристам</span></div>
                 <div class="phone_agency"><a href="tel:8 (831) 413-11-23">8 (831) 413-11-23<img src="images/header_phone_arrow.svg" alt=""></a><span>Агентствам</span></div>
                 <div class="search"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -47,13 +54,26 @@
         <section class="menu">
             <div class="container"><a class="catalog" href="index.html"><img src="images/header_filter.svg" alt="Наши туры"><span>Наши туры</span></a><a href="index.html">О нас</a><a href="index.html">Туристам</a><a href="index.html">Агентам</a><a href="index.html">Об отправлениях</a><a href="index.html">Акции</a><a href="index.html">Блог</a><a href="index.html">Контакты</a></div>
         </section>
+        <section class="mobile_menu">
+            <div class="container">
+                <fieldset class="search">
+                    <input type="search" placeholder="Искать"><img class="search" src="images/search.svg">
+                </fieldset>
+                <menu><a class="catalog" href="index.html"><img src="images/header_filter_black.svg" alt="Наши туры"><span>Подобрать тур</span></a><a href="index.html">О нас</a><a href="index.html">Туристам</a><a href="index.html">Агентам</a><a href="index.html">Об отправлениях</a><a href="index.html">Акции</a><a href="index.html">Блог</a><a href="index.html">Контакты</a></menu>
+                <div class="phones">
+                    <div class="phone_tourist"><a href="tel:8 (831) 413-11-23">8 (831) 413-11-23<img src="images/header_phone_arrow.svg" alt=""></a><span>Туристам</span></div>
+                    <div class="phone_agency"><a href="tel:8 (831) 413-11-23">8 (831) 413-11-23<img src="images/header_phone_arrow.svg" alt=""></a><span>Агентствам</span></div>
+                </div>
+                <div class="socials"><a href="https://telegram.org" target="blank"><img src="images/header_telegram.svg" alt="Telegram"></a><a href="https://vk.ru" target="blank"><img src="images/header_vkontakte.svg" alt="Vkontakte"></a></div>
+            </div>
+        </section>
         <main>
             <section class="main_tour">
                 <div class="container">
                     <div class="breadcrumbs"><a href="index.html">Главная </a><span class="divide">- </span><a href="index.html">Каталог </a><span class="divide">- </span><a href="index.html">Популярные направления </a><span class="divide">- </span><a href="index.html">Туры в Москву </a><span class="divide">- </span><span>Майские праздники в Москве</span></div>
                     <div class="text">
                         <div class="title">
-                            <h1>Майские праздники в Москве</h1>
+                            <h1>Майские праздники в Москве</h1>
                             <div class="share"><a href="index.html">PDF версия для печати</a><a href="index.html"> <img src="images/single_share.svg" alt="Поделиться"><span>Поделиться</span></a></div>
                         </div>
                         <div class="details">
@@ -94,7 +114,7 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="gallery"><img src="images/20.webp"><img src="images/20.webp"><img src="images/20.webp"><img src="images/20.webp"><img src="images/20.webp"><a class="more"><span>Еще 1000 фото</span><img src="images/20.webp"></a></div>
+                        <div class="gallery"><img src="images/20.webp" lightbox="about_tour"><img src="images/20.webp" lightbox="about_tour"><img src="images/20.webp" lightbox="about_tour"><img src="images/20.webp" lightbox="about_tour"><img src="images/20.webp" lightbox="about_tour"><a class="more"><span>Еще 1000 фото</span><img src="images/20.webp"></a></div>
                         <div class="impressions">
                             <h3>Главные впечатления</h3>
                             <div class="list">
@@ -152,7 +172,7 @@
                             <div class="question">
                                 <h5>Задайте вопрос</h5>
                                 <div class="phone_tourist"><a href="tel:8 (831) 413-11-23">8 (831) 413-11-23<img src="images/header_phone_arrow.svg" alt=""></a><span>Туристам</span></div>
-                                <div class="phone_agency"><a href="tel:8 (831) 413-11-23">8 (831) 413-11-23<img src="images/header_phone_arrow.svg" alt=""></a><span>Туристам</span></div>
+                                <div class="phone_agency"><a href="tel:8 (831) 413-11-23">8 (831) 413-11-23<img src="images/header_phone_arrow.svg" alt=""></a><span>Агентствам</span></div>
                             </div>
                             <div class="message">
                                 <h5>Или напишите в сообщении</h5>
@@ -160,11 +180,11 @@
                             </div>
                         </div>
                         <div class="advantages">
-                            <div class="item"><img src="images/filter_map.svg" alt="Сертифицированный туроператор">
-                                <div><strong>Сертифицированный туроператор</strong><span>5000 великолепных туров</span></div>
+                            <div class="item"><img src="images/filter_certificate.svg" alt="Сертифицированный туроператор">
+                                <div><strong>Сертифицированный туроператор</strong><span>в реестре туроператоров РТО 021180</span></div>
                             </div>
-                            <div class="item"><img src="images/filter_certificate.svg" alt="в реестре туроператоров РТО 021180">
-                                <div><strong>в реестре туроператоров РТО 021180</strong><span>по всей России</span></div>
+                            <div class="item"><img src="images/filter_map.svg" alt="5000 великолепных туров">
+                                <div><strong>5000 великолепных туров</strong><span>по всей России</span></div>
                             </div>
                         </div>
                     </div>
@@ -172,7 +192,7 @@
             </section>
             <section class="upcoming">
                 <div class="container">
-                    <h2>Ближайшие туры</h2>
+                    <h3>Ближайшие туры</h3>
                     <div class="swiper month">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">Ближайшие</div>
@@ -207,7 +227,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -216,7 +236,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -225,7 +245,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -234,7 +254,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -243,7 +263,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -252,7 +272,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -261,7 +281,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -270,7 +290,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -279,7 +299,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -288,7 +308,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -297,122 +317,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <button class="more short" onclick="tableAccordion(this)"><span>Показать все даты тура</span><span>Свернуть даты тура</span></button>
-                            </div>
-                            <div class="swiper-slide">
-                                <table class="short">
-                                    <thead>
-                                        <tr>
-                                            <th>Даты тура</th>
-                                            <th>Свободные места</th>
-                                            <th>Место посадки</th>
-                                            <th>Стоимость</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -437,7 +342,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -446,7 +351,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -455,7 +360,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -464,7 +369,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -473,7 +378,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -482,7 +387,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -491,7 +396,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -500,7 +405,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -509,7 +414,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -518,7 +423,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -527,122 +432,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <button class="more short" onclick="tableAccordion(this)"><span>Показать все даты тура</span><span>Свернуть даты тура</span></button>
-                            </div>
-                            <div class="swiper-slide">
-                                <table class="short">
-                                    <thead>
-                                        <tr>
-                                            <th>Даты тура</th>
-                                            <th>Свободные места</th>
-                                            <th>Место посадки</th>
-                                            <th>Стоимость</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -667,7 +457,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -676,7 +466,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -685,7 +475,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -694,7 +484,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -703,7 +493,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -712,7 +502,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -721,7 +511,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -730,7 +520,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -739,7 +529,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -748,7 +538,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -757,122 +547,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <button class="more short" onclick="tableAccordion(this)"><span>Показать все даты тура</span><span>Свернуть даты тура</span></button>
-                            </div>
-                            <div class="swiper-slide">
-                                <table class="short">
-                                    <thead>
-                                        <tr>
-                                            <th>Даты тура</th>
-                                            <th>Свободные места</th>
-                                            <th>Место посадки</th>
-                                            <th>Стоимость</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -897,7 +572,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -906,7 +581,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -915,7 +590,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -924,7 +599,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -933,7 +608,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -942,7 +617,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -951,7 +626,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -960,7 +635,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -969,7 +644,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -978,7 +653,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -987,122 +662,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <button class="more short" onclick="tableAccordion(this)"><span>Показать все даты тура</span><span>Свернуть даты тура</span></button>
-                            </div>
-                            <div class="swiper-slide">
-                                <table class="short">
-                                    <thead>
-                                        <tr>
-                                            <th>Даты тура</th>
-                                            <th>Свободные места</th>
-                                            <th>Место посадки</th>
-                                            <th>Стоимость</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1127,7 +687,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1136,7 +696,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1145,7 +705,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1154,7 +714,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1163,7 +723,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1172,7 +732,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1181,7 +741,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1190,7 +750,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1199,7 +759,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1208,7 +768,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1217,122 +777,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <button class="more short" onclick="tableAccordion(this)"><span>Показать все даты тура</span><span>Свернуть даты тура</span></button>
-                            </div>
-                            <div class="swiper-slide">
-                                <table class="short">
-                                    <thead>
-                                        <tr>
-                                            <th>Даты тура</th>
-                                            <th>Свободные места</th>
-                                            <th>Место посадки</th>
-                                            <th>Стоимость</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1357,7 +802,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1366,7 +811,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1375,7 +820,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1384,7 +829,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1393,7 +838,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1402,7 +847,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1411,7 +856,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1420,7 +865,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1429,7 +874,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1438,7 +883,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1447,122 +892,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <button class="more short" onclick="tableAccordion(this)"><span>Показать все даты тура</span><span>Свернуть даты тура</span></button>
-                            </div>
-                            <div class="swiper-slide">
-                                <table class="short">
-                                    <thead>
-                                        <tr>
-                                            <th>Даты тура</th>
-                                            <th>Свободные места</th>
-                                            <th>Место посадки</th>
-                                            <th>Стоимость</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
-                                            <td>от 2 000 ₽</td>
-                                            <td class="button">
-                                                <button>Забронировать</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>14.12.2024 -24.12.2024</td>
-                                            <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1587,7 +917,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1596,7 +926,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1605,7 +935,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1614,7 +944,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1623,7 +953,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1632,7 +962,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1641,7 +971,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1650,7 +980,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1659,7 +989,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1668,7 +998,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1677,7 +1007,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1702,7 +1032,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1711,7 +1041,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1720,7 +1050,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1729,7 +1059,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1738,7 +1068,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1747,7 +1077,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1756,7 +1086,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1765,7 +1095,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1774,7 +1104,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1783,7 +1113,7 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1792,7 +1122,697 @@
                                         <tr>
                                             <td>14.12.2024 -24.12.2024</td>
                                             <td>30 из 30</td>
-                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Другое место</a></td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button class="more short" onclick="tableAccordion(this)"><span>Показать все даты тура</span><span>Свернуть даты тура</span></button>
+                            </div>
+                            <div class="swiper-slide">
+                                <table class="short">
+                                    <thead>
+                                        <tr>
+                                            <th>Даты тура</th>
+                                            <th>Свободные места</th>
+                                            <th>Место посадки</th>
+                                            <th>Стоимость</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button class="more short" onclick="tableAccordion(this)"><span>Показать все даты тура</span><span>Свернуть даты тура</span></button>
+                            </div>
+                            <div class="swiper-slide">
+                                <table class="short">
+                                    <thead>
+                                        <tr>
+                                            <th>Даты тура</th>
+                                            <th>Свободные места</th>
+                                            <th>Место посадки</th>
+                                            <th>Стоимость</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button class="more short" onclick="tableAccordion(this)"><span>Показать все даты тура</span><span>Свернуть даты тура</span></button>
+                            </div>
+                            <div class="swiper-slide">
+                                <table class="short">
+                                    <thead>
+                                        <tr>
+                                            <th>Даты тура</th>
+                                            <th>Свободные места</th>
+                                            <th>Место посадки</th>
+                                            <th>Стоимость</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button class="more short" onclick="tableAccordion(this)"><span>Показать все даты тура</span><span>Свернуть даты тура</span></button>
+                            </div>
+                            <div class="swiper-slide">
+                                <table class="short">
+                                    <thead>
+                                        <tr>
+                                            <th>Даты тура</th>
+                                            <th>Свободные места</th>
+                                            <th>Место посадки</th>
+                                            <th>Стоимость</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button class="more short" onclick="tableAccordion(this)"><span>Показать все даты тура</span><span>Свернуть даты тура</span></button>
+                            </div>
+                            <div class="swiper-slide">
+                                <table class="short">
+                                    <thead>
+                                        <tr>
+                                            <th>Даты тура</th>
+                                            <th>Свободные места</th>
+                                            <th>Место посадки</th>
+                                            <th>Стоимость</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button class="more short" onclick="tableAccordion(this)"><span>Показать все даты тура</span><span>Свернуть даты тура</span></button>
+                            </div>
+                            <div class="swiper-slide">
+                                <table class="short">
+                                    <thead>
+                                        <tr>
+                                            <th>Даты тура</th>
+                                            <th>Свободные места</th>
+                                            <th>Место посадки</th>
+                                            <th>Стоимость</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
+                                            <td>от 2 000 ₽</td>
+                                            <td class="button">
+                                                <button>Забронировать</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>14.12.2024 -24.12.2024</td>
+                                            <td>30 из 30</td>
+                                            <td>пл. Ленина. Трансфер в Копорье<a href="index.html">Выбрать другое место</a></td>
                                             <td>от 2 000 ₽</td>
                                             <td class="button">
                                                 <button>Забронировать</button>
@@ -1809,7 +1829,7 @@
             <section class="program">
                 <div class="container">
                     <div class="title">
-                        <h2>Программа тура</h2><span>Посещение мини зоопарка кролики, козлики, барашки, уточки… <br>Пешеходная экскурсия по экотропе "Копорье". Вас ждет небольшой пеший маршрут протяженностью около 2х км по лесной дороге, в ходе которого Вы встретите избушку Бабы Яги, сможете изучить различные плакаты с информацией о животных обитающих в этих лесах. Во время экскурсии Вы услышите рассказ от местного егеря о жизни пятнистых оленей: каким образом их разводят, как ведут себя в дикой природе, чем питаются. Сейчас в Копорье обитает около 80 особей пятнистого оленя.</span>
+                        <h3>Программа тура</h3><span>Посещение мини зоопарка кролики, козлики, барашки, уточки… <br>Пешеходная экскурсия по экотропе "Копорье". Вас ждет небольшой пеший маршрут протяженностью около 2х км по лесной дороге, в ходе которого Вы встретите избушку Бабы Яги, сможете изучить различные плакаты с информацией о животных обитающих в этих лесах. Во время экскурсии Вы услышите рассказ от местного егеря о жизни пятнистых оленей: каким образом их разводят, как ведут себя в дикой природе, чем питаются. Сейчас в Копорье обитает около 80 особей пятнистого оленя.</span>
                     </div>
                     <div class="schedule">
                         <div class="day">
@@ -1911,7 +1931,7 @@
             </section>
             <section class="habitation">
                 <div class="container">
-                    <h2>Проживание</h2>
+                    <h3>Проживание</h3>
                     <div class="grid">
                         <div class="note"><span class="note">Проживание во время тура</span>
                             <div><span>Гостиница</span><span class="days">5 ночей</span></div>
@@ -1919,8 +1939,8 @@
                                     <div class="habitation_card">
                                         <div class="hotel_datails"><img class="preview" src="images/1.webp">
                                             <div class="description">
-                                                <div class="text">
-                                                    <h5>Гостевой дом Villa Rosa (Абхазия)</h5><span class="city">Гагра, ул Бостонжана, д.15</span>
+                                                <div class="text"><a href="index.html"> 
+                                                        <h5>Гостевой дом Villa Rosa (Абхазия)</h5></a><span class="city">Гагра, ул Бостонжана, д.15</span>
                                                     <div class="inprice"><span>В стоимость включено:</span>
                                                         <div class="list"><img src="images/hotel_card_icon_1.svg" alt=" "><img src="images/hotel_card_icon_2.svg" alt=" "><img src="images/hotel_card_icon_3.svg" alt=" "><img src="images/hotel_card_icon_4.svg" alt=" "></div>
                                                     </div>
@@ -1964,8 +1984,8 @@
                                             </div>
                                         </div>
                                         <div class="room_datails"><img class="preview" src="images/1.webp">
-                                            <div class="description"><span class="count">1 человек</span>
-                                                <h5>2-х местный Эконом</h5><span class="area">Площадь 22 м2</span>
+                                            <div class="description"><span class="count">1 человек</span><a href="index.html"> 
+                                                    <h5>2-х местный Эконом</h5></a><span class="area">Площадь 22 м2</span>
                                                 <div class="advantages">
                                                     <div class="advantage"><img src="images/room_card_icon_1.svg" alt="WiFi в номерах"><span>WiFi в номерах</span></div>
                                                     <div class="advantage"><img src="images/room_card_icon_2.svg" alt="Собственная ванная"><span>Собственная ванная</span></div>
@@ -1992,7 +2012,7 @@
             </section>
             <section class="questions">
                 <div class="container">
-                    <h2>Важно знать</h2>
+                    <h3>Важно знать</h3>
                     <div class="list">
                                     <div class="question_accordion">
                                         <div class="caption"> <span>Где происходит встреча?</span><img src="images/accordion_arrow.svg"></div>
@@ -2051,7 +2071,7 @@
             </section>
             <section class="terms">
                 <div class="container">
-                    <h2>Условия тура</h2>
+                    <h3>Условия тура</h3>
                     <div class="details">
                         <div class="place"><span class="note">Место сбора группы:</span><span>Отправление Н. Новгород пл. Ленина. Трансфер в Копорье</span><a href="index.html">Выберите место отправления</a></div>
                         <div class="duration"><span class="note">продолжительность:</span>
@@ -2107,56 +2127,56 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                             <div class="review">
-                                                <div class="author"><img src="images/6.webp" alt="Константин Константинопольский">
+                                                <div class="author"><img src="images/22.webp" alt="Константин Константинопольский">
                                                     <div class="name"><span class="name">Константин Константинопольский</span><span class="tour">Тур <a href="index.html">Чечни до Дагестана</a></span></div>
                                                 </div>
                                                 <div class="text"><span>Спасибо за отдых! Тур от Чечни до Дагестана просто супер! Сопровождающей Елене спасибо! Водители Профессионалы с большой буквы!!! Кострома)))</span></div>
-                                                <div class="gallery"><img src="images/3.webp"><img src="images/4.webp"><img src="images/5.webp"></div>
+                                                <div class="gallery"><img src="images/22.webp" lightbox="review_1"><img src="images/14.webp" lightbox="review_1"><img src="images/16.webp" lightbox="review_1"></div>
                                             </div>
                             </div>
                             <div class="swiper-slide">
                                             <div class="review">
-                                                <div class="author"><img src="images/6.webp" alt="Константин Константинопольский">
+                                                <div class="author"><img src="images/9.webp" alt="Константин Константинопольский">
                                                     <div class="name"><span class="name">Константин Константинопольский</span><span class="tour">Тур <a href="index.html">Чечни до Дагестана</a></span></div>
                                                 </div>
                                                 <div class="text"><span>Спасибо за отдых! Тур от Чечни до Дагестана просто супер! Сопровождающей Елене спасибо! Водители Профессионалы с большой буквы!!! Кострома)))</span></div>
-                                                <div class="gallery"><img src="images/3.webp"><img src="images/4.webp"><img src="images/5.webp"></div>
+                                                <div class="gallery"><img src="images/9.webp" lightbox="review_2"><img src="images/14.webp" lightbox="review_2"><img src="images/16.webp" lightbox="review_2"></div>
                                             </div>
                             </div>
                             <div class="swiper-slide">
                                             <div class="review">
-                                                <div class="author"><img src="images/6.webp" alt="Константин Константинопольский">
+                                                <div class="author"><img src="images/13.webp" alt="Константин Константинопольский">
                                                     <div class="name"><span class="name">Константин Константинопольский</span><span class="tour">Тур <a href="index.html">Чечни до Дагестана</a></span></div>
                                                 </div>
                                                 <div class="text"><span>Спасибо за отдых! Тур от Чечни до Дагестана просто супер! Сопровождающей Елене спасибо! Водители Профессионалы с большой буквы!!! Кострома)))</span></div>
-                                                <div class="gallery"><img src="images/3.webp"><img src="images/4.webp"><img src="images/5.webp"></div>
+                                                <div class="gallery"><img src="images/13.webp" lightbox="review_3"><img src="images/14.webp" lightbox="review_3"><img src="images/16.webp" lightbox="review_3"></div>
                                             </div>
                             </div>
                             <div class="swiper-slide">
                                             <div class="review">
-                                                <div class="author"><img src="images/6.webp" alt="Константин Константинопольский">
+                                                <div class="author"><img src="images/28.webp" alt="Константин Константинопольский">
                                                     <div class="name"><span class="name">Константин Константинопольский</span><span class="tour">Тур <a href="index.html">Чечни до Дагестана</a></span></div>
                                                 </div>
                                                 <div class="text"><span>Спасибо за отдых! Тур от Чечни до Дагестана просто супер! Сопровождающей Елене спасибо! Водители Профессионалы с большой буквы!!! Кострома)))</span></div>
-                                                <div class="gallery"><img src="images/3.webp"><img src="images/4.webp"><img src="images/5.webp"></div>
+                                                <div class="gallery"><img src="images/28.webp" lightbox="review_4"><img src="images/14.webp" lightbox="review_4"><img src="images/16.webp" lightbox="review_4"></div>
                                             </div>
                             </div>
                             <div class="swiper-slide">
                                             <div class="review">
-                                                <div class="author"><img src="images/6.webp" alt="Константин Константинопольский">
+                                                <div class="author"><img src="images/37.webp" alt="Константин Константинопольский">
                                                     <div class="name"><span class="name">Константин Константинопольский</span><span class="tour">Тур <a href="index.html">Чечни до Дагестана</a></span></div>
                                                 </div>
                                                 <div class="text"><span>Спасибо за отдых! Тур от Чечни до Дагестана просто супер! Сопровождающей Елене спасибо! Водители Профессионалы с большой буквы!!! Кострома)))</span></div>
-                                                <div class="gallery"><img src="images/3.webp"><img src="images/4.webp"><img src="images/5.webp"></div>
+                                                <div class="gallery"><img src="images/37.webp" lightbox="review_5"><img src="images/14.webp" lightbox="review_5"><img src="images/16.webp" lightbox="review_5"></div>
                                             </div>
                             </div>
                             <div class="swiper-slide">
                                             <div class="review">
-                                                <div class="author"><img src="images/6.webp" alt="Константин Константинопольский">
+                                                <div class="author"><img src="images/35.webp" alt="Константин Константинопольский">
                                                     <div class="name"><span class="name">Константин Константинопольский</span><span class="tour">Тур <a href="index.html">Чечни до Дагестана</a></span></div>
                                                 </div>
                                                 <div class="text"><span>Спасибо за отдых! Тур от Чечни до Дагестана просто супер! Сопровождающей Елене спасибо! Водители Профессионалы с большой буквы!!! Кострома)))</span></div>
-                                                <div class="gallery"><img src="images/3.webp"><img src="images/4.webp"><img src="images/5.webp"></div>
+                                                <div class="gallery"><img src="images/35.webp" lightbox="review_6"><img src="images/14.webp" lightbox="review_6"><img src="images/16.webp" lightbox="review_6"></div>
                                             </div>
                             </div>
                         </div>
@@ -2181,7 +2201,7 @@
             </section>
             <section class="tourlist">
                 <div class="container">
-                    <h2>Вас может заинтересовать</h2>
+                    <h3>Вас может заинтересовать</h3>
                     <div class="swiper tours">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide"><a class="tour_card" href="index.html">
@@ -2335,7 +2355,7 @@
             <section class="expert">
                 <div class="container">
                     <h2><b>Наш эксперт подберет тур для вас!</b> <br>Начните путешествовать вместе с нами</h2>
-                    <form action="index.html">
+                    <form action="index.html" onsubmit="event.preventDefault(); this.classList.add('success')">
                                     <fieldset class="input">
                                         <input type="text" placeholder=" " required><span>Имя</span>
                                     </fieldset>
@@ -2343,9 +2363,12 @@
                                         <input type="text" placeholder=" "><span>Компания</span>
                                     </fieldset>
                         <fieldset class="input">
-                            <input type="tel" placeholder=" "><span>Телефон</span>
+                            <input type="tel" placeholder=" " required><span>Телефон</span>
                         </fieldset>
                         <button>Отправить заявку</button>
+                        <div class="success">
+                            <h5>Ваша заявка успешно отправлена</h5>
+                        </div>
                     </form>
                 </div>
             </section>
@@ -2359,7 +2382,7 @@
                     <div class="account"><a class="agency" href="account.html"><img src="images/footer_arrow.svg" alt="Агентам"><span>Агентам</span></a><a class="tourist" href="account.html"><img src="images/footer_account.svg" alt="Личный кабинет"><span>Личный кабинет</span></a></div>
                     <div class="registry"><img src="images/emblem.webp" alt="Герб"><span>Мы в реестре туроператоров <br>ООО «Чудесный отдых» РТО 021180</span></div>
                 </div>
-                <div class="bottom"><span class="copyright">© 2025 Компания ООО «Чудесный отдых». Все права защищены и охраняются законом.</span>
+                <div class="bottom"><span class="copyright">© 2026 Компания ООО «Чудесный отдых». Все права защищены и охраняются законом.</span>
                     <div class="docs"><a href="index.html">Политика конфиденциальности</a><a href="index.html">Публичная оферта</a></div><a class="studio" href="https://mwi.me" target="blank"><span>Сайт разработан</span><img src="images/mwi.svg" alt="MWI"></a>
                 </div>
             </div>
@@ -2406,13 +2429,13 @@
                                             <input type="text" placeholder=" " required><span>Email</span>
                                         </fieldset>
                                 <fieldset class="password">
-                                    <input type="password" name="password" placeholder="Старый пароль" onChange="passwordChange()">
+                                    <input type="password" name="password" placeholder="Пароль" onChange="passwordChange()">
                                     <div class="eye" onclick="showPassword(this)"><img src="images/password_visible.svg"><img src="images/password_hidden.svg"></div>
                                 </fieldset>
                                 <fieldset class="password">
-                                    <input type="password" name="confirm" placeholder="Новый пароль" onChange="passwordChange()">
+                                    <input type="password" name="confirm" placeholder="Повторите пароль" onChange="passwordChange()">
                                     <div class="eye" onclick="showPassword(this)"><img src="images/password_visible.svg"><img src="images/password_hidden.svg"></div>
-                                </fieldset>
+                                </fieldset><div class="g-recaptcha" data-sitekey="ваш_site_key"></div>
                                 <button>Зарегистрироваться</button>
                                         <label class="checkbox">
                                             <input type="checkbox" checked><span>Даю согласие на обработку персональных данных в соответствии с <a href="index.html">Политикой в отношении обработки персональных данных</a>, а также принимаете условия <a href="index.html">Пользовательского соглашения</a>.</span>
@@ -2443,11 +2466,11 @@
                                             <input type="text" placeholder=" " required><span>Email</span>
                                         </fieldset>
                                 <fieldset class="password">
-                                    <input type="password" name="password" placeholder="Старый пароль" onChange="passwordChange()">
+                                    <input type="password" name="password" placeholder="Пароль" onChange="passwordChange()">
                                     <div class="eye" onclick="showPassword(this)"><img src="images/password_visible.svg"><img src="images/password_hidden.svg"></div>
                                 </fieldset>
                                 <fieldset class="password">
-                                    <input type="password" name="confirm" placeholder="Новый пароль" onChange="passwordChange()">
+                                    <input type="password" name="confirm" placeholder="Повторите пароль" onChange="passwordChange()">
                                     <div class="eye" onclick="showPassword(this)"><img src="images/password_visible.svg"><img src="images/password_hidden.svg"></div>
                                 </fieldset>
                                 <button>Зарегистрироваться</button>
@@ -2470,7 +2493,7 @@
                             <fieldset class="input">
                                 <input type="text" placeholder=" " required><span>Email</span>
                             </fieldset>
-                    <button>Зарегистрироваться</button>
+                    <button>Восстановить</button>
                 </form>
             </div>
         </dialog>
@@ -2515,6 +2538,38 @@
                                 <input type="checkbox" checked><span>Даю согласие на обработку персональных данных в соответствии с <a href="index.html">Политикой в отношении обработки персональных данных</a>, а также принимаете условия <a href="index.html">Пользовательского соглашения</a>.</span>
                             </label>
                 </form>
+            </div>
+        </dialog>
+        <dialog data-modal-name="lightbox">
+            <div class="cross" data-modal-close><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1L11 11" stroke="#ACACAC" stroke-width="2" stroke-linecap="round"/>
+<path d="M11 1L1 11" stroke="#ACACAC" stroke-width="2" stroke-linecap="round"/>
+</svg>
+
+            </div>
+            <div class="container">
+                <div class="images">
+                    <div class="swiper">
+                        <div class="swiper-wrapper"></div>
+                    </div>
+                    <div class="swiper-navigation">
+                        <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                        </div>
+                        <div class="arrow"><svg width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.3536 4.03568C17.5488 3.84042 17.5488 3.52384 17.3536 3.32858L14.1716 0.146596C13.9763 -0.048666 13.6597 -0.048666 13.4645 0.146596C13.2692 0.341858 13.2692 0.658441 13.4645 0.853703L16.2929 3.68213L13.4645 6.51056C13.2692 6.70582 13.2692 7.0224 13.4645 7.21766C13.6597 7.41293 13.9763 7.41293 14.1716 7.21766L17.3536 4.03568ZM0 3.68213L-4.37114e-08 4.18213L17 4.18213L17 3.68213L17 3.18213L4.37114e-08 3.18213L0 3.68213Z" fill="#3068F7"/>
+</svg>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="thumbs">
+                    <div class="swiper">
+                        <div class="swiper-wrapper"></div>
+                    </div>
+                </div>
             </div>
         </dialog>
     </body>

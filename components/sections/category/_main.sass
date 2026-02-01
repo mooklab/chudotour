@@ -146,3 +146,110 @@ section.main
                     grid-column: 3 span
                 +s(s)
                     grid-column: 2 span
+
+        div.dates.tabs
+            margin-top: 30px
+            margin-bottom: 40px
+            user-select: none
+
+            span.note
+                display: block
+                opacity: 0.5
+                margin-bottom: 10px
+
+            div.tabs_captions
+                display: flex
+                white-space: nowrap
+                overflow-x: auto
+                margin-bottom: 20px
+                padding-bottom: 10px
+                div.tab_caption
+                    display: block
+                    padding: 5px 10px
+                    border-radius: 10px
+                    background: white
+                    width: max-content
+                    &.opened
+                        color: #3068F7
+                        background: #f2f5ff
+
+                &::-webkit-scrollbar
+                    height: 5px
+                &::-webkit-scrollbar-track
+                    border-radius: 15px
+                    background: #f1f1f4
+                &::-webkit-scrollbar-thumb
+                    border-radius: 15px
+                    background: #e4e4ea
+                    transition: all 0.3s
+                &::-webkit-scrollbar-thumb:hover
+                    background-color: #b1b1b8
+                &::-webkit-scrollbar:vertical
+                    display: none
+                        
+            div.days.tabs_contents
+                div.tab_content
+                    position: relative
+                    display: none
+                div.opened
+                    display: flex
+
+                    div.swiper
+                        margin-left: 30px
+                        margin-right: 30px
+                        +s(xl)
+                            margin-left: unset
+                            margin-right: unset
+
+                    div.swiper-slide
+                        cursor: pointer
+                        width: max-content !important
+                        padding: 5px 10px
+                        border-radius: 10px
+                        background: white
+                        width: max-content
+                        height: max-content
+                        white-space: nowrap
+
+                        &.clicked
+                            color: #3068F7
+                            background: #f2f5ff
+
+                    div.swiper-scrollbar
+                        position: absolute
+                        bottom: -15px
+                        left: 0
+                        right: 0
+                        height: 5px
+                        background: rgba(221, 221, 228, 0.4)
+                        opacity: 0
+                        pointer-events: none
+                        +s(xl)
+                            opacity: 1
+                            pointer-events: auto
+                        div.swiper-scrollbar-drag
+                            height: 5px
+                            border-radius: 3px
+                            background: #DDDDE4
+                            &:hover
+                                background: #b1b1b8
+
+                    div.swiper-navigation
+                        position: absolute
+                        display: flex
+                        justify-content: space-between
+                        top: 50%
+                        left: 0
+                        width: 100%
+                        pointer-events: none
+                        transform: translateY(-50%)
+                        z-index: 1
+                        +s(xl)
+                            display: none
+                            pointer-events: none
+                        div.arrow
+                            width: max-content
+                            height: max-content
+                            border: unset
+                            background: unset
+                            pointer-events: auto

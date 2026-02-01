@@ -3,10 +3,11 @@ include ../../common/pug/_mixins.pug
 mixin order(color)
     tr
         td(data-thead="Дата тура") 
-            span 14.12.2024-22.12.2024 (8 дней / 7 ночей)
+            span.whitespace 14.12.2024-22.12.2024 
+            span.whitespace (8 дней / 7 ночей)
             i 21782-25122024
         td(data-thead="Направление") Новогодние каникулы в Санкт-Петербурге
-        td(data-thead="ФИО туриста") Константинопольский Константин Константинович
+        td(data-thead="ФИО туриста") Константинопольский Константин <br/>Константинович
         td(data-thead="Статус")
             if color == 'pink'
                 span.pink Подверждено, ожидает оплаты
@@ -22,12 +23,12 @@ mixin order(color)
             div.buttons
                 a(href="index.html").more Подробнее
                 if color == 'pink'
-                    button.pay Оплатить
+                    button.pay Оплатить 100 000 000 ₽
                 else if color == 'green' || color == 'black'
                     span.price 100 000 000 ₽
                 else
                     div.empty
-                button.cancel Аннулировать
+                button.cancel Аннулировать заказ
 
 section.orders
     div.container

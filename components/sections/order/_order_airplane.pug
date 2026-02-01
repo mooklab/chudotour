@@ -1,0 +1,183 @@
+include ../../common/pug/_mixins.pug
+
+section.order_airplane
+    div.container
+
+        a(href="index.html").back
+            img(src="images/back_arrow.svg")
+            span Вернуться к выбору билетов
+
+        div.title
+            h1 Бронирование авиабилетов
+
+        div.data
+
+            div.air_card
+                div.order
+                    h5 Тариф Эконом
+                    span 15 893 ₽
+                    button Изменить тариф
+
+                div.luggage
+                    strong Багаж:
+                    ul
+                        li.tick 
+                            img(src="images/air_card_tick.svg").bullet
+                            span Ручная кладь 1×7 кг
+                            span.right 50×25×37 см
+                        li.cross 
+                            img(src="images/air_card_cross.svg").bullet
+                            span Багаж оплачивается отдельно
+                            div.tooltip
+                                img(src="images/air_card_info.svg")
+                                div.tooltip_text Размер платы и нормы провоза зависят от выбранного тарифа и перевозчика
+                        li.tick 
+                            img(src="images/air_card_tick.svg").bullet
+                            span Обмен платный
+                            div.tooltip
+                                img(src="images/air_card_info.svg")
+                                div.tooltip_text Размер платы и нормы провоза зависят от выбранного тарифа и перевозчика
+                        li.cross 
+                            img(src="images/air_card_cross.svg").bullet
+                            span Без возврата
+                            div.tooltip
+                                img(src="images/air_card_info.svg")
+                                div.tooltip_text Размер платы и нормы провоза зависят от выбранного тарифа и перевозчика
+
+            div.personal_data
+                h2 Личные данные
+                div.inputs
+                    div.tr
+                        +input('Имя', true)
+                        +input('Фамилия', true)
+                    div.tr
+                        +datepicker('Дата рождения')
+                        +select('gender', 'Пол', 'Мужской', 'Женский')
+                    div.tr
+                        fieldset.input
+                            input(type="tel", placeholder=" ", required)
+                            span Телефон
+                        +input('Email', true)
+                    div.tr
+                        +select('document_type', 'Вид документа', 'Паспорт', 'Загран паспорт')
+                        +input('Серия и номер', true)
+                        +select('nationality', 'Гражданство', 'Россия', 'Беларусь', 'Казахстан', 'Армения', 'Грузия')
+                    textarea(name="", placeholder="Примечание")
+                    +checkbox('save_data', 'Сохранить данные для следующих бронирований')
+                button
+                    img(src="images/order_button_plus.svg")
+                    span Добавить ещё пассажиров
+
+            div.note_data
+                div.title
+                    img(src="images/alert.svg")
+                    h5 В тарифе нет багажа
+                span Выгоднее добавить багаж сейчас, если тариф позволяет. В аэропорту это может стоить на 50% дороже
+
+            div.additional_data
+                h2 Добавьте багаж
+                div.list
+                    div.item
+                        div.tr
+                            div.radio
+                                div.title
+                                    +radio('luggage', 'Ручная кладь', true)
+                                div.price
+                                    span 0 ₽
+                            div.radio
+                                div.title
+                                    +radio('luggage', 'Завтрак')
+                                    //- span.note Завтрак шведский стол
+                                div.price
+                                    span + 5 000 ₽
+
+            div.payment_data
+                h2 Форма оплаты
+                div.item
+                    div.tr
+                        div.radio
+                            div.title
+                                +radio('payment', 'Наличными', true)
+                        div.radio
+                            div.title
+                                +radio('payment', 'СБП')
+                                img(src="images/sbp.svg")
+                        div.radio
+                            div.title
+                                +radio('payment', 'Онлайн VISA, MasterCard, Maestro, Мир')
+                                img(src="images/cards.svg")
+        
+        div.total
+            div.total_tickets
+                div.total_title
+                    h5 Ваш билет
+                    button Подробнее
+                div.ticket
+                    div.from
+                        div
+                            span.time 19:10
+                            span.tag VKO
+                        span.date Ср, 16 апреля
+                    div.visual
+                        div.airplane
+                            hr
+                            img(src="images/order_airplane.svg")
+                            hr
+                        span.time 5 ч 20 мин
+                    div.to
+                        div
+                            span.tag VKO
+                            span.time 19:10
+                        span.date Ср, 16 апреля
+                div.ticket
+                    div.from
+                        div
+                            span.time 19:10
+                            span.tag VKO
+                        span.date Ср, 16 апреля
+                    div.visual
+                        div.airplane
+                            hr
+                            img(src="images/order_airplane.svg")
+                            hr
+                        span.time 5 ч 20 мин
+                    div.to
+                        div
+                            span.tag VKO
+                            span.time 19:10
+                        span.date Ср, 16 апреля
+
+            div.total_persons
+                h5 Пассажиры
+                a(href="index.html") Заполните данные пассажира
+            div.total_places
+                h5 Места на борту
+                div.place
+                    span.flight Рейс VKO–LED (FV-6184)
+                    div.customer
+                        span.name Елена Егорова
+                        span.number 8Е
+                div.place
+                    span.flight Рейс VKO–LED (FV-6184)
+                    div.customer
+                        span.name Елена Егорова
+                        span.number 8Е
+            div.total_price
+                h5 Тариф “Эконом”
+                div.list
+                    div.tr
+                        span Билеты
+                        span 189 291 ₽
+                    div.tr
+                        span Налоги и сборы
+                        span 9 000 ₽
+                    div.tr
+                        span Выбор мест
+                        span 9 000 ₽
+                div.tr.total
+                    div
+                        span ИТОГО
+                    div
+                        span 198 000 ₽
+                span.policy Даю #[a Согласие на обработку персональных данных] в соответствии с #[a Политикой в отношении обработки персональных данных], а также принимаете условия #[a Пользовательского соглашения].
+                button Забронировать

@@ -5,11 +5,14 @@ section.expert
 
         h2 #[b Наш эксперт подберет тур для вас!] #[br]Начните путешествовать вместе с нами
 
-        form(action="index.html")
+        form(action="index.html", onsubmit="event.preventDefault(); this.classList.add('success')")
             +input('Имя', true)
             +input('Компания')
             //- +input('Телефон')
             fieldset.input
-                input(type="tel", placeholder=" ", required=(required))
+                input(type="tel", placeholder=" ", required)
                 span Телефон
             button Отправить заявку
+
+            div.success
+                h5 Ваша заявка успешно отправлена

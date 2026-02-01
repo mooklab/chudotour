@@ -186,13 +186,14 @@ section.profile div.container div.account_page form div.edit {
   line-height: 0;
 }
 section.profile div.container div.account_page form.disabled fieldset.input {
-  pointer-events: none;
   border: unset;
   height: 1em;
   max-width: 340px;
 }
 section.profile div.container div.account_page form.disabled fieldset.input input {
+  position: relative;
   padding-left: unset;
+  pointer-events: none;
 }
 section.profile div.container div.account_page form.disabled fieldset.select {
   pointer-events: none;
@@ -222,6 +223,44 @@ section.profile div.container div.account_page form.disabled div.save {
 section.profile div.container div.account_page form.disabled div.save button {
   height: 1em;
 }
+section.profile div.container div.account_page form.disabled fieldset.input {
+  display: grid;
+  grid-template-columns: repeat(2, -webkit-max-content);
+  grid-template-columns: repeat(2, max-content);
+  position: relative;
+  padding: unset;
+}
+section.profile div.container div.account_page form.disabled div.tooltip {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  z-index: 999;
+  display: block;
+}
+section.profile div.container div.account_page form.disabled div.tooltip a {
+  display: block;
+  margin-top: 6px;
+  text-decoration: underline;
+}
+section.profile div.container div.account_page form.disabled div.tooltip a:hover {
+  text-decoration: none;
+}
+section.profile div.container div.account_page form.disabled div.tooltip div.tooltip_text {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+section.profile div.container div.account_page form:not(.disabled) input {
+  width: 100% !important;
+}
+section.profile div.container div.account_page form div.hidden {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+section.profile div.container div.account_page form div.tooltip {
+  display: none;
+}
 section.profile div.container div.account_page form.password {
   grid-gap: 10px;
   max-width: 480px;
@@ -231,6 +270,7 @@ section.profile div.container div.account_page form.password i {
   color: #acacac;
   margin-top: -5px;
   margin-bottom: 14px;
+  font-style: normal;
 }
 section.profile div.container div.account_page form.password div.buttons {
   display: -webkit-box;
@@ -335,6 +375,16 @@ section.orders_empty div.container div.account_page div.filter fieldset.select {
   section.orders_empty div.container div.account_page div.filter fieldset.select {
     margin-left: unset;
   }
+}
+section.orders_empty div.container div.account_page div.filter fieldset.select div.select_dropdown {
+  white-space: nowrap;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  right: 0;
+}
+section.orders_empty div.container div.account_page div.filter fieldset.select div.select_dropdown_content {
+  max-height: 230px;
 }
 section.orders_empty div.container div.empty {
   display: grid;
@@ -500,9 +550,16 @@ section.orders div.container div.account_page table thead {
   }
 }
 section.orders div.container div.account_page table thead th {
-  padding-left: 30px;
   font-weight: 400;
   text-align: left;
+}
+section.orders div.container div.account_page table thead th:first-child {
+  padding-left: 30px;
+}
+@media (max-width: 1600px) {
+  section.orders div.container div.account_page table thead th:first-child {
+    padding-left: 20px;
+  }
 }
 @media (max-width: 960px) {
   section.orders div.container div.account_page table tbody {
@@ -515,6 +572,7 @@ section.orders div.container div.account_page table tbody tr {
 }
 section.orders div.container div.account_page table tbody tr td {
   padding: 30px;
+  padding-left: unset;
   border-top: 1px solid rgba(48, 104, 247, 0.2);
   border-bottom: 1px solid rgba(48, 104, 247, 0.2);
 }
@@ -543,6 +601,17 @@ section.orders div.container div.account_page table tbody tr td:first-child {
   border-right: unset;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  padding-left: 30px;
+}
+@media (max-width: 1600px) {
+  section.orders div.container div.account_page table tbody tr td:first-child {
+    padding-left: 20px;
+  }
+}
+@media (max-width: 960px) {
+  section.orders div.container div.account_page table tbody tr td:first-child {
+    padding: unset;
+  }
 }
 section.orders div.container div.account_page table tbody tr td:last-child {
   border: 1px solid rgba(48, 104, 247, 0.2);
@@ -576,6 +645,10 @@ section.orders div.container div.account_page table span.violet {
 }
 section.orders div.container div.account_page table span.blue {
   color: #3068F7;
+}
+section.orders div.container div.account_page table span.whitespace {
+  display: block;
+  white-space: nowrap;
 }
 section.orders div.container div.account_page table div.buttons {
   display: grid;
@@ -706,6 +779,243 @@ section.order_details div.container {
 }
 section.order_details div.container div.account_page {
   width: 100%;
+}
+section.order_details div.container div.account_page div.tickets {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  max-width: 1048px;
+}
+@media (max-width: 640px) {
+  section.order_details div.container div.account_page div.tickets {
+    grid-template-columns: 1fr;
+  }
+}
+section.order_details div.container div.account_page div.tickets div.ticket div.first {
+  position: relative;
+  border-radius: 20px;
+  background: #f2f5ff;
+  padding: 20px;
+  padding-bottom: 40px;
+}
+@media (max-width: 960px) {
+  section.order_details div.container div.account_page div.tickets div.ticket div.first {
+    padding: 15px 20px;
+  }
+}
+section.order_details div.container div.account_page div.tickets div.ticket div.first h5 {
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+@media (max-width: 960px) {
+  section.order_details div.container div.account_page div.tickets div.ticket div.first h5 {
+    margin-bottom: 5px;
+  }
+}
+section.order_details div.container div.account_page div.tickets div.ticket div.first div.excerpt {
+  display: grid;
+  grid-gap: 5px;
+}
+section.order_details div.container div.account_page div.tickets div.ticket div.first div.excerpt div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+}
+section.order_details div.container div.account_page div.tickets div.ticket div.first div.excerpt span.count {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  opacity: 0.7;
+}
+@media (max-width: 960px) {
+  section.order_details div.container div.account_page div.tickets div.ticket div.first div.excerpt span.count {
+    font-size: 12px;
+  }
+}
+section.order_details div.container div.account_page div.tickets div.ticket div.first::after {
+  content: "";
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  display: block;
+  width: calc(100% - 36px);
+  margin-left: 18px;
+  height: 10px;
+  border-bottom: 1px dashed #3068F7;
+}
+section.order_details div.container div.account_page div.tickets div.ticket div.second {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 24px;
+  border-radius: 20px;
+  background: #f2f5ff;
+  padding: 20px;
+}
+@media (max-width: 960px) {
+  section.order_details div.container div.account_page div.tickets div.ticket div.second {
+    padding: 15px 20px;
+  }
+}
+section.order_details div.container div.account_page div.tickets div.ticket div.second div {
+  display: grid;
+  grid-gap: 5px;
+}
+section.order_details div.container div.account_page div.tickets div.ticket div.second span.note {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  opacity: 0.7;
+}
+@media (max-width: 960px) {
+  section.order_details div.container div.account_page div.tickets div.ticket div.second span.note {
+    font-size: 12px;
+  }
+}
+section.order_details div.container div.account_page div.tickets div.ticket div.second span.number {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  border-radius: 5px;
+  height: 25px;
+  background: #d819a3;
+  padding: 0 10px;
+  color: white;
+  font-variant-numeric: ordinal-nums;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+section.order_details div.container div.account_page div.tickets div.ticket div.second::after {
+  content: "";
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  display: block;
+  width: calc(100% - 36px);
+  margin-left: 18px;
+  height: 10px;
+  border-bottom: 1px dashed #3068F7;
+}
+section.order_details div.container div.account_page div.tickets div.ticket div.third {
+  border-radius: 20px;
+  background: #f2f5ff;
+  padding: 20px;
+}
+@media (max-width: 960px) {
+  section.order_details div.container div.account_page div.tickets div.ticket div.third {
+    padding: 15px 20px;
+  }
+}
+section.order_details div.container div.account_page div.tickets div.ticket div.third div.infographic {
+  display: grid;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  grid-template-columns: -webkit-max-content 1fr -webkit-max-content;
+  grid-template-columns: max-content 1fr max-content;
+  grid-gap: 40px;
+}
+@media (max-width: 1280px) {
+  section.order_details div.container div.account_page div.tickets div.ticket div.third div.infographic {
+    grid-gap: 6px;
+  }
+}
+section.order_details div.container div.account_page div.tickets div.ticket div.third div.infographic div.from,
+section.order_details div.container div.account_page div.tickets div.ticket div.third div.infographic div.to {
+  display: grid;
+  grid-gap: 6px;
+}
+section.order_details div.container div.account_page div.tickets div.ticket div.third div.infographic div.from span.note,
+section.order_details div.container div.account_page div.tickets div.ticket div.third div.infographic div.to span.note {
+  font-size: 14px;
+  opacity: 0.7;
+}
+@media (max-width: 960px) {
+  section.order_details div.container div.account_page div.tickets div.ticket div.third div.infographic div.from span.note,
+  section.order_details div.container div.account_page div.tickets div.ticket div.third div.infographic div.to span.note {
+    font-size: 12px;
+  }
+}
+section.order_details div.container div.account_page div.tickets div.ticket div.third div.infographic div.from div,
+section.order_details div.container div.account_page div.tickets div.ticket div.third div.infographic div.to div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+section.order_details div.container div.account_page div.tickets div.ticket div.third div.infographic div.from div span.time,
+section.order_details div.container div.account_page div.tickets div.ticket div.third div.infographic div.to div span.time {
+  color: #16192C;
+}
+section.order_details div.container div.account_page div.tickets div.ticket div.third div.infographic div.from div span.tag,
+section.order_details div.container div.account_page div.tickets div.ticket div.third div.infographic div.to div span.tag {
+  color: #3068F7;
+}
+section.order_details div.container div.account_page div.tickets div.ticket div.third div.infographic div.from span.date,
+section.order_details div.container div.account_page div.tickets div.ticket div.third div.infographic div.to span.date {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 130%;
+  color: #9495a6;
+}
+section.order_details div.container div.account_page div.tickets div.ticket div.third div.infographic div.to {
+  text-align: right;
+}
+section.order_details div.container div.account_page div.tickets div.ticket div.third div.infographic div.visual {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-gap: 5px;
+}
+section.order_details div.container div.account_page div.tickets div.ticket div.third div.infographic div.visual div.airplane {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 18px;
+}
+section.order_details div.container div.account_page div.tickets div.ticket div.third div.infographic div.visual div.airplane hr {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #9495a6;
+}
+section.order_details div.container div.account_page div.tickets div.ticket div.third div.infographic div.visual span.time {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 130%;
+  color: #9495a6;
+  text-align: center;
+}
+section.order_details div.container div.account_page div.tickets div.ticket div.third div.links {
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+@media (max-width: 960px) {
+  section.order_details div.container div.account_page div.tickets div.ticket div.third div.links {
+    margin-top: 15px;
+  }
+}
+section.order_details div.container div.account_page div.tickets div.ticket div.third div.links a.more {
+  font-weight: 700;
+  text-align: center;
+  color: #3068F7;
+}
+section.order_details div.container div.account_page div.tickets div.ticket div.third div.links a.scheme {
+  opacity: 0.8;
+  text-decoration: underline;
+  font-weight: 700;
 }
 section.order_details div.container div.account_page > div.title {
   display: -webkit-box;
@@ -960,6 +1270,10 @@ section.order_details div.container div.account_page div.room_card div.descripti
 section.order_details div.container div.account_page div.room_card div.description div.title h5 {
   text-transform: unset;
   margin-bottom: 5px;
+  color: #3068F7;
+}
+section.order_details div.container div.account_page div.room_card div.description div.title a:hover h5 {
+  color: #16192c;
 }
 section.order_details div.container div.account_page div.room_card div.description div.title span.area {
   font-weight: 400;
@@ -1147,6 +1461,9 @@ section.order_details div.container div.account_page div.room_card div.order a.b
 section.order_details div.container div.account_page div.detail {
   display: grid;
   grid-gap: 20px;
+}
+section.order_details div.container div.account_page div.detail > h5 {
+  margin-bottom: -10px;
 }
 section.order_details div.container div.account_page div.data {
   display: grid;
@@ -1355,6 +1672,7 @@ section.order_details div.container div.account_page div.data button.more {
   background: #f2f5ff;
   color: #4b69dd;
   z-index: -1;
+  border-radius: 20px;
 }
 section.order_details div.container div.account_page div.results {
   display: grid;
@@ -1383,6 +1701,7 @@ section.order_details div.container div.account_page div.results div.tbody div.t
   grid-template-columns: 1fr max-content;
 }
 section.order_details div.container div.account_page div.results div.tbody div.tr span:nth-child(1) {
+  position: relative;
   display: grid;
   -webkit-box-align: start;
       -ms-flex-align: start;
@@ -1402,6 +1721,10 @@ section.order_details div.container div.account_page div.results div.tbody div.t
 section.order_details div.container div.account_page div.results div.tbody div.tr span:nth-child(2) {
   font-weight: 600;
   color: #16192c;
+}
+section.order_details div.container div.account_page div.results div.tbody div.tr:has(div.tooltip) span {
+  grid-template-columns: -webkit-max-content -webkit-max-content 1fr;
+  grid-template-columns: max-content max-content 1fr;
 }
 section.order_details div.container div.account_page div.results div.tbody div.subtr {
   display: grid;
@@ -1445,6 +1768,12 @@ section.order_details div.container div.account_page button.cancel {
   max-width: 1048px;
   background: rgba(216, 25, 73, 0.1);
   color: #d81949;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+section.order_details div.container div.account_page button.cancel:hover {
+  background: rgb(216, 25, 73);
+  color: white;
 }
 
 section.bonuses {
@@ -1515,14 +1844,14 @@ section.bonuses div.container div.account_page div.graph div.status {
     margin-bottom: 10px;
   }
 }
-section.bonuses div.container div.account_page div.graph div.status span.level {
+section.bonuses div.container div.account_page div.graph div.status h5.level {
   font-weight: 600;
   font-size: 20px;
   line-height: 130%;
   text-transform: uppercase;
   color: #3068f7;
 }
-section.bonuses div.container div.account_page div.graph div.status span.count {
+section.bonuses div.container div.account_page div.graph div.status h5.count {
   font-weight: 600;
   font-size: 20px;
   line-height: 130%;
@@ -1958,10 +2287,17 @@ div.pagination {
 }
 @media (max-width: 960px) {
   div.pagination {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr -webkit-max-content;
+    grid-template-columns: 1fr max-content;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+}
+@media (max-width: 640px) {
+  div.pagination {
+    grid-template-columns: 1fr;
+    justify-items: center;
   }
 }
 div.pagination div.pages {
@@ -1980,6 +2316,14 @@ div.pagination div.pages {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+  }
+}
+@media (max-width: 640px) {
+  div.pagination div.pages {
+    width: 100%;
     margin-bottom: 37px;
   }
 }
@@ -2044,16 +2388,12 @@ div.pagination button {
   background: #F3F2FD;
   justify-self: center;
 }
-@media (max-width: 1280px) {
+@media (max-width: 960px) {
   div.pagination button {
     position: static;
     -webkit-transform: unset;
         -ms-transform: unset;
             transform: unset;
-  }
-}
-@media (max-width: 960px) {
-  div.pagination button {
     font-size: 14px;
   }
 }
@@ -2066,7 +2406,7 @@ div.pagination div.count {
           align-items: center;
   gap: 18px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 960px) {
   div.pagination div.count {
     display: none;
   }
@@ -2095,4 +2435,5 @@ div.pagination div.count fieldset.select img.arrow {
   padding: unset;
   right: 10px;
   top: calc(50% - 4px);
+  margin: unset;
 }/*# sourceMappingURL=account.css.map */

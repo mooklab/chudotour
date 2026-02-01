@@ -6,7 +6,7 @@ section.upcoming
         margin-bottom: 50px
 
     div.container
-        h2
+        h3
             margin-bottom: 40px
 
         div.swiper.month
@@ -15,12 +15,12 @@ section.upcoming
             div.swiper-wrapper
                 div.swiper-slide
                     width: auto !important
-                    font-size: 14px
                     opacity: 0.8
                     cursor: pointer
+                    +s(xl)
+                        font-size: 14px
                     &.swiper-slide-thumb-active
                         font-weight: 500
-                        font-size: 14px
                         text-decoration: underline
                         text-decoration-skip-ink: none
                         color: #3068f7

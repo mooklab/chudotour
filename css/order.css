@@ -55,6 +55,20 @@ section.order_tour div.container div.data div.excursion_card {
 section.order_tour div.container div.data div.excursion_card div.preview {
   aspect-ratio: 1/1;
 }
+@media (max-width: 1280px) {
+  section.order_tour div.container div.data div.excursion_card div.preview {
+    height: 258px;
+    aspect-ratio: unset;
+  }
+}
+section.order_tour div.container div.data div.excursion_card div.preview span.season {
+  left: 20px;
+  bottom: 20px;
+}
+section.order_tour div.container div.data div.excursion_card div.description div.text {
+  padding: 20px;
+  padding-bottom: unset;
+}
 section.order_tour div.container div.data div.excursion_card div.text span.city a {
   display: inline;
 }
@@ -95,7 +109,7 @@ section.order_tour div.container div.data div.excursion_card div.details {
   }
 }
 section.order_tour div.container div.data div.excursion_card div.details div.difficulty {
-  padding: 10px;
+  padding: 20px;
 }
 @media (max-width: 640px) {
   section.order_tour div.container div.data div.excursion_card div.details div.difficulty {
@@ -104,7 +118,7 @@ section.order_tour div.container div.data div.excursion_card div.details div.dif
   }
 }
 section.order_tour div.container div.data div.excursion_card div.details div.tags {
-  padding: 10px;
+  padding: 20px;
 }
 @media (max-width: 640px) {
   section.order_tour div.container div.data div.excursion_card div.details div.tags {
@@ -125,6 +139,7 @@ section.order_tour div.container div.data div.excursion_card button {
 }
 @media (max-width: 640px) {
   section.order_tour div.container div.data div.excursion_card button {
+    font-size: 14px;
     height: 40px;
     width: 100%;
   }
@@ -208,6 +223,9 @@ section.order_tour div.container div.data div.payment_data div.tr {
     grid-auto-flow: unset;
   }
 }
+section.order_tour div.container div.data div.habitation_data fieldset.select div.select_choice span strong {
+  font-weight: 400;
+}
 section.order_tour div.container div.data div.habitation_data fieldset.select div.select_choice span p {
   display: none;
 }
@@ -221,6 +239,9 @@ section.order_tour div.container div.data div.habitation_data fieldset.select di
   grid-gap: 5px;
   border-bottom: 1px solid rgba(52, 58, 96, 0.1176470588);
   padding: 15px;
+}
+section.order_tour div.container div.data div.habitation_data fieldset.select div.select_dropdown strong {
+  font-weight: 400;
 }
 section.order_tour div.container div.data div.habitation_data fieldset.select div.select_dropdown p {
   font-weight: 400;
@@ -404,29 +425,6 @@ section.order_tour div.container div.total div.question {
           align-items: center;
   gap: 5px;
 }
-section.order_tour div.container div.total div.question div.tooltip {
-  position: relative;
-  cursor: pointer;
-}
-section.order_tour div.container div.total div.question div.tooltip div.tooltip_text {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: calc(100% + 10px);
-  border-radius: 10px;
-  background: #d819a3;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 130%;
-  color: #eef5fd;
-  padding: 10px 15px;
-  width: 295px;
-  text-align: left;
-  z-index: 10;
-}
-section.order_tour div.container div.total div.question div.tooltip:hover div.tooltip_text {
-  display: block;
-}
 section.order_tour div.container div.total div.tr.total {
   margin-top: 18px;
   margin-bottom: 24px;
@@ -529,19 +527,18 @@ section.order_hotel div.container {
   }
 }
 section.order_hotel div.container div.title {
+  display: grid;
   grid-column: 2 span;
+  grid-gap: 30px;
+}
+@media (max-width: 1280px) {
+  section.order_hotel div.container div.title {
+    grid-gap: 20px;
+  }
 }
 @media (max-width: 960px) {
   section.order_hotel div.container div.title {
     grid-column: 1 span;
-  }
-}
-section.order_hotel div.container div.title h1 {
-  margin-bottom: 20px;
-}
-@media (max-width: 960px) {
-  section.order_hotel div.container div.title h1 {
-    margin-bottom: unset;
   }
 }
 section.order_hotel div.container div.data {
@@ -648,10 +645,10 @@ section.order_hotel div.container div.data div.room_card div.description {
     padding-bottom: unset;
   }
 }
-section.order_hotel div.container div.data div.room_card div.description div.title {
+section.order_hotel div.container div.data div.room_card div.description div.card_title {
   margin-bottom: 20px;
 }
-section.order_hotel div.container div.data div.room_card div.description div.title span.count {
+section.order_hotel div.container div.data div.room_card div.description div.card_title span.count {
   border-radius: 3px;
   padding: 0 10px;
   background: rgba(14, 171, 105, 0.1);
@@ -661,11 +658,12 @@ section.order_hotel div.container div.data div.room_card div.description div.tit
   color: #0eab69;
   margin-bottom: 5px;
 }
-section.order_hotel div.container div.data div.room_card div.description div.title h5 {
+section.order_hotel div.container div.data div.room_card div.description div.card_title h5 {
   text-transform: unset;
   margin-bottom: 5px;
+  color: #3068F7;
 }
-section.order_hotel div.container div.data div.room_card div.description div.title span.area {
+section.order_hotel div.container div.data div.room_card div.description div.card_title span.area {
   font-weight: 400;
   font-size: 12px;
   line-height: 130%;
@@ -722,6 +720,12 @@ section.order_hotel div.container div.data div.room_card div.order {
   grid-template-rows: 1fr -webkit-max-content;
   grid-template-rows: 1fr max-content;
   border-left: 1px solid rgba(75, 105, 221, 0.2);
+}
+@media (max-width: 1280px) {
+  section.order_hotel div.container div.data div.room_card div.order {
+    border-left: unset;
+    border-top: 1px solid rgba(75, 105, 221, 0.2);
+  }
 }
 section.order_hotel div.container div.data div.room_card div.order div.wrap {
   padding: 20px;
@@ -979,6 +983,11 @@ section.order_hotel div.container div.data div.payment_data div.tr {
   grid-auto-flow: unset;
   grid-template-columns: repeat(2, 1fr);
 }
+@media (max-width: 640px) {
+  section.order_hotel div.container div.data div.payment_data div.tr {
+    grid-template-columns: 1fr;
+  }
+}
 section.order_hotel div.container div.total {
   display: grid;
   -ms-flex-line-pack: start;
@@ -1200,6 +1209,652 @@ section.order_hotel div.container div.total span.policy a:hover {
   text-decoration: none;
 }
 section.order_hotel div.container div.total button {
+  background: #3068f7;
+  width: 100%;
+}
+
+section.order_airplane {
+  background: #F3F5F8;
+}
+section.order_airplane div.container {
+  display: grid;
+  grid-template-columns: 1fr 582px;
+  grid-gap: 20px;
+  margin-top: 48px;
+  margin-bottom: 68px;
+}
+@media (max-width: 1600px) {
+  section.order_airplane div.container {
+    grid-template-columns: 1fr 420px;
+  }
+}
+@media (max-width: 1280px) {
+  section.order_airplane div.container {
+    grid-template-columns: 1fr 320px;
+  }
+}
+@media (max-width: 960px) {
+  section.order_airplane div.container {
+    grid-template-columns: 1fr;
+    margin-top: 20px;
+    margin-bottom: unset;
+  }
+}
+section.order_airplane div.container a.back {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-columns: -webkit-max-content 1fr;
+  grid-template-columns: max-content 1fr;
+  grid-gap: 10px;
+}
+section.order_airplane div.container a.back span {
+  color: #3068F7;
+}
+section.order_airplane div.container a.back:hover span {
+  color: #16192C;
+}
+section.order_airplane div.container div.title {
+  grid-column: 2 span;
+}
+@media (max-width: 960px) {
+  section.order_airplane div.container div.title {
+    grid-column: 1 span;
+  }
+}
+section.order_airplane div.container div.title h1 {
+  margin-bottom: 20px;
+}
+@media (max-width: 960px) {
+  section.order_airplane div.container div.title h1 {
+    margin-bottom: unset;
+  }
+}
+section.order_airplane div.container div.data {
+  display: grid;
+  grid-gap: 20px;
+}
+section.order_airplane div.container div.data div.air_card {
+  display: grid;
+  background: white;
+  max-width: 1048px;
+  min-height: 240px;
+  grid-template-columns: 240px 1fr;
+}
+@media (max-width: 1600px) {
+  section.order_airplane div.container div.data div.air_card {
+    grid-template-columns: 200px 1fr;
+  }
+}
+@media (max-width: 1280px) {
+  section.order_airplane div.container div.data div.air_card {
+    grid-template-columns: 1fr;
+  }
+}
+section.order_airplane div.container div.data div.air_card div.order {
+  display: grid;
+  grid-template-rows: -webkit-max-content 1fr -webkit-max-content;
+  grid-template-rows: max-content 1fr max-content;
+  height: 100%;
+  padding: 30px;
+  padding-bottom: unset;
+  background: #F2F5FF;
+}
+@media (max-width: 960px) {
+  section.order_airplane div.container div.data div.air_card div.order {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    height: auto;
+    padding: 20px;
+  }
+}
+section.order_airplane div.container div.data div.air_card div.order h5 {
+  color: #3068F7;
+  text-transform: unset;
+  margin-bottom: 5px;
+}
+section.order_airplane div.container div.data div.air_card div.order span {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 130%;
+  color: #d819a3;
+}
+@media (max-width: 960px) {
+  section.order_airplane div.container div.data div.air_card div.order span {
+    margin-bottom: 20px;
+  }
+}
+section.order_airplane div.container div.data div.air_card div.order button {
+  border-radius: 0 0 0 20px;
+  margin-left: -30px;
+  width: calc(100% + 60px);
+  height: 63px;
+  background: #3068F7;
+}
+@media (max-width: 960px) {
+  section.order_airplane div.container div.data div.air_card div.order button {
+    margin-left: -20px;
+    width: calc(100% + 40px);
+    border-radius: 0 0 20px 20px;
+    height: 40px;
+  }
+}
+section.order_airplane div.container div.data div.air_card div.luggage {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+}
+@media (max-width: 960px) {
+  section.order_airplane div.container div.data div.air_card div.luggage {
+    max-width: unset;
+    padding: 20px;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+}
+section.order_airplane div.container div.data div.air_card div.luggage strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+section.order_airplane div.container div.data div.air_card div.luggage ul {
+  display: grid;
+  grid-gap: 10px;
+}
+@media (max-width: 1280px) {
+  section.order_airplane div.container div.data div.air_card div.luggage ul {
+    grid-gap: 5px;
+  }
+}
+section.order_airplane div.container div.data div.air_card div.luggage ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+}
+section.order_airplane div.container div.data div.air_card div.luggage ul li img {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+section.order_airplane div.container div.data div.air_card div.luggage ul li img.bullet {
+  margin-right: 5px;
+}
+section.order_airplane div.container div.data div.air_card div.luggage ul li span.right {
+  margin-left: auto;
+}
+section.order_airplane div.container div.data div.air_card div.luggage ul li.cross span {
+  color: #9495a6;
+}
+section.order_airplane div.container div.data div.air_card div.luggage div.tooltip div.tooltip_text {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 260px;
+  bottom: calc(100% + 10px);
+  top: unset;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+section.order_airplane div.container div.data div.personal_data,
+section.order_airplane div.container div.data div.note_data,
+section.order_airplane div.container div.data div.additional_data,
+section.order_airplane div.container div.data div.payment_data {
+  display: grid;
+  grid-gap: 25px;
+  padding: 30px;
+  padding-top: 35px;
+  background: white;
+  border-radius: 20px;
+  max-width: 1048px;
+}
+@media (max-width: 1280px) {
+  section.order_airplane div.container div.data div.personal_data,
+  section.order_airplane div.container div.data div.note_data,
+  section.order_airplane div.container div.data div.additional_data,
+  section.order_airplane div.container div.data div.payment_data {
+    grid-gap: 15px;
+    padding: 20px;
+  }
+}
+section.order_airplane div.container div.data div.personal_data h2,
+section.order_airplane div.container div.data div.note_data h2,
+section.order_airplane div.container div.data div.additional_data h2,
+section.order_airplane div.container div.data div.payment_data h2 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 130%;
+  text-transform: uppercase;
+  color: #16192c;
+}
+@media (max-width: 1280px) {
+  section.order_airplane div.container div.data div.personal_data h2,
+  section.order_airplane div.container div.data div.note_data h2,
+  section.order_airplane div.container div.data div.additional_data h2,
+  section.order_airplane div.container div.data div.payment_data h2 {
+    font-size: 16px;
+  }
+}
+section.order_airplane div.container div.data div.personal_data div.inputs,
+section.order_airplane div.container div.data div.note_data div.inputs,
+section.order_airplane div.container div.data div.additional_data div.inputs,
+section.order_airplane div.container div.data div.payment_data div.inputs {
+  display: grid;
+  grid-gap: 15px;
+}
+@media (max-width: 1280px) {
+  section.order_airplane div.container div.data div.personal_data div.inputs,
+  section.order_airplane div.container div.data div.note_data div.inputs,
+  section.order_airplane div.container div.data div.additional_data div.inputs,
+  section.order_airplane div.container div.data div.payment_data div.inputs {
+    grid-gap: 10px;
+  }
+}
+section.order_airplane div.container div.data div.personal_data div.tr,
+section.order_airplane div.container div.data div.note_data div.tr,
+section.order_airplane div.container div.data div.additional_data div.tr,
+section.order_airplane div.container div.data div.payment_data div.tr {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  grid-gap: 15px;
+}
+@media (max-width: 1280px) {
+  section.order_airplane div.container div.data div.personal_data div.tr,
+  section.order_airplane div.container div.data div.note_data div.tr,
+  section.order_airplane div.container div.data div.additional_data div.tr,
+  section.order_airplane div.container div.data div.payment_data div.tr {
+    grid-gap: 10px;
+  }
+}
+@media (max-width: 640px) {
+  section.order_airplane div.container div.data div.personal_data div.tr,
+  section.order_airplane div.container div.data div.note_data div.tr,
+  section.order_airplane div.container div.data div.additional_data div.tr,
+  section.order_airplane div.container div.data div.payment_data div.tr {
+    grid-auto-flow: unset;
+  }
+}
+section.order_airplane div.container div.data div.personal_data label.checkbox {
+  margin-top: 5px;
+}
+section.order_airplane div.container div.data div.personal_data button {
+  display: grid;
+  grid-template-columns: repeat(2, -webkit-max-content);
+  grid-template-columns: repeat(2, max-content);
+  grid-gap: 15px;
+  border-radius: 10px;
+  height: 60px;
+  background: #f2f5ff;
+  color: rgba(48, 104, 247, 0.7725490196);
+  padding-left: 42px;
+  padding-right: 42px;
+  justify-self: start;
+  margin-top: 5px;
+  border: 1px solid transparent;
+}
+@media (max-width: 1280px) {
+  section.order_airplane div.container div.data div.personal_data button {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+section.order_airplane div.container div.data div.personal_data button:hover {
+  border: 1px solid #3068f7;
+  color: #3068f7;
+}
+section.order_airplane div.container div.data div.additional_data strong,
+section.order_airplane div.container div.data div.payment_data strong {
+  display: block;
+  font-weight: 500;
+  line-height: 130%;
+  text-transform: uppercase;
+  color: #16192c;
+  margin-bottom: 16px;
+}
+@media (max-width: 1280px) {
+  section.order_airplane div.container div.data div.additional_data strong,
+  section.order_airplane div.container div.data div.payment_data strong {
+    margin-bottom: 10px;
+  }
+}
+section.order_airplane div.container div.data div.additional_data div.list,
+section.order_airplane div.container div.data div.payment_data div.list {
+  display: grid;
+  grid-gap: 30px;
+}
+section.order_airplane div.container div.data div.payment_data div.tr {
+  grid-auto-flow: unset;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 640px) {
+  section.order_airplane div.container div.data div.payment_data div.tr {
+    grid-template-columns: 1fr;
+  }
+}
+section.order_airplane div.container div.data div.note_data {
+  grid-gap: 10px;
+}
+section.order_airplane div.container div.data div.note_data div.title {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-columns: -webkit-max-content 1fr;
+  grid-template-columns: max-content 1fr;
+  grid-gap: 10px;
+}
+section.order_airplane div.container div.total {
+  display: grid;
+  -ms-flex-line-pack: start;
+      align-content: start;
+  grid-gap: 20px;
+}
+section.order_airplane div.container div.total div.total_tickets,
+section.order_airplane div.container div.total div.total_persons,
+section.order_airplane div.container div.total div.total_places,
+section.order_airplane div.container div.total div.total_price {
+  display: grid;
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+}
+section.order_airplane div.container div.total strong {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 130%;
+  text-transform: uppercase;
+  color: #333;
+  display: block;
+  margin-bottom: 18px;
+}
+@media (max-width: 1280px) {
+  section.order_airplane div.container div.total strong {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+}
+section.order_airplane div.container div.total div.list {
+  display: grid;
+  grid-gap: 10px;
+}
+section.order_airplane div.container div.total div.total_tickets {
+  display: grid;
+  grid-gap: 20px;
+}
+section.order_airplane div.container div.total div.total_tickets div.total_title {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-columns: 1fr -webkit-max-content;
+  grid-template-columns: 1fr max-content;
+}
+section.order_airplane div.container div.total div.total_tickets div.total_title h5 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 130%;
+}
+@media (max-width: 1280px) {
+  section.order_airplane div.container div.total div.total_tickets div.total_title h5 {
+    font-size: 14px;
+  }
+}
+section.order_airplane div.container div.total div.total_tickets div.total_title button {
+  border-radius: 10px;
+  background: #f2f5ff;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 130%;
+  text-align: center;
+  color: #3068F7;
+  padding: 0px 23px;
+  height: 35px;
+  min-width: unset;
+}
+@media (max-width: 1280px) {
+  section.order_airplane div.container div.total div.total_tickets div.total_title button {
+    font-size: 14px;
+  }
+}
+section.order_airplane div.container div.total div.total_tickets div.ticket {
+  display: grid;
+  grid-template-columns: -webkit-max-content 1fr -webkit-max-content;
+  grid-template-columns: max-content 1fr max-content;
+  grid-gap: 40px;
+}
+@media (max-width: 1280px) {
+  section.order_airplane div.container div.total div.total_tickets div.ticket {
+    grid-gap: 6px;
+  }
+}
+section.order_airplane div.container div.total div.total_tickets div.ticket div.from,
+section.order_airplane div.container div.total div.total_tickets div.ticket div.to {
+  display: grid;
+  grid-gap: 6px;
+}
+section.order_airplane div.container div.total div.total_tickets div.ticket div.from div,
+section.order_airplane div.container div.total div.total_tickets div.ticket div.to div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+section.order_airplane div.container div.total div.total_tickets div.ticket div.from div span.time,
+section.order_airplane div.container div.total div.total_tickets div.ticket div.to div span.time {
+  color: #16192C;
+}
+section.order_airplane div.container div.total div.total_tickets div.ticket div.from div span.tag,
+section.order_airplane div.container div.total div.total_tickets div.ticket div.to div span.tag {
+  color: #3068F7;
+}
+section.order_airplane div.container div.total div.total_tickets div.ticket div.from span.date,
+section.order_airplane div.container div.total div.total_tickets div.ticket div.to span.date {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 130%;
+  color: #9495a6;
+}
+section.order_airplane div.container div.total div.total_tickets div.ticket div.to {
+  text-align: right;
+}
+section.order_airplane div.container div.total div.total_tickets div.ticket div.visual {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-gap: 2px;
+}
+section.order_airplane div.container div.total div.total_tickets div.ticket div.visual div.airplane {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 18px;
+}
+section.order_airplane div.container div.total div.total_tickets div.ticket div.visual div.airplane hr {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #9495a6;
+}
+section.order_airplane div.container div.total div.total_tickets div.ticket div.visual span.time {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 130%;
+  color: #9495a6;
+  text-align: center;
+}
+section.order_airplane div.container div.total div.total_persons {
+  grid-gap: 8px;
+}
+section.order_airplane div.container div.total div.total_persons h5 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 130%;
+}
+@media (max-width: 1280px) {
+  section.order_airplane div.container div.total div.total_persons h5 {
+    font-size: 14px;
+  }
+}
+section.order_airplane div.container div.total div.total_persons a {
+  color: #3068F7;
+  text-decoration: underline;
+}
+section.order_airplane div.container div.total div.total_persons a:hover {
+  text-decoration: none;
+}
+section.order_airplane div.container div.total div.total_places {
+  display: grid;
+  grid-gap: 12px;
+}
+section.order_airplane div.container div.total div.total_places h5 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 130%;
+}
+@media (max-width: 1280px) {
+  section.order_airplane div.container div.total div.total_places h5 {
+    font-size: 14px;
+  }
+}
+section.order_airplane div.container div.total div.total_places div.place {
+  display: grid;
+  grid-gap: 10px;
+}
+section.order_airplane div.container div.total div.total_places div.place div.customer {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-columns: 1fr -webkit-max-content;
+  grid-template-columns: 1fr max-content;
+}
+section.order_airplane div.container div.total div.total_places div.place div.customer span.name {
+  opacity: 0.5;
+}
+section.order_airplane div.container div.total div.total_places div.place div.customer span.number {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  border-radius: 5px;
+  height: 25px;
+  background: #d819a3;
+  padding: 0 10px;
+  color: white;
+  font-variant-numeric: ordinal-nums;
+}
+section.order_airplane div.container div.total div.total_price h5 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 130%;
+  margin-bottom: 14px;
+}
+@media (max-width: 1280px) {
+  section.order_airplane div.container div.total div.total_price h5 {
+    font-size: 14px;
+  }
+}
+section.order_airplane div.container div.total div.tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  grid-gap: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #343a60;
+}
+@media (max-width: 1280px) {
+  section.order_airplane div.container div.total div.tr {
+    font-size: 12px;
+    grid-gap: 10px;
+  }
+}
+section.order_airplane div.container div.total div.tr span:first-child {
+  opacity: 0.8;
+}
+section.order_airplane div.container div.total div.tr span:last-child {
+  text-align: right;
+  max-width: 60%;
+}
+section.order_airplane div.container div.total div.tr.total {
+  margin-top: 18px;
+  margin-bottom: 24px;
+}
+@media (max-width: 1280px) {
+  section.order_airplane div.container div.total div.tr.total {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+section.order_airplane div.container div.total div.tr.total div {
+  display: grid;
+  -ms-flex-line-pack: end;
+      align-content: end;
+  grid-gap: 4px;
+}
+section.order_airplane div.container div.total div.tr.total div:first-child {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 130%;
+  color: #16192C;
+}
+@media (max-width: 1280px) {
+  section.order_airplane div.container div.total div.tr.total div:first-child {
+    font-size: 14px;
+  }
+}
+section.order_airplane div.container div.total div.tr.total div:last-child {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 130%;
+  text-align: right;
+  color: #16192C;
+  white-space: nowrap;
+}
+@media (max-width: 1280px) {
+  section.order_airplane div.container div.total div.tr.total div:last-child {
+    font-size: 14px;
+  }
+}
+section.order_airplane div.container div.total span.policy {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  color: #343a60;
+  margin-bottom: 24px;
+}
+@media (max-width: 1280px) {
+  section.order_airplane div.container div.total span.policy {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+}
+section.order_airplane div.container div.total span.policy a {
+  text-decoration: underline;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: #3068f7;
+}
+section.order_airplane div.container div.total span.policy a:hover {
+  text-decoration: none;
+}
+section.order_airplane div.container div.total button {
   background: #3068f7;
   width: 100%;
 }/*# sourceMappingURL=order.css.map */

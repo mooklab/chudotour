@@ -58,6 +58,18 @@ section.main div.swiper.captions div.swiper-slide {
     padding: 10px 12px;
   }
 }
+@media (max-width: 960px) {
+  section.main div.swiper.captions div.swiper-slide {
+    grid-template-columns: repeat(2, -webkit-max-content);
+    grid-template-columns: repeat(2, max-content);
+    grid-gap: 7px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-radius: 8px;
+    padding: 10px;
+  }
+}
 section.main div.swiper.captions div.swiper-slide-thumb-active {
   background: #3068f7;
   color: white;
@@ -206,6 +218,23 @@ section.main form div.two_column input::placeholder {
 }
 @media (max-width: 1280px) {
   section.main form div.two_column_only_mobile {
+    grid-column: 2 span;
+  }
+}
+@media (max-width: 960px) {
+  section.main form fieldset.direction_airplane,
+  section.main form fieldset.tourists,
+  section.main form fieldset.placement_airplane,
+  section.main form fieldset.food_airplane,
+  section.main form fieldset.direction_sun,
+  section.main form fieldset.placement_sun,
+  section.main form fieldset.food_sun,
+  section.main form fieldset.direction_bus,
+  section.main form fieldset.period_bus,
+  section.main form fieldset.time_hostel,
+  section.main form fieldset.direction_hotel,
+  section.main form fieldset.placement_hotel,
+  section.main form fieldset.food_hotel {
     grid-column: 2 span;
   }
 }

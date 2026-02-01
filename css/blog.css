@@ -216,6 +216,7 @@ section.articles div.container a.blog_card div.preview div.clock {
   }
 }
 section.articles div.container a.blog_card div.preview div.clock span {
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 20px;
   line-height: 130%;

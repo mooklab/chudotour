@@ -48,14 +48,23 @@ section.profile
                 span.note Телефон
                 div.row
                     fieldset.input
+                        div.hidden +7 (963) 923-45-88
                         input(type="tel", placeholder=" ", value="+7 (963) 923-45-88")
+                        div.tooltip
+                            img(src="images/input_success.svg")
+                            div.tooltip_text Подтвержден
                     +form_nav
 
             form.disabled
                 span.note Email
                 div.row
                     fieldset.input
+                        div.hidden konstatin.konstantin123@gmail.com
                         input(type="email", placeholder=" ", value="konstatin.konstantin123@gmail.com")
+                        div.tooltip
+                            img(src="images/input_alert.svg")
+                            div.tooltip_text E-mail не подтвержден
+                                a(href="index.html") Подтвердить
                     +form_nav
 
             h5 Документы

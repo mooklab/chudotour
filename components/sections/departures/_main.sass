@@ -25,11 +25,25 @@ section.main
                 &::placeholder
                     opacity: 0.5
                     color: #16192c
+
+                &::-webkit-search-cancel-button
+                    appearance: none
+                    cursor: pointer
+                    height: 12px
+                    width: 12px
+                    background-image: url('/images/search_cross.svg')
+                    background-size: contain
+
+                &:not(:placeholder-shown) + img
+                    display: none
+                    
+
             img
                 position: absolute
                 top: 50%
                 right: 15px
                 transform: translateY(-50%)
+                display: block
 
         div.dates
             display: flex
@@ -38,6 +52,7 @@ section.main
             overflow-x: auto
             padding-bottom: 10px
             margin-bottom: 40px
+            user-select: none
             +s(l)
                 gap: 10px
 

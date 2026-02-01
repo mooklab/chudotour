@@ -4,6 +4,7 @@ section.main div.container h1 {
 @media (max-width: 960px) {
   section.main div.container h1 {
     margin-bottom: 16px;
+    font-size: 22px;
   }
 }
 section.main div.container h1 b {
@@ -35,7 +36,7 @@ section.main div.container div.advantages div.why {
     border-radius: 20px;
   }
 }
-section.main div.container div.advantages div.why h2 {
+section.main div.container div.advantages div.why h3 {
   position: relative;
   color: white;
   z-index: 1;
@@ -447,6 +448,7 @@ section.payment div.container div.list div.payment div.detail span {
   opacity: 0.8;
 }
 section.payment div.container div.list div.payment div.detail i {
+  font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 140%;
@@ -516,15 +518,20 @@ section.booking div.container div.list div.item {
 }
 section.booking div.container div.list div.item span {
   font-weight: 500;
-  font-size: 14px;
   line-height: 130%;
   text-align: center;
   color: #343a60;
   margin-top: 20px;
 }
+@media (max-width: 1600px) {
+  section.booking div.container div.list div.item span {
+    font-size: 14px;
+  }
+}
 @media (max-width: 1280px) {
   section.booking div.container div.list div.item span {
     margin-top: 15px;
+    font-size: 12px;
   }
 }
 section.booking div.container div.list div.item span::after {

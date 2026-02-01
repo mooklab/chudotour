@@ -37,6 +37,10 @@ const airplanesAirheadFromSwiper = document.querySelector('section.airhead div.s
 const airplanesAirticketsFromSwiper = document.querySelector('section.airlist div.swiper.airticketsfrom')
 const airplanesAirheadToSwiper = document.querySelector('section.airhead div.swiper.airdatesto')
 const airplanesAirticketsToSwiper = document.querySelector('section.airlist div.swiper.airticketsto')
+const categoryDatesDaysSwipers = document.querySelectorAll('section.main div.dates div.days div.swiper')
+const lightboxImages = document.querySelectorAll('[lightbox]')
+const dragdrops = document.querySelectorAll('.dragdrop')
+const fieldsetsSelect = document.querySelectorAll('fieldset.select')
 
 
 // Слайдеры
@@ -512,21 +516,25 @@ singleHotellistSwiper && new Swiper(singleHotellistSwiper, {
 airplanesAirheadFromSwiper && new Swiper(airplanesAirheadFromSwiper, {
     slidesPerView: 'auto',
     spaceBetween: 10,
+    navigation: {
+        prevEl: airplanesAirheadFromSwiper.parentNode.querySelector('div.swiper-navigation div.arrow:first-child'),
+        nextEl: airplanesAirheadFromSwiper.parentNode.querySelector('div.swiper-navigation div.arrow:last-child')
+    },
     breakpoints: {
         640: {
-            // slidesPerView: 4,
+            slidesPerView: 'auto',
             spaceBetween: 10
         },
         960: {
-            // slidesPerView: 6,
-            spaceBetween: 10
-        },
-        1280: {
-            // slidesPerView: 6,
+            slidesPerView: 6,
             spaceBetween: 10
         },
         1600: {
-            // slidesPerView: 10,
+            slidesPerView: 8,
+            spaceBetween: 10
+        },
+        1920: {
+            slidesPerView: 10,
             spaceBetween: 20
         },
     },
@@ -552,21 +560,25 @@ airplanesAirticketsFromSwiper && new Swiper(airplanesAirticketsFromSwiper, {
 airplanesAirheadToSwiper && new Swiper(airplanesAirheadToSwiper, {
     slidesPerView: 'auto',
     spaceBetween: 10,
+    navigation: {
+        prevEl: airplanesAirheadFromSwiper.parentNode.querySelector('div.swiper-navigation div.arrow:first-child'),
+        nextEl: airplanesAirheadFromSwiper.parentNode.querySelector('div.swiper-navigation div.arrow:last-child')
+    },
     breakpoints: {
         640: {
-            // slidesPerView: 4,
+            slidesPerView: 'auto',
             spaceBetween: 10
         },
         960: {
-            // slidesPerView: 6,
-            spaceBetween: 10
-        },
-        1280: {
-            // slidesPerView: 6,
+            slidesPerView: 6,
             spaceBetween: 10
         },
         1600: {
-            // slidesPerView: 10,
+            slidesPerView: 8,
+            spaceBetween: 10
+        },
+        1920: {
+            slidesPerView: 10,
             spaceBetween: 20
         },
     },
@@ -587,6 +599,32 @@ airplanesAirticketsToSwiper && new Swiper(airplanesAirticketsToSwiper, {
             this.el.classList.add('show')
         }
     }
+})
+
+categoryDatesDaysSwipers.forEach( swiper => {
+    new Swiper(swiper, {
+        slidesPerView: 'auto',
+        freeMode: true,
+        navigation: {
+            prevEl: swiper.parentNode.querySelector('div.swiper-navigation div.arrow:first-child'),
+            nextEl: swiper.parentNode.querySelector('div.swiper-navigation div.arrow:last-child')
+        },
+        scrollbar: {
+            el: swiper.parentNode.querySelector('div.swiper-scrollbar'),
+            draggable: true,
+        },
+        on: {
+            init: function () {
+                this.el.classList.add('show')
+            },
+            click: function () {
+                this.slides.forEach(slide => {
+                    slide.classList.remove('clicked');
+                })
+                this.clickedSlide.classList.add('clicked')
+            }
+        }
+    })
 })
 
 
@@ -693,29 +731,166 @@ questionAccordions.forEach(accordion => {
 
 // Аккордионы
 airCardAccordions.forEach(accordion => {
-    console.log('123')
     const button = accordion.querySelector('div.more_caption')
     const content = accordion.querySelector('div.more_content')
     new Accordion(accordion, button, content, 300)
 })
 
-// Яндекс карта
-ymaps.ready(function () {
-    map = new ymaps.Map('map', {
-        controls: ["zoomControl"],
-        center: [56.325549, 43.958205],
-        zoom: 16,
+// Лайтбокс
+lightboxImages.forEach(lightboxImage => {
+    lightboxImage.addEventListener('click', event => {
+
+        
+
+        let groupImages
+        const lightbox = document.querySelector('dialog[data-modal-name=lightbox]')
+        const thumbs = lightbox.querySelector('div.thumbs')
+        const images = lightbox.querySelector('div.images')
+        const group = lightboxImage.getAttribute('lightbox')
+        const wrappers = document.querySelectorAll('dialog[data-modal-name=lightbox] div.swiper-wrapper')
+
+        wrappers.forEach(wrapper => {
+            wrapper.innerHTML = ''
+        })
+
+        const oldImageSwiper = document.querySelector('dialog[data-modal-name=lightbox] div.images div.swiper').swiper
+        const oldThumbSwiper = document.querySelector('dialog[data-modal-name=lightbox] div.thumbs div.swiper').swiper
+
+        oldImageSwiper && oldImageSwiper.destroy(true, true)
+        oldThumbSwiper && oldThumbSwiper.destroy(true, true)
+
+        // Если изображения группированы, выбираем изображения только из группы
+        group ? groupImages = document.querySelectorAll('[lightbox=' + group + ']') : groupImages = lightboxImages
+
+        // Создаем диалоговое окно
+        createDialog('lightbox')
+        const index = Array.from(groupImages).indexOf(event.target)
+
+        // Добавляем слайды
+        groupImages.forEach(groupImage => {
+            thumbs.querySelector('div.swiper-wrapper').append(createSlide(groupImage))
+            images.querySelector('div.swiper-wrapper').append(createSlide(groupImage))
+        })
+
+        // Создаем слайдер
+        const thumbsSwiper = new Swiper(thumbs.querySelector('div.swiper'), {
+            slidesPerView: 'auto',
+            spaceBetween: 10,
+            freeMode: true,
+            centeredSlides: true,
+            on: {
+                init: function () {
+                    this.el.classList.add('show')
+                }
+            }
+        })
+
+        // Создаем слайдер
+        const imagesSwiper = new Swiper(images.querySelector('div.swiper'), {
+            slidesPerView: 1,
+            navigation: {
+                prevEl: 'dialog[data-modal-name=lightbox] div.swiper-navigation > *:first-child',
+                nextEl: 'dialog[data-modal-name=lightbox] div.swiper-navigation > *:last-child',
+            },
+            thumbs: {
+                swiper: thumbsSwiper
+            },
+            on: {
+                init: function () {
+                    this.el.classList.add('show')
+                }
+            }
+        })
+
+        imagesSwiper.slideTo(index)
+
     })
-    var placemark = new ymaps.Placemark([56.325549, 43.958205], { hintContent: 'Чудесный отдых' }, {
-        // iconLayout: 'default#image',
-        // iconImageHref: 'images/svg/evigi_pin.svg',
-        // iconImageSize: [125, 75],
-        // iconImageOffset: [-35, -50]
-    })
-    map.geoObjects.add(placemark)
-    map.behaviors.disable('scrollZoom')
 })
 
+// Доп функционал для селекта
+fieldsetsSelect.forEach( select => {
+    select.addEventListener('mousedown', event => {
+        select == document.activeElement && setTimeout(function(){ select.blur() }, 100)
+    })
+})
 
+//Драг & Дроп скролл
+dragdrops.forEach(element => {
+    let isDown = false
+    let startX
+    let scrollLeft
+
+    element.addEventListener('mousedown', (e) => {
+        isDown = true
+        element.style.cursor = 'grabbing'
+        startX = e.pageX - element.offsetLeft
+        scrollLeft = element.scrollLeft
+    })
+
+    element.addEventListener('mouseleave', () => {
+        isDown = false
+        element.style.cursor = 'grab'
+    })
+
+    element.addEventListener('mouseup', () => {
+        isDown = false
+        element.style.cursor = 'grab'
+    })
+
+    element.addEventListener('mousemove', (e) => {
+        if (!isDown) return
+        e.preventDefault()
+        const x = e.pageX - element.offsetLeft
+        const walk = (x - startX) * 1 // Скорость скролла
+        element.scrollLeft = scrollLeft - walk
+    })
+})
+
+// Ресайз инпута по контенту
+const resizeInputs = () => {
+    document.querySelectorAll('form.disabled div.hidden').forEach(element => {
+        element.nextElementSibling.style.width = element.clientWidth + 20 + 'px'
+    })
+    document.querySelectorAll('form.disabled div.hidden + input').forEach(element => {
+        element.addEventListener('input', event => {
+            const hidden = element.previousElementSibling
+            hidden.textContent = element.value
+            element.style.width = hidden.clientWidth + 20 + 'px'
+        })
+    })
+}
+
+// Создаем блочный элемент и вставляем в него изображение
+const createSlide = element => {
+    let slide = document.createElement('div')
+    slide.classList.add('swiper-slide')
+
+    let image = document.createElement('img')
+    image.src = element.src
+
+    slide.append(image)
+    return slide
+}
+
+// Яндекс карта
+if (typeof ymaps !== 'undefined') {
+    ymaps.ready(function () {
+        map = new ymaps.Map('map', {
+            controls: ["zoomControl"],
+            center: [56.325549, 43.958205],
+            zoom: 16,
+        })
+        var placemark = new ymaps.Placemark([56.325549, 43.958205], { hintContent: 'Чудесный отдых' }, {
+            // iconLayout: 'default#image',
+            // iconImageHref: 'images/svg/evigi_pin.svg',
+            // iconImageSize: [125, 75],
+            // iconImageOffset: [-35, -50]
+        })
+        map.geoObjects.add(placemark)
+        map.behaviors.disable('scrollZoom')
+    })
+}
+
+resizeInputs()
 
 

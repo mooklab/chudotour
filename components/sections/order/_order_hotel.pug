@@ -19,9 +19,10 @@ section.order_hotel
                         div.swiper-slide: img(src="images/1.webp")
                     div.swiper-pagination
                 div.description
-                    div.title
+                    div.card_title
                         span.count 1 человек
-                        h5 2-х местный Эконом
+                        a(href="index.html") 
+                            h5 2-х местный Эконом
                         span.area Площадь 22 м2
                     div.advantages
                         div.advantage
@@ -57,7 +58,9 @@ section.order_hotel
                         +datepicker('Дата рождения')
                         +select('gender', 'Пол', 'Мужской', 'Женский')
                     div.tr
-                        +input('Телефон', true)
+                        fieldset.input
+                            input(type="tel", placeholder=" ", required)
+                            span Телефон
                         +input('Email', true)
                     div.tr
                         +select('category', 'Категория', 'Категория 1', 'Категория 2', 'Категория 3')
@@ -79,7 +82,9 @@ section.order_hotel
                         +input('Имя', true)
                         +input('Фамилия', true)
                     div.tr
-                        +input('Телефон', true)
+                        fieldset.input
+                            input(type="tel", placeholder=" ", required)
+                            span Телефон
                         +input('Email', true)
 
             div.additional_data

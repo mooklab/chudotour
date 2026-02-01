@@ -4,8 +4,12 @@ div.pagination
     align-items: center
     grid-template-columns: 1fr max-content
     +s(m)
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr max-content
         justify-content: center
+    +s(s)
+        grid-template-columns: 1fr
+        justify-items: center
+
     div.pages
         display: flex
         gap: 20px
@@ -13,6 +17,9 @@ div.pagination
             gap: 10px
         +s(m)
             justify-content: space-between
+            width: max-content
+        +s(s)
+            width: 100%
             margin-bottom: 37px
         a
             display: grid
@@ -47,6 +54,7 @@ div.pagination
                 svg
                     path
                         fill: white
+    
     button
         position: absolute
         top: 50%
@@ -62,17 +70,16 @@ div.pagination
         height: 44px
         background: #F3F2FD
         justify-self: center
-        +s(l)
+        +s(m)
             position: static
             transform: unset
-        +s(m)
             font-size: 14px
 
     div.count
         display: flex
         align-items: center
         gap: 18px
-        +s(l)
+        +s(m)
             display: none
         span
             font-weight: 400
@@ -94,3 +101,4 @@ div.pagination
                 padding: unset
                 right: 10px
                 top: calc(50% - 4px)
+                margin: unset

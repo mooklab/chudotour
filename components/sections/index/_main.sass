@@ -41,6 +41,12 @@ section.main
             transition: background 0.5s, color 0.5s
             +s(l)
                 padding: 10px 12px
+            +s(m)
+                grid-template-columns: repeat(2, max-content)
+                grid-gap: 7px
+                align-items: center
+                border-radius: 8px
+                padding: 10px
         div.swiper-slide-thumb-active
             background: #3068f7
             color: white
@@ -147,6 +153,22 @@ section.main
 
         div.two_column_only_mobile
             +s(l)
+                grid-column: 2 span
+
+        fieldset.direction_airplane,
+        fieldset.tourists,
+        fieldset.placement_airplane,
+        fieldset.food_airplane,
+        fieldset.direction_sun,
+        fieldset.placement_sun,
+        fieldset.food_sun,
+        fieldset.direction_bus,
+        fieldset.period_bus,
+        fieldset.time_hostel,
+        fieldset.direction_hotel,
+        fieldset.placement_hotel,
+        fieldset.food_hotel
+            +s(m)
                 grid-column: 2 span
 
         fieldset.select

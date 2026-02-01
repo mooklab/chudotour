@@ -6,7 +6,7 @@ mixin order(color)
             span 14.12.2024-22.12.2024 (8 дней / 7 ночей)
             i 21782-25122024
         td(data-thead="Направление") Новогодние каникулы в Санкт-Петербурге
-        td(data-thead="ФИО туриста") Константинопольский Константин Константинович
+        td(data-thead="ФИО туриста") Константинопольский Константин <br/>Константинович
         td(data-thead="Мененджер") Константин
         td(data-thead="Статус")
             if color == 'pink'
@@ -24,17 +24,17 @@ mixin order(color)
             div.buttons.column
                 a(href="index.html").more Подробнее
                 if color == 'pink'
-                    button.pay Оплатить
+                    button.pay Оплатить 100 000 000 ₽
                 else if color == 'green' || color == 'black'
                     span.price 100 000 000 ₽
                 else
                     div.empty
-                button.cancel Аннулировать
+                button.cancel Аннулировать заказ
 
 section.orders
     div.container
 
-        +account_sidemenu('images/40.webp', 'ООО «Чудесный отдых»', '', '3', 'Данные агентства', 'Бронирования', 'Отчеты', 'Документы', 'Бонусная программа', 'Выйти')
+        +account_sidemenu('images/40.webp', 'ООО «Чудесный отдых»', 'chudotur123@gmail.com', '3', 'Данные агентства', 'Бронирования', 'Отчеты', 'Документы', 'Бонусная программа', 'Выйти')
 
         div.account_page
             h1 Бронирования

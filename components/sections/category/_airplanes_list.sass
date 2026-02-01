@@ -3,16 +3,20 @@ section.airhead
     padding-bottom: 32px
     +s(m)
         background: unset
+
     div.container
 
         h1
             margin-bottom: 30px
             +s(l)
                 margin-bottom: 20px
+        
         h3
             margin-bottom: 32px
+            font-size: 28px
             +s(l)
                 margin-bottom: 10px
+                font-size: 14px
             b
                 color: #d819a3
                 font-weight: 600
@@ -25,18 +29,29 @@ section.airhead
                 color: #d819a3
 
         div.slider
+            position: relative
             margin-bottom: 30px
+            user-select: none
+            +s(xl)
+                padding-left: 40px
+                padding-right: 40px
+            +s(m)
+                padding-left: unset
+                padding-right: unset
             div.swiper
-                overflow: visible
+                +s(m)
+                    overflow: visible
+
                 div.swiper-wrapper
                     div.swiper-slide
                         cursor: pointer
                         border: 1px solid #3068f780
                         border-radius: 15px
                         padding: 15px 20px
-                        width: auto !important
                         +s(l)
                             padding: 7px 15px
+                        +s(m)
+                            width: auto !important
                         span
                             font-size: 13px
                             color: #9495a6
@@ -48,7 +63,28 @@ section.airhead
                         &.swiper-slide-thumb-active
                             background: #dee6ff
                             border: 1px solid transparent
+                            span, h5
+                                color: #3068F7
+
             div.swiper-navigation
+                display: flex
+                justify-content: space-between
+                position: absolute
+                top: 50%
+                left: 0
+                width: calc(100% + 80px)
+                margin-left: -40px
+                transform: translateY(-50%)
+                z-index: 1
+                +s(xl)
+                    width: 100%
+                    margin-left: unset
+                +s(m)
+                    display: none
+                div.arrow
+                    width: 30px
+                    height: 30px
+                    border-radius: 15px
 
         div.filter
             display: grid
@@ -85,6 +121,7 @@ section.airhead
                         opacity: 1
                     &:hover
                         opacity: 1
+            
             div.sort
                 display: flex
                 align-items: center
@@ -107,6 +144,7 @@ section.airhead
                 +s(m)
                     display: grid
                     width: max-content
+                    height: max-content
                 div.select_choice
                     border-radius: 10px
                     background: #f2f5ff
@@ -141,7 +179,7 @@ section.airhead
                 grid-template-columns: 1fr
                 grid-gap: 10px
 
-            span
+            h1
                 font-weight: 600
                 font-size: 40px
                 line-height: 110%

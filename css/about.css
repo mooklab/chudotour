@@ -198,7 +198,15 @@ section.advantages {
 }
 section.advantages div.container {
   display: grid;
-  grid-gap: 32px;
+  grid-gap: 16px;
+}
+section.advantages div.container > h3 {
+  display: none;
+}
+@media (max-width: 960px) {
+  section.advantages div.container > h3 {
+    display: block;
+  }
 }
 section.advantages div.swiper {
   width: 100%;
@@ -237,8 +245,8 @@ section.advantages div.swiper-slide div.text {
         -ms-flex-order: 2;
             order: 2;
     padding: 20px;
-    padding-top: 150px;
-    padding-bottom: 100px;
+    padding-top: 80px;
+    padding-bottom: 80px;
     min-height: unset;
   }
 }
@@ -305,6 +313,7 @@ section.advantages div.swiper-count {
   }
 }
 section.advantages div.swiper-count span {
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 28px;
   line-height: 130%;
@@ -353,7 +362,7 @@ section.direction div.container {
   grid-template-columns: 2fr 3fr;
   grid-gap: 20px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1600px) {
   section.direction div.container {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
@@ -380,6 +389,7 @@ section.direction div.container div.content div.title {
   display: grid;
   grid-template-rows: 1fr -webkit-max-content;
   grid-template-rows: 1fr max-content;
+  max-width: 580px;
 }
 @media (max-width: 960px) {
   section.direction div.container div.content div.title {
@@ -401,17 +411,25 @@ section.direction div.container div.content div.title img.mobile {
     width: 580px;
     top: 40px;
     left: 50%;
-    -webkit-transform: translateX(-65%);
-        -ms-transform: translateX(-65%);
-            transform: translateX(-65%);
-    -o-object-fit: cover;
-       object-fit: cover;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    -o-object-fit: contain;
+       object-fit: contain;
     -o-object-position: center center;
        object-position: center center;
   }
 }
+@media (max-width: 640px) {
+  section.direction div.container div.content div.title img.mobile {
+    -webkit-transform: translateX(-65%);
+        -ms-transform: translateX(-65%);
+            transform: translateX(-65%);
+  }
+}
 section.direction div.container div.content div.list {
   margin-top: 36px;
+  max-width: 580px;
 }
 @media (max-width: 1280px) {
   section.direction div.container div.content div.list {
@@ -444,7 +462,7 @@ section.direction div.container div.preview {
 @media (max-width: 1600px) {
   section.direction div.container div.preview {
     margin-right: -170px;
-    margin-left: -60px;
+    margin-left: -130px;
     width: calc(100% + 230px);
     height: 460px;
   }
@@ -476,7 +494,7 @@ section.garantee div.container {
   grid-template-columns: 2fr 3fr;
   grid-gap: 20px;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1600px) {
   section.garantee div.container {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
@@ -498,6 +516,9 @@ section.garantee div.container div.title {
   section.garantee div.container div.title {
     grid-gap: 15px;
   }
+}
+section.garantee div.container div.title h3 {
+  max-width: 480px;
 }
 section.garantee div.container div.title div.registry {
   display: grid;
@@ -633,12 +654,13 @@ section.comfort div.container div.gallery {
     grid-gap: 10px;
   }
 }
-@media (max-width: 960px) {
+@media (max-width: 640px) {
   section.comfort div.container div.gallery {
     grid-template-columns: 1fr;
   }
 }
 section.comfort div.container div.gallery img {
+  cursor: pointer;
   height: 520px;
   width: 100%;
   -o-object-fit: cover;

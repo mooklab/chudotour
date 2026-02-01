@@ -46,6 +46,24 @@ section.main div.container fieldset.search input::placeholder {
   opacity: 0.5;
   color: #16192c;
 }
+section.main div.container fieldset.search input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+          appearance: none;
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  background-image: url("/images/search_cross.svg");
+  background-size: contain;
+}
+section.main div.container fieldset.search input:not(:-moz-placeholder) + img {
+  display: none;
+}
+section.main div.container fieldset.search input:not(:-ms-input-placeholder) + img {
+  display: none;
+}
+section.main div.container fieldset.search input:not(:placeholder-shown) + img {
+  display: none;
+}
 section.main div.container fieldset.search img {
   position: absolute;
   top: 50%;
@@ -53,6 +71,7 @@ section.main div.container fieldset.search img {
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
+  display: block;
 }
 section.main div.container div.dates {
   display: -webkit-box;
@@ -63,6 +82,10 @@ section.main div.container div.dates {
   overflow-x: auto;
   padding-bottom: 10px;
   margin-bottom: 40px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 @media (max-width: 1280px) {
   section.main div.container div.dates {

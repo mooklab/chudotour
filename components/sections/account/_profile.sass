@@ -122,12 +122,13 @@ section.profile
 
                 &.disabled
                     fieldset.input
-                        pointer-events: none
                         border: unset
                         height: 1em
                         max-width: 340px
                         input
+                            position: relative
                             padding-left: unset
+                            pointer-events: none
                     fieldset.select
                         pointer-events: none
                         max-width: 340px
@@ -147,6 +148,38 @@ section.profile
                         button
                             height: 1em
 
+                    fieldset.input
+                        display: grid
+                        grid-template-columns: repeat(2, max-content)
+                        position: relative
+                        padding: unset
+
+
+                    div.tooltip
+                        width: max-content
+                        z-index: 999
+                        display: block
+                        a
+                            display: block
+                            margin-top: 6px
+                            text-decoration: underline
+                            &:hover
+                                text-decoration: none
+                        div.tooltip_text
+                            width: max-content
+
+                &:not(.disabled)
+                    input
+                        width: 100% !important
+
+                div.hidden
+                    opacity: 0
+                    position: absolute
+                    pointer-events: none
+
+                div.tooltip
+                    display: none
+
             form.password
                 grid-gap: 10px
                 max-width: 480px
@@ -155,6 +188,7 @@ section.profile
                     color: #acacac
                     margin-top: -5px
                     margin-bottom: 14px
+                    font-style: normal
                 div.buttons
                     display: flex
                     align-items: center

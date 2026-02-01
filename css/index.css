@@ -58,6 +58,18 @@ section.main div.swiper.captions div.swiper-slide {
     padding: 10px 12px;
   }
 }
+@media (max-width: 960px) {
+  section.main div.swiper.captions div.swiper-slide {
+    grid-template-columns: repeat(2, -webkit-max-content);
+    grid-template-columns: repeat(2, max-content);
+    grid-gap: 7px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-radius: 8px;
+    padding: 10px;
+  }
+}
 section.main div.swiper.captions div.swiper-slide-thumb-active {
   background: #3068f7;
   color: white;
@@ -206,6 +218,23 @@ section.main form div.two_column input::placeholder {
 }
 @media (max-width: 1280px) {
   section.main form div.two_column_only_mobile {
+    grid-column: 2 span;
+  }
+}
+@media (max-width: 960px) {
+  section.main form fieldset.direction_airplane,
+  section.main form fieldset.tourists,
+  section.main form fieldset.placement_airplane,
+  section.main form fieldset.food_airplane,
+  section.main form fieldset.direction_sun,
+  section.main form fieldset.placement_sun,
+  section.main form fieldset.food_sun,
+  section.main form fieldset.direction_bus,
+  section.main form fieldset.period_bus,
+  section.main form fieldset.time_hostel,
+  section.main form fieldset.direction_hotel,
+  section.main form fieldset.placement_hotel,
+  section.main form fieldset.food_hotel {
     grid-column: 2 span;
   }
 }
@@ -403,6 +432,16 @@ section.tours div.text {
     grid-gap: 24px;
   }
 }
+section.tours div.text a.button {
+  justify-self: center;
+  max-width: 200px;
+}
+@media (max-width: 960px) {
+  section.tours div.text a.button {
+    width: 100%;
+    justify-self: none;
+  }
+}
 section.tours div.swiper.left,
 section.tours div.swiper.right {
   width: 100%;
@@ -553,6 +592,11 @@ section.hot div.container {
 section.hot div.description {
   display: grid;
   justify-items: start;
+}
+@media (max-width: 960px) {
+  section.hot div.description {
+    justify-items: center;
+  }
 }
 section.hot div.description h3 {
   display: block;
@@ -910,6 +954,12 @@ section.reviews div.container div.gis div.subscribers span {
 @media (max-width: 960px) {
   section.reviews div.container div.yandex div.subscribers span,
   section.reviews div.container div.gis div.subscribers span {
+    font-size: 14px;
+  }
+}
+@media (max-width: 640px) {
+  section.reviews div.container div.yandex div.subscribers span,
+  section.reviews div.container div.gis div.subscribers span {
     font-size: 10px;
   }
 }
@@ -1128,6 +1178,7 @@ section.expert div.container {
   }
 }
 section.expert div.container form {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr) -webkit-max-content;
   grid-template-columns: repeat(3, 1fr) max-content;
@@ -1151,6 +1202,28 @@ section.expert div.container form {
   section.expert div.container form button {
     width: 100%;
   }
+}
+section.expert div.container form div.success {
+  position: absolute;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: #f3f2fd;
+  z-index: 9;
+  padding: 40px;
+}
+section.expert div.container form div.success h5 {
+  color: #3068f7;
+}
+section.expert div.container form.success div.success {
+  display: grid;
 }
 
 section.blog {
@@ -1298,7 +1371,7 @@ section.blog div.swiper-slide:first-child div.blog_card div.text {
 section.blog div.swiper-slide:first-child div.blog_card div.text span.date {
   color: white;
 }
-section.blog div.swiper-slide:first-child div.blog_card div.text strong {
+section.blog div.swiper-slide:first-child div.blog_card div.text h5 {
   color: white;
 }
 section.blog div.swiper-slide:first-child div.blog_card div.text span.text {

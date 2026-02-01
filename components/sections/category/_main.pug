@@ -18,10 +18,10 @@ section.main
             div.last_date
                 +datepicker('Дата до')
             div.transport
-                span.note Транспорт
+                span.note Тип транспорта
                 +select('transport', '', 'Любой', 'Самолет', 'Поезд', 'Автобус')
             div.type
-                span.note Тип
+                span.note Тип тура
                 +select('type', '', 'Любой', 'Краткосрочный', 'Среднесрочный', 'Долгосрочный')
             div.adult
                 div.quantity
@@ -43,52 +43,62 @@ section.main
             div.button
                 button Найти тур
 
-        div.dates
-            div.swiper.month
-                div.swiper-wrapper
-                    div.swiper-slide Январь 2025
-                    div.swiper-slide Февраль 2025
-                    div.swiper-slide Март 2025
-                    div.swiper-slide Апрель 2025
-                    div.swiper-slide Май 2025
-                    div.swiper-slide Июнь 2025
-                    div.swiper-slide Июль 2025
-                    div.swiper-slide Август 2025
-                    div.swiper-slide Сентябрь 2025
-                    div.swiper-slide Октябрь 2025
-                    div.swiper-slide Ноябрь 2025
-                    div.swiper-slide Декабрь 2025
-            div.swiper.date
-                div.swiper-wrapper
-                    div.swiper-slide 01.10 сб
-                    div.swiper-slide 02.10 вс
-                    div.swiper-slide 03.10 пн
-                    div.swiper-slide 04.10 вт
-                    div.swiper-slide 05.10 ср
-                    div.swiper-slide 06.10 чт
-                    div.swiper-slide 07.10 пт
-                    div.swiper-slide 08.10 сб
-                    div.swiper-slide 09.10 вс
-                    div.swiper-slide 10.10 вс
-                    div.swiper-slide 11.10 сб
-                    div.swiper-slide 12.10 вс
-                    div.swiper-slide 13.10 пн
-                    div.swiper-slide 14.10 вт
-                    div.swiper-slide 15.10 ср
-                    div.swiper-slide 16.10 чт
-                    div.swiper-slide 17.10 пт
-                    div.swiper-slide 18.10 сб
-                    div.swiper-slide 19.10 вс
-                    div.swiper-slide 20.10 пн
-                    div.swiper-slide 21.10 вт
-                    div.swiper-slide 22.10 ср
-                    div.swiper-slide 23.10 чт
-                    div.swiper-slide 24.10 пт
-                    div.swiper-slide 25.10 сб
-                    div.swiper-slide 26.10 вс
-                    div.swiper-slide 27.10 пн
-                    div.swiper-slide 28.10 вт
-                    div.swiper-slide 29.10 ср
-                    div.swiper-slide 30.10 чт
-                    div.swiper-slide 31.10 пт
-        
+        div.dates.tabs
+            div.monthes
+                span.note Месяц:
+                div.tabs_captions.dragdrop
+                    div.tab_caption.opened Январь 2025
+                    div.tab_caption Февраль 2025
+                    div.tab_caption Март 2025
+                    div.tab_caption Апрель 2025
+                    div.tab_caption Май 2025
+                    div.tab_caption Июнь 2025
+                    div.tab_caption Июль 2025
+                    div.tab_caption Август 2025
+                    div.tab_caption Сентябрь 2025
+                    div.tab_caption Октябрь 2025
+                    div.tab_caption Ноябрь 2025
+                    div.tab_caption Декабрь 2025
+            div.days.tabs_contents
+                span.note Дата:
+                -for(x=0;x<12;x++)
+                    div(class= x === 0 ? 'opened' : null).tab_content
+                        div.swiper
+                            div.swiper-wrapper
+                                div.swiper-slide 01.0!{x+1} сб
+                                div.swiper-slide 02.0!{x+1} вс
+                                div.swiper-slide 03.0!{x+1} пн
+                                div.swiper-slide 04.0!{x+1} вт
+                                div.swiper-slide 05.0!{x+1} ср
+                                div.swiper-slide 06.0!{x+1} чт
+                                div.swiper-slide 07.0!{x+1} пт
+                                div.swiper-slide 08.0!{x+1} сб
+                                div.swiper-slide 09.0!{x+1} вс
+                                div.swiper-slide 10.0!{x+1} вс
+                                div.swiper-slide 11.0!{x+1} сб
+                                div.swiper-slide 12.0!{x+1} вс
+                                div.swiper-slide 13.0!{x+1} пн
+                                div.swiper-slide 14.0!{x+1} вт
+                                div.swiper-slide 15.0!{x+1} ср
+                                div.swiper-slide 16.0!{x+1} чт
+                                div.swiper-slide 17.0!{x+1} пт
+                                div.swiper-slide 18.0!{x+1} сб
+                                div.swiper-slide 19.0!{x+1} вс
+                                div.swiper-slide 20.0!{x+1} пн
+                                div.swiper-slide 21.0!{x+1} вт
+                                div.swiper-slide 22.0!{x+1} ср
+                                div.swiper-slide 23.0!{x+1} чт
+                                div.swiper-slide 24.0!{x+1} пт
+                                div.swiper-slide 25.0!{x+1} сб
+                                div.swiper-slide 26.0!{x+1} вс
+                                div.swiper-slide 27.0!{x+1} пн
+                                div.swiper-slide 28.0!{x+1} вт
+                                div.swiper-slide 29.0!{x+1} ср
+                                div.swiper-slide 30.0!{x+1} чт
+                                div.swiper-slide 31.0!{x+1} пт
+                        div.swiper-scrollbar
+                        div.swiper-navigation
+                            div.arrow
+                                include ../../../images/swiper_arrow.svg
+                            div.arrow
+                                include ../../../images/swiper_arrow.svg

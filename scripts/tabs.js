@@ -20,7 +20,7 @@ export class Tabs {
 
     onClick(index) {
         this.captions[index].classList.add('opened')
-        this.contents[index].classList.add('opened')
+        this.contents[index] && this.contents[index].classList.add('opened')
     }
 
 }
