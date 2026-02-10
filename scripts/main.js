@@ -776,8 +776,8 @@ lightboxImages.forEach(lightboxImage => {
         const thumbsSwiper = new Swiper(thumbs.querySelector('div.swiper'), {
             slidesPerView: 'auto',
             spaceBetween: 10,
-            freeMode: true,
-            centeredSlides: true,
+            // freeMode: true,
+            // centeredSlides: true,
             on: {
                 init: function () {
                     this.el.classList.add('show')
