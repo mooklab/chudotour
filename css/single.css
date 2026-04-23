@@ -635,18 +635,35 @@ section.about_tour div.container div.total div.order div.prices div.price_block 
 section.about_tour div.container div.total div.order div.prices div.price_block:not(:last-child) {
   border-right: 1px solid rgba(48, 104, 247, 0.2);
 }
+@media (max-width: 960px) {
+  section.about_tour div.container div.total div.order div.prices div.price_block:not(:last-child) {
+    border: unset;
+  }
+}
 section.about_tour div.container div.total div.order div.prices div.price_block span {
   font-weight: 400;
   font-size: 14px;
   line-height: 130%;
   text-transform: uppercase;
   color: #343A60;
+  white-space: nowrap;
+}
+@media (max-width: 960px) {
+  section.about_tour div.container div.total div.order div.prices div.price_block span {
+    font-size: 12px;
+  }
 }
 section.about_tour div.container div.total div.order div.prices div.price_block strong {
   font-weight: 600;
   font-size: 32px;
   line-height: 130%;
   color: #d819a3;
+  white-space: nowrap;
+}
+@media (max-width: 960px) {
+  section.about_tour div.container div.total div.order div.prices div.price_block strong {
+    font-size: 24px;
+  }
 }
 section.about_tour div.container div.total div.order div.prices div.price_block:nth-child(2) strong {
   color: #3068F7;
