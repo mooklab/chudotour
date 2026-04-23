@@ -189,7 +189,7 @@ fieldset.select
 
     &:focus
         z-index: 5
-    
+
         div.select_dropdown
             grid-template-rows: 1fr
             box-shadow: var(--gradient)
@@ -1013,7 +1013,7 @@ div.excursion_card
                 &:hover
                     h5
                         color: #343a60
-                
+
             span.city
                 font-weight: 400
                 font-size: 12px
@@ -1172,13 +1172,16 @@ div.excursion_card
                 margin-bottom: 10px
             div.days,
             div.nights
-                display: flex
-                gap: 5px
+                display: grid
+                align-items: center
+                grid-template-columns: repeat(2, max-content)
+                grid-gap: 5px
                 span
                     font-weight: 400
                     font-size: 14px
                     line-height: 150%
                     color: #343a60
+                    white-space: nowrap
                     +s(l)
                         font-size: 12px
         div.dates
@@ -1688,7 +1691,7 @@ div.habitation_card
                     &:hover
                         h5
                             color: #16192c
-                    
+
                 span.city
                     font-size: 12px
                     color: #D819A3
@@ -2050,7 +2053,7 @@ div.air_card
                             background: #f2f5ff
                             transform: rotate(45deg)
                             z-index: -1
-                        
+
         div.end
             grid-area: End
             display: grid

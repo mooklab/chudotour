@@ -1844,10 +1844,13 @@ div.excursion_card div.order div.period {
 }
 div.excursion_card div.order div.period div.days,
 div.excursion_card div.order div.period div.nights {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 5px;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-columns: repeat(2, -webkit-max-content);
+  grid-template-columns: repeat(2, max-content);
+  grid-gap: 5px;
 }
 div.excursion_card div.order div.period div.days span,
 div.excursion_card div.order div.period div.nights span {
@@ -1855,6 +1858,7 @@ div.excursion_card div.order div.period div.nights span {
   font-size: 14px;
   line-height: 150%;
   color: #343a60;
+  white-space: nowrap;
 }
 @media (max-width: 1280px) {
   div.excursion_card div.order div.period div.days span,
