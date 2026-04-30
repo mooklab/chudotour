@@ -898,7 +898,7 @@ resizeInputs()
 
 places.forEach(place => {
     place.addEventListener('click', event => {
-        place.classList.toggle('active')
+        place.classList.toggle('active');
     })
 })
 
