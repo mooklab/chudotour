@@ -48,4 +48,4 @@ const closeDialogs = () => {
 // Добавляем в CSS переменную значение ширины скроллбара
 document.documentElement.style.setProperty('--scrollbar-width', (window.innerWidth - document.documentElement.clientWidth) + "px")
 
-// createDialog('callback')
+// createDialog('bus')

@@ -122,31 +122,27 @@
                             <div class="tags"><span class="tag active">Все (100)</span><span class="tag">Текущие (100)</span><span class="tag">Прошедшие (100)</span></div>
                                         <fieldset class="account_tour select" tabindex="0">
                                             <div class="select_choice">
-                                                <input class="placeholder" type="radio" id="account_tour" name="account_tour" checked><span>Туры</span>
-                                                <input type="radio" id="account_tour_0" name="account_tour"><span>Городская прогулка</span>
-                                                <input type="radio" id="account_tour_1" name="account_tour"><span>Исторический обзор</span>
-                                                <input type="radio" id="account_tour_2" name="account_tour"><span>Культурное погружение</span>
-                                                <input type="radio" id="account_tour_3" name="account_tour"><span>Архитектурный тур</span>
-                                                <input type="radio" id="account_tour_4" name="account_tour"><span>Экскурсия на пляж</span>
-                                                <input type="radio" id="account_tour_5" name="account_tour"><span>Ночная прогулка</span>
-                                                <input type="radio" id="account_tour_6" name="account_tour"><span>Гастрономический тур</span>
-                                                <input type="radio" id="account_tour_7" name="account_tour"><span>Природный заповедник</span>
-                                                <input type="radio" id="account_tour_8" name="account_tour"><span>Музейный маршрут</span>
-                                                <input type="radio" id="account_tour_9" name="account_tour"><span>Круиз по реке</span><img class="arrow" src="images/select_arrow.svg" alt="">
+                                                <input class="placeholder" type="radio" id="account_tour" name="account_tour" checked><span>Сортировка</span>
+                                                <input type="radio" id="account_tour_0" name="account_tour"><span>Все</span>
+                                                <input type="radio" id="account_tour_1" name="account_tour"><span>Не подтверждено</span>
+                                                <input type="radio" id="account_tour_2" name="account_tour"><span>Ожидает обработки</span>
+                                                <input type="radio" id="account_tour_3" name="account_tour"><span>Подтверждено, частично оплачено</span>
+                                                <input type="radio" id="account_tour_4" name="account_tour"><span>Подтверждено, не оплачено</span>
+                                                <input type="radio" id="account_tour_5" name="account_tour"><span>Подтверждено, оплачено</span>
+                                                <input type="radio" id="account_tour_6" name="account_tour"><span>Завершено, не оплачено</span>
+                                                <input type="radio" id="account_tour_7" name="account_tour"><span>Завершено</span><img class="arrow" src="images/select_arrow.svg" alt="">
                                             </div>
                                             <div class="select_dropdown">
                                                 <div class="select_dropdown_overflow">
                                                     <div class="select_dropdown_content">
-                                                        <label for="account_tour_0">Городская прогулка</label>
-                                                        <label for="account_tour_1">Исторический обзор</label>
-                                                        <label for="account_tour_2">Культурное погружение</label>
-                                                        <label for="account_tour_3">Архитектурный тур</label>
-                                                        <label for="account_tour_4">Экскурсия на пляж</label>
-                                                        <label for="account_tour_5">Ночная прогулка</label>
-                                                        <label for="account_tour_6">Гастрономический тур</label>
-                                                        <label for="account_tour_7">Природный заповедник</label>
-                                                        <label for="account_tour_8">Музейный маршрут</label>
-                                                        <label for="account_tour_9">Круиз по реке</label>
+                                                        <label for="account_tour_0">Все</label>
+                                                        <label for="account_tour_1">Не подтверждено</label>
+                                                        <label for="account_tour_2">Ожидает обработки</label>
+                                                        <label for="account_tour_3">Подтверждено, частично оплачено</label>
+                                                        <label for="account_tour_4">Подтверждено, не оплачено</label>
+                                                        <label for="account_tour_5">Подтверждено, оплачено</label>
+                                                        <label for="account_tour_6">Завершено, не оплачено</label>
+                                                        <label for="account_tour_7">Завершено</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -510,6 +506,154 @@
                 <div class="thumbs">
                     <div class="swiper">
                         <div class="swiper-wrapper"></div>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+        <dialog data-modal-name="bus">
+            <div class="container"><img class="cross" src="images/dialog_cross.svg" data-modal-close>
+                <h3>Выберите место</h3>
+                <div class="places">
+                    <div class="row">
+                        <div class="place">15</div><span>Свободно</span>
+                    </div>
+                    <div class="row">
+                        <div class="place">15</div><span>Занято</span>
+                    </div>
+                </div>
+                <div class="scheme"><span class="title">Схема транспорта</span>
+                    <div class="start"><span>Водитель</span>
+                        <div class="enter"></div>
+                    </div>
+                    <div class="row"><span class="note">1</span>
+                        <div class="group">
+                            <div class="place">1</div>
+                            <div class="place">2</div>
+                        </div>
+                        <div class="group">
+                            <div class="place">3</div>
+                            <div class="place">4</div>
+                        </div>
+                    </div>
+                    <div class="row"><span class="note">2</span>
+                        <div class="group">
+                            <div class="place">5</div>
+                            <div class="place">6</div>
+                        </div>
+                        <div class="group">
+                            <div class="place">7</div>
+                            <div class="place">8</div>
+                        </div>
+                    </div>
+                    <div class="row"><span class="note">3</span>
+                        <div class="group">
+                            <div class="place">9</div>
+                            <div class="place">10</div>
+                        </div>
+                        <div class="group">
+                            <div class="place">11</div>
+                            <div class="place">12</div>
+                        </div>
+                    </div>
+                    <div class="row"><span class="note">4</span>
+                        <div class="group">
+                            <div class="place">13</div>
+                            <div class="place">14</div>
+                        </div>
+                        <div class="group">
+                            <div class="place">15</div>
+                            <div class="place">16</div>
+                        </div>
+                    </div>
+                    <div class="row"><span class="note">5</span>
+                        <div class="group">
+                            <div class="place">17</div>
+                            <div class="place">18</div>
+                        </div>
+                        <div class="group">
+                            <div class="place">19</div>
+                            <div class="place">20</div>
+                        </div>
+                    </div>
+                    <div class="row"><span class="note">6</span>
+                        <div class="group">
+                            <div class="place">21</div>
+                            <div class="place">22</div>
+                        </div>
+                        <div class="group">
+                            <div class="place">23</div>
+                            <div class="place">24</div>
+                        </div>
+                    </div>
+                    <div class="row"><span class="note">7</span>
+                        <div class="group">
+                            <div class="place">25</div>
+                            <div class="place">26</div>
+                        </div>
+                        <div class="group">
+                            <div class="enter"></div>
+                        </div>
+                    </div>
+                    <div class="row"><span class="note">8</span>
+                        <div class="group">
+                            <div class="place">27</div>
+                            <div class="place">28</div>
+                        </div>
+                        <div class="group">
+                            <div class="place">29</div>
+                            <div class="place">30</div>
+                        </div>
+                    </div>
+                    <div class="row"><span class="note">9</span>
+                        <div class="group">
+                            <div class="place">31</div>
+                            <div class="place">32</div>
+                        </div>
+                        <div class="group">
+                            <div class="place">33</div>
+                            <div class="place">34</div>
+                        </div>
+                    </div>
+                    <div class="row"><span class="note">10</span>
+                        <div class="group">
+                            <div class="place">35</div>
+                            <div class="place">36</div>
+                        </div>
+                        <div class="group">
+                            <div class="place">37</div>
+                            <div class="place">38</div>
+                        </div>
+                    </div>
+                    <div class="row"><span class="note">11</span>
+                        <div class="group">
+                            <div class="place">39</div>
+                            <div class="place">40</div>
+                        </div>
+                        <div class="group">
+                            <div class="place">41</div>
+                            <div class="place">42</div>
+                        </div>
+                    </div>
+                    <div class="row"><span class="note">12</span>
+                        <div class="group">
+                            <div class="place">43</div>
+                            <div class="place">44</div>
+                        </div>
+                        <div class="group">
+                            <div class="place">45</div>
+                            <div class="place">46</div>
+                        </div>
+                    </div>
+                    <div class="row"><span class="note">13</span>
+                        <div class="group">
+                            <div class="place">47</div>
+                            <div class="place">48</div>
+                            <div class="place">49</div>
+                        </div>
+                        <div class="group">
+                            <div class="place">50</div>
+                            <div class="place">51</div>
+                        </div>
                     </div>
                 </div>
             </div>

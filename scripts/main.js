@@ -42,6 +42,9 @@ const lightboxImages = document.querySelectorAll('[lightbox]')
 const dragdrops = document.querySelectorAll('.dragdrop')
 const fieldsetsSelect = document.querySelectorAll('fieldset.select')
 
+const places = document.querySelectorAll('div.scheme div.place')
+const select_labels = document.querySelectorAll('fieldset.select label')
+
 
 // Слайдеры
 mainSwiperThumbs && new Swiper(mainSwiperThumbs, {
@@ -601,7 +604,7 @@ airplanesAirticketsToSwiper && new Swiper(airplanesAirticketsToSwiper, {
     }
 })
 
-categoryDatesDaysSwipers.forEach( swiper => {
+categoryDatesDaysSwipers.forEach(swiper => {
     new Swiper(swiper, {
         slidesPerView: 'auto',
         freeMode: true,
@@ -740,7 +743,7 @@ airCardAccordions.forEach(accordion => {
 lightboxImages.forEach(lightboxImage => {
     lightboxImage.addEventListener('click', event => {
 
-        
+
 
         let groupImages
         const lightbox = document.querySelector('dialog[data-modal-name=lightbox]')
@@ -808,9 +811,9 @@ lightboxImages.forEach(lightboxImage => {
 })
 
 // Доп функционал для селекта
-fieldsetsSelect.forEach( select => {
+fieldsetsSelect.forEach(select => {
     select.addEventListener('mousedown', event => {
-        select == document.activeElement && setTimeout(function(){ select.blur() }, 100)
+        select == document.activeElement && setTimeout(function () { select.blur() }, 100)
     })
 })
 
@@ -893,4 +896,20 @@ if (typeof ymaps !== 'undefined') {
 
 resizeInputs()
 
+places.forEach(place => {
+    place.addEventListener('click', event => {
+        place.classList.toggle('active')
+    })
+})
 
+document.querySelectorAll('input[type=date').forEach(input => {
+    input.min = new Date().toISOString().split('T')[0]
+})
+
+select_labels.forEach(label => {
+    label.addEventListener('click', event => {
+        setTimeout(() => {
+            document.querySelector('form').focus()
+        }, 100)
+    })
+})

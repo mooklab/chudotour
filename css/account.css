@@ -753,6 +753,24 @@ section.orders div.container div.account_page table div.buttons.column {
     display: none;
   }
 }
+section.orders div.container div.account_page fieldset.select {
+  margin-left: auto;
+}
+@media (max-width: 960px) {
+  section.orders div.container div.account_page fieldset.select {
+    margin-left: unset;
+  }
+}
+section.orders div.container div.account_page fieldset.select div.select_dropdown {
+  white-space: nowrap;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  right: 0;
+}
+section.orders div.container div.account_page fieldset.select div.select_dropdown_content {
+  max-height: 230px;
+}
 
 section.order_details {
   margin-top: 30px;

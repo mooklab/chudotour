@@ -316,6 +316,7 @@ section.about_hotel
                             div.nights
                                 display: flex
                                 gap: 5px
+                                white-space: nowrap
                                 span
                                     font-weight: 400
                                     font-size: 14px
@@ -368,6 +369,13 @@ section.about_hotel
                             min-width: unset
                             +s(xl)
                                 font-size: 14px
+
+                div.info
+                    display: grid
+                    grid-template-columns: max-content 1fr
+                    grid-gap: 10px
+                    align-items: center
+                    margin-top: 20px
 
         div.total
             margin-top: -80px

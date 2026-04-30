@@ -441,7 +441,6 @@ section.about_tour div.container div.about div.inprice {
   margin-bottom: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid rgba(48, 104, 247, 0.2);
 }
 @media (max-width: 640px) {
   section.about_tour div.container div.about div.inprice {
@@ -492,6 +491,7 @@ section.about_tour div.container div.about div.gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 12px;
+  margin-top: 20px;
   margin-bottom: 68px;
 }
 @media (max-width: 960px) {
@@ -1500,6 +1500,7 @@ section.about_hotel div.container div.about div.rooms div.room_card div.order di
   display: -ms-flexbox;
   display: flex;
   gap: 5px;
+  white-space: nowrap;
 }
 section.about_hotel div.container div.about div.rooms div.room_card div.order div.period div.days span,
 section.about_hotel div.container div.about div.rooms div.room_card div.order div.period div.nights span {
@@ -1578,6 +1579,16 @@ section.about_hotel div.container div.about div.rooms div.room_card div.order a.
   section.about_hotel div.container div.about div.rooms div.room_card div.order a.button {
     font-size: 14px;
   }
+}
+section.about_hotel div.container div.about div.rooms div.info {
+  display: grid;
+  grid-template-columns: -webkit-max-content 1fr;
+  grid-template-columns: max-content 1fr;
+  grid-gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
 }
 section.about_hotel div.container div.total {
   margin-top: -80px;

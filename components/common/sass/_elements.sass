@@ -133,6 +133,9 @@ fieldset.input
             content: '*'
             color: #D819A3
 
+    &:has(input:focus)
+        border-color: #343A60
+
     span
         position: absolute
         bottom: calc(50% + 3px)
@@ -644,8 +647,13 @@ a.tour_card
 
     &:hover
         box-shadow: 5px 5px 50px rgba(33, 23, 70, 0.4)
+        +s(m)
+            box-shadow: unset
+
         img.preview
             transform: scale(1.1)
+            +s(m)
+                transform: unset
 
 div.swiper-navigation
     display: grid
@@ -2910,3 +2918,6 @@ div.map
             margin-top: 10px
         button
             background: #3068f7
+
+.price
+    font-family: "Montserrat", sans-serif
