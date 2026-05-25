@@ -191,13 +191,22 @@ section.about_hotel
                 div.question
                     h5 Задайте вопрос
                     div.phone_tourist
-                        a(href="tel:8 (831) 413-11-23") 8 (831) 413-11-23
+                        div(onclick="this.classList.toggle('open')").phone
+                            a(href="tel:8 (831) 413-11-23") 8 (831) 413-11-23
                             img(src="images/header_phone_arrow.svg", alt="")
+                            div.phones
+                                a(href="tel:8 (831) 413-11-23") 8 (831) 413-11-24
+                                a(href="tel:8 (831) 413-11-23") 8 (831) 413-11-25
+
                         span Туристам
 
                     div.phone_agency
-                        a(href="tel:8 (831) 413-11-23") 8 (831) 413-11-23
+                        div(onclick="this.classList.toggle('open')").phone
+                            a(href="tel:8 (831) 413-11-23") 8 (831) 413-11-23
                             img(src="images/header_phone_arrow.svg", alt="")
+                            div.phones
+                                a(href="tel:8 (831) 413-11-23") 8 (831) 413-11-24
+                                a(href="tel:8 (831) 413-11-23") 8 (831) 413-11-25
                         span Агентствам
                 div.message
                     h5 Или напишите в сообщении

@@ -476,40 +476,79 @@ section.about_hotel
                     +s(l)
                         padding: 20px
 
-                    div.phone_tourist
-                        margin-bottom: 16px
-                    div.phone_tourist,
-                    div.phone_agency
+                div.phone_tourist
+                    margin-bottom: 16px
+
+                div.phone
+                    position: relative
+                    display: grid
+                    grid-auto-flow: column
+                    grid-auto-columns: max-content
+                    align-items: center
+                    grid-gap: 10px
+
+                    img
+                        cursor: pointer
+                        transition: all 0.2s
+
+                    div.phones
                         display: grid
-                        align-content: center
                         grid-gap: 8px
+                        position: absolute
+                        top: calc(100% + 8px)
+                        left: 0
+                        background: white
+                        border-radius: 10px
+                        padding: 20px
+                        z-index: 2
+                        border: 1px solid rgba(48, 104, 247, 0.2)
+                        opacity: 0
+                        pointer-events: none
+                        transition: all 0.5s
 
+                    &.open
+                        img
+                            transform: rotate(180deg)
+                        div.phones
+                            opacity: 1
+                            pointer-events: auto
+
+                div.phone_tourist,
+                div.phone_agency
+                    display: grid
+                    align-content: center
+                    grid-gap: 8px
+
+                    +s(xl)
+                        grid-gap: 0px
+                        padding-right: 20px
+
+                    a
+                        font-family: "Montserrat", sans-serif
+                        display: grid
+                        grid-auto-flow: column
+                        grid-auto-columns: max-content
+                        align-items: center
+                        grid-gap: 5px
+                        font-weight: 600
+                        font-size: 16px
+                        line-height: 130%
+                        color: #343a60
                         +s(xl)
-                            grid-gap: 0px
-                            padding-right: 20px
-
-                        a
-                            font-family: "Montserrat", sans-serif
-                            display: grid
-                            grid-auto-flow: column
-                            grid-auto-columns: max-content
-                            align-items: center
-                            grid-gap: 5px
-                            font-weight: 600
-                            font-size: 16px
-                            line-height: 130%
-                            color: #343a60
-                            +s(xl)
-                                font-size: 14px
-
-                        span
-                            font-family: "Montserrat", sans-serif
-                            font-weight: 400
                             font-size: 14px
-                            line-height: 130%
-                            color: #343a60
-                            +s(xl)
-                                font-size: 12px
+
+                        &:hover
+                            color: #3068f7
+
+                    span
+                        font-family: "Montserrat", sans-serif
+                        font-weight: 400
+                        font-size: 14px
+                        line-height: 130%
+                        color: #343a60
+                        +s(xl)
+                            font-size: 12px
+
                 div.message
                     padding: 20px 30px
                     +s(l)

@@ -1774,25 +1774,66 @@ section.about_hotel div.container div.total div.support div.question {
     padding: 20px;
   }
 }
-section.about_hotel div.container div.total div.support div.question div.phone_tourist {
+section.about_hotel div.container div.total div.support div.phone_tourist {
   margin-bottom: 16px;
 }
-section.about_hotel div.container div.total div.support div.question div.phone_tourist,
-section.about_hotel div.container div.total div.support div.question div.phone_agency {
+section.about_hotel div.container div.total div.support div.phone {
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: -webkit-max-content;
+  grid-auto-columns: max-content;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-gap: 10px;
+}
+section.about_hotel div.container div.total div.support div.phone img {
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+section.about_hotel div.container div.total div.support div.phone div.phones {
+  display: grid;
+  grid-gap: 8px;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  z-index: 2;
+  border: 1px solid rgba(48, 104, 247, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+section.about_hotel div.container div.total div.support div.phone.open img {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+section.about_hotel div.container div.total div.support div.phone.open div.phones {
+  opacity: 1;
+  pointer-events: auto;
+}
+section.about_hotel div.container div.total div.support div.phone_tourist,
+section.about_hotel div.container div.total div.support div.phone_agency {
   display: grid;
   -ms-flex-line-pack: center;
       align-content: center;
   grid-gap: 8px;
 }
 @media (max-width: 1600px) {
-  section.about_hotel div.container div.total div.support div.question div.phone_tourist,
-  section.about_hotel div.container div.total div.support div.question div.phone_agency {
+  section.about_hotel div.container div.total div.support div.phone_tourist,
+  section.about_hotel div.container div.total div.support div.phone_agency {
     grid-gap: 0px;
     padding-right: 20px;
   }
 }
-section.about_hotel div.container div.total div.support div.question div.phone_tourist a,
-section.about_hotel div.container div.total div.support div.question div.phone_agency a {
+section.about_hotel div.container div.total div.support div.phone_tourist a,
+section.about_hotel div.container div.total div.support div.phone_agency a {
   font-family: "Montserrat", sans-serif;
   display: grid;
   grid-auto-flow: column;
@@ -1808,13 +1849,17 @@ section.about_hotel div.container div.total div.support div.question div.phone_a
   color: #343a60;
 }
 @media (max-width: 1600px) {
-  section.about_hotel div.container div.total div.support div.question div.phone_tourist a,
-  section.about_hotel div.container div.total div.support div.question div.phone_agency a {
+  section.about_hotel div.container div.total div.support div.phone_tourist a,
+  section.about_hotel div.container div.total div.support div.phone_agency a {
     font-size: 14px;
   }
 }
-section.about_hotel div.container div.total div.support div.question div.phone_tourist span,
-section.about_hotel div.container div.total div.support div.question div.phone_agency span {
+section.about_hotel div.container div.total div.support div.phone_tourist a:hover,
+section.about_hotel div.container div.total div.support div.phone_agency a:hover {
+  color: #3068f7;
+}
+section.about_hotel div.container div.total div.support div.phone_tourist span,
+section.about_hotel div.container div.total div.support div.phone_agency span {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -1822,8 +1867,8 @@ section.about_hotel div.container div.total div.support div.question div.phone_a
   color: #343a60;
 }
 @media (max-width: 1600px) {
-  section.about_hotel div.container div.total div.support div.question div.phone_tourist span,
-  section.about_hotel div.container div.total div.support div.question div.phone_agency span {
+  section.about_hotel div.container div.total div.support div.phone_tourist span,
+  section.about_hotel div.container div.total div.support div.phone_agency span {
     font-size: 12px;
   }
 }
