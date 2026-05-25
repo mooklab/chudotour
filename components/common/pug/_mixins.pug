@@ -6,7 +6,7 @@ mixin input(placeholder, required)
 mixin checkbox(name, title, ischecked = false)
     label.checkbox
         input(type="checkbox", checked=ischecked)
-        span!= title
+        span !{ title }
 
 mixin radio(name, title, checked)
     label.radio

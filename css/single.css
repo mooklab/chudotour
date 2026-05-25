@@ -934,6 +934,47 @@ section.about_tour div.container div.total div.support div.question {
 section.about_tour div.container div.total div.support div.question div.phone_tourist {
   margin-bottom: 16px;
 }
+section.about_tour div.container div.total div.support div.question div.phone {
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: -webkit-max-content;
+  grid-auto-columns: max-content;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-gap: 10px;
+}
+section.about_tour div.container div.total div.support div.question div.phone img {
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+section.about_tour div.container div.total div.support div.question div.phone div.phones {
+  display: grid;
+  grid-gap: 8px;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  z-index: 2;
+  border: 1px solid rgba(48, 104, 247, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+section.about_tour div.container div.total div.support div.question div.phone.open img {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+section.about_tour div.container div.total div.support div.question div.phone.open div.phones {
+  opacity: 1;
+  pointer-events: auto;
+}
 section.about_tour div.container div.total div.support div.question div.phone_tourist,
 section.about_tour div.container div.total div.support div.question div.phone_agency {
   display: grid;
@@ -969,6 +1010,10 @@ section.about_tour div.container div.total div.support div.question div.phone_ag
   section.about_tour div.container div.total div.support div.question div.phone_agency a {
     font-size: 14px;
   }
+}
+section.about_tour div.container div.total div.support div.question div.phone_tourist a:hover,
+section.about_tour div.container div.total div.support div.question div.phone_agency a:hover {
+  color: #3068f7;
 }
 section.about_tour div.container div.total div.support div.question div.phone_tourist span,
 section.about_tour div.container div.total div.support div.question div.phone_agency span {

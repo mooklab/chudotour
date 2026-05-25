@@ -1495,7 +1495,11 @@ div.account_sidemenu
     +s(xl)
         max-width: 360px
     +s(l)
-        display: none
+        max-width: unset
+        overflow: auto
+        &::-webkit-scrollbar
+            display: none
+            opacity: 0
 
     div.tourist
         display: grid
@@ -1505,6 +1509,8 @@ div.account_sidemenu
         border-radius: 10px
         background: #3068f7
         padding: 10px
+        +s(l)
+            display: none
 
         img
             border-radius: 10px
@@ -1532,6 +1538,11 @@ div.account_sidemenu
         display: grid
         border: 1px solid #3068f721
         border-radius: 10px
+        +s(l)
+            width: 100%
+            grid-auto-flow: column
+            grid-auto-columns: max-content
+            margin-bottom: 30px
 
         a
             display: block
@@ -1550,6 +1561,9 @@ div.account_sidemenu
                 pointer-events: none
                 font-weight: 700
                 color: #3068F7
+                +s(l)
+                    border-left: unset
+                    border-bottom: 2px solid #3068f7
 
             &:hover
                 color: #3068f7
@@ -1560,6 +1574,8 @@ div.account_sidemenu
         border: 1px solid rgba(48, 104, 247, 0.2)
         border-radius: 10px
         padding: 20px
+        +s(l)
+            display: none
 
         div.title
             display: flex

@@ -2321,7 +2321,12 @@ div.account_sidemenu {
 }
 @media (max-width: 1280px) {
   div.account_sidemenu {
+    max-width: unset;
+    overflow: auto;
+  }
+  div.account_sidemenu::-webkit-scrollbar {
     display: none;
+    opacity: 0;
   }
 }
 div.account_sidemenu div.tourist {
@@ -2335,6 +2340,11 @@ div.account_sidemenu div.tourist {
   border-radius: 10px;
   background: #3068f7;
   padding: 10px;
+}
+@media (max-width: 1280px) {
+  div.account_sidemenu div.tourist {
+    display: none;
+  }
 }
 div.account_sidemenu div.tourist img {
   border-radius: 10px;
@@ -2365,6 +2375,15 @@ div.account_sidemenu div.menu {
   border: 1px solid rgba(48, 104, 247, 0.1294117647);
   border-radius: 10px;
 }
+@media (max-width: 1280px) {
+  div.account_sidemenu div.menu {
+    width: 100%;
+    grid-auto-flow: column;
+    grid-auto-columns: -webkit-max-content;
+    grid-auto-columns: max-content;
+    margin-bottom: 30px;
+  }
+}
 div.account_sidemenu div.menu a {
   display: block;
   font-weight: 400;
@@ -2386,6 +2405,12 @@ div.account_sidemenu div.menu a.active {
   font-weight: 700;
   color: #3068F7;
 }
+@media (max-width: 1280px) {
+  div.account_sidemenu div.menu a.active {
+    border-left: unset;
+    border-bottom: 2px solid #3068f7;
+  }
+}
 div.account_sidemenu div.menu a:hover {
   color: #3068f7;
 }
@@ -2395,6 +2420,11 @@ div.account_sidemenu div.tours {
   border: 1px solid rgba(48, 104, 247, 0.2);
   border-radius: 10px;
   padding: 20px;
+}
+@media (max-width: 1280px) {
+  div.account_sidemenu div.tours {
+    display: none;
+  }
 }
 div.account_sidemenu div.tours div.title {
   display: -webkit-box;
